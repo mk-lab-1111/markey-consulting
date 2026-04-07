@@ -2,9 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>セミナー・イベント一覧 | MARKEY CONSULTING</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif; color: #222; background: #f8f8f8; }
@@ -714,7 +717,8 @@ const SUPABASE_URL = 'https://wcezsswsynxblrbcbrce.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndjZXpzc3dzeW54YmxyYmNicmNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2MzUyMTEsImV4cCI6MjA5MDIxMTIxMX0.AVzUqWecn8_KkKNghex15iC_gbw7IgJ2fVWMFUpk4D4';
 let supabaseClient = null;
 try {
-  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const _sb = window.supabase || window.Supabase;
+  if (_sb) supabaseClient = _sb.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 } catch(e) {
   console.warn('Supabase初期化エラー:', e);
 }
