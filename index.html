@@ -65,15 +65,16 @@
   .event-card-thumb-wrap {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 220px;
     overflow: hidden;
     background: linear-gradient(135deg, #1a3a5c 0%, #2a6496 60%, #3d8fc4 100%);
   }
   .event-card-banner-img {
     display: none;
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
   }
   .event-card-banner-img[src]:not([src=""]) {
     display: block;
@@ -84,14 +85,15 @@
 
   .event-card-thumb {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     background: linear-gradient(135deg, #1a3a5c, #3d8fc4);
   }
   .event-card-thumb-placeholder {
     width: 100%;
-    height: 180px;
+    height: 220px;
     background: linear-gradient(135deg, #1a3a5c 0%, #2a6496 60%, #3d8fc4 100%);
     display: flex;
     align-items: center;
@@ -202,7 +204,7 @@
   .nav-links a { text-decoration: none; color: #222; font-size: 15px; font-weight: 500; }
   .nav-links a:hover { color: #3d2f8f; }
   .contact-btn {
-    background: #e8302a; color: #fff; border: none;
+    background: #e8302a; color: #ffffff !important; border: none;
     padding: 13px 22px; border-radius: 4px; font-size: 14px;
     font-weight: 700; cursor: pointer; display: inline-flex;
     align-items: center; gap: 8px; text-decoration: none;
@@ -346,9 +348,25 @@
     box-shadow: 0 16px 48px rgba(0,0,0,0.15);
   }
   .case-card-head {
-    background: linear-gradient(135deg, #1a3a5c 0%, #3d2f8f 100%);
+    background: url('case_image.jpg') center/cover no-repeat;
     padding: 32px 28px 24px;
     color: #fff;
+    position: relative;
+  }
+  .case-card-subtitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: #3d2f8f;
+    background: #f0eeff;
+    border-left: 3px solid #3d2f8f;
+    padding: 6px 12px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .case-card-head > * {
+    position: relative;
+    z-index: 1;
   }
   .case-card-label {
     font-size: 11px;
@@ -408,15 +426,17 @@
     margin-bottom: 20px;
   }
   .case-card-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: inline-block;
+    background: #e8302a;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 700;
-    color: #3d2f8f;
-    border-top: 1px solid #eee;
-    padding-top: 16px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 16px;
   }
+  .case-card-link:hover { background: #c0241e; }
   .case-card-link span { font-size: 18px; }
   .cases-cta { text-align: center; }
 
@@ -428,6 +448,138 @@
     .cases-grid { grid-template-columns: 1fr; }
     .cases-title { font-size: 32px; }
   }
+
+
+
+  /* 研修内容セクション */
+  .section-training {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600') center/cover no-repeat;
+    padding: 100px 80px;
+    text-align: center;
+  }
+  .section-training::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 20, 50, 0.76);
+  }
+  .training-content {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .training-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #00a0a0;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .training-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 20px;
+  }
+  .training-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    line-height: 1.9;
+    margin-bottom: 32px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-training {
+    display: inline-block;
+    background: #f07a00;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 16px 44px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    margin-bottom: 52px;
+  }
+  .btn-training:hover { background: #d06800; transform: translateY(-2px); }
+  .training-pickup-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .training-pickup-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 12px;
+    padding: 20px 16px 16px;
+    text-align: left;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+  }
+  .training-pickup-card:hover {
+    background: rgba(255,255,255,0.17);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  }
+  .pickup-num {
+    width: 28px;
+    height: 28px;
+    background: #f07a00;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .pickup-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .pickup-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.58);
+    line-height: 1.55;
+  }
+  .pickup-arrow {
+    font-size: 14px;
+    color: rgba(255,255,255,0.35);
+    text-align: right;
+  }
+  .training-all-link { text-align: center; }
+  .training-all-link a {
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+  .training-all-link a:hover { color: #fff; }
+  @media (max-width: 900px) {
+    .training-pickup-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .section-training { padding: 72px 24px; }
+    .training-title { font-size: 1.8rem; }
+    .training-pickup-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
 
   /* 代表挨拶 */
   .section-message { padding: 80px 80px; }
@@ -565,7 +717,77 @@
   @keyframes heroFadeIn {
     to { opacity: 1; transform: translateY(0); }
   }
+  @keyframes pulse {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
 
+  /* ===== メルマガ誘導バナー（ヒーロー内） ===== */
+  .hero-mailmag {
+    margin-top: 40px;
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(201,168,76,0.75);
+    border-radius: 12px;
+    padding: 16px 20px;
+    max-width: 480px;
+    flex-wrap: wrap;
+    opacity: 0; transform: translateY(20px);
+    animation: heroFadeIn 0.7s forwards;
+    animation-delay: 1.6s;
+  }
+  .hero-mailmag-icon { font-size: 26px; flex-shrink: 0; }
+  .hero-mailmag-text { flex: 1; min-width: 0; }
+  .hero-mailmag-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    color: #c9a84c; margin-bottom: 4px; text-transform: uppercase;
+  }
+  .hero-mailmag-title {
+    font-size: 13px; font-weight: 900; color: #fff;
+    margin-bottom: 4px; line-height: 1.5;
+  }
+  .hero-mailmag-desc { font-size: 11px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .hero-mailmag-btn {
+    display: inline-block;
+    background: #c9a84c; color: #fff;
+    font-size: 12px; font-weight: 700;
+    padding: 9px 16px; border-radius: 6px;
+    text-decoration: none; white-space: nowrap; flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .hero-mailmag-btn:hover { background: #a8883c; }
+
+  /* ===== メルマガ登録セクション ===== */
+  .mailmag-section {
+    background: #1a1a2e;
+    padding: 90px 80px;
+    text-align: center;
+  }
+  .mailmag-label {
+    font-size: 13px; letter-spacing: 4px; font-weight: 600;
+    color: #c9a84c; margin-bottom: 14px; display: block;
+  }
+  .mailmag-title {
+    font-size: 36px; font-weight: 900; color: #fff;
+    margin-bottom: 10px; line-height: 1.3;
+  }
+  .mailmag-subtitle {
+    font-size: 14px; color: rgba(255,255,255,0.45);
+    margin-bottom: 18px;
+  }
+  .mailmag-desc {
+    font-size: 15px; color: rgba(255,255,255,0.72);
+    line-height: 1.9; margin-bottom: 44px;
+  }
+  .mailmag-iframe-wrap {
+    max-width: 560px; margin: 0 auto;
+    border-radius: 12px; overflow: hidden;
+    background: #fff;
+  }
+  .mailmag-iframe-wrap iframe {
+    display: block; width: 100%; border: none;
+  }
 
   /* ===== レスポンシブ ===== */
   @media (max-width: 768px) {
@@ -643,6 +865,15 @@
     footer { padding: 40px 24px; }
     .footer-inner { flex-direction: column; gap: 32px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+    /* メルマガバナー（ヒーロー内） */
+    .hero-mailmag { max-width: 100%; }
+    .hero-mailmag-btn { width: 100%; text-align: center; }
+
+    /* メルマガ登録セクション */
+    .mailmag-section { padding: 60px 24px; }
+    .mailmag-title { font-size: 24px; }
+    .mailmag-iframe-wrap iframe { height: 420px; }
   }
 </style>
 </head>
@@ -656,6 +887,7 @@
     <a href="#business">事業内容</a>
     <a href="#company">会社概要</a>
     <a href="events.html">イベント</a>
+    <a href="training.html">研修内容</a>
     <a href="#news">新着情報</a>
     <a href="#contact" class="contact-btn">✉ お問い合わせ</a>
   </div>
@@ -673,6 +905,7 @@
     <a href="#business" onclick="toggleMenu()">事業内容</a>
     <a href="#company" onclick="toggleMenu()">会社概要</a>
     <a href="events.html" onclick="toggleMenu()">イベント</a>
+    <a href="training.html" onclick="toggleMenu()">研修内容</a>
     <a href="#news" onclick="toggleMenu()">新着情報</a>
     <a href="#contact" onclick="toggleMenu()" class="mobile-contact-btn">✉ お問い合わせ</a>
   </div>
@@ -688,6 +921,16 @@
     <h1 class="hero-title">MARKEY</h1>
     <p class="hero-en">Key to the Future Market.</p>
     <p class="hero-desc">受注を伸ばすなら<br>住宅販売強化特化支援の<br>MARKEY CONSULTING</p>
+    <!-- メルマガ誘導バナー -->
+    <div class="hero-mailmag">
+      <span class="hero-mailmag-icon">📧</span>
+      <div class="hero-mailmag-text">
+        <p class="hero-mailmag-tag">メールマガジン</p>
+        <p class="hero-mailmag-title">インフレ時代に売れる営業ノウハウを無料配信中</p>
+        <p class="hero-mailmag-desc">価格高騰・競合激化の時代に選ばれる住宅会社の戦略を月2回お届け</p>
+      </div>
+      <a href="#mailmag-section" class="hero-mailmag-btn">無料で読んでみる →</a>
+    </div>
   </div>
 </section>
 
@@ -723,11 +966,11 @@
   <div class="events-grid">
 
     <!-- イベントカード1 -->
-    <div class="event-card">
+    <div class="event-card" style="border: 2px solid #e63946; box-shadow: 0 4px 20px rgba(230,57,70,0.3);">
+      <div style="background:#e63946; color:white; text-align:center; padding:8px; font-weight:bold; font-size:14px; animation: pulse 1.5s infinite; border-radius:4px 4px 0 0;">🔴 申込み受付中</div>
       <!-- ↓ バナー画像：src="" にURLを入力するとバナー表示。空のままにするとグラデーション背景 -->
-      <div class="event-card-thumb-wrap">
-        <img class="event-card-banner-img" src="" alt="イベントバナー">
-        <div class="event-card-thumb-placeholder">SEMINAR &amp; EVENT</div>
+      <div class="event-card-thumb-wrap" style="height:220px;overflow:hidden;">
+        <img src="event1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt="">
       </div>
       <div class="event-card-body">
         <div class="event-card-tags">
@@ -735,31 +978,32 @@
           <span class="event-tag online">オンライン</span>
           <span class="event-tag free">無料</span>
         </div>
-        <h3 class="event-card-title">住宅営業の契約率を上げる！現場で使える販売戦略セミナー</h3>
+        <h3 class="event-card-title">インフレでも売って売って売りまくる！1年間で350万円価格UPでも受注190%増！価格高騰時代に売れる営業法則</h3>
+        <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:10px;">元ハウスメーカー全国トップエリアマネージャーが解説。インフレ下でも受注を増やした即日使える手法。</p>
         <div class="event-card-date">
           <span class="event-card-date-badge">開催日</span>
-          2025年4月18日（金）
+          開催①5月7日 / 開催②5月14日・各回20名・無料
         </div>
-        <a href="events.html" class="event-card-link">詳しく見る →</a>
+        <a href="event_01.html" class="event-card-link">詳しく見る →</a>
       </div>
     </div>
 
     <!-- イベントカード2 -->
     <div class="event-card">
       <!-- ↓ バナー画像：src="" にURLを入力するとバナー表示。空のままにするとグラデーション背景 -->
-      <div class="event-card-thumb-wrap">
-        <img class="event-card-banner-img" src="" alt="イベントバナー">
-        <div class="event-card-thumb-placeholder">SEMINAR &amp; EVENT</div>
+      <div class="event-card-thumb-wrap" style="height:220px;overflow:hidden;">
+        <img src="event2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt="">
       </div>
       <div class="event-card-body">
         <div class="event-card-tags">
           <span class="event-tag online">オンライン</span>
           <span class="event-tag paid">有料</span>
         </div>
-        <h3 class="event-card-title">住宅会社のための集客戦略　実践ワークショップ</h3>
+        <h3 class="event-card-title">契約率を劇的に上げる！初回接客から受注までの完全ロードマップ</h3>
+        <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:10px;">初回来場から契約までの各ステップを体系化。トップ営業マンの手法を完全公開。</p>
         <div class="event-card-date">
           <span class="event-card-date-badge">開催日</span>
-          2025年5月9日（金）
+          開催日程・参加費は近日公開予定
         </div>
         <a href="events.html" class="event-card-link">詳しく見る →</a>
       </div>
@@ -768,19 +1012,19 @@
     <!-- イベントカード3（追加） -->
     <div class="event-card">
       <!-- ↓ バナー画像：src="" にURLを入力するとバナー表示。空のままにするとグラデーション背景 -->
-      <div class="event-card-thumb-wrap">
-        <img class="event-card-banner-img" src="" alt="イベントバナー">
-        <div class="event-card-thumb-placeholder">SEMINAR &amp; EVENT</div>
+      <div class="event-card-thumb-wrap" style="height:220px;overflow:hidden;">
+        <img src="event3.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt="">
       </div>
       <div class="event-card-body">
         <div class="event-card-tags">
           <span class="event-tag online">オンライン</span>
           <span class="event-tag free">無料</span>
         </div>
-        <h3 class="event-card-title">住宅販売の最前線！受注棟数を増やす経営戦略セミナー</h3>
+        <h3 class="event-card-title">土地なし客を制する！土地提案から受注まで勝ちパターン完全解説</h3>
+        <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:10px;">苦手な営業が多い「土地なし客」への対応を徹底解説。年間10棟以上を土地なしで受注する手法とは。</p>
         <div class="event-card-date">
           <span class="event-card-date-badge">開催日</span>
-          2025年6月6日（金）
+          開催日程・参加費は近日公開予定
         </div>
         <a href="events.html" class="event-card-link">詳しく見る →</a>
       </div>
@@ -788,7 +1032,7 @@
 
   </div>
   <div class="events-more">
-    <a href="events.html" class="btn-events-all">セミナー一覧を見る →</a>
+    <a href="events.html" class="btn-events-all">イベント一覧をもっと見る →</a>
   </div>
 </section>
 
@@ -855,16 +1099,17 @@
   <div class="cases-grid">
 
     <!-- 事例A -->
-    <a href="case-a.html" class="case-card">
+    <a href="cases.html" class="case-card">
       <div class="case-card-head">
         <span class="case-card-label">CASE A</span>
-        <p class="case-card-name">工務店A社様</p>
+        <p class="case-card-name">R社様</p>
         <span class="case-card-tag">受注改善</span>
       </div>
       <div class="case-card-body">
+          <p class="case-card-subtitle">R社 / 関東甲信越地方 / T社長</p>
         <div class="case-card-result">
           <span class="case-card-result-label">RESULT</span>
-          <p class="case-card-result-text">受注棟数が1年で約２倍に</p>
+          <p class="case-card-result-text">価格350万円UPで52棟→94棟！地域No.1に返り咲き</p>
         </div>
         <p class="case-card-desc">営業力強化と販売戦略の見直しにより、わずか1年で受注棟数を大幅改善。契約率・単価ともに向上を実現しました。</p>
         <div class="case-card-link">詳しく見る <span>→</span></div>
@@ -872,41 +1117,89 @@
     </a>
 
     <!-- 事例B -->
-    <a href="case-b.html" class="case-card">
-      <div class="case-card-head" style="background: linear-gradient(135deg, #1a3a5c 0%, #e8302a 100%);">
+    <a href="cases.html" class="case-card">
+      <div class="case-card-head" >
         <span class="case-card-label">CASE B</span>
-        <p class="case-card-name">住宅会社B社様</p>
-        <span class="case-card-tag">集客改善</span>
+        <p class="case-card-name">H社様</p>
+        <span class="case-card-tag">4年連続受注増</span>
       </div>
       <div class="case-card-body">
+          <p class="case-card-subtitle">H社 / 九州地方 / T社長</p>
         <div class="case-card-result">
           <span class="case-card-result-label">RESULT</span>
-          <p class="case-card-result-text">集客コストを30%削減しながら来場数1.5倍</p>
+          <p class="case-card-result-text">ウッドショック以来4年連続で受注・売上・利益増加！80棟から170棟ビルダーへ！</p>
         </div>
-        <p class="case-card-desc">集客施策の抜本的な見直しにより、コストを抑えながら見込み顧客数を増加。効率的な営業体制を構築しました。</p>
+        <p class="case-card-desc">コロナ禍での2年連続受注減から、組織改革とUSP確立により急回復。4年連続で増収・増益を達成しました。</p>
         <div class="case-card-link">詳しく見る <span>→</span></div>
       </div>
     </a>
 
     <!-- 事例C -->
-    <a href="case-c.html" class="case-card">
-      <div class="case-card-head" style="background: linear-gradient(135deg, #3d2f8f 0%, #1a7a46 100%);">
+    <a href="cases.html" class="case-card">
+      <div class="case-card-head" >
         <span class="case-card-label">CASE C</span>
-        <p class="case-card-name">ハウスビルダーC社様</p>
-        <span class="case-card-tag">組織強化</span>
+        <p class="case-card-name">S社様</p>
+        <span class="case-card-tag">過去最高受注</span>
       </div>
       <div class="case-card-body">
+          <p class="case-card-subtitle">S社 / 関東地方 / I社長</p>
         <div class="case-card-result">
           <span class="case-card-result-label">RESULT</span>
-          <p class="case-card-result-text">離職率ゼロ・営業利益率が2倍に改善</p>
+          <p class="case-card-result-text">顧客管理で過去最高受注達成！建売なのに中長期受注が4割まで増加！</p>
         </div>
-        <p class="case-card-desc">営業組織の再構築と評価制度の改革により、社員のモチベーション向上と業績の同時改善を実現しました。</p>
+        <p class="case-card-desc">集客減少の中、中長期顧客管理の仕組み化と若手育成により、価格を上げながら過去最高103棟を達成しました。</p>
         <div class="case-card-link">詳しく見る <span>→</span></div>
       </div>
     </a>
 
   </div>
 </section>
+
+<!-- 研修内容 -->
+<section class="fade-up section-training" id="training">
+  <div class="training-content">
+    <span class="training-label">MARKEY CONSULTING の研修</span>
+    <h2 class="training-title">営業チームの成果を、研修で変える。</h2>
+    <p class="training-sub">本当に受注が増える研修を受けたことがありますか？私たちの研修は成果コミット型です。即日使える受注スキルから中長期的な案件創出のための顧客管理、戦略策定のための研修まで2時間のスポット研修からご用意しています。</p>
+    <a href="training.html" class="btn-training">内容をいますぐ確認する →</a>
+    <div class="training-pickup-grid">
+      <a href="training.html" class="training-pickup-card">
+        <div class="pickup-num">1</div>
+        <div class="pickup-title">土地なし一発買付</div>
+        <div class="pickup-sub">圧倒的な受注増続出の最強スキル</div>
+        <div class="pickup-arrow">→</div>
+      </a>
+      <a href="training.html" class="training-pickup-card">
+        <div class="pickup-num">2</div>
+        <div class="pickup-title">高付加価値・FAN化セールス</div>
+        <div class="pickup-sub">高くても売れる自社商品を作る</div>
+        <div class="pickup-arrow">→</div>
+      </a>
+      <a href="training.html" class="training-pickup-card">
+        <div class="pickup-num">3</div>
+        <div class="pickup-title">応用クロージング</div>
+        <div class="pickup-sub">お断り案件を受注に変える</div>
+        <div class="pickup-arrow">→</div>
+      </a>
+      <a href="training.html" class="training-pickup-card">
+        <div class="pickup-num">4</div>
+        <div class="pickup-title">SPINセールス研修</div>
+        <div class="pickup-sub">高価格帯に効く最強セールス手法</div>
+        <div class="pickup-arrow">→</div>
+      </a>
+      <a href="training.html" class="training-pickup-card">
+        <div class="pickup-num">5</div>
+        <div class="pickup-title">キャンセル防止研修</div>
+        <div class="pickup-sub">年間プラス5〜10棟を目指す</div>
+        <div class="pickup-arrow">→</div>
+      </a>
+    </div>
+    <div class="training-all-link">
+      <a href="training.html">研修テーマを全て見る（全17テーマ）→</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- 代表挨拶 -->
 <section class="fade-up section-message" id="message">
@@ -1118,6 +1411,20 @@ function hideArticle() {
   </div>
 </section>
 
+<!-- メルマガ登録 -->
+<section id="mailmag-section" class="mailmag-section">
+  <span class="mailmag-label">Mail Magazine｜メールマガジン</span>
+  <h2 class="mailmag-title">住宅営業のノウハウを無料でお届け</h2>
+  <p class="mailmag-subtitle">月2回配信・いつでも解除できます</p>
+  <p class="mailmag-desc">
+    インフレ時代に売れる営業戦略・最新トレンド・<br>
+    セミナー先行案内をお届けします
+  </p>
+  <div class="mailmag-iframe-wrap">
+    <iframe width="540" height="305" src="https://2ebd54d8.sibforms.com/serve/MUIFAAstVVeNYWnRjho9805UU49u0NdWl4IYR0S7uX5fA8aQQ1eGuQHtCkCrpWFJdhqjPvlLAoLb1YB9HpQrWnplOYGZqLdiQ6euCW3PKiHCHnzXGHAme0_aW934p0Wt3Ym3FcZ8jpPJK8P9C5heEUe34FKo0nrWLBanBxvQjgaSD5lowLU2yxd9jTPfUhEbVyMn-7rrcRumYukxZg==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  </div>
+</section>
+
 <!-- フッター -->
 <footer>
   <div class="footer-inner">
@@ -1137,7 +1444,7 @@ function hideArticle() {
   </div>
   <div class="footer-bottom">
     <span class="copy">©2024 MARKEY CONSULTING</span>
-    <a href="#" class="privacy">プライバシーポリシー</a>
+    <a href="privacy.html" class="privacy">プライバシーポリシー</a>
     <div class="footer-social">
       <a href="#">𝕏</a>
       <a href="#">📷</a>
