@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ナフサ特需で過去最高受注！販売戦略セミナー | MARKEY CONSULTING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Hiragino Kaku Gothic ProN','Noto Sans JP','Meiryo',sans-serif; color:#1a1a1a; background:#fff; }
+
+/* ナビ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:#fff; display:flex; align-items:center;
+  justify-content:space-between; padding:0 48px; height:72px;
+  box-shadow:0 1px 0 rgba(0,0,0,0.08);
+}
+.logo-img { height:52px; width:auto; display:block; }
+.back-btn {
+  background:#1a3a5c; color:#fff; padding:10px 24px;
+  border-radius:3px; font-size:14px; font-weight:700;
+  text-decoration:none; display:inline-flex; align-items:center; gap:8px; letter-spacing:0.5px;
+}
+.back-btn:hover { background:#c0392b; }
+
+/* ヒーロー */
+.hero {
+  background: linear-gradient(135deg, #0d1f35 0%, #1a3a5c 50%, #0d1f35 100%);
+  padding: 140px 48px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,200,0,0.08) 0%, transparent 70%);
+}
+.hero-badge {
+  display:inline-block;
+  background:#c0392b; color:#fff;
+  font-size:13px; font-weight:700; letter-spacing:2px;
+  padding:6px 20px; border-radius:2px; margin-bottom:32px;
+}
+.hero h1 {
+  font-size:clamp(24px, 4vw, 44px);
+  font-weight:900; color:#fff;
+  line-height:1.4; margin-bottom:24px;
+  position:relative;
+}
+.hero h1 .accent { color:#f1c40f; }
+.hero h1 .accent-red { color:#e74c3c; }
+.hero-sub {
+  color:rgba(255,255,255,0.85); font-size:16px; line-height:1.8;
+  margin-bottom:36px; max-width:640px; margin-left:auto; margin-right:auto;
+}
+.hero-sub em { color:#f1c40f; font-style:normal; font-weight:700; text-decoration:underline; }
+.hero-tags {
+  display:flex; flex-wrap:wrap; gap:12px;
+  justify-content:center; margin-bottom:40px;
+}
+.hero-tag {
+  background:rgba(255,255,255,0.12); color:#fff;
+  border:1px solid rgba(255,255,255,0.3);
+  padding:8px 18px; border-radius:100px;
+  font-size:13px; font-weight:600; display:flex; align-items:center; gap:6px;
+}
+.cta-btn {
+  display:inline-block;
+  background:linear-gradient(135deg, #e74c3c, #c0392b);
+  color:#fff; font-size:20px; font-weight:900;
+  padding:20px 60px; border-radius:4px;
+  text-decoration:none; letter-spacing:1px;
+  box-shadow:0 8px 32px rgba(192,57,43,0.5);
+  transition:transform 0.2s, box-shadow 0.2s;
+  position:relative;
+}
+.cta-btn:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(192,57,43,0.6); }
+
+/* 共通セクション */
+section { padding:80px 48px; max-width:900px; margin:0 auto; }
+.section-label {
+  font-size:11px; font-weight:700; letter-spacing:3px;
+  color:#c0392b; margin-bottom:12px; display:block;
+}
+.section-title {
+  font-size:clamp(22px,3vw,34px); font-weight:900;
+  line-height:1.4; margin-bottom:24px;
+}
+.section-title .underline { border-bottom:3px solid #f1c40f; padding-bottom:2px; }
+.section-title .red { color:#e74c3c; }
+.section-lead { font-size:15px; line-height:1.9; color:#333; margin-bottom:40px; }
+
+/* TARGET カード */
+.target-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:16px;
+}
+.target-card {
+  border:1px solid #ddd; border-radius:6px; padding:20px 24px;
+}
+.target-card h4 { font-size:14px; font-weight:700; margin-bottom:8px; }
+.target-card p { font-size:13px; color:#555; line-height:1.7; }
+
+/* CTAバー */
+.cta-bar {
+  background:#e74c3c; text-align:center; padding:24px;
+}
+.cta-bar a {
+  color:#fff; font-size:18px; font-weight:900;
+  text-decoration:none; letter-spacing:1px;
+}
+
+/* BENEFIT 数字 */
+.benefit-bg {
+  background: linear-gradient(135deg, #0d1f35, #1a3a5c);
+  padding:80px 48px;
+}
+.benefit-inner { max-width:900px; margin:0 auto; }
+.benefit-bg .section-label { color:#f1c40f; }
+.benefit-bg .section-title { color:#fff; }
+.benefit-bg .section-lead { color:rgba(255,255,255,0.8); }
+.stats-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  border-top:1px solid rgba(255,255,255,0.2);
+  padding-top:40px;
+}
+.stat-item { text-align:center; }
+.stat-num {
+  font-family:'Bebas Neue','Oswald',sans-serif;
+  font-size:72px; color:#f1c40f; line-height:1;
+  margin-bottom:8px; letter-spacing:2px;
+}
+.stat-num span { font-size:36px; }
+.stat-label { color:rgba(255,255,255,0.7); font-size:12px; line-height:1.7; }
+
+/* DIFFERENCE */
+.diff-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px;
+}
+.diff-bad {
+  border:1px solid #ddd; border-radius:6px; padding:28px;
+}
+.diff-bad h4 { font-size:15px; font-weight:700; color:#c0392b; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid #eee; }
+.diff-bad li { list-style:none; padding:8px 0; font-size:14px; color:#555; border-bottom:1px solid #f5f5f5; padding-left:20px; position:relative; }
+.diff-bad li::before { content:'✕'; position:absolute; left:0; color:#c0392b; }
+.diff-good {
+  background:#1a3a5c; border-radius:6px; padding:28px;
+}
+.diff-good h4 { font-size:15px; font-weight:700; color:#f1c40f; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.2); }
+.diff-good li { list-style:none; padding:8px 0; font-size:14px; color:rgba(255,255,255,0.9); border-bottom:1px solid rgba(255,255,255,0.1); padding-left:20px; position:relative; }
+.diff-good li::before { content:'✓'; position:absolute; left:0; color:#f1c40f; }
+
+/* KEY ACTIONS */
+.key-bg {
+  background:#f8f8f8; padding:80px 48px;
+}
+.key-inner { max-width:900px; margin:0 auto; }
+.actions-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px;
+}
+.action-card {
+  background:#fff; border-radius:6px; padding:28px; border:1px solid #eee;
+}
+.action-num {
+  font-family:'Bebas Neue','Oswald',sans-serif;
+  font-size:48px; color:#1a3a5c; line-height:1;
+  margin-bottom:12px; letter-spacing:2px;
+}
+.action-card h4 { font-size:15px; font-weight:700; margin-bottom:12px; }
+.action-card p { font-size:13px; color:#555; line-height:1.8; }
+
+/* CONCERNS */
+.concerns-bg {
+  background: linear-gradient(135deg, #111, #1a2a1a);
+  padding:80px 48px;
+}
+.concerns-inner { max-width:900px; margin:0 auto; }
+.concerns-bg .section-title { color:#fff; }
+.concerns-bg .section-title .red { color:#f1c40f; }
+.concerns-bg .section-label { color:#f1c40f; }
+.concern-list { list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:32px; }
+.concern-list li {
+  background:rgba(255,255,255,0.07); border-radius:4px;
+  padding:16px 20px; color:#fff; font-size:15px;
+  display:flex; align-items:center; gap:12px;
+}
+.concern-list li::before {
+  content:'●'; color:#f1c40f; font-size:10px; flex-shrink:0;
+}
+
+/* CHANGE */
+.change-bg {
+  background:#111; padding:60px 48px;
+}
+.change-inner {
+  max-width:900px; margin:0 auto;
+  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px; padding:40px;
+}
+.change-title {
+  font-size:clamp(20px,3vw,28px); font-weight:900; color:#fff;
+  line-height:1.5; margin-bottom:24px;
+}
+.change-title .red { color:#e74c3c; }
+.change-text { color:rgba(255,255,255,0.8); font-size:15px; line-height:2; }
+.change-text strong { color:#f1c40f; }
+
+/* OPPORTUNITY */
+.opp-bg { background:#f8f8f8; padding:80px 48px; }
+.opp-inner { max-width:900px; margin:0 auto; }
+.opp-stats {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:32px 0;
+}
+.opp-stat {
+  background:#1a3a5c; border-radius:6px; padding:28px; text-align:center;
+}
+.opp-stat-num {
+  font-family:'Bebas Neue','Oswald',sans-serif;
+  font-size:56px; color:#f1c40f; line-height:1; margin-bottom:8px;
+}
+.opp-stat-num span { font-size:28px; }
+.opp-stat-label { color:rgba(255,255,255,0.75); font-size:12px; line-height:1.7; }
+
+/* RECOMMENDED */
+.rec-bg { background:#111; padding:80px 48px; }
+.rec-inner { max-width:900px; margin:0 auto; }
+.rec-bg .section-label { color:#f1c40f; }
+.rec-bg .section-title { color:#fff; }
+.rec-list { list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:32px; }
+.rec-list li {
+  background:rgba(255,255,255,0.06); border-radius:4px;
+  padding:16px 20px; color:#fff; font-size:15px;
+  display:flex; align-items:center; gap:12px;
+}
+.rec-list li::before {
+  content:'○'; color:#f1c40f; font-size:14px; flex-shrink:0;
+}
+
+/* CONTENTS */
+.contents-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:32px;
+}
+.contents-item {
+  padding:14px 20px; background:#f5f5f5; border-radius:4px;
+  font-size:14px; display:flex; align-items:center; gap:10px;
+}
+.contents-item::before {
+  content:'▶'; color:#c0392b; font-size:11px; flex-shrink:0;
+}
+
+/* 講師 */
+.lecturer-bg { background:#0d1f35; padding:80px 48px; }
+.lecturer-inner { max-width:900px; margin:0 auto; }
+.lecturer-card {
+  background:rgba(255,255,255,0.06); border-radius:8px;
+  padding:40px; display:flex; gap:40px; align-items:flex-start;
+}
+.lecturer-left {
+  display:flex; flex-direction:column; gap:16px; flex-shrink:0; width:200px;
+}
+.lecturer-photo {
+  width:200px; height:230px; object-fit:cover;
+  border-radius:4px; background:#2a4a6c;
+  display:flex; align-items:center; justify-content:center;
+  color:rgba(255,255,255,0.3); font-size:13px; overflow:hidden;
+}
+.lecturer-photo img { width:100%; height:100%; object-fit:cover; border-radius:4px; }
+.lecturer-stats {
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+}
+.lec-stat {
+  background:rgba(255,255,255,0.08); border-radius:4px;
+  padding:10px 6px; text-align:center;
+  border:1px solid rgba(241,196,15,0.3);
+}
+.lec-stat-num { font-size:11px; font-weight:900; color:#f1c40f; line-height:1.5; }
+.lecturer-info { flex:1; }
+.lecturer-role { font-size:12px; color:#f1c40f; letter-spacing:2px; margin-bottom:4px; }
+.lecturer-org { font-size:13px; color:rgba(255,255,255,0.7); margin-bottom:2px; }
+.lecturer-pos { font-size:13px; color:rgba(255,255,255,0.7); margin-bottom:12px; }
+.lecturer-name-wrap {
+  display:flex; align-items:baseline; gap:14px; margin-bottom:14px;
+}
+.lecturer-name { font-size:32px; font-weight:900; color:#fff; letter-spacing:2px; }
+.lecturer-name-en { font-size:13px; color:rgba(255,255,255,0.5); }
+.lecturer-career { font-size:13px; font-weight:700; color:#e74c3c; margin-bottom:4px; }
+.lecturer-body { font-size:13px; color:rgba(255,255,255,0.75); line-height:1.9; margin:16px 0; }
+.lecturer-body strong { background:#f1c40f; color:#000; padding:0 4px; }
+.lecturer-tagline {
+  background:rgba(241,196,15,0.15); border:1px solid #f1c40f;
+  color:#f1c40f; font-size:13px; font-weight:700;
+  padding:10px 16px; border-radius:4px; display:inline-block;
+}
+
+/* 申し込み */
+.form-section { padding:80px 48px; background:#f8f8f8; }
+.form-inner { max-width:640px; margin:0 auto; text-align:center; }
+.form-section h2 { font-size:28px; font-weight:900; margin-bottom:12px; }
+.form-section p { color:#555; font-size:14px; margin-bottom:32px; }
+.form-box {
+  background:#fff; border:2px solid #e74c3c;
+  border-radius:8px; padding:40px;
+}
+.form-box-title {
+  background:linear-gradient(135deg, #e74c3c, #c0392b);
+  color:#fff; font-size:18px; font-weight:900;
+  padding:16px; margin:-40px -40px 32px; border-radius:6px 6px 0 0;
+  letter-spacing:1px;
+}
+.form-detail { text-align:left; margin-bottom:28px; }
+.form-detail p { font-size:14px; color:#333; margin-bottom:8px; font-weight:700; }
+.form-detail ul { list-style:none; }
+.form-detail ul li {
+  font-size:14px; color:#555; padding:6px 0;
+  border-bottom:1px dashed #eee; display:flex; align-items:center; gap:8px;
+}
+.form-detail ul li::before { content:'■'; color:#c0392b; font-size:10px; }
+.tbd { color:#999; font-style:italic; }
+.form-note { font-size:12px; color:#888; margin-bottom:24px; }
+.form-submit-btn {
+  display:block; width:100%;
+  background:linear-gradient(135deg, #e74c3c, #c0392b);
+  color:#fff; font-size:18px; font-weight:900;
+  padding:20px; border-radius:4px;
+  text-decoration:none; letter-spacing:1px;
+  box-shadow:0 4px 20px rgba(192,57,43,0.4);
+  transition:transform 0.2s;
+}
+.form-submit-btn:hover { transform:translateY(-2px); }
+
+/* フッター */
+footer {
+  background:#0d1f35; color:rgba(255,255,255,0.6);
+  text-align:center; padding:32px; font-size:13px;
+}
+footer a { color:rgba(255,255,255,0.4); text-decoration:none; }
+
+/* レスポンシブ */
+@media(max-width:768px) {
+  nav { padding:0 20px; height:60px; }
+  .logo-img { height:36px; }
+  .back-btn { font-size:12px; padding:8px 14px; }
+  .hero { padding:90px 20px 60px; }
+  .hero h1 { font-size:22px; }
+  .hero-sub { font-size:14px; }
+  .hero-tags { gap:8px; }
+  .hero-tag { font-size:12px; padding:6px 12px; }
+  .cta-btn { font-size:16px; padding:16px 32px; }
+  section { padding:60px 20px; }
+  .target-grid { grid-template-columns:1fr; }
+  .benefit-bg { padding:60px 20px; }
+  .stats-grid { grid-template-columns:1fr; gap:24px; }
+  .stat-num { font-size:56px; }
+  .diff-grid { grid-template-columns:1fr; }
+  .key-bg { padding:60px 20px; }
+  .actions-grid { grid-template-columns:1fr; }
+  .concerns-bg { padding:60px 20px; }
+  .change-bg { padding:40px 20px; }
+  .change-inner { padding:24px; }
+  .opp-bg { padding:60px 20px; }
+  .opp-stats { grid-template-columns:1fr; }
+  .rec-bg { padding:60px 20px; }
+  .contents-grid { grid-template-columns:1fr; }
+  .lecturer-bg { padding:60px 20px; }
+  .lecturer-card { flex-direction:column; gap:24px; padding:24px; }
+  .lecturer-left { width:100%; }
+  .lecturer-photo { width:100%; height:220px; }
+  .lecturer-stats { grid-template-columns:1fr 1fr; }
+  .form-section { padding:60px 20px; }
+  .form-box { padding:24px; }
+  .form-box-title { margin:-24px -24px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ナビ -->
+<nav>
+  <a href="index.html">
+    <img src="MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING" class="logo-img">
+  </a>
+  <a href="events.html" class="back-btn">← イベント一覧</a>
+</nav>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <div class="hero-badge">MARKEY CONSULTING 有料セミナー</div>
+  <h1>
+    ナフサ特需で<span class="accent">過去最高受注！</span><br>
+    <span class="accent-red">8月までの最大の売り時</span>を逃さないための<br>
+    販売戦略セミナー
+  </h1>
+  <p class="hero-sub">
+    ホルムズ海峡問題に端を発するナフサ危機を<em>最大のチャンスに変え</em>、<br>
+    過去最高受注を実現した企業が続々。<br>
+    販売戦略の立て方から売れている企業が実践していることを体系的にお伝えします。
+  </p>
+  <div style="
+    display:inline-block;
+    border:2px solid #f1c40f;
+    border-radius:6px;
+    padding:16px 32px;
+    margin-bottom:36px;
+    background:rgba(241,196,15,0.08);
+    max-width:600px;
+  ">
+    <p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.9;margin:0;">
+      ナフサ危機は「危機」ではありません。<br>
+      <span style="color:#f1c40f;font-size:18px;font-weight:900;letter-spacing:1px;">「過去20年で最大の特需チャンス」</span>です。
+    </p>
+  </div>
+  <div class="hero-tags">
+    <span class="hero-tag">💻 オンライン開催（Zoom）</span>
+    <span class="hero-tag">👥 各回定員20名</span>
+    <span class="hero-tag">💴 参加費：無料</span>
+    <span class="hero-tag">📅 6/4・6/5・6/9・6/18・6/24・6/25 10:00〜11:00</span>
+    <span class="hero-tag">⏱ 1時間</span>
+  </div>
+  <a href="https://forms.gle/75qHzLAsycAPzy9u6" target="_blank" class="cta-btn">▼ セミナーに申し込む</a>
+</div>
+
+<!-- TARGET -->
+<section>
+  <span class="section-label">TARGET</span>
+  <h2 class="section-title">このセミナーは、<span class="underline red">こんな方</span>に向けたものです</h2>
+  <div class="target-grid">
+    <div class="target-card">
+      <h4>注文住宅会社の経営者・代表の方</h4>
+      <p>価格転嫁がうまくいかず受注が落ち込み、8月までの売り時をどう活かすか悩んでいる方</p>
+    </div>
+    <div class="target-card">
+      <h4>営業部長・営業マネージャーの方</h4>
+      <p>インフレ・価格上昇を理由に受注が取れなくなり、チームの底上げが急務になっている方</p>
+    </div>
+    <div class="target-card">
+      <h4>競合に負けが増えてきた企業の方</h4>
+      <p>価格競争に巻き込まれ、他社との差別化ができず困っている経営者・営業リーダーの方</p>
+    </div>
+    <div class="target-card">
+      <h4>今すぐ受注を増やしたい営業担当の方</h4>
+      <p>ナフサ特需という追い風を最大限に活かし、8月までに一気に受注を伸ばしたい方</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-bar"><a href="https://forms.gle/75qHzLAsycAPzy9u6" target="_blank">▼ セミナーに申し込む ▼</a></div>
+
+<!-- BENEFIT -->
+<div class="benefit-bg">
+  <div class="benefit-inner">
+    <span class="section-label">BENEFIT</span>
+    <h2 class="section-title" style="color:#fff;">このセミナーで<span style="color:#f1c40f;">得られること</span></h2>
+    <p class="section-lead">MARKEY CONSULTINGが支援した住宅会社が実際に達成した成果をベースに、ナフサ特需という最大の売り時を逃さず受注を最大化するための<strong style="color:#f1c40f;">具体的な戦略・手法</strong>をお伝えします。</p>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">過去<span>最高</span></div>
+        <div class="stat-label">4月にキャンペーンを実施し、過去最高の<br>月間受注を達成した企業が続々</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">8<span>月まで</span></div>
+        <div class="stat-label">ナフサ特需による売り時<br>この波を今すぐ活かす</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">即<span>日使える</span></div>
+        <div class="stat-label">翌日の商談から使える<br>実践手法を体系的に解説</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIFFERENCE -->
+<section>
+  <span class="section-label">DIFFERENCE</span>
+  <h2 class="section-title">ナフサ特需期に<span class="underline" style="border-color:#f1c40f;">「売れる会社」</span>と<br>「売れない会社」の違い</h2>
+  <p class="section-lead">同じ市場環境にありながら、受注を伸ばす会社と落とす会社に分かれています。その差はどこにあるのでしょうか？</p>
+  <div class="diff-grid">
+    <div class="diff-bad">
+      <h4>✕ 売れない会社がやっていること</h4>
+      <ul>
+        <li>「価格が高いから売れない」と諦めている</li>
+        <li>競合との価格比較で値引き対応している</li>
+        <li>ナフサ問題を「言い訳」にしている</li>
+        <li>価格ではなく価格で戦おうとしている</li>
+        <li>お客様の不安を解消するトーク訓練をしていない</li>
+      </ul>
+    </div>
+    <div class="diff-good">
+      <h4>✓ 売れる会社がやっていること</h4>
+      <ul>
+        <li>ナフサ特需を「今買うべき理由」に転換している</li>
+        <li>USPを明確にし価値で選ばれる仕組みをつくる</li>
+        <li>「今が最大の売り時」と社員全員が動いている</li>
+        <li>お客様の不安に正面から対処できる</li>
+        <li>土地なし顧客を丁寧に育てて受注につなげる</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- KEY ACTIONS -->
+<div class="key-bg">
+  <div class="key-inner">
+    <span class="section-label">KEY ACTIONS</span>
+    <h2 class="section-title">過去最高受注を達成した会社が<span style="text-decoration:underline;text-decoration-color:#f1c40f;">実践した3つのこと</span></h2>
+    <div class="actions-grid">
+      <div class="action-card">
+        <div class="action-num">01</div>
+        <h4>販売戦略の設計と<br>チーム全体の目線合わせ</h4>
+        <p>ナフサ特需という市場環境を正確に分析し、8月までの販売戦略を設計。経営者から営業社員まで全員が同じ方向を向いて動ける体制を構築した。</p>
+      </div>
+      <div class="action-card">
+        <div class="action-num">02</div>
+        <h4>「今買うべき理由」の<br>演出と実行施策の展開</h4>
+        <p>価格上昇を「今こそ買い時」という感覚をお客様に醸成。具体的な集客施策・追客施策を即実行し、商談数を一気に増やした。</p>
+      </div>
+      <div class="action-card">
+        <div class="action-num">03</div>
+        <h4>価格転嫁を実現する<br>営業トークの習得</h4>
+        <p>「高い」と言われた瞬間の切り返しから、お客様の不安を解消し価値で選ばれるクロージングまで。即日使える営業トークを体得した。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONCERNS -->
+<div class="concerns-bg">
+  <div class="concerns-inner">
+    <span class="section-label">COMMON CONCERNS</span>
+    <h2 class="section-title">8月までの売り時について、<br><span class="red">こんなことを考えていませんか？</span></h2>
+    <ul class="concern-list">
+      <li>「価格が高くなったのだから、受注が減るのは仕方がない…」</li>
+      <li>「ナフサ問題がどう影響するのか、正直よくわかっていない…」</li>
+      <li>「値引きしなければ競合に負けてしまう…」</li>
+      <li>「お客様に価格上昇を説明しても、なかなか納得してもらえない…」</li>
+      <li>「8月に向けた具体的な販売戦略が描けていない…」</li>
+      <li>「社員が動いてくれず、現場の温度感が上がらない…」</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CHANGE -->
+<div class="change-bg">
+  <div class="change-inner">
+    <h2 class="change-title">そのような考えをお持ちであれば、<br>今すぐ<span class="red">その考えを変える必要があります。</span></h2>
+    <p class="change-text">
+      ナフサ特需は、<strong>価格転嫁を正当化できる絶好のチャンス</strong>です。<br><br>
+      大半の企業が「価格が上がったから売れない」と思い込んでいる今こそ、<br>
+      正しい手法を持っている企業だけが<strong>圧倒的な差をつけられる時代</strong>です。<br><br>
+      実際にMARKEY CONSULTINGが支援した企業では、4月に過去最高受注を達成。<br>
+      ナフサ特需を「言い訳」にするか、「チャンス」として活用するかで、<br>
+      数年後の会社の姿はまったく異なるものになります。
+    </p>
+  </div>
+</div>
+
+<!-- OPPORTUNITY -->
+<div class="opp-bg">
+  <div class="opp-inner">
+    <span class="section-label">OPPORTUNITY</span>
+    <h2 class="section-title">ナフサ特需期こそ、<span class="underline" style="border-color:#f1c40f;">受注・売上を大きく伸ばすチャンス</span>です</h2>
+    <p class="section-lead">実際にMARKEY CONSULTINGが支援してきた住宅会社の実績をご覧ください。インフレという逆境の中でも、正しい手法を実践した企業はこれほどの成果を出しています。</p>
+    <div class="opp-stats">
+      <div class="opp-stat">
+        <div class="opp-stat-num">過去<span>最高</span></div>
+        <div class="opp-stat-label">4月に過去最高受注を達成<br>（R社・H社 他複数）</div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-stat-num">4<span>年</span></div>
+        <div class="opp-stat-label">ウッドショック以来<br>4年連続受注増・増収増益（H社）</div>
+      </div>
+      <div class="opp-stat">
+        <div class="opp-stat-num">50<span>社超</span></div>
+        <div class="opp-stat-label">支援してきた住宅会社・工務店数<br>多くがエリアNo.1を達成</div>
+      </div>
+    </div>
+    <p class="section-lead">このセミナーでは、こうした成果を生み出した具体的な手法・考え方・話法を、元ハウスメーカー全国トップエリアマネージャーが体系的にお伝えします。</p>
+  </div>
+</div>
+
+<!-- RECOMMENDED -->
+<div class="rec-bg">
+  <div class="rec-inner">
+    <span class="section-label">RECOMMENDED FOR</span>
+    <h2 class="section-title">このような方に<span style="color:#f1c40f;">最適なセミナー</span>です</h2>
+    <ul class="rec-list">
+      <li>価格転嫁がうまくいかず、受注が減少している経営者・店長の方</li>
+      <li>8月までの最大の売り時に最高の結果を出したい経営者・営業部長の方</li>
+      <li>ナフサ特需を活かした販売戦略の立て方がわからない方</li>
+      <li>社員を動かす方法・マネジメント手法に悩んでいる方</li>
+      <li>価格を上げられず、利益率が下がり続けている方</li>
+      <li>営業トークを根本から見直し、競合に勝てる営業力をつけたい方</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SEMINAR CONTENTS -->
+<section>
+  <span class="section-label">SEMINAR CONTENTS</span>
+  <h2 class="section-title">このセミナーで<span class="underline red">お伝えすること</span></h2>
+  <p class="section-lead">ナフサ特需という追い風を最大限に活かし、8月までに過去最高受注を目指すための手法を体系的に解説します。</p>
+  <div class="contents-grid">
+    <div class="contents-item">ナフサ危機の正しい理解とチャンスへの転換</div>
+    <div class="contents-item">顧客から契約をお願いされる状態を作る</div>
+    <div class="contents-item">行列ができる住宅会社というブランディング</div>
+    <div class="contents-item">8月までに受注の山を作る販売戦略</div>
+    <div class="contents-item">圧倒的なUSPの作り方</div>
+    <div class="contents-item">社員が「売りたくてしょうがない」状態にする</div>
+    <div class="contents-item">価格転嫁を実現する営業トークスクリプト</div>
+    <div class="contents-item">集客・中長期追客での契約率最大化</div>
+  </div>
+</section>
+
+<!-- 講師 -->
+<div class="lecturer-bg">
+  <div class="lecturer-inner">
+    <div class="lecturer-card">
+      <!-- 左列：写真＋実績 -->
+      <div class="lecturer-left">
+        <div class="lecturer-photo">
+          <img src="顔写真③.jpg" alt="鶴田槙人">
+        </div>
+        <div class="lecturer-stats">
+          <div class="lec-stat"><div class="lec-stat-num">受注改革率<br>346%で<br>日本一達成</div></div>
+          <div class="lec-stat"><div class="lec-stat-num">26ヵ月連続<br>受注・顧客<br>満足95%</div></div>
+          <div class="lec-stat"><div class="lec-stat-num">50社以上の<br>住宅会社を<br>支援</div></div>
+          <div class="lec-stat"><div class="lec-stat-num">エリアNo.1<br>達成企業を<br>多数輩出</div></div>
+        </div>
+      </div>
+      <!-- 右列：プロフィール -->
+      <div class="lecturer-info">
+        <p class="lecturer-role">セミナー講師</p>
+        <p class="lecturer-org">MARKEY CONSULTING</p>
+        <p class="lecturer-pos">代表</p>
+        <div class="lecturer-name-wrap">
+          <h3 class="lecturer-name">鶴田　槙人</h3>
+          <span class="lecturer-name-en">MAKITO TSURUTA</span>
+        </div>
+        <p class="lecturer-career">元証一部上場住宅会社 エリアマネージャー</p>
+        <p class="lecturer-career">元東証グロース上場経営コンサルティング会社 住宅部門マネージャー</p>
+        <p class="lecturer-body">
+          大手建築会社で、営業職として<strong>10位／1,500名中</strong>の実績。プレイングマネージャー時、<strong>年間10棟受注の店舗を1年後に45棟受注まで改善し改革率日本一</strong>を達成。その後、関東エリアマネージャーとして利益拡大、営業マーケ戦略・育成、人事まで従事。<br><br>
+          その後、戦略・事業コンサルティング会社に参画。現は独立し、累計50社以上の販売戦略〜営業個別強化まで一貫して伴走し、多数の企業のV字回復や前年対比200%以上の成果などをコンスタントに達成している。
+        </p>
+        <span class="lecturer-tagline">「成果を必ず出すコンサルティング」が信条。</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 申し込み -->
+<div class="form-section" id="form">
+  <div class="form-inner">
+    <h2>セミナー申し込み</h2>
+    <p>以下の内容をご確認の上、お申し込みください。各回定員20名・参加費55,000円（税込）です。</p>
+    <div class="form-box">
+      <div class="form-box-title">▼ オンライン受講（Zoom）▼</div>
+      <div class="form-detail">
+        <p>■ 開催概要</p>
+        <ul>
+          <li>場所：オンライン会議室（Zoom）</li>
+          <li>時間：10:00〜11:00（1時間）</li>
+          <li>参加費：無料</li>
+          <li>開催①：6月4日（木）10:00〜11:00</li>
+          <li>開催②：6月5日（金）10:00〜11:00</li>
+          <li>開催③：6月9日（火）10:00〜11:00</li>
+          <li>開催④：6月18日（木）10:00〜11:00</li>
+          <li>開催⑤：6月24日（水）10:00〜11:00</li>
+          <li>開催⑥：6月25日（木）10:00〜11:00</li>
+        </ul>
+      </div>
+      <p class="form-note">※ 各回定員20名 ／ 参加費無料 ／ お申し込み後に詳細をご案内します</p>
+      <a href="https://forms.gle/75qHzLAsycAPzy9u6" target="_blank" class="form-submit-btn">セミナーに申し込む</a>
+    </div>
+  </div>
+</div>
+
+<!-- フッター -->
+<footer>
+  <p style="margin-bottom:8px;">MARKEY CONSULTING</p>
+  <p style="margin-bottom:8px;"><a href="https://markey-consulting.com">https://markey-consulting.com</a></p>
+  <p><a href="privacy.html">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>
