@@ -74,7 +74,13 @@ section[id]{scroll-margin-top:80px;}
 .deco-curve.tl{top:-90px;left:-130px;width:480px;}
 .bg-cream .deco-curve{opacity:.28;}
 .bg-paper .deco-curve{opacity:.26;}
-@media (max-width:760px){.deco-curve{display:none;}}
+@media (max-width:760px){
+  .deco-curve{opacity:.20;}
+  .bg-cream .deco-curve,.bg-paper .deco-curve{opacity:.18;}
+  .deco-curve.tr{top:-40px;right:-90px;width:280px;}
+  .deco-curve.bl{bottom:-50px;left:-90px;width:300px;}
+  .deco-curve.tl{top:-40px;left:-80px;width:260px;}
+}
 
 /* ===== Buttons ===== */
 .btn{
