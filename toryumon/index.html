@@ -2,465 +2,1042 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>住宅営業登竜門 | 住宅営業のプロを最短距離で育てる営業塾</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>住宅営業登竜門｜住宅営業のプロを最短距離で育てる営業塾</title>
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --red:#d42b2b;--red-dark:#b01f1f;--navy:#1a2a5e;--navy-dark:#111e44;
-  --gold:#d4a017;--gold-light:#f0c030;--white:#ffffff;--light:#f4f6fa;
-  --text:#1a1a2e;--muted:#5a6080;
+  --crimson:#C2273F;
+  --crimson-dark:#9A1B30;
+  --crimson-deep:#6E1424;
+  --crimson-soft:#FBEAEC;
+  --navy:#1B2540;
+  --navy-soft:#34406A;
+  --navy-deep:#0E1626;
+  --gold:#C49A2E;
+  --gold-light:#E9CE82;
+  --gold-deep:#9C7A1F;
+  --cream:#FBF7F0;
+  --paper:#FFFFFF;
+  --ink:#23262E;
+  --mist:#83899B;
+  --line:#EAE2D2;
+  --radius:20px;
+  --shadow:0 18px 50px -22px rgba(27,37,64,0.28);
 }
-body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;color:var(--text);background:var(--white);line-height:1.7;}
-header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:2px solid #eee;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1140px;margin:0 auto;padding:0 32px;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+
+/* ===== Typography ===== */
+.font-display{font-family:'Shippori Mincho',serif;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.18em;
+  color:var(--crimson);text-transform:uppercase;margin-bottom:18px;
+}
+h1,h2,h3{font-family:'Shippori Mincho',serif;color:var(--navy);font-weight:700;letter-spacing:.01em;}
+h2.section-title{font-size:clamp(28px,3.4vw,40px);line-height:1.55;margin-bottom:18px;}
+h2.section-title .accent{color:var(--crimson);}
+.section-lead{font-size:15.5px;color:var(--mist);max-width:640px;line-height:1.95;}
+.section-head{margin-bottom:52px;}
+.section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+.section-head.center .section-lead{margin-left:auto;margin-right:auto;}
+
+/* ===== Sections base ===== */
+section{position:relative;padding:96px 0;overflow:hidden;}
+section.bg-paper{background:var(--paper);}
+section.bg-cream{background:var(--cream);}
+section.bg-navy{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#EDEFF5;}
+section.bg-navy h2,section.bg-navy h3{color:#fff;}
+section.bg-navy .section-lead{color:#B6BFD6;}
+section > .container{position:relative;z-index:2;}
+section[id]{scroll-margin-top:80px;}
+
+/* decorative crimson ribbon curves */
+.deco-curve{position:absolute;z-index:1;pointer-events:none;opacity:.30;color:var(--crimson);}
+.deco-curve.tr{top:-80px;right:-120px;width:520px;transform:rotate(8deg);}
+.deco-curve.bl{bottom:-100px;left:-140px;width:560px;transform:rotate(-6deg);}
+.deco-curve.tl{top:-90px;left:-130px;width:480px;}
+.bg-cream .deco-curve{opacity:.28;}
+.bg-paper .deco-curve{opacity:.26;}
+@media (max-width:760px){.deco-curve{display:none;}}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 34px;border-radius:100px;
+  font-size:15px;font-weight:700;text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease,opacity .18s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(120deg,var(--crimson) 0%,var(--crimson-dark) 100%);
+  color:#fff;box-shadow:0 14px 30px -12px rgba(194,39,63,0.55);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(194,39,63,0.6);}
+.btn-outline{
+  background:transparent;color:var(--navy);border:1.5px solid var(--navy);
+}
+.btn-outline:hover{background:var(--navy);color:#fff;}
+.btn-on-navy{
+  background:rgba(255,255,255,0.08);color:#fff;border:1.5px solid rgba(255,255,255,0.35);
+}
+.btn-on-navy:hover{background:rgba(255,255,255,0.16);transform:translateY(-2px);}
+.btn-gold{
+  background:linear-gradient(120deg,var(--gold-light) 0%,var(--gold) 100%);
+  color:var(--navy-deep);box-shadow:0 14px 30px -14px rgba(156,122,31,0.6);
+}
+.btn-gold:hover{transform:translateY(-2px);}
+.btn-light{
+  background:rgba(255,255,255,0.85);color:var(--navy);border:1.5px solid rgba(27,37,64,0.18);
+  backdrop-filter:blur(4px);
+}
+.btn-light:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 28px -14px rgba(27,37,64,0.4);}
+.btn-sm{padding:11px 24px;font-size:13.5px;}
+
+/* ===== Koi icon ===== */
+.icon-koi-md{display:inline-block;}
+.icon-koi-md{width:34px;height:22px;color:var(--crimson);}
+
+/* ===== Header ===== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(251,247,240,0.86);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1140px;margin:0 auto;padding:0 32px;height:74px;
+  display:flex;align-items:center;justify-content:space-between;
+}
 .logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo-img{height:60px;width:auto;border-radius:6px;display:block;object-fit:contain;}
-.logo-txt .lt1{font-size:15px;font-weight:900;color:var(--navy);letter-spacing:1px;line-height:1.3;display:block;}
-.logo-txt .lt2{font-size:11px;color:var(--muted);display:block;}
-nav{display:flex;align-items:center;gap:28px;}
-nav a{text-decoration:none;font-size:15px;font-weight:600;color:var(--text);}
-nav a:hover{color:var(--red);}
-.hd-btn{background:var(--red);color:var(--white);padding:12px 20px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;}
-.hd-btn:hover{background:var(--red-dark);}
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:stretch;position:relative;overflow:hidden;}
-.hero-left{width:50%;background:var(--red);padding:32px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;clip-path:polygon(0 0,88% 0,100% 100%,0 100%);}
-.hero-eyebrow{font-size:15px;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:2px;margin-bottom:14px;}
-.hero-h1{font-size:68px;font-weight:900;color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-2px;}
-.hero-tagline{font-size:18px;font-style:italic;color:var(--gold-light);font-weight:700;margin-bottom:24px;letter-spacing:1px;}
-.hero-copy{font-size:16px;font-weight:700;color:var(--white);line-height:1.7;margin-bottom:28px;}
-.hero-card-inline{background:rgba(0,0,0,0.22);border-radius:10px;padding:16px 18px;max-width:360px;}
-.hci-label{font-size:10px;font-weight:700;color:var(--gold-light);letter-spacing:2px;margin-bottom:6px;}
-.hci-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;}
-.hci-btn{display:inline-block;background:var(--gold);color:var(--navy);padding:8px 18px;border-radius:5px;font-size:13px;font-weight:700;text-decoration:none;}
-.hero-right{flex:1;position:relative;}
-.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-.hero-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(212,43,43,0.12) 0%,transparent 40%);}
-/* STATS */
-.stats-bar{background:var(--navy);padding:22px 60px;display:flex;justify-content:center;gap:56px;}
-.stat-item{text-align:center;}
-.stat-num{font-size:34px;font-weight:900;color:var(--gold);display:block;line-height:1;}
-.stat-label{font-size:11px;color:rgba(255,255,255,0.65);margin-top:3px;}
-/* SEC */
-.sec{padding:76px 60px;}
-.sec-inner{max-width:1120px;margin:0 auto;}
-.sec-eyebrow{font-size:13px;font-weight:700;color:var(--red);letter-spacing:3px;text-align:center;margin-bottom:10px;}
-.sec-h2{font-size:34px;font-weight:900;color:var(--navy);text-align:center;margin-bottom:8px;line-height:1.45;}
-.sec-h2 .red{color:var(--red);}
-.sec-divider{width:56px;height:4px;background:var(--red);margin:0 auto 48px;border-radius:2px;}
-/* ABOUT */
-.about-grid{display:flex;gap:56px;align-items:center;}
-.about-img{flex:1;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(26,42,94,0.18);}
-.about-img img{width:100%;height:360px;object-fit:cover;display:block;}
-.about-text{flex:1;}
-.about-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--red);margin-bottom:12px;}
-.about-h2{font-size:28px;font-weight:900;color:var(--navy);line-height:1.55;margin-bottom:18px;}
-.about-h2 .hl{color:var(--red);text-decoration:underline;text-underline-offset:4px;}
-.about-p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:10px;}
-.about-p .em{color:var(--red);font-weight:700;}
-.about-p strong{color:var(--navy);}
-.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
-.ac{background:var(--light);border-radius:10px;padding:14px 16px;border-left:4px solid var(--red);}
-.ac .ac-num{font-size:20px;font-weight:900;color:var(--red);}
-.ac .ac-label{font-size:11px;color:var(--muted);margin-top:2px;}
-.about-btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);padding:13px 26px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;margin-top:24px;}
-/* DIFF */
-.diff-sec{background:var(--light);}
-.diff-h2-wrap{text-align:center;margin-bottom:48px;}
-.diff-headline{display:inline-block;background:var(--gold-light);padding:10px 34px;font-size:30px;font-weight:900;color:var(--navy);border-radius:4px;letter-spacing:2px;}
-.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.diff-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(26,42,94,0.10);}
-.diff-card img{width:100%;height:190px;object-fit:cover;display:block;}
-.diff-card-body{padding:22px 20px;}
-.dc-num{font-size:12px;font-weight:700;color:var(--red);letter-spacing:1px;margin-bottom:7px;}
-.diff-card-body h3{font-size:16px;font-weight:900;color:var(--navy);line-height:1.5;margin-bottom:9px;}
-.diff-card-body p{font-size:13px;color:var(--muted);line-height:1.8;}
-/* FEATURES */
-.feat-grid{display:flex;flex-direction:column;gap:18px;flex:1;}
-.feat-item{background:var(--white);border-radius:14px;padding:28px 32px;display:flex;gap:24px;align-items:flex-start;border:1px solid #e0e4f0;box-shadow:0 2px 12px rgba(26,42,94,0.07);}
-.feat-num-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;}
-.feat-num{width:48px;height:48px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;}
-.feat-num-label{font-size:9px;color:var(--muted);letter-spacing:1px;}
-.feat-content h3{font-size:19px;font-weight:900;color:var(--navy);margin-bottom:12px;}
-.feat-content h3 .hl{color:var(--red);}
-.checks{display:flex;flex-direction:column;gap:8px;}
-.ck{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--muted);}
-.ck-icon{width:19px;height:19px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:10px;flex-shrink:0;margin-top:2px;}
-.ck .em{color:var(--navy);font-weight:700;}
-/* EVENTS */
-.ev-sec{background:var(--light);}
-.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-.ev-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(26,42,94,0.10);transition:transform .2s;}
-.ev-card:hover{transform:translateY(-4px);}
-.ev-card.featured{border:3px solid var(--red);}
-.ev-card-top{position:relative;}
-.ev-card-top img{width:100%;height:175px;object-fit:cover;display:block;}
-.ev-tag{position:absolute;top:10px;left:10px;background:var(--navy);color:var(--white);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;}
-.ev-tag.red-tag{background:var(--red);}
-.ev-status{position:absolute;top:0;left:0;right:0;background:var(--red);color:var(--white);font-size:11px;font-weight:700;text-align:center;padding:5px;}
-.ev-status-dot{display:inline-block;width:7px;height:7px;background:var(--white);border-radius:50%;margin-right:5px;animation:blink 1s infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-.ev-card-body{padding:18px 18px 12px;}
-.ev-badges{display:flex;gap:7px;margin-bottom:9px;flex-wrap:wrap;}
-.ev-badge{font-size:11px;font-weight:600;padding:2px 9px;border-radius:100px;background:var(--light);color:var(--navy);border:1px solid #c0ceea;}
-.ev-badge.new{background:var(--red);color:var(--white);border:none;}
-.ev-card-body h3{font-size:14px;font-weight:800;color:var(--navy);line-height:1.55;margin-bottom:7px;}
-.ev-card-body p{font-size:12px;color:var(--muted);line-height:1.7;}
-.ev-card-foot{padding:0 18px 18px;}
-.ev-detail-btn{display:block;text-align:center;background:var(--red);color:var(--white);padding:9px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;margin-top:12px;}
-/* COLUMN */
-.col-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-.col-card{background:var(--white);border-radius:12px;overflow:hidden;border:1px solid #e0e4f0;transition:transform .2s;cursor:pointer;}
-.col-card:hover{transform:translateY(-4px);}
-.col-img-wrap{position:relative;}
-.col-img-wrap img{width:100%;height:135px;object-fit:cover;display:block;}
-.col-img-tag{position:absolute;top:9px;left:9px;background:var(--red);color:var(--white);font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px;}
-.col-body{padding:14px;}
-.col-date{font-size:11px;color:var(--muted);margin-bottom:5px;}
-.col-title{font-size:13px;font-weight:700;color:var(--navy);line-height:1.6;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.col-excerpt{font-size:11px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-/* FINAL CTA */
-.final-sec{background:linear-gradient(135deg,var(--navy) 0%,#1e3a8a 60%,#1a5c9a 100%);padding:76px 60px;position:relative;overflow:hidden;}
-.final-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%,rgba(212,43,43,0.18) 0%,transparent 60%);}
-.final-inner{max-width:960px;margin:0 auto;text-align:center;position:relative;z-index:1;}
-.final-eyebrow{display:inline-block;background:rgba(255,255,255,0.12);border-radius:100px;padding:5px 18px;font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,0.8);margin-bottom:18px;}
-.final-h2{font-size:36px;font-weight:900;color:var(--white);margin-bottom:12px;line-height:1.4;}
-.final-p{font-size:15px;color:rgba(255,255,255,0.75);margin-bottom:44px;}
-.final-cards{display:flex;gap:22px;}
-.f-card{flex:1;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:16px;padding:30px 26px;text-align:center;}
-.f-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 13px;border-radius:100px;letter-spacing:1px;margin-bottom:12px;}
-.f-badge.red{background:var(--red);color:var(--white);}
-.f-badge.green{background:#16a05e;color:var(--white);}
-.f-card h3{font-size:20px;font-weight:900;color:var(--white);margin-bottom:7px;}
-.f-card .fsub{font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:20px;}
-.f-card .fsub strong{color:var(--gold-light);font-weight:800;}
-.f-card .fsub strong.green{color:#4ade80;}
-.f-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;}
-.f-btn.white{background:var(--white);color:var(--navy);}
-.f-btn.outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.6);}
-/* FOOTER */
-footer{background:#080e20;padding:56px 60px 34px;}
-.ft-inner{max-width:1120px;margin:0 auto;}
-.ft-top{display:flex;justify-content:space-between;gap:40px;margin-bottom:44px;}
-.ft-logo .ft-tagline{font-size:12px;color:rgba(255,255,255,0.4);margin-top:10px;line-height:1.7;}
-.ft-nav{display:flex;gap:72px;}
-.ft-nav a{display:block;color:rgba(255,255,255,0.55);text-decoration:none;font-size:14px;margin-bottom:16px;}
-.ft-nav a:hover{color:var(--white);}
-.ft-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;}
-.ft-bottom a{color:rgba(255,255,255,0.3);font-size:12px;text-decoration:none;}
-.ft-copy{text-align:center;font-size:11px;color:rgba(255,255,255,0.22);margin-top:12px;}
+.logo-img{height:52px;width:auto;border-radius:6px;display:block;}
+.logo-txt{display:flex;flex-direction:column;line-height:1.35;}
+.logo-txt .lt1{font-family:'Shippori Mincho',serif;font-size:15px;font-weight:700;color:var(--navy);}
+.logo-txt .lt2{font-size:10.5px;color:var(--mist);letter-spacing:.08em;}
+nav.main-nav{display:flex;align-items:center;gap:30px;}
+nav.main-nav .nav-links{display:flex;align-items:center;}
+nav.main-nav .nav-links a{position:relative;padding:0 18px;}
+nav.main-nav .nav-links a:not(:last-child)::after{
+  content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:1px;height:14px;background:var(--line);
+}
+nav.main-nav .nav-links a:first-child{padding-left:0;}
+nav.main-nav a{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);transition:color .15s;}
+nav.main-nav a:hover{color:var(--crimson);}
+nav.main-nav .nav-cta{font-size:13.5px;}
+@media (max-width:880px){
+  nav.main-nav .nav-links{display:none;}
+  .logo-txt{display:none;}
+}
+@media (max-width:480px){
+  h2.section-title{font-size:22px;line-height:1.65;}
+  .nav-inner{padding:0 20px;}
+  nav.main-nav .nav-cta{padding:10px 16px;font-size:12px;}
+  .container{padding:0 20px;}
+}
+
+/* ===== Wave dividers ===== */
+.wave{display:block;width:100%;line-height:0;position:relative;}
+.wave svg{display:block;width:100%;height:64px;}
+.wave .wave-koi{
+  position:absolute;width:64px;height:42px;left:18%;top:6px;color:var(--crimson);
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.12));
+  animation:koi-bob 6s ease-in-out infinite;
+}
+@keyframes koi-bob{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-6px) rotate(2deg);}}
+@media (prefers-reduced-motion:reduce){.wave-koi{animation:none;}}
+
+/* ===== HERO (full-bleed photo) ===== */
+.hero{position:relative;overflow:hidden;}
+.hero-photo-wrap{position:absolute;inset:0;z-index:0;}
+.hero-photo{width:100%;height:100%;object-fit:cover;object-position:right top;}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(100deg, rgba(251,247,240,0.97) 0%, rgba(251,247,240,0.92) 34%, rgba(251,247,240,0.55) 52%, rgba(251,247,240,0.12) 66%, rgba(251,247,240,0) 80%),
+    linear-gradient(180deg, rgba(251,247,240,0.4) 0%, rgba(251,247,240,0) 30%);
+}
+.hero-inner{position:relative;z-index:2;padding-top:110px;padding-bottom:84px;min-height:auto;height:100vh;max-height:820px;box-sizing:border-box;display:flex;align-items:center;}
+.hero-copy{max-width:560px;}
+.hero-eyebrow{color:var(--crimson);margin-bottom:12px;}
+.hero-logo{width:172px;border-radius:10px;box-shadow:var(--shadow);margin-bottom:14px;}
+.hero-tagline{
+  font-family:'Shippori Mincho',serif;font-style:italic;font-weight:600;
+  color:var(--gold-deep);font-size:14px;letter-spacing:.06em;margin-bottom:14px;
+}
+.hero-copy h1{font-size:clamp(32px,4vw,46px);line-height:1.45;margin-bottom:18px;text-shadow:0 1px 2px rgba(251,247,240,0.6);}
+.hero-copy h1 .accent{color:var(--crimson);}
+.hero-lead{font-size:14.5px;color:#46505F;max-width:500px;margin-bottom:26px;line-height:1.85;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+
+.hero-corp-banner{
+  position:absolute;top:88px;left:max(32px,calc((100% - 1140px)/2 + 32px));z-index:5;
+  background:rgba(255,255,255,0.94);backdrop-filter:blur(8px);
+  border-radius:100px;padding:10px 14px 10px 16px;
+  box-shadow:0 16px 40px -16px rgba(27,37,64,.35);
+  display:inline-flex;align-items:center;gap:14px;
+  border:1px solid rgba(27,37,64,0.08);text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.hero-corp-banner:hover{transform:translateY(-2px);box-shadow:0 22px 48px -16px rgba(27,37,64,.45);}
+.hero-corp-banner .fl-logo{width:50px;height:24px;flex-shrink:0;display:flex;align-items:center;}
+.hero-corp-banner .fl-logo img{width:100%;height:100%;object-fit:contain;}
+.hero-banner-text{display:flex;align-items:baseline;gap:10px;line-height:1.4;white-space:nowrap;}
+.hero-banner-text .ft-label{font-weight:700;color:var(--navy);font-size:13px;}
+.hero-banner-text .ft-desc{color:var(--mist);font-size:12px;}
+.hero-corp-banner .banner-arrow{
+  color:#fff;background:var(--crimson);font-weight:700;font-size:12px;
+  padding:6px 14px;border-radius:100px;white-space:nowrap;flex-shrink:0;
+}
+@media (max-width:980px){
+  .hero-photo{object-position:72% top;}
+  .hero-overlay{background:linear-gradient(180deg, rgba(251,247,240,0.94) 0%, rgba(251,247,240,0.88) 45%, rgba(251,247,240,0.5) 72%, rgba(251,247,240,0.2) 100%);}
+  .hero-inner{height:auto;max-height:none;padding-top:150px;padding-bottom:90px;}
+  .hero-corp-banner{top:84px;left:16px;right:16px;transform:none;border-radius:14px;padding:12px 16px;}
+  .hero-corp-banner:hover{transform:translateY(-2px);}
+}
+@media (max-height:820px){
+  .hero-inner{max-height:none;}
+  .hero-logo{width:140px;margin-bottom:8px;}
+  .hero-tagline{margin-bottom:8px;font-size:13px;}
+  .hero-eyebrow{margin-bottom:8px;}
+  .hero-copy h1{font-size:clamp(26px,3vw,38px);margin-bottom:12px;line-height:1.4;}
+  .hero-lead{margin-bottom:16px;font-size:14px;line-height:1.75;}
+  .hero-inner{padding-top:140px;}
+}
+@media (max-height:700px){
+  .hero-logo{width:120px;margin-bottom:6px;}
+  .hero-copy h1{font-size:clamp(24px,2.6vw,32px);margin-bottom:10px;}
+  .hero-lead{margin-bottom:14px;font-size:13px;}
+  .hero-inner{padding-top:132px;}
+}
+@media (max-width:620px){
+  .hero-banner-text{flex-direction:column;gap:1px;}
+  .hero-banner-text .ft-label{font-size:12px;}
+  .hero-banner-text .ft-desc{font-size:11px;}
+  .hero-corp-banner .banner-arrow{font-size:11px;padding:6px 12px;}
+}
+@media (max-width:560px){
+  .hero-logo{width:170px;}
+}
+
+/* ===== PRELAUNCH BANNER ===== */
+.prelaunch{
+  background:linear-gradient(110deg,var(--gold-light) 0%,var(--gold) 60%,var(--gold-deep) 100%);
+  padding:30px 0;
+}
+.prelaunch-inner{
+  display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;
+  text-align:center;
+}
+.prelaunch-text{color:var(--navy-deep);}
+.prelaunch-text strong{font-family:'Shippori Mincho',serif;font-size:19px;display:block;margin-bottom:4px;}
+.prelaunch-text span{font-size:13.5px;opacity:.85;}
+
+/* ===== PROBLEM ===== */
+.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px;}
+.problem-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 32px;display:flex;gap:18px;align-items:flex-start;
+  box-shadow:0 8px 28px -20px rgba(27,37,64,0.4);
+}
+.problem-card p{font-size:15px;color:var(--ink);font-weight:600;line-height:1.85;}
+@media (max-width:760px){.problem-grid{grid-template-columns:1fr;}}
+
+/* ===== TARGET ===== */
+.target-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.target-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 34px;position:relative;overflow:hidden;
+  box-shadow:0 8px 28px -20px rgba(27,37,64,0.4);
+}
+.target-card::before{
+  content:'';position:absolute;top:0;left:0;width:5px;height:100%;
+  background:linear-gradient(180deg,var(--crimson),var(--gold));
+}
+.target-card h3{font-size:18px;margin-bottom:10px;line-height:1.5;}
+.target-card p{font-size:13.5px;color:var(--mist);line-height:1.85;}
+@media (max-width:760px){.target-grid{grid-template-columns:1fr;}}
+
+/* ===== MINI CTA ===== */
+.mini-cta{
+  margin-top:56px;background:linear-gradient(120deg,var(--navy) 0%,var(--navy-soft) 100%);
+  border-radius:var(--radius);padding:32px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  color:#fff;
+}
+.mini-cta p{font-size:16px;font-weight:700;font-family:'Shippori Mincho',serif;}
+.mini-cta p span{display:block;font-size:12.5px;font-weight:500;font-family:'Noto Sans JP',sans-serif;color:#C7CEE2;margin-top:4px;letter-spacing:.04em;}
+
+/* ===== WHAT & HOW ===== */
+.what-body{font-size:15.5px;color:var(--ink);max-width:760px;margin-bottom:56px;line-height:2;}
+.how-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:64px;}
+.how-card{background:var(--paper);border-radius:var(--radius);padding:34px 30px;border:1px solid var(--line);box-shadow:0 8px 28px -20px rgba(27,37,64,0.4);}
+.how-num{
+  font-family:'Shippori Mincho',serif;font-size:14px;font-weight:700;color:var(--crimson);
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;letter-spacing:.1em;
+}
+.how-num::after{content:'';flex:1;height:1px;background:var(--line);}
+.how-card h3{font-size:16.5px;margin-bottom:10px;line-height:1.5;}
+.how-card p{font-size:13.5px;color:var(--mist);line-height:1.85;}
+@media (max-width:880px){.how-row{grid-template-columns:1fr;}}
+
+.video-row{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+.video-card{}
+.video-frame{
+  position:relative;width:100%;aspect-ratio:16/9;border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow);background:var(--navy);
+}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.video-caption{margin-top:14px;font-size:13.5px;color:var(--mist);font-weight:600;}
+.video-caption strong{color:var(--navy);font-weight:700;}
+@media (max-width:760px){.video-row{grid-template-columns:1fr;}}
+
+/* ===== RESULTS & VOICES ===== */
+.results-note{font-size:13px;color:var(--mist);margin-top:-10px;margin-bottom:48px;}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px;}
+.result-card{
+  background:var(--paper);border-radius:var(--radius);padding:30px 28px;
+  border-top:4px solid var(--crimson);box-shadow:var(--shadow);
+}
+.result-tag{
+  display:inline-block;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;
+  padding:5px 14px;border-radius:100px;letter-spacing:.06em;margin-bottom:18px;
+}
+.result-number{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap;}
+.result-number .from{font-size:24px;font-weight:700;color:var(--mist);font-family:'Shippori Mincho',serif;}
+.result-number .arrow{color:var(--gold-deep);font-size:18px;}
+.result-number .to{font-size:40px;font-weight:800;color:var(--crimson);font-family:'Shippori Mincho',serif;}
+.result-number .unit{font-size:14px;color:var(--mist);}
+.result-label{font-size:12.5px;color:var(--mist);margin-bottom:18px;}
+.result-quote{font-size:13.5px;line-height:1.85;color:var(--ink);}
+
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.voice-card{
+  background:var(--paper);border-radius:var(--radius);padding:28px 26px;
+  border:1px solid var(--line);position:relative;
+}
+.voice-card::before{
+  content:'“';position:absolute;top:10px;left:20px;font-family:'Shippori Mincho',serif;
+  font-size:48px;color:var(--gold-light);line-height:1;
+}
+.voice-text{font-size:14px;color:var(--ink);line-height:1.9;margin-top:24px;margin-bottom:18px;}
+.voice-attr{font-size:12.5px;color:var(--mist);font-weight:700;border-top:1px dashed var(--line);padding-top:12px;}
+@media (max-width:980px){.result-grid,.voice-grid{grid-template-columns:1fr;}}
+
+/* ===== VALUE TABS ===== */
+.value-tabs{display:flex;gap:12px;margin-bottom:40px;}
+.value-tab-btn{
+  flex:1;border:1.5px solid var(--line);background:var(--paper);
+  padding:18px 24px;border-radius:14px;font-family:'Shippori Mincho',serif;
+  font-size:17px;font-weight:700;color:var(--mist);cursor:pointer;
+  transition:all .2s ease;text-align:center;
+}
+.value-tab-btn.active{
+  border-color:var(--crimson);color:var(--crimson);
+  background:var(--crimson-soft);box-shadow:0 10px 24px -16px rgba(194,39,63,.5);
+}
+.value-panel{display:none;}
+.value-panel.active{display:block;}
+.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.value-item{
+  background:var(--paper);border-radius:var(--radius);padding:28px 30px;
+  border:1px solid var(--line);display:flex;gap:18px;box-shadow:0 8px 28px -20px rgba(27,37,64,0.4);
+}
+.value-item .v-num{
+  font-family:'Shippori Mincho',serif;font-size:13px;font-weight:700;color:#fff;
+  background:var(--crimson);width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.value-item h3{font-size:16px;margin-bottom:8px;}
+.value-item p{font-size:13.5px;color:var(--mist);line-height:1.85;}
+@media (max-width:760px){.value-tabs{flex-direction:column;}.value-grid{grid-template-columns:1fr;}}
+
+/* ===== INSTRUCTOR ===== */
+.instructor-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;}
+.instructor-bio p{font-size:14.5px;color:var(--ink);line-height:2;margin-bottom:16px;}
+.instructor-bio .role-tag{
+  display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;
+  padding:6px 16px;border-radius:100px;margin-bottom:18px;letter-spacing:.04em;
+}
+@media (max-width:920px){.instructor-grid{grid-template-columns:1fr;gap:36px;}}
+
+/* ===== PRICING ===== */
+.pricing-note{
+  background:var(--paper);border:1px dashed var(--gold-deep);border-radius:14px;
+  padding:18px 24px;font-size:13px;color:var(--navy);margin-bottom:48px;line-height:1.9;
+}
+.pricing-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-bottom:24px;}
+.price-card{
+  border-radius:var(--radius);padding:40px 38px;position:relative;overflow:hidden;
+}
+.price-card.personal{
+  background:var(--paper);border:2px solid var(--crimson);box-shadow:var(--shadow);
+}
+.price-card.corporate{
+  background:linear-gradient(150deg,var(--navy) 0%,var(--navy-soft) 100%);color:#fff;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.price-card .p-badge{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.12em;
+  padding:5px 14px;border-radius:100px;margin-bottom:18px;
+}
+.price-card.personal .p-badge{background:var(--crimson-soft);color:var(--crimson);}
+.price-card.corporate .p-badge{background:rgba(255,255,255,.12);color:var(--gold-light);}
+.price-card h3{font-size:20px;margin-bottom:6px;}
+.price-card.corporate h3{color:#fff;}
+.price-card .p-sub{font-size:13px;color:var(--mist);margin-bottom:22px;}
+.price-card.corporate .p-sub{color:#B6BFD6;}
+.price-amount{display:flex;align-items:baseline;gap:6px;margin-bottom:24px;}
+.price-amount .num{font-family:'Shippori Mincho',serif;font-size:44px;font-weight:800;color:var(--crimson);}
+.price-card.corporate .price-amount .num{color:var(--gold-light);}
+.price-amount .unit{font-size:14px;color:var(--mist);}
+.price-card.corporate .price-amount .unit{color:#B6BFD6;}
+.price-features{list-style:none;margin-bottom:28px;}
+.price-features li{
+  font-size:13.5px;padding:9px 0;border-bottom:1px solid var(--line);
+  display:flex;gap:10px;align-items:flex-start;color:var(--ink);
+}
+.price-card.corporate .price-features li{border-bottom:1px solid rgba(255,255,255,.12);color:#E3E7F2;}
+.price-features li::before{content:'◯';color:var(--crimson);font-size:11px;margin-top:3px;}
+.price-card.corporate .price-features li::before{color:var(--gold-light);}
+
+.oneon1-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.oneon1-card h3{font-size:17px;margin-bottom:6px;}
+.oneon1-card p{font-size:13.5px;color:var(--mist);}
+.oneon1-price{font-family:'Shippori Mincho',serif;font-size:28px;font-weight:800;color:var(--crimson);white-space:nowrap;}
+.oneon1-price span{font-size:13px;color:var(--mist);font-weight:500;font-family:'Noto Sans JP',sans-serif;}
+@media (max-width:880px){.pricing-grid{grid-template-columns:1fr;}}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:780px;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-item summary{
+  padding:22px 4px;font-size:15px;font-weight:700;color:var(--navy);
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:'+';font-size:22px;color:var(--crimson);font-weight:400;flex-shrink:0;
+  transition:transform .2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-item .faq-a{padding:0 4px 22px;font-size:13.5px;color:var(--mist);line-height:1.9;}
+.faq-item summary .q-label{color:var(--crimson);font-family:'Shippori Mincho',serif;margin-right:6px;}
+
+/* ===== WHY MESSAGE ===== */
+.why-grid{display:grid;grid-template-columns:1fr;gap:0;max-width:760px;margin:0 auto;}
+.why-grid p{font-size:15px;line-height:2.1;margin-bottom:20px;color:#D6DBEA;}
+.why-signature{
+  margin-top:36px;display:flex;align-items:center;gap:16px;
+  border-top:1px solid rgba(255,255,255,.15);padding-top:28px;
+}
+.why-signature .sig-line{width:40px;height:2px;background:var(--gold-light);display:block;}
+.why-signature span{font-family:'Shippori Mincho',serif;font-size:15px;color:#fff;font-weight:700;}
+
+/* ===== FINAL CTA ===== */
+.final-cta-box{
+  max-width:880px;margin:0 auto;text-align:center;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;padding:64px 56px;
+}
+.final-cta-box h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:14px;}
+.final-cta-box p{font-size:14.5px;color:#B6BFD6;margin-bottom:40px;line-height:2;}
+.final-cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-deep);padding:64px 0 32px;color:rgba(255,255,255,.6);}
+.footer-top{
+  display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;
+  padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:28px;
+}
+.footer-logo .ft-logo-img{height:54px;border-radius:6px;margin-bottom:14px;}
+.footer-logo p{font-size:12px;line-height:1.9;color:rgba(255,255,255,.4);}
+.footer-nav{display:flex;gap:64px;flex-wrap:wrap;}
+.footer-nav a{display:block;font-size:13.5px;margin-bottom:14px;text-decoration:none;color:rgba(255,255,255,.6);transition:color .15s;}
+.footer-nav a:hover{color:#fff;}
+.footer-markey{
+  display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 22px;
+}
+.footer-markey img{height:36px;}
+.footer-markey-text{font-size:12px;line-height:1.7;}
+.footer-markey-text a{color:var(--gold-light);font-weight:700;text-decoration:none;}
+.footer-bottom{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:12px;}
+.footer-bottom a{text-decoration:none;color:rgba(255,255,255,.35);}
+.footer-copy{text-align:center;font-size:11px;color:rgba(255,255,255,.22);margin-top:18px;}
+
+/* ===== Reveal animation ===== */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+/* ===== Focus ===== */
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--crimson);outline-offset:3px;
+}
 </style>
 </head>
 <body>
 
+<!-- koi symbol -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="koi" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4,38 C18,12 56,8 76,21 C86,27 93,21 96,17 C93,28 93,35 96,44 C90,42 83,38 76,42 C58,52 20,48 4,38 Z"/>
+    <path d="M76,21 L90,11 M76,42 L88,53 M40,30 C46,33 50,33 56,30"/>
+    <circle cx="22" cy="27" r="2.2" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ribbon" viewBox="0 0 400 300" fill="currentColor">
+    <path d="M400,40 C300,70 250,150 280,210 C300,250 360,260 400,250 L400,300 L0,300 C80,270 140,250 200,255 C150,230 140,170 190,130 C260,75 350,80 400,40 Z" opacity="0.55"/>
+    <path d="M400,90 C330,110 300,160 320,200 C334,228 370,236 400,230 L400,90 Z" opacity="0.9"/>
+  </symbol>
+</svg>
+
+<!-- ===== HEADER ===== -->
 <header>
-  <a href="#" class="logo-wrap">
-    <img src="logo.jpg" alt="住宅営業登竜門" class="logo-img">
-    <div class="logo-txt">
-      <span class="lt1">JYUTAKU EIGYO<br>TORYUMON</span>
-      <span class="lt2">Key to the Sales Success.</span>
-    </div>
-  </a>
-  <nav>
-    <a href="#about">サービス概要</a>
-    <a href="#features">特徴</a>
-    <a href="#events">イベント</a>
-    <a href="#column">コラム</a>
-    <a href="#contact" class="hd-btn">✉ お問い合わせ</a>
-  </nav>
+  <div class="nav-inner">
+    <a href="#" class="logo-wrap">
+      <img src="logo.jpg" alt="住宅営業登竜門" class="logo-img">
+      <div class="logo-txt">
+        <span class="lt1">住宅営業登竜門</span>
+        <span class="lt2">JYUTAKU EIGYO TORYUMON</span>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <div class="nav-links">
+        <a href="#about">サービス概要</a>
+        <a href="#voices">成果事例</a>
+        <a href="#pricing">料金プラン</a>
+        <a href="#faq">よくある質問</a>
+        <a href="corporate.html">法人の方へ</a>
+      </div>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-sm nav-cta">開始のお知らせを受け取る</a>
+    </nav>
+  </div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">住宅営業 × 販売戦略</p>
-    <img src="logo.jpg" alt="住宅営業登竜門" style="width:260px;max-width:100%;border-radius:8px;margin-bottom:10px;">
-    <p class="hero-tagline">Key to the Sales Success.</p>
-    <p class="hero-copy">受注を伸ばすなら<br>住宅営業強化特化支援の<br><strong>住宅営業登竜門</strong></p>
-    <div style="background:rgba(0,0,0,0.22);border-radius:10px;padding:16px 18px;max-width:360px;margin-top:16px;">
-      <img src="../MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING" style="height:40px;margin-bottom:10px;display:block;">
-      <p style="font-size:13px;font-weight:700;color:#ffffff;margin-bottom:10px;">経営者様・マネージャーの方はこちらへ　販売強化プロジェクト</p>
-      <a href="/index.html" style="display:inline-block;background:#d4a017;color:#1a2a5e;padding:8px 18px;border-radius:5px;font-size:13px;font-weight:700;text-decoration:none;">MARKEY CONSULTINGへ →</a>
+  <div class="hero-photo-wrap">
+    <img src="hero.png" alt="住宅営業に取り組むビジネスパーソン" class="hero-photo">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <span class="eyebrow hero-eyebrow">住宅営業 × 動画で学ぶ営業塾</span>
+      <img src="logo.jpg" alt="住宅営業登竜門" class="hero-logo">
+      <p class="hero-tagline">Key to the Sales Success.</p>
+      <h1>5年分の営業力を、<br><span class="accent">たった3ヶ月</span>で。</h1>
+      <p class="hero-lead">
+        上場ハウスメーカーでトップセールスを記録し、独立後は50社以上の住宅会社を受注増加へ導いてきた「伝説のコンサルタント」のノウハウを、初めて動画コンテンツとして体系化。住宅営業として活躍するための最短ルートを、ここから。
+      </p>
+      <div class="hero-cta">
+        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary">開始のお知らせを受け取る</a>
+        <a href="#about" class="btn btn-light">サービス概要を見る</a>
+      </div>
     </div>
   </div>
-  <div class="hero-right">
-    <img src="hero.png" alt="住宅街">
-    <div class="hero-right-overlay"></div>
+  <a href="corporate.html" class="hero-corp-banner reveal">
+    <div class="fl-logo"><img src="../MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING"></div>
+    <div class="hero-banner-text">
+      <span class="ft-label">経営者・マネージャーの方へ</span>
+      <span class="ft-desc">法人プラン(新人育成・営業力強化)</span>
+    </div>
+    <span class="banner-arrow">詳しく見る →</span>
+  </a>
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C220,85 460,5 740,40 C1020,75 1240,15 1440,45 L1440,100 L0,100 Z" fill="var(--gold)"/>
+    </svg>
+    <svg class="wave-koi" aria-hidden="true"><use href="#koi"/></svg>
   </div>
 </section>
 
-<div class="stats-bar">
-  <div class="stat-item"><span class="stat-num">190%</span><span class="stat-label">受注増 実績例</span></div>
-  <div class="stat-item"><span class="stat-num">350万円</span><span class="stat-label">価格UP対応実績</span></div>
-  <div class="stat-item"><span class="stat-num">3.2倍</span><span class="stat-label">平均アポ率向上</span></div>
-  <div class="stat-item"><span class="stat-num">90日</span><span class="stat-label">成果が出るまでの平均期間</span></div>
+<!-- ===== PRELAUNCH BANNER ===== -->
+<section class="prelaunch">
+  <div class="container prelaunch-inner">
+    <div class="prelaunch-text">
+      <strong>住宅営業登竜門は、2026年7月末サービス開始予定です</strong>
+      <span>サービス開始時に、メールでいち早くお知らせします</span>
+    </div>
+    <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-on-navy btn-sm" style="background:var(--navy-deep);border-color:var(--navy-deep);color:#fff;">開始のお知らせを受け取る →</a>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="bg-cream">
+  <svg class="deco-curve tr" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">PROBLEM</span>
+      <h2 class="section-title">住宅営業は、「教わらず、<br>自分でやるしかない」仕事でした。</h2>
+      <p class="section-lead">
+        先輩の背中を見て学ぶ。店長は忙しくて教える時間がない。働き方改革で残業もできない。<br>
+        そんな環境の中で、「やる気はあるのに、やり方がわからない」まま、時間だけが過ぎていく営業マンがたくさんいます。
+      </p>
+    </div>
+    <div class="problem-grid reveal">
+      <div class="problem-card">
+        <p>初回接客で何を話せばいいか、毎回手探り。</p>
+      </div>
+      <div class="problem-card">
+        <p>次回アポが取れず、追客もただの御用聞きになっている。</p>
+      </div>
+      <div class="problem-card">
+        <p>商談で値引き要求にどう対応すればいいか、わからない。</p>
+      </div>
+      <div class="problem-card">
+        <p>先輩のやり方を見て覚えるしかなく、成長スピードが遅い。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TARGET ===== -->
+<section class="bg-paper" id="target">
+  <svg class="deco-curve bl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">TARGET</span>
+      <h2 class="section-title">住宅営業登竜門は、<br><span class="accent">こんな方</span>に向けたサービスです</h2>
+    </div>
+    <div class="target-grid reveal">
+      <div class="target-card">
+        <h3>入社1〜5年目の住宅営業マン</h3>
+        <p>年間契約棟数10棟以下で、基礎から正しい営業スキルを身につけ、契約数を伸ばしたい方。</p>
+      </div>
+      <div class="target-card">
+        <h3>やる気はあるが、やり方がわからない方</h3>
+        <p>一生懸命動いているのに成果が出ない、何を改善すればいいかわからず悩んでいる方。</p>
+      </div>
+      <div class="target-card">
+        <h3>会社の研修体制に不安がある方</h3>
+        <p>先輩の「見て覚える」文化に限界を感じ、体系的に営業を学びたいと考えている方。</p>
+      </div>
+      <div class="target-card">
+        <h3>組織の営業力を強化したい経営者・営業責任者の方</h3>
+        <p>新人教育の仕組み化、チーム全体の営業力の標準化を進めたい方(法人プラン)。</p>
+      </div>
+    </div>
+    <div class="mini-cta reveal">
+      <p>あなたに合っているか、まずは相談してみる<span>住宅営業登竜門は2026年7月末サービス開始予定です</span></p>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-gold btn-sm">開始のお知らせを受け取る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT & HOW ===== -->
+<section class="bg-cream" id="about">
+  <svg class="deco-curve tr" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">WHAT</span>
+      <h2 class="section-title">5年かけて学ぶ内容を、<span class="accent">3ヶ月</span>で。</h2>
+    </div>
+    <p class="what-body reveal">
+      住宅営業登竜門は、住宅営業に必要なスキルを動画で学べる、見放題のサブスクリプションサービスです。<br>
+      上場ハウスメーカーでトップセールスを記録し、その後エリアマネージャー、独立後は50社以上の住宅会社をコンサルティングしてきた「伝説のコンサルタント」が持つ、これまで一切公開されてこなかった営業ノウハウを、初めて体系的にコンテンツ化しました。
+    </p>
+
+    <div class="how-row reveal">
+      <div class="how-card">
+        <div class="how-num">01 — なぜ3ヶ月で身につくのか</div>
+        <h3>シリーズ完結型カリキュラム</h3>
+        <p>「土地なし客対応」など、テーマ別に約10本のシリーズで構成。1テーマを最短3ヶ月で習得できる設計です。</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h3>1本あたり実践重視の動画</h3>
+        <p>実際の現場ですぐ使えるトーク・テクニックに絞った、効率重視のコンテンツです。</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h3>自学自習で着実にレベルアップ</h3>
+        <p>学習塾のような体系化されたカリキュラムで、自分のペースで基礎から実践まで進められます。</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 style="font-size:18px;margin-bottom:24px;">実際の講座を、少しだけお試しで</h3>
+      <div class="video-row">
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID_1" title="サンプル動画1" allowfullscreen></iframe>
+          </div>
+          <p class="video-caption"><strong>土地なし客対応研修</strong> 第1回(サンプル)</p>
+        </div>
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID_2" title="サンプル動画2" allowfullscreen></iframe>
+          </div>
+          <p class="video-caption"><strong>時事ネタ特集</strong> 価格高騰時代の販売戦略(サンプル)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS & VOICES ===== -->
+<section class="bg-paper" id="voices">
+  <svg class="deco-curve bl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">RESULTS &amp; VOICES</span>
+      <h2 class="section-title">MARKEY CONSULTING の<br>営業研修受講者の声・成果事例</h2>
+    </div>
+    <p class="results-note reveal">※ MARKEY CONSULTING は、住宅営業登竜門の主催元です。</p>
+
+    <div class="result-grid reveal">
+      <div class="result-card">
+        <span class="result-tag">入社2年目</span>
+        <div class="result-number"><span class="from">3</span><span class="unit">棟</span><span class="arrow">→</span><span class="to">7</span><span class="unit">棟</span></div>
+        <div class="result-label">年間契約棟数</div>
+        <p class="result-quote">「初回接客の流れが明確になり、次回アポ率が大きく改善しました」</p>
+      </div>
+      <div class="result-card">
+        <span class="result-tag">入社4年目</span>
+        <div class="result-number"><span class="from">5</span><span class="unit">棟</span><span class="arrow">→</span><span class="to">12</span><span class="unit">棟</span></div>
+        <div class="result-label">年間契約棟数</div>
+        <p class="result-quote">「商談での価格交渉への対応に自信が持てるようになりました」</p>
+      </div>
+      <div class="result-card">
+        <span class="result-tag">法人導入</span>
+        <div class="result-number"><span class="to">1/2</span></div>
+        <div class="result-label">新人育成期間を半分に短縮</div>
+        <p class="result-quote">「動画を使った研修プログラムを整備でき、教育担当の負担が大幅に減りました」</p>
+      </div>
+    </div>
+
+    <div class="voice-grid reveal">
+      <div class="voice-card">
+        <p class="voice-text">正直、先輩に聞くのは気が引けることも、動画なら何度も見返せるのがよかったです。</p>
+        <p class="voice-attr">入社2年目・男性</p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-text">会社で教えてもらえなかったクロージングのコツが、ようやく腑に落ちました。</p>
+        <p class="voice-attr">入社3年目・女性</p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-text">自分のペースで学べるので、スキマ時間に少しずつ進められています。</p>
+        <p class="voice-attr">入社1年目・男性</p>
+      </div>
+    </div>
+
+    <div class="mini-cta reveal">
+      <p>自分も成果を出したい方へ<span>まずは開始のお知らせ登録から</span></p>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-gold btn-sm">開始のお知らせを受け取る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUE ===== -->
+<section class="bg-cream">
+  <svg class="deco-curve tr" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">VALUE</span>
+      <h2 class="section-title">住宅営業登竜門で<span class="accent">得られるもの</span></h2>
+    </div>
+
+    <div class="reveal">
+      <div class="value-tabs">
+        <button class="value-tab-btn active" data-tab="personal">個人の方</button>
+        <button class="value-tab-btn" data-tab="corporate">法人の方</button>
+      </div>
+
+      <div class="value-panel active" data-panel="personal">
+        <div class="value-grid">
+          <div class="value-item">
+            <div class="v-num">1</div>
+            <div><h3>即戦力化</h3><p>入社1〜5年目で身につけるべき営業スキルを、最短距離で習得できます。</p></div>
+          </div>
+          <div class="value-item">
+            <div class="v-num">2</div>
+            <div><h3>年収アップ</h3><p>契約棟数の増加が、インセンティブ・評価に直結します。</p></div>
+          </div>
+          <div class="value-item">
+            <div class="v-num">3</div>
+            <div><h3>営業への自信</h3><p>「やり方がわからない」不安から脱却し、自分の営業に自信を持てます。</p></div>
+          </div>
+          <div class="value-item">
+            <div class="v-num">4</div>
+            <div><h3>スキマ時間学習</h3><p>通勤時間や休憩時間に、スマホで自分のペースで学習可能です。</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="value-panel" data-panel="corporate">
+        <div class="value-grid">
+          <div class="value-item">
+            <div class="v-num">1</div>
+            <div><h3>新人教育の自動化</h3><p>「動画A-1〜A-10を見る」など、育成プログラムを体系化・仕組み化できます。</p></div>
+          </div>
+          <div class="value-item">
+            <div class="v-num">2</div>
+            <div><h3>若手の離職率低下</h3><p>「教える時間がない」「育つ前に辞めてしまう」という経営課題に対応します。</p></div>
+          </div>
+          <div class="value-item">
+            <div class="v-num">3</div>
+            <div><h3>営業力の標準化</h3><p>全社員が同じ営業の考え方を学ぶことで、売れる営業と売れない営業の差を縮小します。</p></div>
+          </div>
+          <div class="value-item">
+            <div class="v-num">4</div>
+            <div><h3>採用力の強化</h3><p>充実した研修制度として、採用活動でのアピール材料になります。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSTRUCTOR ===== -->
+<section class="bg-paper">
+  <svg class="deco-curve tl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">INSTRUCTOR</span>
+      <h2 class="section-title">講師紹介</h2>
+    </div>
+    <div class="instructor-grid reveal">
+      <div class="instructor-bio">
+        <span class="role-tag">MARKEY CONSULTING 代表</span>
+        <p>
+          上場ハウスメーカーでトップセールスを記録。その後エリアマネージャーとして拠点全体の営業力強化に従事し、独立後は経営コンサルタントとして50社以上の住宅会社をサポート、数多くの企業の受注増加を実現してきました。
+        </p>
+        <p>
+          本講座では、これまで一切公開してこなかった「営業の秘蔵の技」を、初めて体系的に公開します。
+        </p>
+      </div>
+      <div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/PLACEHOLDER_INSTRUCTOR_VIDEO_ID" title="講師からのメッセージ" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">「住宅営業登竜門に込めた思い」</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="bg-cream" id="pricing">
+  <svg class="deco-curve bl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">PRICING</span>
+      <h2 class="section-title">料金プラン</h2>
+    </div>
+
+    <p class="pricing-note reveal">
+      ※ 表示の料金は、サービス開始後にお申し込みいただく際の予定価格です。サービス開始(2026年7月末予定)に合わせて、メールにてお申し込み方法をご案内します。
+    </p>
+
+    <div class="pricing-grid reveal">
+      <div class="price-card personal">
+        <span class="p-badge">PERSONAL</span>
+        <h3>個人プラン</h3>
+        <p class="p-sub">入社1〜5年目の住宅営業マン向け</p>
+        <div class="price-amount"><span class="num">5,480</span><span class="unit">円 / 月(税込)</span></div>
+        <ul class="price-features">
+          <li>動画見放題(全シリーズ視聴可能)</li>
+          <li>月1回オンライン研修イベント(有料オプションで参加可能)</li>
+          <li>いつでも解約OK</li>
+        </ul>
+        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary" style="width:100%;">開始のお知らせを受け取る</a>
+      </div>
+
+      <div class="price-card corporate">
+        <div>
+          <span class="p-badge">CORPORATE</span>
+          <h3>法人プラン</h3>
+          <p class="p-sub">新人育成・組織の営業力強化</p>
+          <div class="price-amount"><span class="num">55,000</span><span class="unit">円〜 / 月(税込)</span></div>
+          <ul class="price-features">
+            <li>全社員が利用できる法人アカウント</li>
+            <li>月1回オンライン研修イベント／個別コンサルティング(プラン別)</li>
+            <li>育成プログラムの仕組み化・採用PRにも活用可能</li>
+          </ul>
+        </div>
+        <a href="corporate.html" class="btn btn-gold" style="width:100%;">法人プランの詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="oneon1-card reveal">
+      <div>
+        <h3>1on1オンラインコンサルティング(オプション)</h3>
+        <p>オンライン家庭教師形式での個別指導(都度払い)</p>
+      </div>
+      <div class="oneon1-price">11,000円 <span>/ 1時間(税込)</span></div>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-outline btn-sm">開始案内を受け取る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="bg-paper" id="faq">
+  <svg class="deco-curve tr" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">よくある質問</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary><span><span class="q-label">Q.</span>営業未経験でもついていけますか?</span></summary>
+        <p class="faq-a">はい。基礎から体系的に学べる構成になっているため、未経験の方でも安心して始められます。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span><span class="q-label">Q.</span>動画はどのくらいの本数がありますか?</span></summary>
+        <p class="faq-a">現在10本程度からスタートし、最終的には50本以上のシリーズ展開を予定しています。今後も継続的にコンテンツを追加していきます。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span><span class="q-label">Q.</span>スマホでも視聴できますか?</span></summary>
+        <p class="faq-a">はい。スマートフォン・タブレット・PCいずれからも視聴可能です。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span><span class="q-label">Q.</span>法人プランの支払い方法は?</span></summary>
+        <p class="faq-a">お問い合わせの上、貴社のご要望に合わせてご案内いたします。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span><span class="q-label">Q.</span>個人プランはいつでも解約できますか?</span></summary>
+        <p class="faq-a">はい。月単位でのご利用となり、いつでも解約可能です。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span><span class="q-label">Q.</span>個人プランでもイベントに参加できますか?</span></summary>
+        <p class="faq-a">はい。個人プランの方も、有料オプションでイベントにご参加いただけます。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY MESSAGE ===== -->
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,55 C240,5 480,95 740,45 C1000,0 1240,70 1440,30 L1440,100 L0,100 Z" fill="var(--navy-deep)"/>
+  </svg>
 </div>
-
-<section class="sec" id="about">
-  <div class="sec-inner">
-    <p class="sec-eyebrow">ABOUT</p>
-    <h2 class="sec-h2">住宅営業登竜門は、<br>住宅営業の<span class="red">「売れる人材」</span>を<br>最短距離で育てます。</h2>
-    <div class="sec-divider"></div>
-    <div class="about-grid">
-      <div class="about-img">
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80" alt="コンサルティングの様子">
+<section class="bg-navy">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">MESSAGE</span>
+      <h2 class="section-title" style="color:#fff;">代表メッセージ</h2>
+    </div>
+    <div class="why-grid reveal">
+      <p>
+        住宅営業という仕事は、これまで「誰にも教わらず、先輩の背中を見て自分で学ぶしかない」、成長が非常に難しい業界でした。
+        本来教える立場である店長も、自身の業務に追われて十分な指導時間を確保できず、働き方改革による残業規制も加わり、これまで以上に「自学自習」が求められる時代になっています。
+      </p>
+      <p>
+        私自身、育成にかける時間に課題を感じてきた一人です。そして、「やる気はあるのに、やり方がわからない」という営業マンが、正しい知識と正しいスキルを身につけることで、受注を2倍、3倍に伸ばせることを、現場で何度も見てきました。
+      </p>
+      <p>
+        このサービスは、そうした方々の力になりたいという思いから生まれました。住宅営業という素晴らしい仕事を、もっと「楽しく」「稼げる」ものだと感じていただけるように。<br>
+        皆様の成長と活躍を、心から楽しみにしています。
+      </p>
+      <div class="why-signature">
+        <span>MARKEY CONSULTING 代表</span>
       </div>
-      <div class="about-text">
-        <p class="about-eyebrow">ABOUT US</p>
-        <h2 class="about-h2">現場で使える営業スキルを<br><span class="hl">最短距離で習得。</span><br>売れる営業スタイルを確立。</h2>
-        <p class="about-p">住宅営業の現場を知り尽くしたコンサルタントが、あなたの<span class="em">売れない原因を特定</span>し、成果が出る営業スタイルをマンツーマンで指導します。</p>
-        <p class="about-p"><strong>その月のうちに、</strong>現場で使える営業スタイルを確立。インフレ時代でも売って売って売りまくる力を身につけます。</p>
-        <div class="about-cards">
-          <div class="ac"><div class="ac-num">完全<br>1on1</div><div class="ac-label">マンツーマン指導</div></div>
-          <div class="ac"><div class="ac-num">即日<br>実践</div><div class="ac-label">現場で使えるスキル</div></div>
-        </div>
-        <a href="#features" class="about-btn">サービスの詳細を見る →</a>
+    </div>
+    <div class="mini-cta reveal" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);">
+      <p>この思いに共感したら<span>開始のお知らせ登録から、最初の一歩を</span></p>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-gold btn-sm">開始のお知らせを受け取る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="bg-navy">
+  <div class="container">
+    <div class="final-cta-box reveal">
+      <span class="eyebrow" style="color:var(--gold-light);justify-content:center;">FINAL CTA</span>
+      <h2>住宅営業登竜門、<br>2026年7月末スタート</h2>
+      <p>
+        まだコンテンツを準備中です。サービスが開始しましたら、メールにて最速でお知らせいたします。<br>
+        サブスクのお申し込みは、サービス開始時に改めてご案内します。
+      </p>
+      <div class="final-cta-buttons">
+        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-gold">開始のお知らせを受け取る(無料登録)</a>
+        <a href="corporate.html" class="btn btn-on-navy">法人プランの詳細・開始案内を受け取る</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec diff-sec">
-  <div class="sec-inner">
-    <div class="diff-h2-wrap"><span class="diff-headline">成果を生む３つの違い</span></div>
-    <div class="diff-grid">
-      <div class="diff-card">
-        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80" alt="業績成果">
-        <div class="diff-card-body">
-          <p class="dc-num">1. 圧倒的な業績成果実績（業績改善コミット型支援）</p>
-          <h3>大手ハウスメーカーから地方工務店まで幅広い住宅会社で成果を出した実績</h3>
-          <p>インフレ・競合激化の時代でも売れる営業の仕組みを短期間で構築。業績不振企業のV字回復など、圧倒的多数の実績があります。</p>
-        </div>
-      </div>
-      <div class="diff-card">
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="住宅業界出身者による指導">
-        <div class="diff-card-body">
-          <p class="dc-num">2. 住宅業界出身者による実践的な戦術・実行サポート</p>
-          <h3>元ハウスメーカーマネージャーが直接指導する実践型カリキュラム</h3>
-          <p>現場レベルの実践的な手法と営業コンサルティングで、即日使えるスキルを習得。</p>
-        </div>
-      </div>
-      <div class="diff-card">
-        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="個社の特徴に合わせた戦略">
-        <div class="diff-card-body">
-          <p class="dc-num">3. 個社の特徴・独自性に合わせた営業戦略・育成支援</p>
-          <h3>他社の成功事例を真似るだけでなく、あなたの会社に合わせた指導</h3>
-          <p>自社の独自性を活かした営業戦略で、ブランド価値を高めながら受注を伸ばします。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="features" style="background:var(--white);">
-  <div class="sec-inner">
-    <p class="sec-eyebrow">FEATURES</p>
-    <h2 class="sec-h2">住宅営業登竜門の<span class="red">特徴</span></h2>
-    <div class="sec-divider"></div>
-    <div style="display:flex;gap:52px;align-items:flex-start;">
-      <div style="width:240px;flex-shrink:0;">
-        <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:20px;">マンツーマン × オーダーメイド × 伴走サポート。成果が変わる3つの理由。</p>
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80" alt="営業指導" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(26,42,94,0.15);">
-      </div>
-      <div class="feat-grid">
-        <div class="feat-item">
-          <div class="feat-num-wrap"><div class="feat-num">01</div><span class="feat-num-label">POINT</span></div>
-          <div class="feat-content">
-            <h3>少人数を<span class="hl">徹底的に</span>育成</h3>
-            <div class="checks">
-              <div class="ck"><div class="ck-icon">✓</div><span>最大3名までの<span class="em">少人数集中指導</span>で1日完結も可能</span></div>
-              <div class="ck"><div class="ck-icon">✓</div><span>受講後すぐに<span class="em">現場で使えるスキル</span>が身につく実践型</span></div>
-              <div class="ck"><div class="ck-icon">✓</div><span>初心者でも置いていかれない<span class="em">進度個別調整</span>システム</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-num-wrap"><div class="feat-num">02</div><span class="feat-num-label">POINT</span></div>
-          <div class="feat-content">
-            <h3>課題ヒアリングで<span class="hl">完全オーダーメイド</span></h3>
-            <div class="checks">
-              <div class="ck"><div class="ck-icon">✓</div><span>事前ヒアリングで<span class="em">あなたの営業課題を可視化</span></span></div>
-              <div class="ck"><div class="ck-icon">✓</div><span>売上に直結するスキルを<span class="em">100%カスタマイズ</span>で指導</span></div>
-              <div class="ck"><div class="ck-icon">✓</div><span>住宅会社業態別の<span class="em">実践テンプレート</span>を多数用意</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-num-wrap"><div class="feat-num">03</div><span class="feat-num-label">POINT</span></div>
-          <div class="feat-content">
-            <h3>現役コンサルタントによる<span class="hl">実践指導</span></h3>
-            <div class="checks">
-              <div class="ck"><div class="ck-icon">✓</div><span>住宅会社の現場を知る<span class="em">実績あるコンサルタント</span>が直接指導</span></div>
-              <div class="ck"><div class="ck-icon">✓</div><span>ロールプレイング中心の<span class="em">実践型カリキュラム</span>で即日使える</span></div>
-              <div class="ck"><div class="ck-icon">✓</div><span>受講後も安心の<span class="em">継続フォローアップ</span>付き</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec ev-sec" id="events">
-  <div class="sec-inner">
-    <p style="font-size:14px;font-weight:700;letter-spacing:2px;color:var(--navy);margin-bottom:6px;">Event information</p>
-    <h2 class="sec-h2" style="text-align:left;margin-bottom:0;">イベント情報</h2>
-    <div class="sec-divider" style="margin:18px 0 36px 0;"></div>
-    <div class="ev-grid">
-      <div class="ev-card">
-        <div class="ev-card-top">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="セミナー">
-          <span class="ev-tag">近日開催予定</span>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-badges"><span class="ev-badge">オンライン</span><span class="ev-badge">無料</span></div>
-          <h3>インフレでも売って売って売りまくる！1年間で350万円価格UPでも受注190%増！価格高騰時代に売れる営業法則</h3>
-          <p>価格高騰・競合激化の時代に選ばれる住宅会社の戦略を月2回お届けします。</p>
-        </div>
-        <div class="ev-card-foot"><a href="#" class="ev-detail-btn">詳細を見る</a></div>
-      </div>
-      <div class="ev-card featured">
-        <div class="ev-card-top" style="padding-top:31px;">
-          <div class="ev-status"><span class="ev-status-dot"></span>申込み受付中</div>
-          <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=600&q=80" alt="受付中セミナー">
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-badges"><span class="ev-badge new">NEW</span><span class="ev-badge">オンライン</span><span class="ev-badge">無料</span></div>
-          <h3>ナフサ特需で過去最高受注！8月までの最大の売り時を逃さないための販売戦略セミナー</h3>
-          <p>ナフサ価格下落による特需期に最大受注を実現するための具体的な戦略と行動計画を解説。</p>
-        </div>
-        <div class="ev-card-foot"><a href="#" class="ev-detail-btn">申し込む →</a></div>
-      </div>
-      <div class="ev-card">
-        <div class="ev-card-top">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="有料セミナー">
-          <span class="ev-tag red-tag">有料</span>
-        </div>
-        <div class="ev-card-body">
-          <div class="ev-badges"><span class="ev-badge">オンライン</span><span class="ev-badge" style="background:#fff0f0;color:var(--red);border-color:#f0c0c0;">有料</span></div>
-          <h3>契約率を劇的に上げる！初回接客から受注までの完全ロードマップ</h3>
-          <p>初回来場から契約までの各ステップを体系化。トップ営業マンの手法を完全公開。</p>
-        </div>
-        <div class="ev-card-foot"><a href="#" class="ev-detail-btn">詳細を見る</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="column">
-  <div class="sec-inner">
-    <p class="sec-eyebrow">COLUMN</p>
-    <h2 class="sec-h2">住宅営業登竜門の<span class="red">コラム</span></h2>
-    <div class="sec-divider"></div>
-    <div class="col-grid">
-      <div class="col-card">
-        <div class="col-img-wrap">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="クロージング">
-          <span class="col-img-tag">営業スキル</span>
-        </div>
-        <div class="col-body">
-          <p class="col-date">2026.06.01</p>
-          <p class="col-title">迷っているお客様を動かす！住宅営業クロージングの鉄則5選</p>
-          <p class="col-excerpt">「考えさせてください」と言われたとき、どう返せばいいか。成約率を上げる実践的なテクニックを…</p>
-        </div>
-      </div>
-      <div class="col-card">
-        <div class="col-img-wrap">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="初回接客">
-          <span class="col-img-tag">初回接客</span>
-        </div>
-        <div class="col-body">
-          <p class="col-date">2026.05.25</p>
-          <p class="col-title">住宅展示場の初回接客｜来場者の心をつかむトーク術</p>
-          <p class="col-excerpt">初回接客の出来が契約率を大きく左右する。お客様の本音を引き出すヒアリングのコツを解説…</p>
-        </div>
-      </div>
-      <div class="col-card">
-        <div class="col-img-wrap">
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80" alt="紹介営業">
-          <span class="col-img-tag">紹介営業</span>
-        </div>
-        <div class="col-body">
-          <p class="col-date">2026.05.18</p>
-          <p class="col-title">紹介が途切れない！住宅営業のアフターフォロー戦略</p>
-          <p class="col-excerpt">新規集客コストを下げながら安定した受注を作るには、OBさんとの関係構築が鍵…</p>
-        </div>
-      </div>
-      <div class="col-card">
-        <div class="col-img-wrap">
-          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&q=80" alt="価格交渉">
-          <span class="col-img-tag">価格交渉</span>
-        </div>
-        <div class="col-body">
-          <p class="col-date">2026.05.10</p>
-          <p class="col-title">「もう少し安くして」への正しい対応｜価値を伝える価格交渉術</p>
-          <p class="col-excerpt">値引き要求は価値が伝わっていないサイン。正面から向き合い信頼関係を深める方法…</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="final-sec" id="contact">
-  <div class="final-inner">
-    <span class="final-eyebrow">FINAL CTA</span>
-    <h2 class="final-h2">住宅営業登竜門で、<br>営業の可能性を解き放つ。</h2>
-    <p class="final-p">サービス資料のダウンロードや、営業塾のご相談など、お気軽にお問い合わせください。</p>
-    <div class="final-cards">
-      <div class="f-card">
-        <span class="f-badge red">DOCUMENT</span>
-        <h3>サービス資料をダウンロード</h3>
-        <p class="fsub"><strong>3分</strong>でわかる、営業塾の全貌。</p>
-        <a href="#" class="f-btn white">📄 資料をダウンロード →</a>
-      </div>
-      <div class="f-card">
-        <span class="f-badge green">CONTACT</span>
-        <h3>無料で相談する</h3>
-        <p class="fsub"><strong class="green">30分</strong>で見つかる、あなたにベストな指導。</p>
-        <a href="#" class="f-btn outline">📅 無料相談を予約する →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ===== FOOTER ===== -->
 <footer>
-  <div class="ft-inner">
-    <div class="ft-top">
-      <div class="ft-logo">
-        <img src="logo.jpg" alt="住宅営業登竜門" style="height:64px;border-radius:6px;">
-        <p class="ft-tagline">住宅営業のプロを最短距離で育てる営業塾<br><br>markey-consulting.com</p>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="住宅営業登竜門" class="ft-logo-img">
+        <p>住宅営業のプロを最短距離で育てる営業塾<br>2026年7月末サービス開始予定</p>
       </div>
-      <div class="ft-nav">
+      <div class="footer-nav">
         <div>
           <a href="#">ホーム</a>
           <a href="#about">サービス概要</a>
-          <a href="#features">特徴</a>
-          <a href="#events">イベント</a>
+          <a href="#target">こんな方へ</a>
+          <a href="#voices">成果事例</a>
         </div>
         <div>
-          <a href="#column">コラム</a>
-          <a href="#">講師紹介</a>
-          <a href="#contact">お問い合わせ</a>
+          <a href="#pricing">料金プラン</a>
+          <a href="#faq">よくある質問</a>
+          <a href="corporate.html">法人プラン</a>
+        </div>
+      </div>
+      <div class="footer-markey">
+        <img src="../MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING">
+        <div class="footer-markey-text">
+          運営会社<br>
+          <a href="../index.html">markey-consulting.com →</a>
         </div>
       </div>
     </div>
-    <div class="ft-bottom">
-      <a href="#">プライバシーポリシー</a>
+    <div class="footer-bottom">
+      <a href="../privacy.html">プライバシーポリシー</a>
       <a href="#">特定商取引法に基づく表記</a>
       <a href="#">利用規約</a>
     </div>
-    <div style="text-align:center;padding:32px 0 16px;border-top:1px solid rgba(255,255,255,0.1);margin-top:24px;">
-      <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:12px;">運営会社</p>
-      <a href="/" style="display:inline-block;">
-        <img src="../MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING" style="height:48px;">
-      </a>
-      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;"><a href="/" style="color:rgba(255,255,255,0.5);text-decoration:none;">markey-consulting.com →</a></p>
-    </div>
-    <p class="ft-copy">© 2026 MARKEY CONSULTING. All rights reserved.</p>
+    <p class="footer-copy">© 2026 MARKEY CONSULTING. All rights reserved.</p>
   </div>
 </footer>
 
+<script>
+// VALUE タブ切り替え
+document.querySelectorAll('.value-tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.value-tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.value-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelector('.value-panel[data-panel="'+btn.dataset.tab+'"]').classList.add('active');
+  });
+});
+
+// スクロールリビール
+if('IntersectionObserver' in window){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
+}
+</script>
 </body>
 </html>
