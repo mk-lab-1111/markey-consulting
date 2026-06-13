@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>住宅営業登竜門 | 住宅営業のプロを最短距離で育てる営業塾</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --red:#d42b2b;--red-dark:#b01f1f;--navy:#1a2a5e;--navy-dark:#111e44;
+  --gold:#d4a017;--gold-light:#f0c030;--white:#ffffff;--light:#f4f6fa;
+  --text:#1a1a2e;--muted:#5a6080;
+}
+body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;color:var(--text);background:var(--white);line-height:1.7;}
+header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:2px solid #eee;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;}
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-img{height:60px;width:auto;border-radius:6px;display:block;object-fit:contain;}
+.logo-txt .lt1{font-size:15px;font-weight:900;color:var(--navy);letter-spacing:1px;line-height:1.3;display:block;}
+.logo-txt .lt2{font-size:11px;color:var(--muted);display:block;}
+nav{display:flex;align-items:center;gap:28px;}
+nav a{text-decoration:none;font-size:15px;font-weight:600;color:var(--text);}
+nav a:hover{color:var(--red);}
+.hd-btn{background:var(--red);color:var(--white);padding:12px 20px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;}
+.hd-btn:hover{background:var(--red-dark);}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:stretch;position:relative;overflow:hidden;}
+.hero-left{width:50%;background:var(--red);padding:32px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;clip-path:polygon(0 0,88% 0,100% 100%,0 100%);}
+.hero-eyebrow{font-size:15px;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:2px;margin-bottom:14px;}
+.hero-h1{font-size:68px;font-weight:900;color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-2px;}
+.hero-tagline{font-size:18px;font-style:italic;color:var(--gold-light);font-weight:700;margin-bottom:24px;letter-spacing:1px;}
+.hero-copy{font-size:16px;font-weight:700;color:var(--white);line-height:1.7;margin-bottom:28px;}
+.hero-card-inline{background:rgba(0,0,0,0.22);border-radius:10px;padding:16px 18px;max-width:360px;}
+.hci-label{font-size:10px;font-weight:700;color:var(--gold-light);letter-spacing:2px;margin-bottom:6px;}
+.hci-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.hci-btn{display:inline-block;background:var(--gold);color:var(--navy);padding:8px 18px;border-radius:5px;font-size:13px;font-weight:700;text-decoration:none;}
+.hero-right{flex:1;position:relative;}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.hero-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(212,43,43,0.12) 0%,transparent 40%);}
+/* STATS */
+.stats-bar{background:var(--navy);padding:22px 60px;display:flex;justify-content:center;gap:56px;}
+.stat-item{text-align:center;}
+.stat-num{font-size:34px;font-weight:900;color:var(--gold);display:block;line-height:1;}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.65);margin-top:3px;}
+/* SEC */
+.sec{padding:76px 60px;}
+.sec-inner{max-width:1120px;margin:0 auto;}
+.sec-eyebrow{font-size:13px;font-weight:700;color:var(--red);letter-spacing:3px;text-align:center;margin-bottom:10px;}
+.sec-h2{font-size:34px;font-weight:900;color:var(--navy);text-align:center;margin-bottom:8px;line-height:1.45;}
+.sec-h2 .red{color:var(--red);}
+.sec-divider{width:56px;height:4px;background:var(--red);margin:0 auto 48px;border-radius:2px;}
+/* ABOUT */
+.about-grid{display:flex;gap:56px;align-items:center;}
+.about-img{flex:1;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(26,42,94,0.18);}
+.about-img img{width:100%;height:360px;object-fit:cover;display:block;}
+.about-text{flex:1;}
+.about-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--red);margin-bottom:12px;}
+.about-h2{font-size:28px;font-weight:900;color:var(--navy);line-height:1.55;margin-bottom:18px;}
+.about-h2 .hl{color:var(--red);text-decoration:underline;text-underline-offset:4px;}
+.about-p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:10px;}
+.about-p .em{color:var(--red);font-weight:700;}
+.about-p strong{color:var(--navy);}
+.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.ac{background:var(--light);border-radius:10px;padding:14px 16px;border-left:4px solid var(--red);}
+.ac .ac-num{font-size:20px;font-weight:900;color:var(--red);}
+.ac .ac-label{font-size:11px;color:var(--muted);margin-top:2px;}
+.about-btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);padding:13px 26px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;margin-top:24px;}
+/* DIFF */
+.diff-sec{background:var(--light);}
+.diff-h2-wrap{text-align:center;margin-bottom:48px;}
+.diff-headline{display:inline-block;background:var(--gold-light);padding:10px 34px;font-size:30px;font-weight:900;color:var(--navy);border-radius:4px;letter-spacing:2px;}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.diff-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(26,42,94,0.10);}
+.diff-card img{width:100%;height:190px;object-fit:cover;display:block;}
+.diff-card-body{padding:22px 20px;}
+.dc-num{font-size:12px;font-weight:700;color:var(--red);letter-spacing:1px;margin-bottom:7px;}
+.diff-card-body h3{font-size:16px;font-weight:900;color:var(--navy);line-height:1.5;margin-bottom:9px;}
+.diff-card-body p{font-size:13px;color:var(--muted);line-height:1.8;}
+/* FEATURES */
+.feat-grid{display:flex;flex-direction:column;gap:18px;flex:1;}
+.feat-item{background:var(--white);border-radius:14px;padding:28px 32px;display:flex;gap:24px;align-items:flex-start;border:1px solid #e0e4f0;box-shadow:0 2px 12px rgba(26,42,94,0.07);}
+.feat-num-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;}
+.feat-num{width:48px;height:48px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;}
+.feat-num-label{font-size:9px;color:var(--muted);letter-spacing:1px;}
+.feat-content h3{font-size:19px;font-weight:900;color:var(--navy);margin-bottom:12px;}
+.feat-content h3 .hl{color:var(--red);}
+.checks{display:flex;flex-direction:column;gap:8px;}
+.ck{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--muted);}
+.ck-icon{width:19px;height:19px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:10px;flex-shrink:0;margin-top:2px;}
+.ck .em{color:var(--navy);font-weight:700;}
+/* EVENTS */
+.ev-sec{background:var(--light);}
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.ev-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(26,42,94,0.10);transition:transform .2s;}
+.ev-card:hover{transform:translateY(-4px);}
+.ev-card.featured{border:3px solid var(--red);}
+.ev-card-top{position:relative;}
+.ev-card-top img{width:100%;height:175px;object-fit:cover;display:block;}
+.ev-tag{position:absolute;top:10px;left:10px;background:var(--navy);color:var(--white);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;}
+.ev-tag.red-tag{background:var(--red);}
+.ev-status{position:absolute;top:0;left:0;right:0;background:var(--red);color:var(--white);font-size:11px;font-weight:700;text-align:center;padding:5px;}
+.ev-status-dot{display:inline-block;width:7px;height:7px;background:var(--white);border-radius:50%;margin-right:5px;animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.ev-card-body{padding:18px 18px 12px;}
+.ev-badges{display:flex;gap:7px;margin-bottom:9px;flex-wrap:wrap;}
+.ev-badge{font-size:11px;font-weight:600;padding:2px 9px;border-radius:100px;background:var(--light);color:var(--navy);border:1px solid #c0ceea;}
+.ev-badge.new{background:var(--red);color:var(--white);border:none;}
+.ev-card-body h3{font-size:14px;font-weight:800;color:var(--navy);line-height:1.55;margin-bottom:7px;}
+.ev-card-body p{font-size:12px;color:var(--muted);line-height:1.7;}
+.ev-card-foot{padding:0 18px 18px;}
+.ev-detail-btn{display:block;text-align:center;background:var(--red);color:var(--white);padding:9px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;margin-top:12px;}
+/* COLUMN */
+.col-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.col-card{background:var(--white);border-radius:12px;overflow:hidden;border:1px solid #e0e4f0;transition:transform .2s;cursor:pointer;}
+.col-card:hover{transform:translateY(-4px);}
+.col-img-wrap{position:relative;}
+.col-img-wrap img{width:100%;height:135px;object-fit:cover;display:block;}
+.col-img-tag{position:absolute;top:9px;left:9px;background:var(--red);color:var(--white);font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px;}
+.col-body{padding:14px;}
+.col-date{font-size:11px;color:var(--muted);margin-bottom:5px;}
+.col-title{font-size:13px;font-weight:700;color:var(--navy);line-height:1.6;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.col-excerpt{font-size:11px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+/* FINAL CTA */
+.final-sec{background:linear-gradient(135deg,var(--navy) 0%,#1e3a8a 60%,#1a5c9a 100%);padding:76px 60px;position:relative;overflow:hidden;}
+.final-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%,rgba(212,43,43,0.18) 0%,transparent 60%);}
+.final-inner{max-width:960px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.final-eyebrow{display:inline-block;background:rgba(255,255,255,0.12);border-radius:100px;padding:5px 18px;font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,0.8);margin-bottom:18px;}
+.final-h2{font-size:36px;font-weight:900;color:var(--white);margin-bottom:12px;line-height:1.4;}
+.final-p{font-size:15px;color:rgba(255,255,255,0.75);margin-bottom:44px;}
+.final-cards{display:flex;gap:22px;}
+.f-card{flex:1;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:16px;padding:30px 26px;text-align:center;}
+.f-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 13px;border-radius:100px;letter-spacing:1px;margin-bottom:12px;}
+.f-badge.red{background:var(--red);color:var(--white);}
+.f-badge.green{background:#16a05e;color:var(--white);}
+.f-card h3{font-size:20px;font-weight:900;color:var(--white);margin-bottom:7px;}
+.f-card .fsub{font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:20px;}
+.f-card .fsub strong{color:var(--gold-light);font-weight:800;}
+.f-card .fsub strong.green{color:#4ade80;}
+.f-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;}
+.f-btn.white{background:var(--white);color:var(--navy);}
+.f-btn.outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.6);}
+/* FOOTER */
+footer{background:#080e20;padding:56px 60px 34px;}
+.ft-inner{max-width:1120px;margin:0 auto;}
+.ft-top{display:flex;justify-content:space-between;gap:40px;margin-bottom:44px;}
+.ft-logo .ft-tagline{font-size:12px;color:rgba(255,255,255,0.4);margin-top:10px;line-height:1.7;}
+.ft-nav{display:flex;gap:72px;}
+.ft-nav a{display:block;color:rgba(255,255,255,0.55);text-decoration:none;font-size:14px;margin-bottom:16px;}
+.ft-nav a:hover{color:var(--white);}
+.ft-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;}
+.ft-bottom a{color:rgba(255,255,255,0.3);font-size:12px;text-decoration:none;}
+.ft-copy{text-align:center;font-size:11px;color:rgba(255,255,255,0.22);margin-top:12px;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo-wrap">
+    <img src="logo.jpg" alt="住宅営業登竜門" class="logo-img">
+    <div class="logo-txt">
+      <span class="lt1">JYUTAKU EIGYO<br>TORYUMON</span>
+      <span class="lt2">Key to the Sales Success.</span>
+    </div>
+  </a>
+  <nav>
+    <a href="#about">サービス概要</a>
+    <a href="#features">特徴</a>
+    <a href="#events">イベント</a>
+    <a href="#column">コラム</a>
+    <a href="#contact" class="hd-btn">✉ お問い合わせ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">住宅営業 × 販売戦略</p>
+    <img src="logo.jpg" alt="住宅営業登竜門" style="width:260px;max-width:100%;border-radius:8px;margin-bottom:10px;">
+    <p class="hero-tagline">Key to the Sales Success.</p>
+    <p class="hero-copy">受注を伸ばすなら<br>住宅営業強化特化支援の<br><strong>住宅営業登竜門</strong></p>
+    <div style="background:rgba(0,0,0,0.22);border-radius:10px;padding:16px 18px;max-width:360px;margin-top:16px;">
+      <img src="../MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING" style="height:40px;margin-bottom:10px;display:block;">
+      <p style="font-size:13px;font-weight:700;color:#ffffff;margin-bottom:10px;">経営者様・マネージャーの方はこちらへ　販売強化プロジェクト</p>
+      <a href="/index.html" style="display:inline-block;background:#d4a017;color:#1a2a5e;padding:8px 18px;border-radius:5px;font-size:13px;font-weight:700;text-decoration:none;">MARKEY CONSULTINGへ →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="hero.png" alt="住宅街">
+    <div class="hero-right-overlay"></div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">190%</span><span class="stat-label">受注増 実績例</span></div>
+  <div class="stat-item"><span class="stat-num">350万円</span><span class="stat-label">価格UP対応実績</span></div>
+  <div class="stat-item"><span class="stat-num">3.2倍</span><span class="stat-label">平均アポ率向上</span></div>
+  <div class="stat-item"><span class="stat-num">90日</span><span class="stat-label">成果が出るまでの平均期間</span></div>
+</div>
+
+<section class="sec" id="about">
+  <div class="sec-inner">
+    <p class="sec-eyebrow">ABOUT</p>
+    <h2 class="sec-h2">住宅営業登竜門は、<br>住宅営業の<span class="red">「売れる人材」</span>を<br>最短距離で育てます。</h2>
+    <div class="sec-divider"></div>
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80" alt="コンサルティングの様子">
+      </div>
+      <div class="about-text">
+        <p class="about-eyebrow">ABOUT US</p>
+        <h2 class="about-h2">現場で使える営業スキルを<br><span class="hl">最短距離で習得。</span><br>売れる営業スタイルを確立。</h2>
+        <p class="about-p">住宅営業の現場を知り尽くしたコンサルタントが、あなたの<span class="em">売れない原因を特定</span>し、成果が出る営業スタイルをマンツーマンで指導します。</p>
+        <p class="about-p"><strong>その月のうちに、</strong>現場で使える営業スタイルを確立。インフレ時代でも売って売って売りまくる力を身につけます。</p>
+        <div class="about-cards">
+          <div class="ac"><div class="ac-num">完全<br>1on1</div><div class="ac-label">マンツーマン指導</div></div>
+          <div class="ac"><div class="ac-num">即日<br>実践</div><div class="ac-label">現場で使えるスキル</div></div>
+        </div>
+        <a href="#features" class="about-btn">サービスの詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec diff-sec">
+  <div class="sec-inner">
+    <div class="diff-h2-wrap"><span class="diff-headline">成果を生む３つの違い</span></div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80" alt="業績成果">
+        <div class="diff-card-body">
+          <p class="dc-num">1. 圧倒的な業績成果実績（業績改善コミット型支援）</p>
+          <h3>大手ハウスメーカーから地方工務店まで幅広い住宅会社で成果を出した実績</h3>
+          <p>インフレ・競合激化の時代でも売れる営業の仕組みを短期間で構築。業績不振企業のV字回復など、圧倒的多数の実績があります。</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="住宅業界出身者による指導">
+        <div class="diff-card-body">
+          <p class="dc-num">2. 住宅業界出身者による実践的な戦術・実行サポート</p>
+          <h3>元ハウスメーカーマネージャーが直接指導する実践型カリキュラム</h3>
+          <p>現場レベルの実践的な手法と営業コンサルティングで、即日使えるスキルを習得。</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="個社の特徴に合わせた戦略">
+        <div class="diff-card-body">
+          <p class="dc-num">3. 個社の特徴・独自性に合わせた営業戦略・育成支援</p>
+          <h3>他社の成功事例を真似るだけでなく、あなたの会社に合わせた指導</h3>
+          <p>自社の独自性を活かした営業戦略で、ブランド価値を高めながら受注を伸ばします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="features" style="background:var(--white);">
+  <div class="sec-inner">
+    <p class="sec-eyebrow">FEATURES</p>
+    <h2 class="sec-h2">住宅営業登竜門の<span class="red">特徴</span></h2>
+    <div class="sec-divider"></div>
+    <div style="display:flex;gap:52px;align-items:flex-start;">
+      <div style="width:240px;flex-shrink:0;">
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:20px;">マンツーマン × オーダーメイド × 伴走サポート。成果が変わる3つの理由。</p>
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80" alt="営業指導" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(26,42,94,0.15);">
+      </div>
+      <div class="feat-grid">
+        <div class="feat-item">
+          <div class="feat-num-wrap"><div class="feat-num">01</div><span class="feat-num-label">POINT</span></div>
+          <div class="feat-content">
+            <h3>少人数を<span class="hl">徹底的に</span>育成</h3>
+            <div class="checks">
+              <div class="ck"><div class="ck-icon">✓</div><span>最大3名までの<span class="em">少人数集中指導</span>で1日完結も可能</span></div>
+              <div class="ck"><div class="ck-icon">✓</div><span>受講後すぐに<span class="em">現場で使えるスキル</span>が身につく実践型</span></div>
+              <div class="ck"><div class="ck-icon">✓</div><span>初心者でも置いていかれない<span class="em">進度個別調整</span>システム</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num-wrap"><div class="feat-num">02</div><span class="feat-num-label">POINT</span></div>
+          <div class="feat-content">
+            <h3>課題ヒアリングで<span class="hl">完全オーダーメイド</span></h3>
+            <div class="checks">
+              <div class="ck"><div class="ck-icon">✓</div><span>事前ヒアリングで<span class="em">あなたの営業課題を可視化</span></span></div>
+              <div class="ck"><div class="ck-icon">✓</div><span>売上に直結するスキルを<span class="em">100%カスタマイズ</span>で指導</span></div>
+              <div class="ck"><div class="ck-icon">✓</div><span>住宅会社業態別の<span class="em">実践テンプレート</span>を多数用意</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num-wrap"><div class="feat-num">03</div><span class="feat-num-label">POINT</span></div>
+          <div class="feat-content">
+            <h3>現役コンサルタントによる<span class="hl">実践指導</span></h3>
+            <div class="checks">
+              <div class="ck"><div class="ck-icon">✓</div><span>住宅会社の現場を知る<span class="em">実績あるコンサルタント</span>が直接指導</span></div>
+              <div class="ck"><div class="ck-icon">✓</div><span>ロールプレイング中心の<span class="em">実践型カリキュラム</span>で即日使える</span></div>
+              <div class="ck"><div class="ck-icon">✓</div><span>受講後も安心の<span class="em">継続フォローアップ</span>付き</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ev-sec" id="events">
+  <div class="sec-inner">
+    <p style="font-size:14px;font-weight:700;letter-spacing:2px;color:var(--navy);margin-bottom:6px;">Event information</p>
+    <h2 class="sec-h2" style="text-align:left;margin-bottom:0;">イベント情報</h2>
+    <div class="sec-divider" style="margin:18px 0 36px 0;"></div>
+    <div class="ev-grid">
+      <div class="ev-card">
+        <div class="ev-card-top">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="セミナー">
+          <span class="ev-tag">近日開催予定</span>
+        </div>
+        <div class="ev-card-body">
+          <div class="ev-badges"><span class="ev-badge">オンライン</span><span class="ev-badge">無料</span></div>
+          <h3>インフレでも売って売って売りまくる！1年間で350万円価格UPでも受注190%増！価格高騰時代に売れる営業法則</h3>
+          <p>価格高騰・競合激化の時代に選ばれる住宅会社の戦略を月2回お届けします。</p>
+        </div>
+        <div class="ev-card-foot"><a href="#" class="ev-detail-btn">詳細を見る</a></div>
+      </div>
+      <div class="ev-card featured">
+        <div class="ev-card-top" style="padding-top:31px;">
+          <div class="ev-status"><span class="ev-status-dot"></span>申込み受付中</div>
+          <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=600&q=80" alt="受付中セミナー">
+        </div>
+        <div class="ev-card-body">
+          <div class="ev-badges"><span class="ev-badge new">NEW</span><span class="ev-badge">オンライン</span><span class="ev-badge">無料</span></div>
+          <h3>ナフサ特需で過去最高受注！8月までの最大の売り時を逃さないための販売戦略セミナー</h3>
+          <p>ナフサ価格下落による特需期に最大受注を実現するための具体的な戦略と行動計画を解説。</p>
+        </div>
+        <div class="ev-card-foot"><a href="#" class="ev-detail-btn">申し込む →</a></div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-card-top">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="有料セミナー">
+          <span class="ev-tag red-tag">有料</span>
+        </div>
+        <div class="ev-card-body">
+          <div class="ev-badges"><span class="ev-badge">オンライン</span><span class="ev-badge" style="background:#fff0f0;color:var(--red);border-color:#f0c0c0;">有料</span></div>
+          <h3>契約率を劇的に上げる！初回接客から受注までの完全ロードマップ</h3>
+          <p>初回来場から契約までの各ステップを体系化。トップ営業マンの手法を完全公開。</p>
+        </div>
+        <div class="ev-card-foot"><a href="#" class="ev-detail-btn">詳細を見る</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="column">
+  <div class="sec-inner">
+    <p class="sec-eyebrow">COLUMN</p>
+    <h2 class="sec-h2">住宅営業登竜門の<span class="red">コラム</span></h2>
+    <div class="sec-divider"></div>
+    <div class="col-grid">
+      <div class="col-card">
+        <div class="col-img-wrap">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="クロージング">
+          <span class="col-img-tag">営業スキル</span>
+        </div>
+        <div class="col-body">
+          <p class="col-date">2026.06.01</p>
+          <p class="col-title">迷っているお客様を動かす！住宅営業クロージングの鉄則5選</p>
+          <p class="col-excerpt">「考えさせてください」と言われたとき、どう返せばいいか。成約率を上げる実践的なテクニックを…</p>
+        </div>
+      </div>
+      <div class="col-card">
+        <div class="col-img-wrap">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="初回接客">
+          <span class="col-img-tag">初回接客</span>
+        </div>
+        <div class="col-body">
+          <p class="col-date">2026.05.25</p>
+          <p class="col-title">住宅展示場の初回接客｜来場者の心をつかむトーク術</p>
+          <p class="col-excerpt">初回接客の出来が契約率を大きく左右する。お客様の本音を引き出すヒアリングのコツを解説…</p>
+        </div>
+      </div>
+      <div class="col-card">
+        <div class="col-img-wrap">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80" alt="紹介営業">
+          <span class="col-img-tag">紹介営業</span>
+        </div>
+        <div class="col-body">
+          <p class="col-date">2026.05.18</p>
+          <p class="col-title">紹介が途切れない！住宅営業のアフターフォロー戦略</p>
+          <p class="col-excerpt">新規集客コストを下げながら安定した受注を作るには、OBさんとの関係構築が鍵…</p>
+        </div>
+      </div>
+      <div class="col-card">
+        <div class="col-img-wrap">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&q=80" alt="価格交渉">
+          <span class="col-img-tag">価格交渉</span>
+        </div>
+        <div class="col-body">
+          <p class="col-date">2026.05.10</p>
+          <p class="col-title">「もう少し安くして」への正しい対応｜価値を伝える価格交渉術</p>
+          <p class="col-excerpt">値引き要求は価値が伝わっていないサイン。正面から向き合い信頼関係を深める方法…</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-sec" id="contact">
+  <div class="final-inner">
+    <span class="final-eyebrow">FINAL CTA</span>
+    <h2 class="final-h2">住宅営業登竜門で、<br>営業の可能性を解き放つ。</h2>
+    <p class="final-p">サービス資料のダウンロードや、営業塾のご相談など、お気軽にお問い合わせください。</p>
+    <div class="final-cards">
+      <div class="f-card">
+        <span class="f-badge red">DOCUMENT</span>
+        <h3>サービス資料をダウンロード</h3>
+        <p class="fsub"><strong>3分</strong>でわかる、営業塾の全貌。</p>
+        <a href="#" class="f-btn white">📄 資料をダウンロード →</a>
+      </div>
+      <div class="f-card">
+        <span class="f-badge green">CONTACT</span>
+        <h3>無料で相談する</h3>
+        <p class="fsub"><strong class="green">30分</strong>で見つかる、あなたにベストな指導。</p>
+        <a href="#" class="f-btn outline">📅 無料相談を予約する →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-logo">
+        <img src="logo.jpg" alt="住宅営業登竜門" style="height:64px;border-radius:6px;">
+        <p class="ft-tagline">住宅営業のプロを最短距離で育てる営業塾<br><br>markey-consulting.com</p>
+      </div>
+      <div class="ft-nav">
+        <div>
+          <a href="#">ホーム</a>
+          <a href="#about">サービス概要</a>
+          <a href="#features">特徴</a>
+          <a href="#events">イベント</a>
+        </div>
+        <div>
+          <a href="#column">コラム</a>
+          <a href="#">講師紹介</a>
+          <a href="#contact">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+      <a href="#">利用規約</a>
+    </div>
+    <div style="text-align:center;padding:32px 0 16px;border-top:1px solid rgba(255,255,255,0.1);margin-top:24px;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:12px;">運営会社</p>
+      <a href="/" style="display:inline-block;">
+        <img src="../MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING" style="height:48px;">
+      </a>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;"><a href="/" style="color:rgba(255,255,255,0.5);text-decoration:none;">markey-consulting.com →</a></p>
+    </div>
+    <p class="ft-copy">© 2026 MARKEY CONSULTING. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
