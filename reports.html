@@ -208,6 +208,71 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
 .footer-copy{text-align:center;font-size:11px;color:rgba(255,255,255,.18);margin-top:12px;}
 @media(max-width:640px){.footer-top{flex-direction:column;gap:32px;}.footer-nav{gap:32px;}section{padding:64px 0;}}
 @media(max-width:480px){.container{padding:0 20px;}.latest-card-head{padding:20px;}.latest-card-body{padding:20px;}.archive-card-head{padding:18px 20px;}.archive-card-body{padding:0 20px 20px;padding-top:18px;}}
+
+/* === フローティング メルマガカード === */
+#mm-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 8000;
+  background: #fff; border-radius: 16px; width: 260px;
+  padding: 20px 20px 16px;
+  box-shadow: 0 8px 40px rgba(27,37,64,0.30), 0 2px 8px rgba(27,37,64,0.12);
+  animation: mmFloat 3.5s ease-in-out infinite;
+}
+@keyframes mmFloat {
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-7px); }
+}
+#mm-float-close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: none; font-size: 18px;
+  line-height: 1; cursor: pointer; color: var(--mist); padding: 2px 4px;
+}
+#mm-float-close:hover { color: var(--ink); }
+.mm-float-label {
+  font-size: 10px; letter-spacing: .1em; color: var(--gold);
+  text-transform: uppercase; font-weight: 700; margin-bottom: 6px;
+}
+.mm-float-title {
+  font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4;
+}
+.mm-float-body {
+  font-size: 11.5px; color: #555; line-height: 1.75; margin-bottom: 14px;
+}
+.mm-float-btn {
+  display: block; width: 100%; text-align: center;
+  background: var(--gold); color: var(--navy);
+  border: none; border-radius: 8px; padding: 11px 0;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.mm-float-btn:hover { background: var(--gold-deep); transform: translateY(-1px); }
+
+/* === メルマガ モーダル（reports.html用） === */
+.mm-modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6); z-index: 9000;
+  align-items: center; justify-content: center;
+}
+.mm-modal-overlay.is-open { display: flex; }
+.mm-modal-box {
+  position: relative; background: #fff; border-radius: 10px;
+  width: 90%; max-width: 720px; max-height: 92vh;
+  overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.mm-modal-close {
+  position: absolute; top: 10px; right: 14px;
+  background: none; border: none; font-size: 26px;
+  line-height: 1; cursor: pointer; color: #444; z-index: 1;
+}
+.mm-modal-box iframe { width: 100%; height: 700px; border: none; flex-shrink: 0; }
+
+@media(max-width:768px){
+  #mm-float { width: 180px; padding: 14px 14px 12px; bottom: 14px; right: 10px; }
+  .mm-float-body { display: none; }
+  .mm-float-title { font-size: 12px; margin-bottom: 10px; }
+  .mm-float-btn { font-size: 13px; padding: 9px 0; }
+  .mm-modal-box iframe { height: 580px; }
+}
 </style>
 </head>
 <body>
@@ -579,6 +644,45 @@ async function loadReports() {
 }
 
 loadReports();
+</script>
+
+<!-- フローティング：メルマガ訴求カード -->
+<div id="mm-float">
+  <button id="mm-float-close" aria-label="閉じる">&times;</button>
+  <p class="mm-float-label">Mail Magazine</p>
+  <p class="mm-float-title">無料メールマガジン</p>
+  <p class="mm-float-body">週2回の無料メールマガジンで最新レポート・最新イベント情報・営業コラムなどをメールで直接お届けしています。お申込みは簡単、30秒で入力完了。受注向上にお役立てください。</p>
+  <button class="mm-float-btn" id="mm-float-open">申し込む</button>
+</div>
+
+<!-- モーダル：メルマガ登録 -->
+<div id="modal-mailmag" class="mm-modal-overlay" role="dialog" aria-modal="true">
+  <div class="mm-modal-box">
+    <button class="mm-modal-close" aria-label="閉じる">&times;</button>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqK0dkD2zQEzFy6As_mxheq9FKkhVzYx7P3AIhH8uPrEWsSw/viewform?embedded=true" title="メルマガ登録フォーム" loading="lazy"></iframe>
+  </div>
+</div>
+
+<script>
+(function(){
+  var floatCard = document.getElementById("mm-float");
+  var modal = document.getElementById("modal-mailmag");
+  function openModal(){
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal(){
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+  document.getElementById("mm-float-open").addEventListener("click", openModal);
+  document.getElementById("mm-float-close").addEventListener("click", function(){
+    floatCard.style.display = "none";
+  });
+  modal.querySelector(".mm-modal-close").addEventListener("click", closeModal);
+  modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+})();
 </script>
 </body>
 </html>
