@@ -598,6 +598,24 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   /* buttons a touch smaller */
   .btn{padding:14px 26px;font-size:14px;}
 }
+
+/* === X アイコンリンク === */
+.nav-x-link { display:inline-flex; align-items:center; color:var(--ink); opacity:0.65; text-decoration:none; transition:opacity .15s,color .15s; line-height:1; }
+.nav-x-link:hover { opacity:1; color:#000; }
+
+/* ===== X TIMELINE ===== */
+.x-timeline-section{padding:96px 0;}
+.x-lead{text-align:center;font-size:16px;color:var(--mist);margin:-28px 0 40px;line-height:1.8;}
+.x-timeline-wrap{max-width:540px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(27,37,64,.12);}
+.x-timeline-wrap .twitter-timeline{display:block;}
+.x-follow-wrap{text-align:center;margin-top:32px;}
+.btn-x-follow{display:inline-flex;align-items:center;gap:9px;background:#000;color:#fff;padding:13px 30px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;transition:background .15s,transform .15s;}
+.btn-x-follow:hover{background:#333;transform:translateY(-2px);}
+@media(max-width:768px){
+  .x-timeline-section{padding:64px 0;}
+  .x-timeline-wrap{max-width:100%;}
+  .btn-x-follow{font-size:14px;padding:11px 22px;}
+}
 </style>
 </head>
 <body>
@@ -632,6 +650,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
         <a href="#pricing">料金プラン</a>
         <a href="#faq">よくある質問</a>
         <a href="corporate.html">法人の方へ</a>
+        <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="nav-x-link"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
       </div>
       <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-sm nav-cta">開始のお知らせを受け取る</a>
     </nav>
@@ -1066,6 +1085,30 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   </div>
 </section>
 
+<!-- ===== X TIMELINE ===== -->
+<section class="bg-cream x-timeline-section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">X / TWITTER</span>
+      <h2 class="section-title">X（旧Twitter）投稿</h2>
+    </div>
+    <p class="x-lead reveal">即日営業力UPできる住宅営業虎の巻を発信しています</p>
+    <div class="x-timeline-wrap reveal">
+      <a class="twitter-timeline"
+         data-height="600"
+         data-theme="light"
+         href="https://twitter.com/makixx999?ref_src=twsrc%5Etfw">Tweets by makixx999</a>
+    </div>
+    <div class="x-follow-wrap reveal">
+      <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" class="btn-x-follow" aria-label="公式X（住宅営業登竜門）をフォローする">
+        
+<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Xでフォローする
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FINAL CTA ===== -->
 <section class="bg-navy">
   <div class="container">
@@ -1145,5 +1188,6 @@ if('IntersectionObserver' in window){
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
 }
 </script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
