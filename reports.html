@@ -209,6 +209,12 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
 @media(max-width:640px){.footer-top{flex-direction:column;gap:32px;}.footer-nav{gap:32px;}section{padding:64px 0;}}
 @media(max-width:480px){.container{padding:0 20px;}.latest-card-head{padding:20px;}.latest-card-body{padding:20px;}.archive-card-head{padding:18px 20px;}.archive-card-body{padding:0 20px 20px;padding-top:18px;}}
 
+/* === X アイコンリンク === */
+.nav-x-link { display:inline-flex; align-items:center; color:var(--ink); opacity:0.65; text-decoration:none; transition:opacity .15s,color .15s; line-height:1; }
+.nav-x-link:hover { opacity:1; color:#000; }
+.footer-x-link { display:inline-flex; align-items:center; color:rgba(255,255,255,.45); text-decoration:none; transition:color .15s; line-height:1; margin-left:20px; }
+.footer-x-link:hover { color:#fff; }
+
 /* === フローティング メルマガカード === */
 #mm-float {
   position: fixed; bottom: 24px; right: 24px; z-index: 8000;
@@ -289,6 +295,7 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
         <a href="index.html#services">サービス</a>
         <a href="toryumon/index.html">住宅営業登竜門</a>
         <a href="reports.html" class="active">市場レポート</a>
+        <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="nav-x-link"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
       </div>
       <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
     </nav>
@@ -400,6 +407,7 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
     <div class="footer-bottom">
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="#">特定商取引法に基づく表記</a>
+      <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="footer-x-link"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
     </div>
     <p class="footer-copy">© 2026 MARKEY CONSULTING. All rights reserved.</p>
   </div>

@@ -893,6 +893,10 @@
     .mailmag-iframe-wrap iframe { height: 420px; }
   }
 
+/* === X アイコンリンク（ナビ） === */
+.nav-x-link { display:inline-flex; align-items:center; color:#222; opacity:0.65; text-decoration:none; transition:opacity .15s,color .15s; line-height:1; }
+.nav-x-link:hover { opacity:1; color:#000; }
+
 /* === モーダル共通 === */
 .modal-overlay {
   display: none; position: fixed; inset: 0;
@@ -934,6 +938,7 @@
     <a href="training.html">研修内容</a>
     <a href="#news">新着情報</a>
     <a href="reports.html">市場レポート</a>
+    <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="nav-x-link"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
     <a href="#contact" class="contact-btn">✉ お問い合わせ</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="メニュー">
@@ -953,6 +958,7 @@
     <a href="training.html" onclick="toggleMenu()">研修内容</a>
     <a href="#news" onclick="toggleMenu()">新着情報</a>
     <a href="reports.html" onclick="toggleMenu()">市場レポート</a>
+    <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="nav-x-link" style="padding:8px 0;display:flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span style="font-size:14px;font-weight:600;">公式X（住宅営業登竜門）</span></a>
     <a href="#contact" onclick="toggleMenu()" class="mobile-contact-btn">✉ お問い合わせ</a>
   </div>
 </div>
@@ -1420,7 +1426,7 @@ fetch('https://mk-lab-1111.github.io/markey-report/data/archive.json')
     <span class="copy">©2024 MARKEY CONSULTING</span>
     <a href="privacy.html" class="privacy">プライバシーポリシー</a>
     <div class="footer-social">
-      <a href="#">𝕏</a>
+      <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="footer-x-link"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
       <a href="#">📷</a>
     </div>
   </div>
