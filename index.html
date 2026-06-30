@@ -892,6 +892,33 @@
     .mailmag-title { font-size: 24px; }
     .mailmag-iframe-wrap iframe { height: 420px; }
   }
+
+/* === モーダル共通 === */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6); z-index: 9000;
+  align-items: center; justify-content: center;
+}
+.modal-overlay.is-open { display: flex; }
+.modal-box {
+  position: relative; background: #fff; border-radius: 8px;
+  width: 90%; max-width: 700px; max-height: 90vh;
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.modal-close {
+  position: absolute; top: 10px; right: 14px;
+  background: none; border: none; font-size: 24px;
+  line-height: 1; cursor: pointer; color: #333; z-index: 1;
+}
+.modal-box iframe {
+  width: 100%; height: 700px; border: none; flex-shrink: 0;
+}
+.modal-fallback {
+  text-align: center; padding: 12px 0 16px;
+  font-size: 14px; color: #555;
+}
+.modal-fallback a { color: #e8302a; }
+.hero-mailmag-btn { cursor: pointer; border: none; }
 </style>
 </head>
 <body>
@@ -1349,18 +1376,6 @@ fetch('https://mk-lab-1111.github.io/markey-report/data/archive.json')
 </section>
 
 
-<!-- お問い合わせ -->
-<section class="fade-up section-contact" id="contact">
-  <h2 class="contact-title">お問い合わせ</h2>
-  <p class="contact-desc">ご質問・ご相談はお気軽にお問い合わせください。</p>
-  <div style="max-width:640px; margin:0 auto;">
-    <iframe src="https://forms.gle/sCtQdtUrAbU5heaE6?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:8px;">読み込んでいます…</iframe>
-  </div>
-  <div style="text-align:center; margin-top:24px;">
-    <a href="https://forms.gle/sCtQdtUrAbU5heaE6" target="_blank" class="btn-red" style="display:inline-flex;">✉ フォームが表示されない場合はこちら</a>
-  </div>
-</section>
-
 <!-- メルマガ登録 -->
 <section id="mailmag-section" class="mailmag-section">
   <span class="mailmag-label">Mail Magazine｜メールマガジン</span>
@@ -1370,8 +1385,17 @@ fetch('https://mk-lab-1111.github.io/markey-report/data/archive.json')
     インフレ時代に売れる営業戦略・最新トレンド・<br>
     セミナー先行案内をお届けします
   </p>
-  <div class="mailmag-iframe-wrap">
-    <iframe width="540" height="305" src="https://2ebd54d8.sibforms.com/serve/MUIFAAstVVeNYWnRjho9805UU49u0NdWl4IYR0S7uX5fA8aQQ1eGuQHtCkCrpWFJdhqjPvlLAoLb1YB9HpQrWnplOYGZqLdiQ6euCW3PKiHCHnzXGHAme0_aW934p0Wt3Ym3FcZ8jpPJK8P9C5heEUe34FKo0nrWLBanBxvQjgaSD5lowLU2yxd9jTPfUhEbVyMn-7rrcRumYukxZg==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  <div style="text-align:center; margin-top:32px;">
+    <button class="hero-mailmag-btn modal-open-btn" data-modal="modal-mailmag">✉ 無料メルマガに登録する</button>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="fade-up section-contact" id="contact">
+  <h2 class="contact-title">お問い合わせ</h2>
+  <p class="contact-desc">ご質問・ご相談はお気軽にお問い合わせください。</p>
+  <div style="text-align:center; margin-top:32px;">
+    <button class="btn-red modal-open-btn" data-modal="modal-contact">✉ お問い合わせはこちら</button>
   </div>
 </section>
 
@@ -1445,6 +1469,50 @@ const countObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
+</script>
+
+<!-- モーダル：メルマガ登録 -->
+<div id="modal-mailmag" class="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="閉じる">&times;</button>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqK0dkD2zQEzFy6As_mxheq9FKkhVzYx7P3AIhH8uPrEWsSw/viewform?embedded=true" title="メルマガ登録フォーム" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- モーダル：お問い合わせ -->
+<div id="modal-contact" class="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="閉じる">&times;</button>
+    <iframe src="https://forms.gle/sCtQdtUrAbU5heaE6?embedded=true" title="お問い合わせフォーム" loading="lazy"></iframe>
+    <div class="modal-fallback"><a href="https://forms.gle/sCtQdtUrAbU5heaE6" target="_blank" rel="noopener">✉ フォームが表示されない場合はこちら</a></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  function openModal(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal(m) {
+    m.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+  document.querySelectorAll(".modal-open-btn").forEach(function(btn) {
+    btn.addEventListener("click", function() { openModal(btn.dataset.modal); });
+  });
+  document.querySelectorAll(".modal-overlay").forEach(function(overlay) {
+    overlay.querySelector(".modal-close").addEventListener("click", function() { closeModal(overlay); });
+    overlay.addEventListener("click", function(e) { if (e.target === overlay) closeModal(overlay); });
+  });
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".modal-overlay.is-open").forEach(function(m) { closeModal(m); });
+    }
+  });
+})();
 </script>
 </body>
 </html>
