@@ -606,14 +606,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
 /* ===== X TIMELINE ===== */
 .x-timeline-section{padding:96px 0;}
 .x-lead{text-align:center;font-size:16px;color:var(--mist);margin:-28px 0 40px;line-height:1.8;}
-.x-timeline-wrap{max-width:540px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(27,37,64,.12);}
-.x-timeline-wrap .twitter-timeline{display:block;}
+.x-post-card{max-width:500px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(27,37,64,.12);display:block;text-decoration:none;transition:box-shadow .2s,transform .2s;}
+.x-post-card:hover{box-shadow:0 10px 44px rgba(27,37,64,.24);transform:translateY(-4px);}
+.x-post-card img{width:100%;height:auto;display:block;}
 .x-follow-wrap{text-align:center;margin-top:32px;}
 .btn-x-follow{display:inline-flex;align-items:center;gap:9px;background:#000;color:#fff;padding:13px 30px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;transition:background .15s,transform .15s;}
 .btn-x-follow:hover{background:#333;transform:translateY(-2px);}
 @media(max-width:768px){
   .x-timeline-section{padding:64px 0;}
-  .x-timeline-wrap{max-width:100%;}
+  .x-post-card{max-width:100%;}
   .btn-x-follow{font-size:14px;padding:11px 22px;}
 }
 </style>
@@ -1093,11 +1094,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
       <h2 class="section-title">X（旧Twitter）投稿</h2>
     </div>
     <p class="x-lead reveal">即日営業力UPできる住宅営業虎の巻を発信しています</p>
-    <div class="x-timeline-wrap reveal">
-      <a class="twitter-timeline"
-         data-height="600"
-         data-theme="light"
-         href="https://twitter.com/makixx999?ref_src=twsrc%5Etfw">Tweets by makixx999</a>
+    <div class="x-post-img-wrap reveal">
+      <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer"
+         class="x-post-card" aria-label="住宅営業登竜門の最新X投稿を見る">
+        <img src="xpost-feature.png" alt="住宅営業登竜門の最新X投稿" loading="lazy">
+      </a>
     </div>
     <div class="x-follow-wrap reveal">
       <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" class="btn-x-follow" aria-label="公式X（住宅営業登竜門）をフォローする">
@@ -1188,6 +1189,5 @@ if('IntersectionObserver' in window){
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
 }
 </script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
