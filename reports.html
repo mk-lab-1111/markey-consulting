@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>住宅市場レポート | MARKEY CONSULTING</title>
+<meta name="description" content="住宅市場の最新動向を週2回自動配信。金利・建材・競合・来場動向など、住宅営業に役立つ市場レポートをまとめてご覧いただけます。">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crimson:#C2273F;--crimson-dark:#9A1B30;--crimson-deep:#6E1424;--crimson-soft:#FBEAEC;
+  --navy:#1B2540;--navy-soft:#34406A;--navy-deep:#0E1626;
+  --gold:#C49A2E;--gold-light:#E9CE82;--gold-deep:#9C7A1F;
+  --cream:#FBF7F0;--paper:#FFFFFF;--ink:#23262E;--mist:#83899B;--line:#EAE2D2;
+  --radius:20px;--shadow:0 18px 50px -22px rgba(27,37,64,0.28);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
+  color:var(--ink);background:var(--cream);line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1060px;margin:0 auto;padding:0 32px;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+
+h1,h2,h3,h4{font-family:'Shippori Mincho',serif;color:var(--navy);font-weight:700;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.18em;
+  color:var(--crimson);text-transform:uppercase;margin-bottom:14px;
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:100px;font-size:14px;font-weight:700;
+  text-decoration:none;transition:transform .18s,box-shadow .18s;white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(120deg,var(--crimson),var(--crimson-dark));color:#fff;box-shadow:0 12px 28px -12px rgba(194,39,63,.5);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+.btn-outline:hover{background:var(--navy);color:#fff;}
+.btn-on-navy{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.35);}
+.btn-on-navy:hover{background:rgba(255,255,255,.16);transform:translateY(-2px);}
+.btn-sm{padding:10px 20px;font-size:13px;}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(251,247,240,.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:1060px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-img{height:48px;width:auto;display:block;}
+nav.main-nav{display:flex;align-items:center;gap:28px;}
+nav.main-nav a{font-size:13.5px;font-weight:600;text-decoration:none;color:var(--ink);transition:color .15s;}
+nav.main-nav a:hover{color:var(--crimson);}
+nav.main-nav a.active{color:var(--crimson);}
+.nav-links{display:flex;align-items:center;}
+.nav-links a{padding:0 16px;position:relative;}
+.nav-links a:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:13px;background:var(--line);}
+@media(max-width:880px){.nav-links{display:none;}}
+@media(max-width:480px){.nav-inner{padding:0 20px;}.btn-sm{padding:9px 14px;font-size:12px;}}
+
+/* ===== PAGE HERO ===== */
+.page-hero{
+  padding:120px 0 72px;
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 80% 30%,rgba(194,39,63,.18) 0%,transparent 60%);
+}
+.page-hero .container{position:relative;z-index:2;}
+.page-hero .eyebrow{color:var(--gold-light);}
+.page-hero h1{font-size:clamp(30px,4vw,46px);color:#fff;line-height:1.4;margin-bottom:16px;}
+.page-hero h1 .accent{color:var(--gold-light);}
+.page-hero .hero-lead{font-size:15px;color:rgba(255,255,255,.72);max-width:580px;line-height:1.9;}
+.hero-meta{display:flex;align-items:center;gap:18px;margin-top:28px;flex-wrap:wrap;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:7px 16px;
+  font-size:12.5px;color:rgba(255,255,255,.85);font-weight:600;
+}
+.hero-badge .dot{width:7px;height:7px;background:var(--gold-light);border-radius:50%;animation:pulse-dot 2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.85);}}
+
+/* ===== WAVE ===== */
+.wave{display:block;width:100%;line-height:0;}
+.wave svg{display:block;width:100%;}
+
+/* ===== LOADING / STATES ===== */
+.state-box{padding:80px 32px;text-align:center;}
+.spinner{
+  width:44px;height:44px;border:3px solid var(--line);
+  border-top-color:var(--crimson);border-radius:50%;
+  animation:spin .8s linear infinite;margin:0 auto 20px;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+.state-box p{color:var(--mist);font-size:15px;}
+.state-box .state-icon{font-size:48px;margin-bottom:16px;}
+.state-box h3{font-size:20px;color:var(--navy);margin-bottom:10px;}
+
+/* ===== LATEST REPORT ===== */
+.latest-section{padding:72px 0 56px;background:var(--paper);}
+.latest-label{margin-bottom:36px;}
+.latest-card{
+  background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+}
+.latest-card-head{
+  background:linear-gradient(120deg,var(--crimson-deep) 0%,var(--crimson) 100%);
+  padding:32px 36px;
+}
+.latest-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+.latest-stamp{font-size:13px;color:rgba(255,255,255,.65);font-family:'Noto Sans JP',sans-serif;letter-spacing:.05em;}
+.latest-badge{
+  background:rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:700;
+  padding:3px 12px;border-radius:100px;letter-spacing:.1em;
+}
+.latest-theme{font-size:clamp(20px,3vw,28px);color:#fff;line-height:1.5;margin-bottom:0;}
+.latest-card-body{padding:36px 36px;}
+@media(max-width:640px){.latest-card-head{padding:24px 22px;}.latest-card-body{padding:24px 22px;}}
+
+/* ===== REPORT CONTENT (parsed) ===== */
+.r-section{
+  font-size:18px;font-weight:700;color:var(--crimson);
+  border-left:3px solid var(--crimson);padding-left:14px;
+  margin:32px 0 16px;line-height:1.5;
+}
+.r-section:first-child{margin-top:0;}
+.r-subsection{font-size:15.5px;font-weight:700;color:var(--navy);margin:20px 0 8px;}
+.r-body{font-size:14.5px;color:var(--ink);line-height:1.9;margin-bottom:14px;white-space:pre-wrap;}
+.r-closing{
+  margin-top:32px;padding:20px 24px;border-radius:12px;
+  background:var(--crimson-soft);border-left:4px solid var(--crimson);
+}
+.r-closing p{font-size:13.5px;color:var(--crimson-deep);line-height:1.85;white-space:pre-wrap;}
+
+/* ===== ANCHOR LINK ===== */
+.anchor-link{
+  display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--mist);
+  text-decoration:none;border:1px solid var(--line);border-radius:100px;
+  padding:4px 12px;margin-top:24px;transition:color .15s,border-color .15s;
+}
+.anchor-link:hover{color:var(--crimson);border-color:var(--crimson);}
+
+/* ===== ARCHIVE ===== */
+.archive-section{padding:64px 0 88px;background:var(--cream);}
+.archive-grid{display:flex;flex-direction:column;gap:18px;}
+.archive-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:box-shadow .2s;
+  scroll-margin-top:90px;
+}
+.archive-card:hover{box-shadow:0 8px 32px -16px rgba(27,37,64,.3);}
+.archive-card-head{
+  padding:24px 28px;display:flex;align-items:flex-start;justify-content:space-between;
+  gap:20px;cursor:pointer;user-select:none;
+}
+.archive-card-head:focus-visible{outline:2px solid var(--crimson);outline-offset:-2px;}
+.arch-info{flex:1;min-width:0;}
+.arch-date{font-size:12px;color:var(--mist);margin-bottom:6px;font-weight:600;letter-spacing:.05em;}
+.arch-theme{font-size:17px;color:var(--navy);line-height:1.5;margin-bottom:8px;}
+.arch-preview{
+  font-size:13.5px;color:var(--mist);line-height:1.75;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.arch-toggle{
+  flex-shrink:0;width:36px;height:36px;border-radius:50%;
+  background:var(--crimson-soft);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .18s,transform .25s;color:var(--crimson);font-size:14px;font-weight:700;
+  margin-top:4px;
+}
+.archive-card.open .arch-toggle{transform:rotate(180deg);background:var(--crimson);color:#fff;}
+.archive-card-body{
+  display:none;padding:0 28px 28px;border-top:1px solid var(--line);
+  padding-top:24px;
+}
+.archive-card.open .archive-card-body{display:block;}
+.archive-card-body .anchor-link{margin-top:20px;}
+
+/* ===== SECTION COMMON ===== */
+.sec-head{margin-bottom:40px;}
+.sec-head h2{font-size:clamp(24px,3vw,34px);line-height:1.5;margin-bottom:6px;}
+.sec-head p{font-size:14px;color:var(--mist);}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-deep);padding:52px 0 32px;}
+.footer-top{display:flex;gap:48px;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;}
+.footer-logo img{height:56px;border-radius:6px;margin-bottom:10px;}
+.footer-logo p{font-size:12px;color:rgba(255,255,255,.38);line-height:1.7;}
+.footer-nav{display:flex;gap:56px;}
+.footer-nav a{display:block;color:rgba(255,255,255,.5);font-size:13.5px;text-decoration:none;margin-bottom:13px;transition:color .15s;}
+.footer-nav a:hover{color:#fff;}
+.footer-nav a.current{color:var(--gold-light);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.footer-bottom a{color:rgba(255,255,255,.28);font-size:12px;text-decoration:none;}
+.footer-copy{text-align:center;font-size:11px;color:rgba(255,255,255,.18);margin-top:12px;}
+@media(max-width:640px){.footer-top{flex-direction:column;gap:32px;}.footer-nav{gap:32px;}section{padding:64px 0;}}
+@media(max-width:480px){.container{padding:0 20px;}.latest-card-head{padding:20px;}.latest-card-body{padding:20px;}.archive-card-head{padding:18px 20px;}.archive-card-body{padding:0 20px 20px;padding-top:18px;}}
+
+/* === X アイコンリンク === */
+.nav-x-link { display:inline-flex; align-items:center; color:var(--ink); opacity:0.65; text-decoration:none; transition:opacity .15s,color .15s; line-height:1; }
+.nav-x-link:hover { opacity:1; color:#000; }
+.footer-x-link { display:inline-flex; align-items:center; color:rgba(255,255,255,.45); text-decoration:none; transition:color .15s; line-height:1; margin-left:20px; }
+.footer-x-link:hover { color:#fff; }
+
+/* === フローティング メルマガカード === */
+#mm-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 8000;
+  background: #fff; border-radius: 16px; width: 260px;
+  padding: 20px 20px 16px;
+  box-shadow: 0 8px 40px rgba(27,37,64,0.30), 0 2px 8px rgba(27,37,64,0.12);
+  animation: mmFloat 3.5s ease-in-out infinite;
+}
+@keyframes mmFloat {
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-7px); }
+}
+#mm-float-close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: none; font-size: 18px;
+  line-height: 1; cursor: pointer; color: var(--mist); padding: 2px 4px;
+}
+#mm-float-close:hover { color: var(--ink); }
+.mm-float-label {
+  font-size: 10px; letter-spacing: .1em; color: var(--gold);
+  text-transform: uppercase; font-weight: 700; margin-bottom: 6px;
+}
+.mm-float-title {
+  font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4;
+}
+.mm-float-body {
+  font-size: 11.5px; color: #555; line-height: 1.75; margin-bottom: 14px;
+}
+.mm-float-btn {
+  display: block; width: 100%; text-align: center;
+  background: var(--gold); color: var(--navy);
+  border: none; border-radius: 8px; padding: 11px 0;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.mm-float-btn:hover { background: var(--gold-deep); transform: translateY(-1px); }
+
+/* === メルマガ モーダル（reports.html用） === */
+.mm-modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6); z-index: 9000;
+  align-items: center; justify-content: center;
+}
+.mm-modal-overlay.is-open { display: flex; }
+.mm-modal-box {
+  position: relative; background: #fff; border-radius: 10px;
+  width: 90%; max-width: 720px; max-height: 92vh;
+  overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.mm-modal-close {
+  position: absolute; top: 10px; right: 14px;
+  background: none; border: none; font-size: 26px;
+  line-height: 1; cursor: pointer; color: #444; z-index: 1;
+}
+.mm-modal-box iframe { width: 100%; height: 700px; border: none; flex-shrink: 0; }
+
+@media(max-width:768px){
+  #mm-float { width: 180px; padding: 14px 14px 12px; bottom: 14px; right: 10px; }
+  .mm-float-body { display: none; }
+  .mm-float-title { font-size: 12px; margin-bottom: 10px; }
+  .mm-float-btn { font-size: 13px; padding: 9px 0; }
+  .mm-modal-box iframe { height: 580px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING" class="logo-img">
+    </a>
+    <nav class="main-nav">
+      <div class="nav-links">
+        <a href="index.html">ホーム</a>
+        <a href="index.html#services">サービス</a>
+        <a href="toryumon/index.html">住宅営業登竜門</a>
+        <a href="reports.html" class="active">市場レポート</a>
+        <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="nav-x-link"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
+      <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">MARKET REPORT</p>
+    <h1>住宅市場<span class="accent">レポート</span></h1>
+    <p class="hero-lead">
+      金利・建材・競合・来場動向など、住宅営業に役立つ市場情報を週2回（月・木）自動配信しています。
+      最新レポートから過去のアーカイブまで、こちらでまとめてご覧いただけます。
+    </p>
+    <div class="hero-meta">
+      <span class="hero-badge"><span class="dot"></span>週2回 自動更新（月・木 20:00）</span>
+      <span class="hero-badge">最新30件を保存</span>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--navy-deep);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,32 C240,56 480,0 720,24 C960,48 1200,8 1440,28 L1440,48 L0,48 Z" fill="var(--paper)"/>
+  </svg>
+</div>
+
+<!-- ===== REPORTS ROOT ===== -->
+<div id="reports-root">
+
+  <!-- Loading -->
+  <div id="state-loading" class="latest-section" style="background:var(--paper);">
+    <div class="container">
+      <div class="state-box">
+        <div class="spinner"></div>
+        <p>レポートを読み込んでいます…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error / Empty -->
+  <div id="state-error" class="latest-section" style="background:var(--paper);display:none;">
+    <div class="container">
+      <div class="state-box">
+        <div class="state-icon">📋</div>
+        <h3 id="state-error-title">まだレポートがありません</h3>
+        <p id="state-error-msg">次回の自動生成（月・木 20:00）をお待ちください。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reports content (shown when data loads successfully) -->
+  <div id="reports-content" style="display:none;">
+
+    <!-- Latest featured -->
+    <section class="latest-section" id="latest-section">
+      <div class="container">
+        <div class="sec-head latest-label">
+          <p class="eyebrow">LATEST</p>
+          <h2 style="font-size:clamp(22px,2.8vw,30px);">最新レポート</h2>
+        </div>
+        <div id="latest-container"></div>
+      </div>
+    </section>
+
+    <div class="wave" style="background:var(--paper);">
+      <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,16 C360,52 720,0 1080,32 C1260,48 1380,18 1440,12 L1440,48 L0,48 Z" fill="var(--cream)"/>
+      </svg>
+    </div>
+
+    <!-- Archive -->
+    <section class="archive-section" id="archive-section">
+      <div class="container">
+        <div class="sec-head" id="archive-head" style="display:none;">
+          <p class="eyebrow">ARCHIVE</p>
+          <h2>過去のレポート</h2>
+          <p>クリックで全文を開けます。</p>
+        </div>
+        <div class="archive-grid" id="archive-container"></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="MARKEY_CONSULTING.jpg" alt="MARKEY CONSULTING">
+        <p>住宅不動産 × 販売戦略<br>markey-consulting.com</p>
+      </div>
+      <div class="footer-nav">
+        <div>
+          <a href="index.html">ホーム</a>
+          <a href="toryumon/index.html">住宅営業登竜門</a>
+          <a href="reports.html" class="current">市場レポート</a>
+        </div>
+        <div>
+          <a href="index.html#services">サービス</a>
+          <a href="index.html#contact">お問い合わせ</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+      <a href="https://x.com/makixx999" target="_blank" rel="noopener noreferrer" aria-label="公式X（住宅営業登竜門）" class="footer-x-link"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+    <p class="footer-copy">© 2026 MARKEY CONSULTING. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const DATA_URL = 'https://mk-lab-1111.github.io/markey-report/data/archive.json';
+
+/* ===== UTILS ===== */
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatStamp(stamp) {
+  // "20260622" → "2026年06月22日"
+  if (!stamp || stamp.length < 8) return stamp;
+  return `${stamp.slice(0,4)}年${stamp.slice(4,6)}月${stamp.slice(6,8)}日`;
+}
+
+/* ===== PARSER ===== */
+function parseReportText(text) {
+  if (!text) return { title: '', date: '', sections: [], closing: '' };
+
+  // --- 区切りに依存せず行単位で解析する。
+  // --- がある旧データ(6/22〜6/30)も、--- が1つだけの新データ(7/1〜)も両対応。
+  let title = '', date = '', closing = '';
+  const sections = [];
+  let inClosing = false;
+  const closingLines = [];
+  let bodyStarted = false;
+
+  let curSectionTitle = null; // null = セクション未開始
+  let curSubSections = [];
+  let curSubTitle = '';
+  let curBody = [];
+
+  function flushSub() {
+    if (curSubTitle || curBody.length) {
+      curSubSections.push({ title: curSubTitle, body: curBody.join('\n').trim() });
+      curSubTitle = '';
+      curBody = [];
+    }
+  }
+  function flushSection() {
+    flushSub();
+    if (curSectionTitle !== null || curSubSections.length) {
+      sections.push({ sectionTitle: curSectionTitle || '', subSections: curSubSections });
+      curSectionTitle = null;
+      curSubSections = [];
+    }
+  }
+
+  for (const line of text.split('\n')) {
+    const t = line.trim();
+
+    // --- は区切り記号として無視（body 開始の目印としてフラグだけ立てる）
+    if (/^-{3,}$/.test(t)) { bodyStarted = true; continue; }
+
+    if (inClosing) { closingLines.push(line); continue; }
+
+    if (t.startsWith('TITLE:'))  { title = t.replace(/^TITLE:\s*/, '');  continue; }
+    if (t.startsWith('DATE:'))   { date  = t.replace(/^DATE:\s*/, '');   continue; }
+
+    if (t.startsWith('CLOSING:')) {
+      flushSection();
+      inClosing = true;
+      const rest = t.replace(/^CLOSING:\s*/, '').trim();
+      if (rest) closingLines.push(rest);
+      continue;
+    }
+
+    if (t.startsWith('SECTION:')) {
+      const sc = t.replace(/^SECTION:\s*/, '').trim();
+      if (sc.startsWith('■')) {
+        // 「SECTION: ■ X」→ 小見出し(H4)として扱う（崩れデータの後方互換）
+        flushSub();
+        curSubTitle = sc.replace(/^■\s*/, '').trim();
+        if (curSectionTitle === null) curSectionTitle = '';
+      } else {
+        // 新しい大見出し(H3)セクション開始
+        flushSection();
+        curSectionTitle = sc;
+      }
+      bodyStarted = true;
+      continue;
+    }
+
+    if (t.startsWith('■')) {
+      flushSub();
+      curSubTitle = t.replace(/^■\s*/, '').trim();
+      if (curSectionTitle === null) curSectionTitle = '';
+      bodyStarted = true;
+      continue;
+    }
+
+    if (!t) { if (bodyStarted) curBody.push(''); continue; } // 空行
+
+    // 通常テキスト
+    if (!bodyStarted && !title) {
+      title = t; // fallback: TITLE: がない場合の先頭行をタイトルに
+    } else {
+      curBody.push(line);
+      bodyStarted = true;
+      if (curSectionTitle === null) curSectionTitle = '';
+    }
+  }
+
+  flushSection();
+  closing = closingLines.join('\n').trim();
+  return { title, date, sections, closing };
+}
+
+function renderParsed(parsed) {
+  let html = '';
+  for (const sec of parsed.sections) {
+    if (sec.sectionTitle) {
+      html += `<h3 class="r-section">${esc(sec.sectionTitle)}</h3>`;
+    }
+    for (const sub of sec.subSections) {
+      if (sub.title) html += `<h4 class="r-subsection">■ ${esc(sub.title)}</h4>`;
+      if (sub.body) html += `<p class="r-body">${esc(sub.body).replace(/\n/g,'<br>')}</p>`;
+    }
+  }
+  if (parsed.closing) {
+    html += `<div class="r-closing"><p>${esc(parsed.closing).replace(/\n/g,'<br>')}</p></div>`;
+  }
+  return html;
+}
+
+function getPreview(text, maxLen = 120) {
+  if (!text) return '';
+  // strip section markers for preview
+  return text
+    .replace(/^(TITLE:|DATE:|SECTION:|CLOSING:|---+|■)/gm,'')
+    .replace(/\s+/g,' ').trim()
+    .slice(0, maxLen) + (text.length > maxLen ? '…' : '');
+}
+
+function shareUrl(stamp) {
+  return `${location.href.split('#')[0]}#r-${stamp}`;
+}
+
+/* ===== RENDERERS ===== */
+function renderLatest(item) {
+  const parsed = parseReportText(item.report_text);
+  const displayDate = item.generated_at || formatStamp(item.stamp);
+  const title = parsed.title || item.theme || 'レポート';
+  const bodyHtml = renderParsed(parsed);
+
+  return `
+    <article class="latest-card" id="r-${esc(item.stamp)}">
+      <div class="latest-card-head">
+        <div class="latest-meta">
+          <span class="latest-badge">最新号</span>
+          <span class="latest-stamp">${esc(displayDate)}</span>
+        </div>
+        <h2 class="latest-theme">${esc(item.theme || title)}</h2>
+      </div>
+      <div class="latest-card-body">
+        ${bodyHtml || `<p class="r-body">${esc(item.report_text || '')}</p>`}
+        <a href="${esc(shareUrl(item.stamp))}" class="anchor-link">🔗 このレポートへのリンク</a>
+      </div>
+    </article>
+  `;
+}
+
+function renderArchiveCard(item, index) {
+  const parsed = parseReportText(item.report_text);
+  const displayDate = item.generated_at || formatStamp(item.stamp);
+  const title = parsed.title || item.theme || 'レポート';
+  const preview = getPreview(item.report_text);
+  const bodyHtml = renderParsed(parsed);
+  const cardId = `r-${item.stamp}`;
+
+  return `
+    <article class="archive-card" id="${esc(cardId)}">
+      <div class="archive-card-head" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleCard(this)">
+        <div class="arch-info">
+          <p class="arch-date">${esc(displayDate)}</p>
+          <h3 class="arch-theme">${esc(item.theme || title)}</h3>
+          <p class="arch-preview">${esc(preview)}</p>
+        </div>
+        <button class="arch-toggle" aria-label="展開" tabindex="-1">▼</button>
+      </div>
+      <div class="archive-card-body">
+        ${bodyHtml || `<p class="r-body">${esc(item.report_text || '')}</p>`}
+        <a href="${esc(shareUrl(item.stamp))}" class="anchor-link">🔗 このレポートへのリンク</a>
+      </div>
+    </article>
+  `;
+}
+
+function toggleCard(head) {
+  const card = head.closest('.archive-card');
+  const isOpen = card.classList.contains('open');
+  card.classList.toggle('open', !isOpen);
+  head.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ===== MAIN ===== */
+async function loadReports() {
+  const elLoading = document.getElementById('state-loading');
+  const elError   = document.getElementById('state-error');
+  const elContent = document.getElementById('reports-content');
+  const elErrTitle = document.getElementById('state-error-title');
+  const elErrMsg   = document.getElementById('state-error-msg');
+
+  try {
+    const res = await fetch(DATA_URL);
+
+    if (res.status === 404) {
+      elLoading.style.display = 'none';
+      elErrTitle.textContent = 'まだレポートがありません';
+      elErrMsg.textContent = '次回の自動生成（月・木 20:00）をお待ちください。';
+      elError.style.display = '';
+      return;
+    }
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const data = await res.json();
+
+    if (!Array.isArray(data) || data.length === 0) {
+      elLoading.style.display = 'none';
+      elErrTitle.textContent = 'まだレポートがありません';
+      elErrMsg.textContent = '次回の自動生成（月・木 20:00）をお待ちください。';
+      elError.style.display = '';
+      return;
+    }
+
+    // Sort newest first by stamp (string "20260622" works lexicographically)
+    data.sort((a, b) => String(b.stamp).localeCompare(String(a.stamp)));
+
+    const [latest, ...rest] = data;
+
+    // Render latest
+    document.getElementById('latest-container').innerHTML = renderLatest(latest);
+
+    // Render archive
+    if (rest.length > 0) {
+      document.getElementById('archive-head').style.display = '';
+      document.getElementById('archive-container').innerHTML =
+        rest.map((item, i) => renderArchiveCard(item, i)).join('');
+    }
+
+    elLoading.style.display = 'none';
+    elContent.style.display = '';
+
+    // If URL has anchor, scroll to it after render
+    if (location.hash) {
+      const target = document.querySelector(location.hash);
+      if (target) {
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
+        // Also auto-open the archive card if it's an archive item
+        const card = target.closest('.archive-card');
+        if (card && !card.classList.contains('open')) {
+          const head = card.querySelector('.archive-card-head');
+          if (head) toggleCard(head);
+        }
+      }
+    }
+
+  } catch (err) {
+    console.error('[reports] fetch error:', err);
+    elLoading.style.display = 'none';
+    elErrTitle.textContent = 'レポートの読み込みに失敗しました';
+    elErrMsg.textContent = 'ネットワーク接続をご確認の上、ページを再読み込みしてください。';
+    elError.style.display = '';
+  }
+}
+
+loadReports();
+</script>
+
+<!-- フローティング：メルマガ訴求カード -->
+<div id="mm-float">
+  <button id="mm-float-close" aria-label="閉じる">&times;</button>
+  <p class="mm-float-label">Mail Magazine</p>
+  <p class="mm-float-title">無料メールマガジン</p>
+  <p class="mm-float-body">週2回の無料メールマガジンで最新レポート・最新イベント情報・営業コラムなどをメールで直接お届けしています。お申込みは簡単、30秒で入力完了。受注向上にお役立てください。</p>
+  <button class="mm-float-btn" id="mm-float-open">申し込む</button>
+</div>
+
+<!-- モーダル：メルマガ登録 -->
+<div id="modal-mailmag" class="mm-modal-overlay" role="dialog" aria-modal="true">
+  <div class="mm-modal-box">
+    <button class="mm-modal-close" aria-label="閉じる">&times;</button>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqK0dkD2zQEzFy6As_mxheq9FKkhVzYx7P3AIhH8uPrEWsSw/viewform?embedded=true" title="メルマガ登録フォーム" loading="lazy"></iframe>
+  </div>
+</div>
+
+<script>
+(function(){
+  var floatCard = document.getElementById("mm-float");
+  var modal = document.getElementById("modal-mailmag");
+  function openModal(){
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal(){
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+  document.getElementById("mm-float-open").addEventListener("click", openModal);
+  document.getElementById("mm-float-close").addEventListener("click", function(){
+    floatCard.style.display = "none";
+  });
+  modal.querySelector(".mm-modal-close").addEventListener("click", closeModal);
+  modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+})();
+</script>
+</body>
+</html>
