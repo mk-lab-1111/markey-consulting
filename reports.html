@@ -433,62 +433,92 @@ function formatStamp(stamp) {
 function parseReportText(text) {
   if (!text) return { title: '', date: '', sections: [], closing: '' };
 
-  const rawBlocks = text.split(/^---+$/m);
-  let title = '';
-  let date = '';
+  // --- 区切りに依存せず行単位で解析する。
+  // --- がある旧データ(6/22〜6/30)も、--- が1つだけの新データ(7/1〜)も両対応。
+  let title = '', date = '', closing = '';
   const sections = [];
-  let closing = '';
+  let inClosing = false;
+  const closingLines = [];
+  let bodyStarted = false;
 
-  // Header block (before first ---)
-  const headerLines = (rawBlocks[0] || '').split('\n');
-  for (const line of headerLines) {
-    const t = line.trim();
-    if (!t) continue;
-    if (t.startsWith('TITLE:')) {
-      title = t.replace(/^TITLE:\s*/, '');
-    } else if (t.startsWith('DATE:')) {
-      date = t.replace(/^DATE:\s*/, '');
-    } else if (!title) {
-      title = t; // fallback: first non-empty line
+  let curSectionTitle = null; // null = セクション未開始
+  let curSubSections = [];
+  let curSubTitle = '';
+  let curBody = [];
+
+  function flushSub() {
+    if (curSubTitle || curBody.length) {
+      curSubSections.push({ title: curSubTitle, body: curBody.join('\n').trim() });
+      curSubTitle = '';
+      curBody = [];
+    }
+  }
+  function flushSection() {
+    flushSub();
+    if (curSectionTitle !== null || curSubSections.length) {
+      sections.push({ sectionTitle: curSectionTitle || '', subSections: curSubSections });
+      curSectionTitle = null;
+      curSubSections = [];
     }
   }
 
-  // Body blocks
-  for (let i = 1; i < rawBlocks.length; i++) {
-    const block = rawBlocks[i].trim();
-    if (!block) continue;
+  for (const line of text.split('\n')) {
+    const t = line.trim();
 
-    if (/^CLOSING:/m.test(block)) {
-      closing = block.replace(/^CLOSING:\s*/m, '').trim();
+    // --- は区切り記号として無視（body 開始の目印としてフラグだけ立てる）
+    if (/^-{3,}$/.test(t)) { bodyStarted = true; continue; }
+
+    if (inClosing) { closingLines.push(line); continue; }
+
+    if (t.startsWith('TITLE:'))  { title = t.replace(/^TITLE:\s*/, '');  continue; }
+    if (t.startsWith('DATE:'))   { date  = t.replace(/^DATE:\s*/, '');   continue; }
+
+    if (t.startsWith('CLOSING:')) {
+      flushSection();
+      inClosing = true;
+      const rest = t.replace(/^CLOSING:\s*/, '').trim();
+      if (rest) closingLines.push(rest);
       continue;
     }
 
-    const lines = block.split('\n');
-    let sectionTitle = '';
-    const subSections = [];
-    let curSubTitle = '';
-    let curBody = [];
-
-    for (const line of lines) {
-      if (line.startsWith('SECTION:')) {
-        sectionTitle = line.replace(/^SECTION:\s*/, '').trim();
-      } else if (line.startsWith('■')) {
-        if (curSubTitle || curBody.length) {
-          subSections.push({ title: curSubTitle, body: curBody.join('\n').trim() });
-          curBody = [];
-        }
-        curSubTitle = line.slice(1).trim();
+    if (t.startsWith('SECTION:')) {
+      const sc = t.replace(/^SECTION:\s*/, '').trim();
+      if (sc.startsWith('■')) {
+        // 「SECTION: ■ X」→ 小見出し(H4)として扱う（崩れデータの後方互換）
+        flushSub();
+        curSubTitle = sc.replace(/^■\s*/, '').trim();
+        if (curSectionTitle === null) curSectionTitle = '';
       } else {
-        curBody.push(line);
+        // 新しい大見出し(H3)セクション開始
+        flushSection();
+        curSectionTitle = sc;
       }
-    }
-    if (curSubTitle || curBody.length) {
-      subSections.push({ title: curSubTitle, body: curBody.join('\n').trim() });
+      bodyStarted = true;
+      continue;
     }
 
-    sections.push({ sectionTitle, subSections });
+    if (t.startsWith('■')) {
+      flushSub();
+      curSubTitle = t.replace(/^■\s*/, '').trim();
+      if (curSectionTitle === null) curSectionTitle = '';
+      bodyStarted = true;
+      continue;
+    }
+
+    if (!t) { if (bodyStarted) curBody.push(''); continue; } // 空行
+
+    // 通常テキスト
+    if (!bodyStarted && !title) {
+      title = t; // fallback: TITLE: がない場合の先頭行をタイトルに
+    } else {
+      curBody.push(line);
+      bodyStarted = true;
+      if (curSectionTitle === null) curSectionTitle = '';
+    }
   }
 
+  flushSection();
+  closing = closingLines.join('\n').trim();
   return { title, date, sections, closing };
 }
 
