@@ -393,34 +393,107 @@ nav.main-nav .nav-cta{font-size:13.5px;}
 /* ===== PRICING ===== */
 .pricing-note{
   background:var(--paper);border:1px dashed var(--gold-deep);border-radius:14px;
-  padding:18px 24px;font-size:13px;color:var(--navy);margin-bottom:48px;line-height:1.9;
+  padding:18px 24px;font-size:13px;color:var(--navy);margin-bottom:32px;line-height:1.9;
 }
-.pricing-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-bottom:24px;}
+.common-benefit{
+  background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-deep) 100%);
+  border-radius:14px;padding:40px 48px;margin-bottom:36px;
+  position:relative;overflow:hidden;
+}
+.common-benefit::before{
+  content:'';position:absolute;top:-50px;right:-50px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(184,142,60,.12);pointer-events:none;
+}
+.common-benefit-heading{
+  font-family:'Shippori Mincho',serif;
+  font-size:22px;font-weight:700;letter-spacing:.12em;color:var(--gold-light);
+  margin-bottom:28px;display:flex;align-items:center;gap:16px;
+}
+.common-benefit-heading::before,
+.common-benefit-heading::after{content:'';flex:1;height:1px;background:rgba(233,206,130,.4);}
+.common-benefit-items{display:flex;gap:0;flex-wrap:wrap;}
+.common-benefit-item{
+  flex:1;min-width:160px;padding:0 32px;
+  border-right:1px solid rgba(233,206,130,.3);text-align:center;
+}
+.common-benefit-item:last-child{border-right:none;}
+.cb-item-label{
+  font-size:15px;font-weight:700;letter-spacing:.1em;color:var(--gold-light);
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid rgba(233,206,130,.4);display:block;
+}
+.cb-item-value{
+  font-family:'Shippori Mincho',serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;
+}
+.cb-item-value s{
+  font-size:13px;color:rgba(255,255,255,.4);font-family:'Noto Sans JP',sans-serif;font-weight:400;
+}
+.cb-item-value strong{color:var(--gold-light);}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px;}
 .price-card{
   border-radius:var(--radius);padding:40px 38px;position:relative;overflow:hidden;
 }
 .price-card.personal{
   background:var(--paper);border:2px solid var(--crimson);box-shadow:var(--shadow);
 }
+.price-card.premium{
+  background:var(--paper);border:2px solid var(--gold-deep);box-shadow:var(--shadow);
+}
 .price-card.corporate{
   background:linear-gradient(150deg,var(--navy) 0%,var(--navy-soft) 100%);color:#fff;
   display:flex;flex-direction:column;justify-content:space-between;
+}
+/* 期間限定リボン */
+.price-card.personal::after,
+.price-card.premium::after{
+  content:'期間限定';
+  position:absolute;top:20px;right:-26px;
+  width:110px;background:var(--crimson);color:#fff;
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  padding:5px 0;text-align:center;
+  transform:rotate(45deg);box-shadow:0 2px 6px rgba(0,0,0,.2);
 }
 .price-card .p-badge{
   display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.12em;
   padding:5px 14px;border-radius:100px;margin-bottom:18px;
 }
 .price-card.personal .p-badge{background:var(--crimson-soft);color:var(--crimson);}
+.price-card.premium .p-badge{background:rgba(184,142,60,.14);color:var(--gold-deep);}
 .price-card.corporate .p-badge{background:rgba(255,255,255,.12);color:var(--gold-light);}
-.price-card h3{font-size:20px;margin-bottom:6px;}
+.price-card h3{font-size:18px;margin-bottom:12px;line-height:1.5;}
 .price-card.corporate h3{color:#fff;}
-.price-card .p-sub{font-size:13px;color:var(--mist);margin-bottom:22px;}
+.price-card .p-sub{font-size:13px;color:var(--mist);margin-bottom:16px;}
 .price-card.corporate .p-sub{color:#B6BFD6;}
-.price-amount{display:flex;align-items:baseline;gap:6px;margin-bottom:24px;}
-.price-amount .num{font-family:'Shippori Mincho',serif;font-size:44px;font-weight:800;color:var(--crimson);}
+.price-original{
+  font-size:21px;color:#555;text-decoration:line-through;
+  text-decoration-thickness:2px;display:block;margin-bottom:4px;font-weight:600;
+}
+.price-card.premium .price-original{color:#7A5E3C;}
+.price-amount{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+.price-amount .num{font-family:'Shippori Mincho',serif;font-size:52px;font-weight:800;color:var(--crimson);}
+.price-card.premium .price-amount .num{color:var(--gold-deep);}
 .price-card.corporate .price-amount .num{color:var(--gold-light);}
 .price-amount .unit{font-size:14px;color:var(--mist);}
 .price-card.corporate .price-amount .unit{color:#B6BFD6;}
+.price-forever-note{
+  border-radius:8px;padding:14px 18px;margin-bottom:20px;text-align:center;
+}
+.price-card.personal .price-forever-note{
+  background:var(--crimson-soft);border:1px solid rgba(194,39,63,.2);
+}
+.price-card.premium .price-forever-note{
+  background:rgba(156,122,31,.1);border:1px solid rgba(156,122,31,.28);
+}
+.pfn-label{
+  font-size:12px;color:var(--mist);display:block;margin-bottom:5px;letter-spacing:.03em;
+}
+.pfn-main{
+  font-family:'Shippori Mincho',serif;font-size:20px;font-weight:800;
+  display:block;line-height:1.3;
+}
+.price-card.personal .pfn-main{color:var(--crimson);}
+.price-card.premium .pfn-main{color:var(--gold-deep);}
 .price-features{list-style:none;margin-bottom:28px;}
 .price-features li{
   font-size:13.5px;padding:9px 0;border-bottom:1px solid var(--line);
@@ -428,16 +501,26 @@ nav.main-nav .nav-cta{font-size:13.5px;}
 }
 .price-card.corporate .price-features li{border-bottom:1px solid rgba(255,255,255,.12);color:#E3E7F2;}
 .price-features li::before{content:'◯';color:var(--crimson);font-size:11px;margin-top:3px;}
+.price-card.premium .price-features li::before{color:var(--gold-deep);}
 .price-card.corporate .price-features li::before{color:var(--gold-light);}
-
-.oneon1-card{
-  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-  padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+.corporate-cta-text{font-size:14px;color:#B6BFD6;margin-bottom:20px;line-height:1.7;}
+/* シャインアニメーション */
+@keyframes shine-sweep{
+  0%  {transform:translateX(-100px) skewX(-20deg);opacity:0;}
+  8%  {opacity:1;}
+  28% {transform:translateX(calc(100vw + 100px)) skewX(-20deg);opacity:1;}
+  30% {opacity:0;}
+  100%{transform:translateX(calc(100vw + 100px)) skewX(-20deg);opacity:0;}
 }
-.oneon1-card h3{font-size:17px;margin-bottom:6px;}
-.oneon1-card p{font-size:13.5px;color:var(--mist);}
-.oneon1-price{font-family:'Shippori Mincho',serif;font-size:28px;font-weight:800;color:var(--crimson);white-space:nowrap;}
-.oneon1-price span{font-size:13px;color:var(--mist);font-weight:500;font-family:'Noto Sans JP',sans-serif;}
+.common-benefit::after{
+  content:'';position:absolute;top:0;left:0;
+  width:80px;height:100%;pointer-events:none;
+  background:linear-gradient(105deg,transparent 25%,rgba(255,220,120,.25) 45%,rgba(255,255,255,.15) 55%,rgba(255,220,120,.25) 65%,transparent 85%);
+  animation:shine-sweep 5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion:reduce){
+  .common-benefit::after{animation:none;}
+}
 @media (max-width:880px){.pricing-grid{grid-template-columns:1fr;}}
 
 /* ===== FAQ ===== */
@@ -569,14 +652,20 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   .instructor-bio p{font-size:13px;line-height:1.85;margin-bottom:12px;}
 
   /* pricing */
-  .pricing-note{font-size:12px;padding:14px 18px;margin-bottom:32px;}
+  .pricing-note{font-size:12px;padding:14px 18px;margin-bottom:24px;}
+  .common-benefit{padding:28px 24px;margin-bottom:28px;}
+  .common-benefit-heading{font-size:17px;letter-spacing:.08em;margin-bottom:20px;}
+  .common-benefit-items{gap:0;}
+  .common-benefit-item{
+    flex:none;width:100%;padding:14px 0;
+    border-right:none;border-bottom:1px solid rgba(233,206,130,.25);text-align:left;
+  }
+  .common-benefit-item:last-child{border-bottom:none;padding-bottom:0;}
+  .cb-item-label{font-size:13px;margin-bottom:8px;}
   .price-card{padding:28px 26px;}
-  .price-card h3{font-size:18px;}
-  .price-amount .num{font-size:36px;}
+  .price-card h3{font-size:16px;}
+  .price-amount .num{font-size:42px;}
   .price-features li{font-size:12.5px;padding:8px 0;}
-  .oneon1-card{padding:22px 24px;}
-  .oneon1-card h3{font-size:15px;}
-  .oneon1-price{font-size:24px;}
 
   /* faq */
   .faq-item summary{font-size:14px;padding:18px 4px;}
@@ -973,43 +1062,73 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
       ※ 表示の料金は、サービス開始後にお申し込みいただく際の予定価格です。サービス開始(2026年8月末予定)に合わせて、メールにてお申し込み方法をご案内します。
     </p>
 
+    <div class="common-benefit reveal">
+      <p class="common-benefit-heading">オープン記念キャンペーン ― 個人向けコース共通</p>
+      <div class="common-benefit-items">
+        <div class="common-benefit-item">
+          <p class="cb-item-label">月額割引</p>
+          <p class="cb-item-value">今お申し込みで <strong>ずっと</strong> 3,000円OFF</p>
+        </div>
+        <div class="common-benefit-item">
+          <p class="cb-item-label">入会金</p>
+          <p class="cb-item-value"><s>10,000円</s> → <strong>0円</strong></p>
+        </div>
+        <div class="common-benefit-item">
+          <p class="cb-item-label">解約手数料</p>
+          <p class="cb-item-value"><strong>0円</strong>（いつでも解約可）</p>
+        </div>
+      </div>
+    </div>
+
     <div class="pricing-grid reveal">
+      <!-- スタンダードコース -->
       <div class="price-card personal">
-        <span class="p-badge">PERSONAL</span>
-        <h3>個人プラン</h3>
-        <p class="p-sub">入社1〜5年目の住宅営業マン向け</p>
+        <span class="p-badge">PERSONAL / STANDARD</span>
+        <h3>サービス開始記念<br>期間限定特別価格</h3>
+        <span class="price-original">通常 8,480円 / 月</span>
         <div class="price-amount"><span class="num">5,480</span><span class="unit">円 / 月(税込)</span></div>
+        <div class="price-forever-note">
+          <span class="pfn-label">今お申し込みの方は</span>
+          <span class="pfn-main"><strong>ずっと</strong> 月額3,000円OFF</span>
+        </div>
         <ul class="price-features">
-          <li><strong>動画見放題</strong>(全シリーズ視聴可能)</li>
-          <li>月1回オンライン研修イベント(有料オプションで参加可能)</li>
-          <li><strong class="em-red">いつでも解約OK</strong></li>
+          <li><strong>動画見放題</strong>（全シリーズ視聴可能）</li>
         </ul>
         <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary" style="width:100%;">開始のお知らせを受け取る</a>
       </div>
 
+      <!-- プレミアコース -->
+      <div class="price-card premium">
+        <span class="p-badge">PREMIUM</span>
+        <h3>期間限定特別価格</h3>
+        <span class="price-original">通常 15,800円 / 月</span>
+        <div class="price-amount"><span class="num">12,800</span><span class="unit">円 / 月(税込)</span></div>
+        <div class="price-forever-note">
+          <span class="pfn-label">今お申し込みの方は</span>
+          <span class="pfn-main"><strong>ずっと</strong> 月額3,000円OFF</span>
+        </div>
+        <ul class="price-features">
+          <li><strong>動画見放題</strong>（全シリーズ視聴可能）</li>
+          <li>時事対策営業ウェビナー参加権・アーカイブ視聴</li>
+          <li>営業コミュニティ参加</li>
+        </ul>
+        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary" style="width:100%;">開始のお知らせを受け取る</a>
+      </div>
+
+      <!-- 法人プラン -->
       <div class="price-card corporate">
         <div>
           <span class="p-badge">CORPORATE</span>
           <h3>法人プラン</h3>
           <p class="p-sub">新人育成・組織の営業力強化</p>
-          <div class="price-amount"><span class="num">55,000</span><span class="unit">円〜 / 月(税込)</span></div>
+          <p class="corporate-cta-text">営業組織の強化・営業育成の仕組み化については、下記よりご確認ください。</p>
           <ul class="price-features">
             <li>全社員が利用できる<strong class="em-red">法人アカウント</strong></li>
-            <li>月1回オンライン研修イベント／個別コンサルティング(プラン別)</li>
-            <li><strong class="em-red">育成プログラムの仕組み化</strong>・採用PRにも活用可能</li>
+            <li><strong class="em-red">育成プログラムの仕組み化</strong><br>・採用PRにも活用可能</li>
           </ul>
         </div>
         <a href="corporate.html" class="btn btn-gold" style="width:100%;">法人プランの詳細を見る →</a>
       </div>
-    </div>
-
-    <div class="oneon1-card reveal">
-      <div>
-        <h3>1on1オンラインコンサルティング(オプション)</h3>
-        <p><strong class="em-red">オンライン家庭教師形式</strong>での個別指導(都度払い)</p>
-      </div>
-      <div class="oneon1-price">11,000円 <span>/ 1時間(税込)</span></div>
-      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-outline btn-sm">開始案内を受け取る →</a>
     </div>
   </div>
 </section>
