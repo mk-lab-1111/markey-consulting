@@ -56,6 +56,9 @@ h2.section-title .accent{color:var(--crimson);}
 .section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
 .section-head.center .section-lead{margin-left:auto;margin-right:auto;}
 .em-red{color:var(--crimson);font-weight:800;font-size:1.15em;}
+.nw{white-space:nowrap;}
+.sp-br{display:none;}
+@media(max-width:760px){.sp-br{display:inline;}}
 
 /* ===== Highlight marker (蛍光イエロー) ===== */
 .hl{
@@ -183,7 +186,8 @@ nav.main-nav .nav-cta{font-size:13.5px;}
   padding:24px 30px;display:flex;gap:16px;align-items:center;
   font-size:16px;font-weight:700;color:var(--body-text);line-height:1.75;
 }
-.pain-item .pain-keyword{color:var(--crimson);font-weight:800;}
+.pain-item .pain-text{flex:1;min-width:0;}
+.pain-item .pain-keyword{color:var(--crimson);font-weight:800;white-space:nowrap;}
 .pain-icon{
   font-size:22px;flex-shrink:0;width:44px;height:44px;
   background:var(--crimson-soft);border-radius:12px;
@@ -448,7 +452,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   .logo-txt{display:none;}
   .msg-wrap{flex-direction:column;align-items:center;}
   .msg-photo{width:140px;}
-  .profile-block{flex-direction:column;text-align:center;}
+  .profile-block{flex-direction:column;text-align:center;gap:20px;}
+  .profile-photo{width:90px;height:90px;}
   .profile-career li{text-align:left;}
   .roi-row{grid-template-columns:1fr;gap:12px;}
   .roi-arrow{transform:rotate(90deg);}
@@ -462,8 +467,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   section{padding:52px 0;}
   .section-head{margin-bottom:32px;}
   .eyebrow{font-size:11px;margin-bottom:12px;}
-  h2.section-title{font-size:21px;line-height:1.55;margin-bottom:12px;}
-  .section-lead{font-size:13px;line-height:1.85;}
+  h2.section-title{font-size:21px;line-height:1.55;margin-bottom:14px;}
+  .section-lead{font-size:12.5px;line-height:1.85;margin-top:6px;}
   .hero-content{padding:100px 20px 80px;}
   .hero-content h1{font-size:26px;}
   .hero-lead{font-size:14px;}
@@ -476,6 +481,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   .roi-highlight .roi-big-num{font-size:26px;}
   .pricing-box{padding:36px 20px;}
   .pricing-box .price-main{font-size:36px;}
+  .pricing-box .price-sub{font-size:12.5px;}
   .pricing-urgency{font-size:15px;}
   .results-row{grid-template-columns:repeat(2,1fr);}
   .result-item .num{font-size:26px;}
@@ -486,10 +492,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   .msg-body p{font-size:14px;}
   .btn{padding:14px 26px;font-size:14px;}
   .btn-lg{padding:16px 32px;font-size:15px;}
-  .btn-xl{padding:20px 40px;font-size:16px;}
+  .btn-xl{padding:20px 40px;font-size:16px;white-space:normal;text-align:center;}
   .nav-inner{padding:0 20px;}
   nav.main-nav .nav-cta{padding:10px 16px;font-size:12px;}
   .container{padding:0 20px;}
+  .pain-item{padding:20px 22px;font-size:15px;}
   .campaign-banner{padding:16px 20px;font-size:14px;}
   .campaign-banner .cb-limit{font-size:17px;}
   .profile-block{padding:22px 20px;}
@@ -540,23 +547,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     <span class="eyebrow">JYUTAKU EIGYO TORYUMON</span>
     <h1>売れる営業はいる。<br><span class="hero-accent">育てられる仕組みが、ない。</span></h1>
     <p class="hero-lead">
-      トップセールスは、売るのは上手くても教えるのが上手いとは限らない。<br>
+      <span class="nw">トップセールス</span>は、売るのは上手くても教えるのが上手いとは限らない。<br>
       ノウハウは属人のまま、教育は背中を見せるだけ。<br>
       売れる人の頭の中にあるノウハウを、<span class="hl-hero">誰でも吸収できる研修動画に体系化</span>しました。
     </p>
     <p class="hero-sub">
-      元ハウスメーカートップセールスが全講義を担当｜新人育成・組織の営業力強化を動画で仕組み化｜<strong style="font-size:1.15em;">月額55,000円〜</strong>
+      元<span class="nw">ハウスメーカー</span><span class="nw">トップセールス</span>が全講義を担当｜新人育成・組織の営業力強化を動画で仕組み化｜<strong style="font-size:1.15em;" class="nw">月額55,000円〜</strong>
     </p>
     <div class="hero-cta">
       <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-lg">詳細はこちら</a>
-      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-on-navy">カスタマイズのご相談・ご質問はこちら</a>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-on-navy"><span class="nw">カスタマイズ</span>のご相談・ご質問はこちら</a>
     </div>
   </div>
 </section>
 
 <!-- ===== CAMPAIGN BANNER (hero直下) ===== -->
 <div class="campaign-banner">
-  モニターキャンペーン実施中｜<span class="cb-limit">10月末まで</span>・<span class="cb-limit">先着50社限定</span>
+  モニターキャンペーン実施中｜<span class="cb-limit nw">10月末まで</span>・<span class="cb-limit nw">先着50社限定</span>
   <div class="cb-detail">特典の詳細は説明動画内でご案内します</div>
 </div>
 
@@ -571,23 +578,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     <div class="pain-list reveal">
       <div class="pain-item">
         <span class="pain-icon">!</span>
-        トップだけが売れて、<span class="pain-keyword">下が育たない</span>
+        <span class="pain-text">トップだけが売れて、<span class="pain-keyword">下が育たない</span></span>
       </div>
       <div class="pain-item">
         <span class="pain-icon">!</span>
-        教える<span class="pain-keyword">時間が取れない</span>
+        <span class="pain-text">教える<span class="pain-keyword">時間が取れない</span></span>
       </div>
       <div class="pain-item">
         <span class="pain-icon">!</span>
-        教え方が人によって<span class="pain-keyword">バラバラ</span>
+        <span class="pain-text">教え方が人によって<span class="pain-keyword">バラバラ</span></span>
       </div>
       <div class="pain-item">
         <span class="pain-icon">!</span>
-        価格高騰で、<span class="pain-keyword">売れていた営業まで売れなくなった</span>
+        <span class="pain-text">価格高騰で、<span class="pain-keyword">売れていた営業まで売れなくなった</span></span>
       </div>
       <div class="pain-item">
         <span class="pain-icon">!</span>
-        広告で集客しても、<span class="pain-keyword">決めきれない</span>
+        <span class="pain-text">広告で集客しても、<span class="pain-keyword">決めきれない</span></span>
       </div>
     </div>
   </div>
@@ -599,7 +606,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow">INSIGHT</span>
-      <h2 class="section-title">なぜ、営業教育は<span class="accent">うまくいかない</span>のか</h2>
+      <h2 class="section-title">なぜ、営業教育は<br class="sp-br"><span class="accent nw">うまくいかない</span>のか</h2>
       <p class="section-lead">多くの住宅会社が抱える「教育の壁」。その構造を解き明かします。</p>
     </div>
 
@@ -616,13 +623,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
       </div>
       <div class="seed-item">
         <p class="seed-num">構造 3</p>
-        <h3>自社のトップセールスは<span class="em-red">「教えるプロ」ではない</span></h3>
+        <h3>自社の<span class="nw">トップセールス</span>は<span class="em-red nw">「教えるプロ」ではない</span></h3>
         <p>売るプロであって教えるプロではない。教えるのが好きでない人も、苦手な人もいる。</p>
       </div>
       <div class="seed-item">
         <p class="seed-num">構造 4</p>
-        <h3>仮に教える力があっても、<span class="em-red">時間がない</span></h3>
-        <p>トップセールスは自分の受注で手一杯。働き方改革で「教えるための残業」すら難しく、教える時間を作ること自体が労務リスクになる。</p>
+        <h3>仮に教える力があっても、<span class="em-red nw">時間がない</span></h3>
+        <p><span class="nw">トップセールス</span>は自分の受注で手一杯。働き方改革で「教えるための残業」すら難しく、教える時間を作ること自体が労務リスクになる。</p>
       </div>
     </div>
 
@@ -632,8 +639,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     </div>
 
     <div class="seed-question reveal">
-      例えば、価格高騰時代の受注の鍵は"ファン化"。<br>
-      では、住宅営業向けにファン化のやり方を<br>体系立てて教えられる人が、<strong>社内にいますか?</strong>
+      例えば、価格高騰時代の受注の鍵は<span class="nw">"ファン化"</span>。<br>
+      では、住宅営業向けに<span class="nw">ファン化のやり方</span>を<br>体系立てて教えられる人が、<strong class="nw">社内にいますか?</strong>
     </div>
   </div>
 </section>
@@ -645,21 +652,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     <div class="section-head center reveal">
       <span class="eyebrow">SOLUTION</span>
       <h2 class="section-title">だから、<span class="accent">研修動画</span>で仕組み化する</h2>
-      <p class="section-lead">50社・1,000人超の営業を支援してきた"教えるプロ"が、トップセールス級のノウハウを<span class="hl-strong">約100本の研修動画に体系化</span>。</p>
+      <p class="section-lead">50社・1,000人超の営業を支援してきた"教えるプロ"が、<span class="nw">トップセールス</span>級のノウハウを<span class="hl-strong">約100本の研修動画に体系化</span>。</p>
     </div>
 
     <div class="sol-grid reveal" id="content">
       <div class="sol-card">
         <div class="sol-icon">1</div>
-        <p><strong>全店舗・全営業に同じ品質の教育が届く。</strong>トップセールスの時間を1秒も使わずに、教え上手な店長がいない店舗でも育成が回る。運任せだった育成が、仕組みになる。</p>
+        <p><strong>全店舗・全営業に同じ品質の教育が届く。</strong><span class="nw">トップセールス</span>の時間を1秒も使わずに、教え上手な店長がいない店舗でも育成が回る。運任せだった育成が、仕組みになる。</p>
       </div>
       <div class="sol-card">
         <div class="sol-icon">2</div>
-        <p><strong>カリキュラム化で運用の型が組める。</strong>「1週目は動画1〜10、2週目は11〜20」のように順を追って学び、修了を確認してデビューという流れを作れる。</p>
+        <p><strong><span class="nw">カリキュラム</span>化で運用の型が組める。</strong>「1週目は動画1〜10、2週目は11〜20」のように順を追って学び、修了を確認してデビューという流れを作れる。</p>
       </div>
       <div class="sol-card">
         <div class="sol-icon">3</div>
-        <p><strong>即使える具体トーク・ロープレパート。</strong>営業マンが自ら学びたくなる実践的な中身。スマホでいつでもどこでも視聴可能。</p>
+        <p><strong>即使える具体トーク・<span class="nw">ロープレパート</span>。</strong>営業マンが自ら学びたくなる実践的な中身。スマホでいつでもどこでも視聴可能。</p>
       </div>
       <div class="sol-card">
         <div class="sol-icon">4</div>
@@ -705,24 +712,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
     <div class="results-row reveal">
       <div class="result-item">
-        <p class="num">50社以上</p>
+        <p class="num"><span class="nw">50社以上</span></p>
         <p>住宅会社への支援実績</p>
       </div>
       <div class="result-item">
-        <p class="num">1,000人超</p>
+        <p class="num"><span class="nw">1,000人超</span></p>
         <p>研修累計人数</p>
       </div>
       <div class="result-item">
-        <p class="num">54棟→94棟</p>
+        <p class="num"><span class="nw">54棟→94棟</span></p>
         <p>支援先企業の受注数変化</p>
       </div>
       <div class="result-item">
-        <p class="num">3棟→15棟</p>
+        <p class="num"><span class="nw">3棟→15棟</span></p>
         <p>個人営業の受注数変化</p>
       </div>
       <div class="result-item">
         <p class="num">多数輩出</p>
-        <p>トップセールス・本部長</p>
+        <p><span class="nw">トップセールス</span>・本部長</p>
       </div>
     </div>
 
@@ -742,31 +749,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
       <div class="roi-row">
         <div class="roi-card">
           <p class="roi-label">月額費用</p>
-          <p class="roi-value cost">55,000円〜</p>
+          <p class="roi-value cost"><span class="nw">55,000円〜</span></p>
         </div>
         <div class="roi-arrow">→</div>
         <div class="roi-card">
           <p class="roi-label">受注1棟増の粗利</p>
-          <p class="roi-value gain">300〜500万円</p>
+          <p class="roi-value gain"><span class="nw">300〜500万円</span></p>
         </div>
       </div>
 
       <div class="roi-examples">
         <ul>
-          <li>住宅は1棟あたり粗利300〜500万円。受注が<strong style="color:var(--crimson);">1棟増えれば、月額費用は即回収</strong>できる</li>
+          <li>住宅は1棟あたり粗利<span class="nw">300〜500万円</span>。受注が<strong style="color:var(--crimson);">1棟増えれば、月額費用は即回収</strong>できる</li>
           <li>研修は10人・20人の営業全員に同時に効く</li>
           <li>チラシや広告を少し出すより安い月額で、「集客の後工程」である<strong style="color:var(--crimson);">決める力</strong>に投資する</li>
         </ul>
       </div>
 
       <div class="roi-highlight">
-        <p class="roi-big-num">例えば20人の営業で8棟増えれば<br><span class="hl-strong">粗利 2,400万円の増加</span></p>
+        <p class="roi-big-num">例えば20人の営業で8棟増えれば<br><span class="hl-strong"><span class="nw">粗利 2,400万円の増加</span></span></p>
         <p>月額55,000円の投資で、年間数千万円のリターンに</p>
       </div>
 
       <div class="roi-reframe">
         そもそも、社内で研修を行えば残業代だけで月額費用を超えることも。<br>
-        例えば営業10名を2時間集めて店長が教えれば、残業代と店長の時間だけで<span class="hl-strong" style="color:var(--crimson);">月55,000円を超える</span>。<br>
+        例えば営業10名を2時間集めて店長が教えれば、残業代と店長の時間だけで<span class="hl-strong nw" style="color:var(--crimson);">月55,000円を超える</span>。<br>
         <strong>これは"追加コスト"ではなく、今かかっている教育コストの置き換えです。</strong>
       </div>
     </div>
@@ -841,10 +848,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
     <div class="msg-wrap reveal">
       <div class="msg-photo">
-        <img src="顔写真③.jpg" alt="鶴田 槙人">
+        <img src="profile.jpg" alt="鶴田 槙人">
       </div>
       <div class="msg-body">
-        <p>住宅会社のエリアマネージャーだったころ、多忙を極めていました。どうしても深夜まで仕事があり、教える時間が取れないことが多々ありました。<strong><span class="hl-strong">「勝手に営業が自分で育ってくれるような動画があったら、本当に助かるのにな」</span></strong>と思っていました。</p>
+        <p>住宅会社の<span class="nw">エリアマネージャー</span>だったころ、多忙を極めていました。どうしても深夜まで仕事があり、教える時間が取れないことが多々ありました。<strong><span class="hl-strong">「勝手に営業が自分で育ってくれるような動画があったら、本当に助かるのにな」</span></strong>と思っていました。</p>
 
         <p>ただし、私が本当に欲しかった、痒い所に手が届くような具体の話をしてくれる動画教材も書籍もありませんでした。みんな抽象的で、かつ、超高額だったのです。</p>
 
@@ -852,7 +859,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
         <p>ならばと、今回、自身で50社の支援、1,000人以上の研修、多数の実績・経験を踏まえた上で、本当に成果が出る営業育成動画コースを作ろうと決意しました。</p>
 
-        <p>金額が高額では導入が難しい企業様もあるため、いくつかコースを用意し、ベーシックコースでも十分回せるように金額も調整しています。必要があれば、しっかりとしたオンボーディングのコースもご用意しています。</p>
+        <p>金額が高額では導入が難しい企業様もあるため、いくつかコースを用意し、<span class="nw">ベーシックコース</span>でも十分回せるように金額も調整しています。必要があれば、しっかりとした<span class="nw">オンボーディング</span>のコースもご用意しています。</p>
 
         <p>営業力強化は必須の世情となってきましたが、今回ご用意した内容をやり込んでいただければ、十分対応できると確信しています。私が現在ご支援している企業は、<strong><span class="hl-strong">コロナ禍から2026年の現在まで、すべて絶好調</span></strong>です。過去最高受注・過去最高益を出している企業も多数あります。</p>
 
@@ -862,12 +869,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
     <div class="profile-block reveal">
       <div class="profile-photo">
-        <img src="顔写真③.jpg" alt="鶴田 槙人">
+        <img src="profile.jpg" alt="鶴田 槙人">
       </div>
       <div class="profile-info">
         <p class="profile-name">鶴田 槙人</p>
         <p class="profile-name-en">MAKITO TSURUTA ／ MARKEY CONSULTING 代表</p>
-        <p class="profile-title">元 東証一部上場住宅会社 エリアマネージャー<br>元 東証グロース上場経営コンサルティング会社 住宅部門マネージャー</p>
+        <p class="profile-title">元 東証一部上場住宅会社 <span class="nw">エリアマネージャー</span><br>元 東証グロース上場経営コンサルティング会社 住宅部門マネージャー</p>
         <ul class="profile-career">
           <li>大手建築会社で営業職として1,500名中10位の実績</li>
           <li>年間10棟受注の店舗を1年後に45棟受注まで改善し、改善率日本一を達成</li>
@@ -883,7 +890,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 <!-- ===== 10. PRICING / CONTACT ===== -->
 <!-- campaign banner (料金セクション冒頭) -->
 <div class="campaign-banner">
-  モニターキャンペーン実施中｜<span class="cb-limit">10月末まで</span>・<span class="cb-limit">先着50社限定</span>
+  モニターキャンペーン実施中｜<span class="cb-limit nw">10月末まで</span>・<span class="cb-limit nw">先着50社限定</span>
   <div class="cb-detail">特典の詳細は説明動画内でご案内します</div>
 </div>
 
@@ -895,21 +902,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     </div>
 
     <div class="pricing-box reveal">
-      <p class="price-label">ベーシックプラン</p>
-      <p class="price-main">月額 55,000円〜 <span class="price-tax">(税込)</span></p>
-      <p class="price-sub">企業規模・ご要望に応じて最適なプランをご案内します</p>
+      <p class="price-label"><span class="nw">ベーシックプラン</span></p>
+      <p class="price-main"><span class="nw">月額 55,000円〜<span class="price-tax">(税込)</span></span></p>
+      <p class="price-sub"><span class="nw">企業規模・ご要望に応じて</span><span class="nw">最適なプランをご案内します</span></p>
 
-      <p class="pricing-urgency">＼ <span class="hl-full">10月末まで</span>・<span class="hl-full">先着50社限定</span> ／</p>
+      <p class="pricing-urgency">＼ <span class="hl-full nw">10月末まで</span>・<span class="hl-full nw">先着50社限定</span> ／</p>
 
       <ul class="pricing-notes">
-        <li>ご要望に応じて、育成カリキュラムの構築・カスタマイズのご支援も可能です</li>
+        <li>ご要望に応じて、育成<span class="nw">カリキュラム</span>の構築・<span class="nw">カスタマイズ</span>のご支援も可能です</li>
         <li>詳細説明動画は近日公開。公開時にメールでご案内します</li>
       </ul>
 
       <div class="pricing-cta">
         <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-xl">詳細はこちら ― 公開案内を受け取る</a>
         <span class="cta-hint">詳細説明動画の公開時にメールでお知らせします</span>
-        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-white-outline">カスタマイズのご相談・ご質問はこちら</a>
+        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-white-outline"><span class="nw">カスタマイズ</span>のご相談・ご質問はこちら</a>
       </div>
     </div>
   </div>
