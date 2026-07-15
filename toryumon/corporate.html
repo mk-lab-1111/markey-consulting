@@ -58,7 +58,8 @@ h2.section-title .accent{color:var(--crimson);}
 .em-red{color:var(--crimson);font-weight:800;font-size:1.15em;}
 .nw{white-space:nowrap;}
 .sp-br{display:none;}
-@media(max-width:760px){.sp-br{display:inline;}}
+.sp-gap{display:none;}
+@media(max-width:760px){.sp-br{display:inline;}.sp-gap{display:block;height:10px;}}
 
 /* ===== Highlight marker (蛍光イエロー) ===== */
 .hl{
@@ -318,9 +319,11 @@ nav.main-nav .nav-cta{font-size:13.5px;}
 /* ===== Living Content ===== */
 .living-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
 .living-card{
-  background:var(--paper);border-radius:var(--radius);padding:30px 26px;
-  border:1px solid var(--line);text-align:center;
+  background:var(--paper);border-radius:var(--radius);padding:0;
+  border:1px solid var(--line);text-align:center;overflow:hidden;
 }
+.living-card-img{width:100%;height:auto;display:block;}
+.living-card-body{padding:24px 22px;}
 .living-icon{font-size:32px;margin-bottom:14px;}
 .living-card h3{font-size:15px;margin-bottom:10px;line-height:1.5;}
 .living-card p{font-size:13.5px;color:var(--sub-text);line-height:1.85;}
@@ -480,7 +483,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   .roi-card .roi-value.gain{font-size:30px;}
   .roi-highlight .roi-big-num{font-size:26px;}
   .pricing-box{padding:36px 20px;}
-  .pricing-box .price-main{font-size:36px;}
+  .pricing-box .price-main{font-size:32px;}
+  .pricing-box .price-main .price-tax{display:block;font-size:13px;margin-top:4px;}
   .pricing-box .price-sub{font-size:12.5px;}
   .pricing-urgency{font-size:15px;}
   .results-row{grid-template-columns:repeat(2,1fr);}
@@ -545,10 +549,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   <div class="hero-bg"></div>
   <div class="hero-content reveal">
     <span class="eyebrow">JYUTAKU EIGYO TORYUMON</span>
-    <h1>売れる営業はいる。<br><span class="hero-accent">育てられる仕組みが、ない。</span></h1>
+    <h1>売れる営業はいる。<br><span class="hero-accent">育てられる仕組みが、<br class="sp-br"><span class="nw">ない。</span></span></h1>
     <p class="hero-lead">
-      <span class="nw">トップセールス</span>は、売るのは上手くても教えるのが上手いとは限らない。<br>
-      ノウハウは属人のまま、教育は背中を見せるだけ。<br>
+      <span class="nw">トップセールス</span>は、売るのは上手くても教えるのが上手いとは限らない。<br><span class="sp-gap"></span>
+      ノウハウは属人のまま、教育は背中を見せるだけ。<br><span class="sp-gap"></span>
       売れる人の頭の中にあるノウハウを、<span class="hl-hero">誰でも吸収できる研修動画に体系化</span>しました。
     </p>
     <p class="hero-sub">
@@ -607,7 +611,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     <div class="section-head center reveal">
       <span class="eyebrow">INSIGHT</span>
       <h2 class="section-title">なぜ、営業教育は<br class="sp-br"><span class="accent nw">うまくいかない</span>のか</h2>
-      <p class="section-lead">多くの住宅会社が抱える「教育の壁」。その構造を解き明かします。</p>
+      <p class="section-lead">多くの住宅会社が抱える「教育の壁」。<br class="sp-br">その構造を解き明かします。</p>
     </div>
 
     <div class="seed-blocks reveal">
@@ -634,13 +638,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     </div>
 
     <div class="seed-conclusion reveal">
-      <strong>だから、教え上手な店長がいる店舗だけが伸び、それ以外は育たない。</strong><br>
+      <strong>だから、教え上手な店長がいる店舗だけが伸び、それ以外は育たない。</strong><br><span class="sp-gap"></span>
       組織の営業力が「たまたま良い上司がいるか」という<span class="hl-yellow-on-dark">「運」に委ねられている。</span>
     </div>
 
     <div class="seed-question reveal">
-      例えば、価格高騰時代の受注の鍵は<span class="nw">"ファン化"</span>。<br>
-      では、住宅営業向けに<span class="nw">ファン化のやり方</span>を<br>体系立てて教えられる人が、<strong class="nw">社内にいますか?</strong>
+      例えば、価格高騰時代の<br class="sp-br">受注の鍵は<span class="nw">"ファン化"</span>。<br><span class="sp-gap"></span>
+      では、住宅営業向けに<span class="nw">ファン化のやり方</span>を体系立てて教えられる人が、<strong class="nw">社内にいますか?</strong>
     </div>
   </div>
 </section>
@@ -652,7 +656,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     <div class="section-head center reveal">
       <span class="eyebrow">SOLUTION</span>
       <h2 class="section-title">だから、<span class="accent">研修動画</span>で仕組み化する</h2>
-      <p class="section-lead">50社・1,000人超の営業を支援してきた"教えるプロ"が、<span class="nw">トップセールス</span>級のノウハウを<span class="hl-strong">約100本の研修動画に体系化</span>。</p>
+      <p class="section-lead">50社・1,000人超の営業を支援してきた"教えるプロ"が、<span class="nw">トップセールス</span>級のノウハウを<br class="sp-br"><span class="hl-strong nw">約100本の研修動画に体系化</span>。</p>
     </div>
 
     <div class="sol-grid reveal" id="content">
@@ -697,7 +701,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow">TRACK RECORD</span>
-      <h2 class="section-title">実績と、<span class="accent">この価格</span>で提供できる理由</h2>
+      <h2 class="section-title">実績と、<br class="sp-br"><span class="accent">この価格</span>で<span class="nw">提供できる理由</span></h2>
     </div>
 
     <div class="track-narrative reveal">
@@ -773,7 +777,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
       <div class="roi-reframe">
         そもそも、社内で研修を行えば残業代だけで月額費用を超えることも。<br>
-        例えば営業10名を2時間集めて店長が教えれば、残業代と店長の時間だけで<span class="hl-strong nw" style="color:var(--crimson);">月55,000円を超える</span>。<br>
+        例えば営業10名を2時間集めて店長が教えれば、残業代と店長の時間だけで<span class="hl-strong nw" style="color:var(--crimson);">月55,000円を超える</span>。<br><span class="sp-gap"></span>
         <strong>これは"追加コスト"ではなく、今かかっている教育コストの置き換えです。</strong>
       </div>
     </div>
@@ -792,19 +796,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
     <div class="living-grid reveal">
       <div class="living-card">
-        <p class="living-icon">&#x1f504;</p>
-        <h3>時代で使えなくなるトークを<strong>更新し続ける</strong></h3>
-        <p>市況の変化に応じて内容をアップデート。常に「今使えるトーク」が学べます。</p>
+        <img src="gazou_koushin.png" alt="トーク内容の更新イメージ" class="living-card-img">
+        <div class="living-card-body">
+          <h3>時代で使えなくなるトークを<br class="sp-br"><strong class="nw">更新し続ける</strong></h3>
+          <p>市況の変化に応じて内容をアップデート。常に「今使えるトーク」が学べます。</p>
+        </div>
       </div>
       <div class="living-card">
-        <p class="living-icon">&#x1f4ca;</p>
-        <h3><strong>毎月追加</strong>の営業戦略動画</h3>
-        <p>営業マンだけでなく経営層も、市況変化への打ち手がわかる最新の営業戦略をお届けします。</p>
+        <img src="gazou_eigyousenryaku.png" alt="営業戦略動画のイメージ" class="living-card-img">
+        <div class="living-card-body">
+          <h3><strong>毎月追加</strong>の営業戦略動画</h3>
+          <p>営業マンだけでなく経営層も、市況変化への打ち手がわかる最新の営業戦略をお届けします。</p>
+        </div>
       </div>
       <div class="living-card">
-        <p class="living-icon">&#x1f4dd;</p>
-        <h3>会議・社内研修の<strong>題材にも</strong></h3>
-        <p>動画のテーマをそのまま社内会議や研修の題材として活用できます。</p>
+        <img src="gazou_kensyuu.png" alt="社内研修での活用イメージ" class="living-card-img">
+        <div class="living-card-body">
+          <h3>会議・社内研修の<strong>題材にも</strong></h3>
+          <p>動画のテーマをそのまま社内会議や研修の題材として活用できます。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -903,7 +913,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
     <div class="pricing-box reveal">
       <p class="price-label"><span class="nw">ベーシックプラン</span></p>
-      <p class="price-main"><span class="nw">月額 55,000円〜<span class="price-tax">(税込)</span></span></p>
+      <p class="price-main"><span class="nw">月額 55,000円〜</span><span class="price-tax">(税込)</span></p>
       <p class="price-sub"><span class="nw">企業規模・ご要望に応じて</span><span class="nw">最適なプランをご案内します</span></p>
 
       <p class="pricing-urgency">＼ <span class="hl-full nw">10月末まで</span>・<span class="hl-full nw">先着50社限定</span> ／</p>
