@@ -549,7 +549,7 @@ function getPreview(text, maxLen = 120) {
 }
 
 function shareUrl(stamp) {
-  return `${location.href.split('#')[0]}#r-${stamp}`;
+  return `${location.href.split('#')[0]}#r${stamp}`;
 }
 
 /* ===== RENDERERS ===== */
@@ -560,7 +560,7 @@ function renderLatest(item) {
   const bodyHtml = renderParsed(parsed);
 
   return `
-    <article class="latest-card" id="r-${esc(item.stamp)}">
+    <article class="latest-card" id="r${esc(item.stamp)}">
       <div class="latest-card-head">
         <div class="latest-meta">
           <span class="latest-badge">最新号</span>
@@ -582,7 +582,7 @@ function renderArchiveCard(item, index) {
   const title = parsed.title || item.theme || 'レポート';
   const preview = getPreview(item.report_text);
   const bodyHtml = renderParsed(parsed);
-  const cardId = `r-${item.stamp}`;
+  const cardId = `r${item.stamp}`;
 
   return `
     <article class="archive-card" id="${esc(cardId)}">
