@@ -566,7 +566,7 @@ function renderLatest(item) {
           <span class="latest-badge">最新号</span>
           <span class="latest-stamp">${esc(displayDate)}</span>
         </div>
-        <h2 class="latest-theme">${esc(item.theme || title)}</h2>
+        <h2 class="latest-theme">${esc(title)}</h2>
       </div>
       <div class="latest-card-body">
         ${bodyHtml || `<p class="r-body">${esc(item.report_text || '')}</p>`}
@@ -589,7 +589,7 @@ function renderArchiveCard(item, index) {
       <div class="archive-card-head" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleCard(this)">
         <div class="arch-info">
           <p class="arch-date">${esc(displayDate)}</p>
-          <h3 class="arch-theme">${esc(item.theme || title)}</h3>
+          <h3 class="arch-theme">${esc(title)}</h3>
           <p class="arch-preview">${esc(preview)}</p>
         </div>
         <button class="arch-toggle" aria-label="展開" tabindex="-1">▼</button>
