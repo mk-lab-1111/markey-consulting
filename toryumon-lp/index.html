@@ -1209,6 +1209,203 @@ footer{background:var(--navy-deep);padding:64px 0 32px;color:rgba(255,255,255,.6
   .btn{white-space:normal;text-align:center;}
 }
 
+
+/* ============================================================
+   残席・締切バッジ（点滅）
+   ============================================================ */
+.scarcity{
+  max-width:620px;margin:0 auto 30px;
+  background:rgba(194,39,63,.14);
+  border:2px solid var(--crimson);
+  border-radius:16px;padding:22px 26px;text-align:center;
+}
+.sc-blink{
+  display:inline-block;
+  background:var(--crimson);color:#fff;
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:12px;font-weight:900;letter-spacing:.14em;
+  padding:6px 18px;border-radius:100px;margin-bottom:14px;
+  animation:sc-flash 1.4s ease-in-out infinite;
+}
+@keyframes sc-flash{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:.45;transform:scale(.97);}
+}
+@media (prefers-reduced-motion:reduce){
+  .sc-blink{animation:none;}
+}
+.sc-seats{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(22px,4vw,32px);font-weight:800;color:#fff;
+  line-height:1.4;margin-bottom:6px;
+}
+.sc-seats .num{
+  color:var(--gold-light);font-size:1.6em;
+  animation:sc-pulse 1.4s ease-in-out infinite;
+  display:inline-block;
+}
+@keyframes sc-pulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.55;}
+}
+@media (prefers-reduced-motion:reduce){
+  .sc-seats .num{animation:none;}
+}
+.sc-total{font-size:.6em;color:#D6DBEA;font-weight:700;}
+.sc-when{font-size:13px;color:#D6DBEA;font-weight:600;margin-bottom:16px;}
+.sc-bar{
+  height:10px;background:rgba(255,255,255,.14);
+  border-radius:100px;overflow:hidden;margin:0 auto 10px;max-width:420px;
+}
+.sc-bar-fill{
+  height:100%;width:36%;
+  background:linear-gradient(90deg,var(--gold-light),var(--crimson));
+  border-radius:100px;
+}
+.sc-bar-note{font-size:12.5px;color:#D6DBEA;font-weight:700;margin-bottom:18px;}
+.sc-deadline{
+  border-top:1px solid rgba(255,255,255,.22);padding-top:16px;
+}
+.sc-dl-lb{font-size:12.5px;color:#D6DBEA;font-weight:700;letter-spacing:.08em;margin-bottom:8px;}
+.sc-dl-date{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(17px,3vw,22px);font-weight:800;color:#fff;line-height:1.5;
+}
+.sc-dl-date .em{color:var(--gold-light);}
+#countdown{
+  margin-top:12px;font-family:'Shippori Mincho',serif;
+  font-size:clamp(16px,2.8vw,21px);font-weight:800;color:var(--gold-light);
+  letter-spacing:.02em;
+}
+#countdown .cd-u{font-size:.62em;color:#D6DBEA;font-weight:700;margin:0 2px 0 1px;}
+@media (max-width:760px){
+  .scarcity{padding:20px 18px;margin-bottom:24px;}
+  .sc-when{font-size:12px;}
+  .sc-bar-note{font-size:11.5px;}
+}
+
+/* ============================================================
+   比較表
+   ============================================================ */
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.cmp{
+  width:100%;min-width:680px;border-collapse:separate;border-spacing:0;
+  background:var(--paper);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.cmp th,.cmp td{
+  padding:18px 16px;text-align:left;vertical-align:top;
+  border-bottom:1px solid var(--line);font-size:14px;line-height:1.75;
+}
+.cmp thead th{
+  background:var(--navy);color:#fff;
+  font-family:'Shippori Mincho',serif;font-size:15px;font-weight:800;
+  text-align:center;line-height:1.5;border-bottom:none;
+}
+.cmp thead th.us{
+  background:linear-gradient(160deg,var(--crimson) 0%,var(--crimson-deep) 100%);
+  font-size:16px;position:relative;
+}
+.cmp thead th.us .us-badge{
+  display:block;font-family:'Noto Sans JP',sans-serif;
+  font-size:10.5px;font-weight:700;letter-spacing:.12em;
+  color:var(--gold-light);margin-bottom:5px;
+}
+.cmp tbody th{
+  background:var(--cream);color:var(--navy);
+  font-family:'Shippori Mincho',serif;font-weight:800;font-size:14.5px;
+  width:90px;text-align:center;vertical-align:middle;
+}
+.cmp td.us{
+  background:var(--crimson-soft);
+  font-weight:700;color:var(--navy-deep);
+}
+.cmp td.us strong{color:var(--crimson);font-weight:900;}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none;}
+.cmp .price{
+  font-family:'Shippori Mincho',serif;font-size:17px;font-weight:800;
+  color:var(--navy);display:block;margin-bottom:3px;
+}
+.cmp td.us .price{color:var(--crimson);font-size:21px;}
+.cmp-note{
+  margin-top:20px;font-size:13px;color:var(--body);line-height:1.9;text-align:center;
+}
+.cmp-scroll-hint{
+  display:none;font-size:12px;color:var(--body);font-weight:700;
+  text-align:center;margin-bottom:10px;
+}
+@media (max-width:760px){
+  .cmp-scroll-hint{display:block;}
+  .cmp th,.cmp td{padding:13px 12px;font-size:12.5px;}
+  .cmp thead th{font-size:13px;}
+  .cmp thead th.us{font-size:13.5px;}
+  .cmp tbody th{width:64px;font-size:12.5px;}
+  .cmp .price{font-size:14px;}
+  .cmp td.us .price{font-size:17px;}
+  .cmp-note{text-align:left;font-size:12.5px;}
+}
+
+/* ============================================================
+   追伸パート
+   ============================================================ */
+.ps-box{
+  max-width:760px;margin:0 auto;
+  background:var(--paper);border-radius:var(--radius);
+  padding:52px 56px;box-shadow:var(--shadow);
+  border-top:6px solid var(--crimson);
+}
+.ps-label{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(24px,4vw,34px);font-weight:900;color:var(--crimson);
+  letter-spacing:.1em;margin-bottom:8px;
+}
+.ps-label small{
+  display:block;font-family:'Noto Sans JP',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--body);
+  margin-top:6px;
+}
+.ps-box p{font-size:16px;line-height:2.05;color:var(--ink);margin-bottom:1.5em;}
+.ps-box p:last-child{margin-bottom:0;}
+.ps-box p strong{font-weight:900;}
+.ps-hr{height:1px;background:var(--line);margin:32px 0;}
+.ps-recap{
+  background:var(--cream);border-radius:14px;padding:26px 28px;margin:28px 0;
+}
+.ps-recap-h{
+  font-family:'Shippori Mincho',serif;
+  font-size:16px;font-weight:900;color:var(--navy);margin-bottom:14px;
+  padding-bottom:10px;border-bottom:1px dashed var(--line);
+}
+.ps-recap ul{list-style:none;}
+.ps-recap li{
+  font-size:14.5px;line-height:1.85;color:var(--ink);
+  padding:7px 0 7px 26px;position:relative;
+}
+.ps-recap li::before{
+  content:'◯';position:absolute;left:2px;top:9px;
+  color:var(--crimson);font-size:10px;
+}
+.ps-recap li strong{color:var(--crimson);font-weight:900;}
+.ps-sign{
+  margin-top:32px;padding-top:24px;border-top:1px solid var(--line);
+  text-align:right;
+}
+.ps-sign span{
+  font-family:'Shippori Mincho',serif;font-size:15px;font-weight:800;color:var(--navy);
+}
+.ps-strong{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(18px,3.2vw,23px);font-weight:900;color:var(--navy);
+  line-height:1.8;
+}
+@media (max-width:760px){
+  .ps-box{padding:30px 22px;}
+  .ps-box p{font-size:14px;line-height:1.95;}
+  .ps-recap{padding:20px 18px;}
+  .ps-recap li{font-size:13px;padding-left:22px;}
+  .ps-recap-h{font-size:14.5px;}
+}
+
 /* ===== Reveal animation ===== */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.is-visible{opacity:1;transform:translateY(0);}
@@ -1837,10 +2034,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
         <p>
           そして——引渡し時の「大変満足」は<strong class="em-red">96%</strong>。<span class="marker">王道のやり方で、お客様に喜ばれながら売ってきました。</span>
         </p>
-      </div>
-      <p class="anon-note">
-        ※ 現在も住宅業界の企業様をご支援している立場のため、氏名・所属企業名・顔写真はWEBサイト上は非公開とさせていただいております。本システム内では一部公開しております。
-      </p>
+        <p class="anon-note">
+          ※ 現在も住宅業界の企業様をご支援している立場のため、氏名・所属企業名・顔写真はWEBサイト上は非公開とさせていただいております。本システム内では一部公開しております。
+        </p>
       </div>
     </div>
   </div>
@@ -2138,6 +2334,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
       <p class="cb-last">来月も同じことで悩んでいたくない。<br>もしそうお思いならば。</p>
     </div>
 
+    <div class="scarcity reveal">
+      <span class="sc-blink">CAMPAIGN 残席わずか</span>
+      <div class="sc-seats">
+        残り <span class="num">64</span>名<span class="sc-total">／限定100名</span>
+      </div>
+      <div class="sc-when">2026年8月時点</div>
+      <div class="sc-bar"><div class="sc-bar-fill"></div></div>
+      <div class="sc-bar-note">すでに36名の方がお申し込みされています</div>
+      <div class="sc-deadline">
+        <div class="sc-dl-lb">永年35%OFF キャンペーン締切</div>
+        <div class="sc-dl-date"><span class="em">2026年10月29日（水）0:00</span> まで</div>
+        <div id="countdown">残り —</div>
+      </div>
+    </div>
+
     <div class="final-cta-box reveal">
       <h2>今月から、<br class="sp-br">売れる営業になる。</h2>
       <p>
@@ -2153,6 +2364,181 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
     <p class="reveal m-left" style="color:#D6DBEA;margin-top:40px;font-size:15px;line-height:1.9;text-align:center;">
       あなたと実際の講義の中でお会いできることを、<br>心より楽しみにしています。
     </p>
+  </div>
+</section>
+<!-- ============================================================
+     比較パート
+     ============================================================ -->
+<section class="bg-cream">
+  <svg class="deco-curve tr" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">COMPARISON</span>
+      <h2 class="section-title">他の学び方と、<br class="sp-br"><span class="accent">何が違うのか。</span></h2>
+      <p class="section-lead">
+        住宅営業を学ぶ方法は、他にもあります。ですが「価格」「頻度」「内容の専門性」を並べてみると、違いは明確です。
+      </p>
+    </div>
+
+    <p class="cmp-scroll-hint reveal">← 横にスクロールできます →</p>
+    <div class="cmp-wrap reveal">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th style="width:80px;"></th>
+            <th class="us"><span class="us-badge">RECOMMENDED</span>住宅営業登竜門</th>
+            <th>コンサル会社<br>の研修</th>
+            <th>一般の<br>営業動画講座</th>
+            <th>単発<br>セミナー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>価格</th>
+            <td class="us">
+              <span class="price">月5,480円</span>
+              <strong>1日あたり183円。</strong>缶コーヒー1本分で、永年この価格。
+            </td>
+            <td>
+              <span class="price">月30万円以上〜</span>
+              個人で負担できる金額ではありません。
+            </td>
+            <td>
+              <span class="price">月15,000円〜</span>
+              登竜門の約3倍の月額。
+            </td>
+            <td>
+              <span class="price">1回50,000円〜</span>
+              1回ごとに費用が発生します。
+            </td>
+          </tr>
+          <tr>
+            <th>頻度</th>
+            <td class="us">
+              <strong>動画100本以上が見放題</strong><br>
+              好きな時に、何度でも。1本10〜15分で毎日続けられます。
+            </td>
+            <td>
+              月1回・数時間<br>
+              次の研修まで1ヶ月空きます。
+            </td>
+            <td>
+              動画見放題
+            </td>
+            <td>
+              1回のみ<br>
+              その場で終わりです。
+            </td>
+          </tr>
+          <tr>
+            <th>内容</th>
+            <td class="us">
+              <strong>住宅営業に特化。</strong>1,500人中10位・6年間102棟の実績者が、50社1,000名の指導で体系化した内容。<strong>トークスクリプト・ロープレ実演まで収録。</strong>
+            </td>
+            <td>
+              体系的だが、抽象的なことも多い。<strong>住宅営業の経験がないコンサルタント</strong>が担当する場合もあります。
+            </td>
+            <td>
+              <strong>住宅営業専門の内容はほとんどありません。</strong>一般的な営業手法が中心です。
+            </td>
+            <td>
+              良い内容だが、<strong>頻度と数が少ないため習得にかなりの時間がかかります。</strong>
+            </td>
+          </tr>
+          <tr>
+            <th>解約</th>
+            <td class="us"><strong>いつでも解約可能</strong><br>解約手数料0円。合わなければ1ヶ月でやめられます。</td>
+            <td>年間契約が一般的</td>
+            <td>プランにより異なる</td>
+            <td>―</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="cmp-note reveal">
+      ※ 各サービスの価格・内容は一般的な相場をもとにした比較であり、個別の事業者を指すものではありません。
+    </p>
+
+    <div class="mini-cta reveal">
+      <div>
+        <span class="mc-label">CAMPAIGN 実施中</span>
+        <p>1日183円で、住宅営業に特化した学びを<span>いつでも解約できます。解約手数料もかかりません</span></p>
+      </div>
+      <a href="https://mosh.jp/services/383423?openExternalBrowser=1" class="btn btn-sm">今すぐ申し込む<span class="b-sub">月5,480円・永年固定（35%OFF）</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     追伸パート
+     ============================================================ -->
+<section class="bg-paper">
+  <svg class="deco-curve bl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="ps-box reveal">
+      <div class="ps-label">追伸<small>POSTSCRIPT</small></div>
+
+      <p>
+        ここまでお読みいただき、ありがとうございます。<br>
+        最後に、どうしてもお伝えしたいことがあります。
+      </p>
+
+      <p>
+        私が住宅営業を始めた頃、<strong>教えてくれる人がいるかどうかは「運」でした。</strong>上司に恵まれた私は成果を出せ、そうでなかった同期は苦しみ続けました。同じ会社、同じ商品なのに、配属先の運とめぐり合わせだけで営業人生が決まっていた。
+      </p>
+
+      <p>
+        あの理不尽を、もう繰り返してほしくない。<br>
+        <span class="marker">正しいやり方を知りたい人が、いつでも学べる場所を作りたかった。</span>それがこのサービスを作った理由です。
+      </p>
+
+      <div class="ps-hr"></div>
+
+      <div class="ps-recap">
+        <div class="ps-recap-h">あらためて、お申し込みいただくと</div>
+        <ul>
+          <li><strong>16プログラム・100本以上</strong>の動画が見放題（毎月追加）</li>
+          <li>トークスクリプト・ロープレ実演まで<strong>すべて収録</strong></li>
+          <li>1本10〜15分。<strong>倍速再生対応</strong>で通勤中にも学べる</li>
+          <li><strong>4大特典</strong>（企業向けに提供している帳票・育成ツールのエクセル版）</li>
+          <li>月<strong>5,480円</strong>（通常8,480円／<strong>永年35%OFF</strong>）</li>
+          <li><strong>いつでも解約可能・解約手数料0円</strong></li>
+        </ul>
+      </div>
+
+      <p>
+        <strong>この5つの弱点を埋めれば、受注は変わります。</strong>年3棟だった方が18棟に、土地なし契約率が8割に、12ヶ月連続受注に。全員、最初は売れなかった人たちです。特別な才能があったわけではありません。<strong>埋めるべき場所を知って、動いただけです。</strong>
+      </p>
+
+      <p>
+        そして——<strong>永年35%OFFは、2026年10月29日0:00まで。限定100名です。</strong>この価格で入られた方は、来年も3年後も5,480円のまま。締切後にお申し込みの方は8,480円になります。
+      </p>
+
+      <p class="ps-strong">
+        1ヶ月試して合わなければ、やめていただいて構いません。<br>
+        失うのは5,480円だけ。でも<span class="marker">得られるものは、これから何年も使える技術です。</span>
+      </p>
+
+      <p>
+        営業は、才能ではありません。<br>
+        <strong>正しい型を、正しい順番で身につけるかどうかです。</strong><br>
+        あなたが変わる最初の一歩に、この登竜門を使ってください。
+      </p>
+
+      <div class="ps-sign">
+        <span>住宅営業登竜門　代表</span>
+      </div>
+    </div>
+
+    <div class="mini-cta reveal" style="max-width:760px;margin-left:auto;margin-right:auto;">
+      <div>
+        <span class="mc-label">締切 2026年10月29日 0:00</span>
+        <p>永年35%OFF・限定100名<span>残り64名（2026年8月時点）</span></p>
+      </div>
+      <a href="https://mosh.jp/services/383423?openExternalBrowser=1" class="btn btn-sm">今すぐ申し込む<span class="b-sub">月5,480円・永年固定</span></a>
+    </div>
   </div>
 </section>
 
@@ -2244,6 +2630,30 @@ if('IntersectionObserver' in window){
 } else {
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
 }
+
+// キャンペーン締切カウントダウン
+(function(){
+  var el = document.getElementById('countdown');
+  if(!el) return;
+  var deadline = new Date('2026-10-29T00:00:00+09:00').getTime();
+  function tick(){
+    var diff = deadline - Date.now();
+    if(diff <= 0){
+      el.innerHTML = 'キャンペーンは終了しました';
+      return;
+    }
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor(diff%86400000/3600000);
+    var m = Math.floor(diff%3600000/60000);
+    var s = Math.floor(diff%60000/1000);
+    el.innerHTML = '残り ' + d + '<span class="cd-u">日</span>' +
+                   h + '<span class="cd-u">時間</span>' +
+                   m + '<span class="cd-u">分</span>' +
+                   s + '<span class="cd-u">秒</span>';
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
 </script>
 </body>
 </html>
