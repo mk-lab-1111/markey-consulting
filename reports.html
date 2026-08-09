@@ -215,70 +215,22 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
 .footer-x-link { display:inline-flex; align-items:center; color:rgba(255,255,255,.45); text-decoration:none; transition:color .15s; line-height:1; margin-left:20px; }
 .footer-x-link:hover { color:#fff; }
 
-/* === フローティング メルマガカード === */
-#mm-float {
-  position: fixed; bottom: 24px; right: 24px; z-index: 8000;
-  background: #fff; border-radius: 16px; width: 260px;
-  padding: 20px 20px 16px;
-  box-shadow: 0 8px 40px rgba(27,37,64,0.30), 0 2px 8px rgba(27,37,64,0.12);
-  animation: mmFloat 3.5s ease-in-out infinite;
-}
-@keyframes mmFloat {
-  0%,100%{ transform:translateY(0); }
-  50%{ transform:translateY(-7px); }
-}
-#mm-float-close {
-  position: absolute; top: 8px; right: 12px;
-  background: none; border: none; font-size: 18px;
-  line-height: 1; cursor: pointer; color: var(--mist); padding: 2px 4px;
-}
-#mm-float-close:hover { color: var(--ink); }
-.mm-float-label {
-  font-size: 10px; letter-spacing: .1em; color: var(--gold);
-  text-transform: uppercase; font-weight: 700; margin-bottom: 6px;
-}
-.mm-float-title {
-  font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4;
-}
-.mm-float-body {
-  font-size: 11.5px; color: #555; line-height: 1.75; margin-bottom: 14px;
-}
-.mm-float-btn {
-  display: block; width: 100%; text-align: center;
-  background: var(--gold); color: var(--navy);
-  border: none; border-radius: 8px; padding: 11px 0;
-  font-size: 14px; font-weight: 700; cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-.mm-float-btn:hover { background: var(--gold-deep); transform: translateY(-1px); }
-
-/* === メルマガ モーダル（reports.html用） === */
-.mm-modal-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.6); z-index: 9000;
-  align-items: center; justify-content: center;
-}
-.mm-modal-overlay.is-open { display: flex; }
-.mm-modal-box {
-  position: relative; background: #fff; border-radius: 10px;
-  width: 90%; max-width: 720px; max-height: 92vh;
-  overflow: hidden; display: flex; flex-direction: column;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-}
-.mm-modal-close {
-  position: absolute; top: 10px; right: 14px;
-  background: none; border: none; font-size: 26px;
-  line-height: 1; cursor: pointer; color: #444; z-index: 1;
-}
-.mm-modal-box iframe { width: 100%; height: 700px; border: none; flex-shrink: 0; }
-
-@media(max-width:768px){
-  #mm-float { width: 180px; padding: 14px 14px 12px; bottom: 14px; right: 10px; }
-  .mm-float-body { display: none; }
-  .mm-float-title { font-size: 12px; margin-bottom: 10px; }
-  .mm-float-btn { font-size: 13px; padding: 9px 0; }
-  .mm-modal-box iframe { height: 580px; }
-}
+/* === 住宅営業登竜門 CTA === */
+.tr-cta{position:fixed;right:24px;bottom:24px;z-index:9999;width:300px;background:#fff;border-radius:10px;box-shadow:0 10px 34px rgba(0,0,0,.20);padding:24px 22px 22px;box-sizing:border-box;animation:tr-cta-in .5s cubic-bezier(.2,.8,.3,1) both;}
+.tr-cta[hidden]{display:none;}
+@keyframes tr-cta-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.tr-cta__eyebrow{margin:0 0 10px;font-size:11px;letter-spacing:.14em;font-weight:700;color:#a8863c;}
+.tr-cta__title{margin:0 0 12px;font-size:17px;line-height:1.5;font-weight:700;color:#7a0c22;}
+.tr-cta__text{margin:0 0 18px;font-size:12.5px;line-height:1.85;color:#666;}
+.tr-cta__btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;border-radius:6px;background:linear-gradient(180deg,#c9a227,#b08c1d);color:#fff;font-size:14px;font-weight:700;text-decoration:none;text-align:center;transition:filter .2s ease,transform .2s ease;}
+.tr-cta__btn:hover,.tr-cta__btn:focus-visible{filter:brightness(1.08);transform:translateY(-1px);color:#fff;}
+.tr-cta__btn:focus-visible{outline:2px solid #7a0c22;outline-offset:3px;}
+.tr-cta__btn svg{flex:0 0 auto;}
+.tr-cta__close{position:absolute;top:8px;right:8px;width:30px;height:30px;border:0;background:transparent;color:#999;font-size:18px;line-height:1;cursor:pointer;border-radius:50%;}
+.tr-cta__close:hover{color:#333;background:#f2f2f2;}
+.tr-cta__close:focus-visible{outline:2px solid #7a0c22;outline-offset:2px;}
+@media (max-width:640px){.tr-cta{right:12px;left:12px;bottom:12px;width:auto;padding:18px 18px 16px;}.tr-cta__title{font-size:16px;}.tr-cta__text{display:none;}}
+@media (prefers-reduced-motion:reduce){.tr-cta{animation:none;}.tr-cta__btn{transition:none;}}
 </style>
 </head>
 <body>
@@ -684,42 +636,30 @@ async function loadReports() {
 loadReports();
 </script>
 
-<!-- フローティング：メルマガ訴求カード -->
-<div id="mm-float">
-  <button id="mm-float-close" aria-label="閉じる">&times;</button>
-  <p class="mm-float-label">Mail Magazine</p>
-  <p class="mm-float-title">無料メールマガジン</p>
-  <p class="mm-float-body">週2回の無料メールマガジンで最新レポート・最新イベント情報・営業コラムなどをメールで直接お届けしています。お申込みは簡単、30秒で入力完了。受注向上にお役立てください。</p>
-  <button class="mm-float-btn" id="mm-float-open">申し込む</button>
-</div>
-
-<!-- モーダル：メルマガ登録 -->
-<div id="modal-mailmag" class="mm-modal-overlay" role="dialog" aria-modal="true">
-  <div class="mm-modal-box">
-    <button class="mm-modal-close" aria-label="閉じる">&times;</button>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqK0dkD2zQEzFy6As_mxheq9FKkhVzYx7P3AIhH8uPrEWsSw/viewform?embedded=true" title="メルマガ登録フォーム" loading="lazy"></iframe>
-  </div>
-</div>
+<aside class="tr-cta" id="tr-cta" aria-label="住宅営業登竜門のご案内">
+  <button type="button" class="tr-cta__close" id="tr-cta-close" aria-label="閉じる">&times;</button>
+  <p class="tr-cta__eyebrow">住宅営業登竜門</p>
+  <p class="tr-cta__title">受注UP・営業力強化はこちらへ</p>
+  <p class="tr-cta__text">住宅営業の成果を決める「5つの成約フレームワーク」を、16プログラム・100本以上の動画で体系的に学べます。</p>
+  <a class="tr-cta__btn" href="https://markey-consulting.com/toryumon-lp/" target="_blank" rel="noopener">
+    住宅営業登竜門を見る
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</aside>
 
 <script>
-(function(){
-  var floatCard = document.getElementById("mm-float");
-  var modal = document.getElementById("modal-mailmag");
-  function openModal(){
-    modal.classList.add("is-open");
-    document.body.style.overflow = "hidden";
-  }
-  function closeModal(){
-    modal.classList.remove("is-open");
-    document.body.style.overflow = "";
-  }
-  document.getElementById("mm-float-open").addEventListener("click", openModal);
-  document.getElementById("mm-float-close").addEventListener("click", function(){
-    floatCard.style.display = "none";
+(function () {
+  var cta = document.getElementById('tr-cta');
+  var close = document.getElementById('tr-cta-close');
+  if (!cta || !close) return;
+  var KEY = 'tr-cta-closed';
+  try { if (sessionStorage.getItem(KEY) === '1') { cta.hidden = true; return; } } catch (e) {}
+  close.addEventListener('click', function () {
+    cta.hidden = true;
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
   });
-  modal.querySelector(".mm-modal-close").addEventListener("click", closeModal);
-  modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
 })();
 </script>
 </body>
