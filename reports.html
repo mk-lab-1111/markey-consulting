@@ -216,21 +216,70 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
 .footer-x-link:hover { color:#fff; }
 
 /* === 住宅営業登竜門 CTA === */
-.tr-cta{position:fixed;right:24px;bottom:24px;z-index:9999;width:300px;background:#fff;border-radius:10px;box-shadow:0 10px 34px rgba(0,0,0,.20);padding:24px 22px 22px;box-sizing:border-box;animation:tr-cta-in .5s cubic-bezier(.2,.8,.3,1) both;}
+.tr-cta{
+  position:fixed;right:24px;bottom:24px;z-index:9999;width:336px;
+  background:linear-gradient(160deg,#8e1128 0%,#6b0a1c 100%);
+  border:1px solid rgba(201,162,39,.55);
+  border-radius:12px;
+  box-shadow:0 16px 44px rgba(0,0,0,.34);
+  padding:22px 22px 20px;box-sizing:border-box;
+  animation:tr-cta-in .55s cubic-bezier(.2,.9,.3,1) both;
+}
 .tr-cta[hidden]{display:none;}
-@keyframes tr-cta-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-.tr-cta__eyebrow{margin:0 0 10px;font-size:11px;letter-spacing:.14em;font-weight:700;color:#a8863c;}
-.tr-cta__title{margin:0 0 12px;font-size:17px;line-height:1.5;font-weight:700;color:#7a0c22;}
-.tr-cta__text{margin:0 0 18px;font-size:12.5px;line-height:1.85;color:#666;}
-.tr-cta__btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;border-radius:6px;background:linear-gradient(180deg,#c9a227,#b08c1d);color:#fff;font-size:14px;font-weight:700;text-decoration:none;text-align:center;transition:filter .2s ease,transform .2s ease;}
-.tr-cta__btn:hover,.tr-cta__btn:focus-visible{filter:brightness(1.08);transform:translateY(-1px);color:#fff;}
-.tr-cta__btn:focus-visible{outline:2px solid #7a0c22;outline-offset:3px;}
-.tr-cta__btn svg{flex:0 0 auto;}
-.tr-cta__close{position:absolute;top:8px;right:8px;width:30px;height:30px;border:0;background:transparent;color:#999;font-size:18px;line-height:1;cursor:pointer;border-radius:50%;}
-.tr-cta__close:hover{color:#333;background:#f2f2f2;}
-.tr-cta__close:focus-visible{outline:2px solid #7a0c22;outline-offset:2px;}
-@media (max-width:640px){.tr-cta{right:12px;left:12px;bottom:12px;width:auto;padding:18px 18px 16px;}.tr-cta__title{font-size:16px;}.tr-cta__text{display:none;}}
-@media (prefers-reduced-motion:reduce){.tr-cta{animation:none;}.tr-cta__btn{transition:none;}}
+@keyframes tr-cta-in{from{opacity:0;transform:translateY(20px) scale(.97);}to{opacity:1;transform:none;}}
+
+.tr-cta__head{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.tr-cta__logo{
+  flex:0 0 auto;width:64px;height:64px;border-radius:50%;
+  background:#fff;object-fit:cover;
+  border:2px solid rgba(201,162,39,.75);
+}
+.tr-cta__eyebrow{
+  margin:0 0 4px;font-size:11px;letter-spacing:.16em;font-weight:700;color:#e6c86e;
+}
+.tr-cta__title{
+  margin:0;font-size:19px;line-height:1.4;font-weight:700;color:#fff;
+}
+.tr-cta__text{
+  margin:0 0 18px;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.82);
+}
+.tr-cta__btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px 12px;border-radius:8px;
+  background:linear-gradient(180deg,#e0b93c,#c39a1c);
+  color:#4b0d1c;font-size:16px;font-weight:700;text-decoration:none;
+  animation:tr-pulse 2.4s ease-in-out infinite;
+  transition:transform .2s ease,filter .2s ease;
+}
+.tr-cta__btn:hover,.tr-cta__btn:focus-visible{
+  filter:brightness(1.08);transform:translateY(-2px);color:#4b0d1c;animation:none;
+}
+.tr-cta__btn:focus-visible{outline:2px solid #fff;outline-offset:3px;}
+@keyframes tr-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(224,185,60,.55);}
+  50%{box-shadow:0 0 0 10px rgba(224,185,60,0);}
+}
+
+.tr-cta__close{
+  position:absolute;top:8px;right:8px;width:30px;height:30px;border:0;
+  background:transparent;color:rgba(255,255,255,.65);font-size:20px;line-height:1;
+  cursor:pointer;border-radius:50%;
+}
+.tr-cta__close:hover{color:#fff;background:rgba(255,255,255,.14);}
+.tr-cta__close:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+
+@media (max-width:640px){
+  .tr-cta{right:12px;left:12px;bottom:12px;width:auto;padding:16px 16px 14px;}
+  .tr-cta__logo{width:48px;height:48px;}
+  .tr-cta__title{font-size:16.5px;}
+  .tr-cta__title br{display:none;}
+  .tr-cta__text{display:none;}
+  .tr-cta__head{margin-bottom:12px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .tr-cta{animation:none;}
+  .tr-cta__btn{animation:none;transition:none;}
+}
 </style>
 </head>
 <body>
@@ -638,13 +687,18 @@ loadReports();
 
 <aside class="tr-cta" id="tr-cta" aria-label="住宅営業登竜門のご案内">
   <button type="button" class="tr-cta__close" id="tr-cta-close" aria-label="閉じる">&times;</button>
-  <p class="tr-cta__eyebrow">住宅営業登竜門</p>
-  <p class="tr-cta__title">受注UP・営業力強化はこちらへ</p>
-  <p class="tr-cta__text">住宅営業の成果を決める「5つの成約フレームワーク」を、16プログラム・100本以上の動画で体系的に学べます。</p>
+  <div class="tr-cta__head">
+    <img class="tr-cta__logo" src="toryumon-lp/logo.jpg" alt="住宅営業登竜門" width="64" height="64" loading="lazy">
+    <div>
+      <p class="tr-cta__eyebrow">住宅営業登竜門</p>
+      <p class="tr-cta__title">受注UP・<br>営業力強化はこちらへ</p>
+    </div>
+  </div>
+  <p class="tr-cta__text">成果を決める「5つの成約フレームワーク」を、16プログラム・100本以上の動画で体系的に学べます。</p>
   <a class="tr-cta__btn" href="https://markey-consulting.com/toryumon-lp/" target="_blank" rel="noopener">
-    住宅営業登竜門を見る
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    詳しく見る
+    <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
 </aside>
