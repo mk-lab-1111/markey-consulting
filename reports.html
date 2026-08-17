@@ -268,13 +268,48 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
 .tr-cta__close:hover{color:#fff;background:rgba(255,255,255,.14);}
 .tr-cta__close:focus-visible{outline:2px solid #fff;outline-offset:2px;}
 
+.tr-cta__short{display:none;}
+
 @media (max-width:640px){
-  .tr-cta{right:12px;left:12px;bottom:12px;width:auto;padding:16px 16px 14px;}
-  .tr-cta__logo{width:48px;height:48px;}
-  .tr-cta__title{font-size:16.5px;}
+  .tr-cta{
+    right:8px;left:8px;bottom:8px;width:auto;
+    padding:0 8px 0 10px;
+    border-radius:10px;
+    display:flex;align-items:center;gap:10px;
+    min-height:56px;
+  }
+  .tr-cta__head{
+    display:flex;align-items:center;gap:10px;
+    margin:0;flex:1 1 auto;min-width:0;
+  }
+  .tr-cta__logo{
+    width:36px;height:36px;border-width:1.5px;
+  }
+  .tr-cta__eyebrow{display:none;}
+  .tr-cta__title{
+    font-size:13.5px;line-height:1.35;font-weight:700;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
   .tr-cta__title br{display:none;}
   .tr-cta__text{display:none;}
-  .tr-cta__head{margin-bottom:12px;}
+  .tr-cta__btn{
+    flex:0 0 auto;
+    padding:9px 14px;
+    font-size:13px;
+    border-radius:6px;
+    gap:4px;
+    animation:none;
+  }
+  .tr-cta__btn svg{width:13px;height:13px;}
+  .tr-cta__close{
+    position:static;
+    flex:0 0 auto;
+    width:26px;height:26px;
+    font-size:17px;
+    margin-right:-2px;
+  }
+  .tr-cta__long{display:none;}
+  .tr-cta__short{display:inline;}
 }
 @media (prefers-reduced-motion:reduce){
   .tr-cta{animation:none;}
@@ -691,7 +726,7 @@ loadReports();
     <img class="tr-cta__logo" src="toryumon-lp/logo.jpg" alt="住宅営業登竜門" width="64" height="64" loading="lazy">
     <div>
       <p class="tr-cta__eyebrow">住宅営業登竜門</p>
-      <p class="tr-cta__title">受注UP・<br>営業力強化はこちらへ</p>
+      <p class="tr-cta__title"><span class="tr-cta__long">受注UP・<br>営業力強化はこちらへ</span><span class="tr-cta__short">受注UP・営業力強化</span></p>
     </div>
   </div>
   <p class="tr-cta__text">成果を決める「5つの成約フレームワーク」を、16プログラム・100本以上の動画で体系的に学べます。</p>
