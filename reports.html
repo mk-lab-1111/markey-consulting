@@ -138,7 +138,11 @@ nav.main-nav a.active{color:var(--crimson);}
 }
 .r-section:first-child{margin-top:0;}
 .r-subsection{font-size:15.5px;font-weight:700;color:var(--navy);margin:20px 0 8px;}
-.r-body{font-size:14.5px;color:var(--ink);line-height:1.9;margin-bottom:14px;white-space:pre-wrap;}
+.r-body{font-size:14.5px;color:var(--ink);line-height:1.9;margin-bottom:14px;}
+.r-list{margin:6px 0 10px 1.2em;padding:0;list-style:disc;}
+.r-list li{font-size:14.5px;color:var(--ink);line-height:1.8;margin-bottom:2px;}
+.r-item-head{font-size:14.5px;color:var(--ink);line-height:1.9;margin:14px 0 4px;}
+.r-item-head strong{color:var(--navy);}
 .r-closing{
   margin-top:32px;padding:20px 24px;border-radius:12px;
   background:var(--crimson-soft);border-left:4px solid var(--crimson);
@@ -148,6 +152,8 @@ nav.main-nav a.active{color:var(--crimson);}
   .r-section{font-size:16.5px;margin:24px 0 12px;}
   .r-subsection{font-size:15px;margin:16px 0 6px;}
   .r-body{font-size:13.5px !important;line-height:1.8;}
+  .r-list li{font-size:13.5px;}
+  .r-item-head{font-size:13.5px;}
   .r-closing{padding:16px 18px;}
   .r-closing p{font-size:13px;}
 }
@@ -565,6 +571,55 @@ function parseReportText(text) {
   return { title, date, sections, closing };
 }
 
+function emphasize(str) {
+  return str.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
+function formatBody(raw) {
+  const lines = raw.split('\n');
+  let html = '';
+  let inList = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+    if (!trimmed) {
+      if (inList) { html += '</ul>'; inList = false; }
+      continue;
+    }
+
+    // 箇条書き: 「・」または「-」で始まる行
+    const bulletMatch = trimmed.match(/^[・\-]\s*(.+)$/);
+    if (bulletMatch) {
+      if (!inList) { html += '<ul class="r-list">'; inList = true; }
+      html += `<li>${emphasize(esc(bulletMatch[1]))}</li>`;
+      continue;
+    }
+
+    // リスト以外の行が来たらリストを閉じる
+    if (inList) { html += '</ul>'; inList = false; }
+
+    // 番号付き小見出し: 「1. 」「2. 」など
+    const numMatch = trimmed.match(/^(\d+)[.\)．）]\s*(.+)$/);
+    if (numMatch) {
+      html += `<p class="r-item-head"><strong>${esc(numMatch[1])}. ${emphasize(esc(numMatch[2]))}</strong></p>`;
+      continue;
+    }
+
+    // 行頭「短い語＋コロン」パターン（コロン前10文字以内）
+    const colonMatch = trimmed.match(/^(.{1,10}?)[:：]\s*(.+)$/);
+    if (colonMatch) {
+      html += `<p class="r-body"><strong>${esc(colonMatch[1])}：</strong>${emphasize(esc(colonMatch[2]))}</p>`;
+      continue;
+    }
+
+    // 通常行
+    html += `<p class="r-body">${emphasize(esc(trimmed))}</p>`;
+  }
+  if (inList) html += '</ul>';
+  return html;
+}
+
 function renderParsed(parsed) {
   let html = '';
   for (const sec of parsed.sections) {
@@ -573,7 +628,7 @@ function renderParsed(parsed) {
     }
     for (const sub of sec.subSections) {
       if (sub.title) html += `<h4 class="r-subsection">■ ${esc(sub.title)}</h4>`;
-      if (sub.body) html += `<p class="r-body">${esc(sub.body).replace(/\n/g,'<br>')}</p>`;
+      if (sub.body) html += formatBody(sub.body);
     }
   }
   if (parsed.closing) {
