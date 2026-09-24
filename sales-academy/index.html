@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Academy by MARKEY CONSULTING｜BtoB営業の学習コミュニティ</title>
+<meta name="description" content="法人営業・SaaS営業・コンサルティング営業のプロが集まる学習コミュニティ。月1回のオンライン勉強会、ゲスト講師の特別講演、交流会を開催。登録無料・自由参加。">
+<link rel="canonical" href="https://markey-consulting.com/sales-academy/">
+<meta property="og:url" content="https://markey-consulting.com/sales-academy/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sales Academy by MARKEY CONSULTING｜BtoB営業の学習コミュニティ">
+<meta property="og:description" content="BtoB営業を、みんなで学ぶ。共に成長する。登録無料・オンライン開催・自由参加の研究会です。">
+<meta property="og:image" content="https://markey-consulting.com/sales-academy/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#A51E6D">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+   ═══════════════════════════════════════════ */
+:root{
+  /* palette */
+  --accent:#A51E6D;
+  --accent-deep:#7E1553;
+  --accent-tint:#F6E9F0;
+  --accent-tint-2:#FBF3F7;
+  --red:#FF5757;
+  --purple:#8C52FF;
+  --grad:linear-gradient(90deg,#FF5757 0%,#8C52FF 100%);
+  --grad-soft:linear-gradient(90deg,rgba(255,87,87,.10) 0%,rgba(140,82,255,.10) 100%);
+  --ink:#333;
+  --ink-2:#5a5a5a;
+  --ink-3:#a3a3a3;
+  --gray-1:#f7f7f7;
+  --gray-2:#f5f5f5;
+  --gray-3:#e6e6e6;
+  --gray-4:#d9d9d9;
+  --line:#e2e2e2;
+  --white:#fff;
+  --brand-navy:#1E1456;
+
+  /* type */
+  --jp:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --en:"Inter",var(--jp);
+
+  /* rhythm */
+  --sec-y:clamp(56px,7vw,104px);
+  --gutter:clamp(16px,4vw,40px);
+  --maxw:1120px;
+
+  /* form */
+  --r-sm:8px;
+  --r-md:14px;
+  --r-lg:22px;
+  --r-pill:999px;
+  --sh-1:0 2px 10px rgba(51,51,51,.06);
+  --sh-2:0 8px 28px rgba(51,51,51,.10);
+  --sh-3:0 18px 48px rgba(51,51,51,.14);
+}
+
+/* ═══════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--jp);
+  color:var(--ink);
+  background:var(--white);
+  font-size:15px;
+  line-height:1.9;
+  font-weight:400;
+  letter-spacing:.02em;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* icons */
+.ico{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ico--fill{fill:currentColor;stroke:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.8,.3,1),transform .7s cubic-bezier(.22,.8,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT PRIMITIVES
+   ═══════════════════════════════════════════ */
+.section{padding:var(--sec-y) var(--gutter)}
+.inner{max-width:var(--maxw);margin:0 auto}
+.inner--narrow{max-width:800px}
+.tint{background:var(--accent-tint)}
+.tint-2{background:var(--accent-tint-2)}
+.gray{background:var(--gray-2)}
+
+.sec-head{text-align:center;margin-bottom:clamp(36px,4.5vw,60px)}
+.sec-en{
+  font-family:var(--en);
+  font-size:12px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:12px;
+}
+.sec-title{
+  font-size:clamp(21px,2.9vw,26px);
+  font-weight:700;line-height:1.5;letter-spacing:.05em;
+  color:var(--accent);
+}
+.sec-title--ink{color:var(--ink)}
+.sec-lead{
+  margin-top:18px;
+  font-size:clamp(13.5px,1.4vw,15px);
+  line-height:2;color:var(--ink-2);
+  max-width:660px;margin-left:auto;margin-right:auto;
+}
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════ */
+.cta-block{display:flex;flex-direction:column;align-items:center;position:relative}
+.cta-label{
+  position:relative;z-index:2;
+  background:var(--white);
+  border:2px solid var(--red);
+  color:var(--accent);
+  font-size:clamp(12px,1.3vw,14px);font-weight:700;letter-spacing:.04em;
+  padding:6px 22px;border-radius:var(--r-sm);
+  margin-bottom:-14px;
+  box-shadow:0 2px 8px rgba(51,51,51,.08);
+}
+.cta-band{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;
+  width:100%;max-width:560px;
+  background:var(--grad);
+  color:var(--white);
+  padding:22px 28px 20px;
+  border-radius:var(--r-sm);
+  box-shadow:var(--sh-2);
+  transition:transform .2s cubic-bezier(.22,.8,.3,1),box-shadow .2s;
+  text-align:center;
+}
+.cta-band:hover{transform:translateY(-3px);box-shadow:var(--sh-3)}
+.cta-band strong{font-size:clamp(17px,2.2vw,22px);font-weight:700;letter-spacing:.06em;line-height:1.4}
+.cta-band small{font-size:clamp(11.5px,1.2vw,13px);font-weight:500;opacity:.93;letter-spacing:.04em}
+.cta-note{
+  margin-top:16px;font-size:12px;line-height:1.8;color:var(--ink-3);
+  text-align:center;max-width:520px;
+}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--white);
+  border:1px solid var(--ink);
+  color:var(--ink);
+  font-size:14px;font-weight:500;letter-spacing:.05em;
+  padding:13px 20px 13px 26px;border-radius:var(--r-pill);
+  transition:background .2s,color .2s;
+}
+.btn-ghost:hover{background:var(--ink);color:var(--white)}
+.btn-ghost .dot{
+  width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--white);
+  display:grid;place-items:center;font-size:13px;
+  transition:background .2s,color .2s;
+}
+.btn-ghost:hover .dot{background:var(--white);color:var(--ink)}
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.hdr{
+  position:sticky;top:0;z-index:90;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s,box-shadow .25s;
+}
+.hdr.scrolled{border-bottom-color:var(--line);box-shadow:0 1px 14px rgba(51,51,51,.05)}
+.hdr-in{
+  max-width:1260px;margin:0 auto;
+  padding:0 var(--gutter);height:72px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.hdr-logo img{height:38px;width:auto}
+.hdr-nav{display:flex;align-items:center;gap:30px}
+.hdr-nav a{
+  font-size:13.5px;font-weight:500;letter-spacing:.04em;color:var(--ink);
+  position:relative;padding:4px 0;transition:color .2s;
+}
+.hdr-nav a::after{
+  content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;
+  background:var(--grad);transform:scaleX(0);transform-origin:left;
+  transition:transform .28s cubic-bezier(.22,.8,.3,1);
+}
+.hdr-nav a:hover{color:var(--accent)}
+.hdr-nav a:hover::after{transform:scaleX(1)}
+.hdr-cta{
+  background:var(--grad);color:var(--white);
+  font-size:13.5px;font-weight:700;letter-spacing:.05em;
+  padding:11px 24px;border-radius:var(--r-pill);
+  box-shadow:0 4px 14px rgba(140,82,255,.28);
+  transition:transform .2s,box-shadow .2s;
+}
+.hdr-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(140,82,255,.36)}
+.hdr-burger{
+  display:none;width:42px;height:42px;
+  border:1px solid var(--line);border-radius:var(--r-sm);
+  background:var(--white);color:var(--ink);
+  place-items:center;font-size:20px;cursor:pointer;
+}
+
+/* drawer */
+.drawer{
+  position:fixed;inset:72px 0 0;z-index:89;
+  background:var(--white);
+  padding:28px var(--gutter) 40px;
+  transform:translateY(-12px);opacity:0;pointer-events:none;
+  transition:opacity .26s,transform .26s;
+  overflow-y:auto;
+}
+.drawer.open{opacity:1;transform:none;pointer-events:auto}
+.drawer a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 4px;border-bottom:1px solid var(--line);
+  font-size:15px;font-weight:500;letter-spacing:.04em;
+}
+.drawer a .ico{font-size:16px;color:var(--ink-3)}
+.drawer .drawer-cta{
+  margin-top:28px;border:none;justify-content:center;
+  background:var(--grad);color:var(--white);
+  font-weight:700;padding:18px;border-radius:var(--r-sm);
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero{position:relative;overflow:hidden;background:var(--white)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(100deg,#fff 0%,#fff 30%,rgba(255,255,255,.88) 46%,rgba(255,255,255,.35) 68%,rgba(255,255,255,.05) 88%),
+    linear-gradient(to top,rgba(255,255,255,.9) 0%,transparent 34%);
+}
+.hero-in{
+  position:relative;z-index:1;
+  max-width:var(--maxw);margin:0 auto;
+  padding:clamp(48px,6vw,78px) var(--gutter) clamp(52px,6vw,86px);
+}
+.hero-logo{width:clamp(244px,33vw,404px);height:auto;margin-bottom:clamp(24px,3.2vw,34px)}
+.hero-kicker{
+  font-size:clamp(12px,1.4vw,14.5px);font-weight:500;letter-spacing:.09em;
+  color:var(--ink-2);margin-bottom:clamp(14px,1.8vw,20px);
+}
+.hero h1{
+  font-size:clamp(27px,4.6vw,56px);
+  font-weight:500;line-height:1.28;letter-spacing:.05em;
+  color:var(--ink);
+  margin-bottom:clamp(26px,3.4vw,40px);
+}
+.hero h1 em{
+  display:inline-block;
+  font-style:normal;font-weight:700;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .cta-block{align-items:flex-start}
+.hero .cta-band{max-width:470px}
+.hero .cta-label{align-self:center;margin-left:0}
+.hero .cta-wrap{max-width:470px;display:flex;flex-direction:column;align-items:center}
+
+/* vertical ribbons (SHIFT AI signature) */
+.ribbons{
+  position:absolute;top:0;right:clamp(12px,4vw,58px);z-index:2;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.ribbon{
+  writing-mode:vertical-rl;
+  text-orientation:upright;
+  white-space:nowrap;
+  color:var(--white);
+  font-size:12px;font-weight:700;letter-spacing:.16em;
+  padding:22px 9px 26px;
+  border-radius:0 0 4px 4px;
+  box-shadow:0 6px 18px rgba(51,51,51,.16);
+}
+.ribbon--a{background:var(--red)}
+.ribbon--b{background:var(--purple)}
+
+/* ═══════════════════════════════════════════
+   QUICK FACTS
+   ═══════════════════════════════════════════ */
+.facts{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--white);
+}
+.facts-grid{
+  max-width:var(--maxw);margin:0 auto;
+  padding:clamp(24px,3vw,34px) var(--gutter);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,32px);
+}
+.fact{display:flex;align-items:center;gap:14px;justify-content:center;text-align:left}
+.fact+.fact{border-left:1px solid var(--line)}
+.fact-ico{
+  width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;font-size:20px;
+  background:var(--grad-soft);color:var(--accent);flex-shrink:0;
+}
+.fact-txt{display:block}
+.fact-t{display:block;font-size:clamp(14px,1.6vw,16px);font-weight:700;letter-spacing:.04em;line-height:1.5}
+.fact-s{display:block;font-size:11.5px;color:var(--ink-3);line-height:1.6;letter-spacing:.02em}
+
+/* ═══════════════════════════════════════════
+   PHOTO STRIP
+   ═══════════════════════════════════════════ */
+.strip{display:grid;grid-template-columns:repeat(3,1fr)}
+.strip-item{position:relative;aspect-ratio:16/9;overflow:hidden}
+.strip-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.8,.3,1)}
+.strip-item:hover img{transform:scale(1.06)}
+.strip-item::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(40,20,45,.82) 0%,rgba(40,20,45,.15) 52%,transparent 100%);
+}
+.strip-cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:clamp(14px,2vw,22px);color:var(--white);
+}
+.strip-no{
+  font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.16em;
+  display:inline-block;margin-bottom:6px;
+  background:var(--grad);padding:3px 10px;border-radius:var(--r-pill);
+}
+.strip-t{font-size:clamp(12.5px,1.4vw,14.5px);font-weight:700;letter-spacing:.04em;line-height:1.5}
+
+/* ═══════════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════════ */
+.about-grid{
+  display:grid;grid-template-columns:.92fr 1.08fr;
+  gap:clamp(32px,5vw,64px);align-items:center;
+}
+.about-visual{position:relative}
+.about-visual img.main{
+  width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-lg);
+  box-shadow:var(--sh-2);
+}
+.about-visual img.sub{
+  position:absolute;right:-18px;bottom:-22px;
+  width:42%;aspect-ratio:4/3;object-fit:cover;
+  border-radius:var(--r-md);border:6px solid var(--white);
+  box-shadow:var(--sh-2);
+}
+.about-chip{
+  position:absolute;top:18px;left:18px;
+  background:var(--grad);color:var(--white);
+  font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.12em;
+  padding:7px 16px;border-radius:var(--r-pill);
+  box-shadow:0 4px 14px rgba(140,82,255,.3);
+}
+.about-body .sec-en,.about-body .sec-title,.about-body .sec-lead{text-align:left;margin-left:0}
+.about-body .sec-title{margin-bottom:0}
+.about-body .sec-lead{max-width:none}
+.points{display:flex;flex-direction:column;gap:14px;margin-top:clamp(26px,3vw,36px)}
+.point{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--white);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:20px 22px;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+}
+.point:hover{border-color:transparent;box-shadow:var(--sh-2);transform:translateX(4px)}
+.point-ico{
+  width:42px;height:42px;border-radius:var(--r-sm);
+  background:var(--grad);color:var(--white);
+  display:grid;place-items:center;font-size:19px;flex-shrink:0;
+}
+.point h4{font-size:14.5px;font-weight:700;letter-spacing:.04em;margin-bottom:4px;line-height:1.6}
+.point p{font-size:13px;line-height:1.85;color:var(--ink-2)}
+
+/* ═══════════════════════════════════════════
+   FEATURES (3 reasons)
+   ═══════════════════════════════════════════ */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
+.feat{
+  background:var(--white);border-radius:var(--r-md);
+  padding:clamp(28px,3vw,38px) clamp(20px,2.4vw,28px);
+  text-align:center;position:relative;overflow:hidden;
+  box-shadow:var(--sh-1);
+  transition:transform .28s cubic-bezier(.22,.8,.3,1),box-shadow .28s;
+}
+.feat:hover{transform:translateY(-6px);box-shadow:var(--sh-3)}
+.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+.feat-no{
+  font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.16em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:14px;
+}
+.feat-ico{
+  width:60px;height:60px;margin:0 auto 18px;border-radius:50%;
+  background:var(--grad-soft);color:var(--accent);
+  display:grid;place-items:center;font-size:26px;
+}
+.feat h3{font-size:clamp(15px,1.8vw,17.5px);font-weight:700;letter-spacing:.05em;line-height:1.6;margin-bottom:10px}
+.feat p{font-size:13px;line-height:1.9;color:var(--ink-2)}
+.feat .amt{
+  display:block;font-family:var(--en);font-size:26px;font-weight:700;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1.2;margin-bottom:4px;
+}
+
+/* ═══════════════════════════════════════════
+   ACTIVITIES
+   ═══════════════════════════════════════════ */
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,26px)}
+.act{
+  display:flex;flex-direction:column;
+  background:var(--white);border:1px solid var(--line);
+  border-radius:var(--r-md);overflow:hidden;
+  transition:transform .28s cubic-bezier(.22,.8,.3,1),box-shadow .28s,border-color .28s;
+}
+.act:hover{transform:translateY(-6px);box-shadow:var(--sh-3);border-color:transparent}
+.act-photo{position:relative;aspect-ratio:16/10;overflow:hidden}
+.act-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.8,.3,1)}
+.act:hover .act-photo img{transform:scale(1.06)}
+.act-no{
+  position:absolute;left:14px;top:14px;z-index:2;
+  font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;
+  background:var(--grad);color:var(--white);
+  padding:5px 13px;border-radius:var(--r-pill);
+}
+.act-body{padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;flex:1}
+.act-body h3{font-size:clamp(15px,1.7vw,16.5px);font-weight:700;letter-spacing:.04em;line-height:1.6;margin-bottom:10px}
+.act-body p{font-size:13px;line-height:1.9;color:var(--ink-2);margin-bottom:18px}
+.act-meta{margin-top:auto;display:flex;flex-wrap:wrap;gap:7px}
+.chip{
+  font-size:11.5px;font-weight:500;letter-spacing:.02em;
+  background:var(--gray-2);color:var(--ink-2);
+  padding:5px 12px;border-radius:var(--r-pill);
+}
+
+/* ═══════════════════════════════════════════
+   SCHEDULE
+   ═══════════════════════════════════════════ */
+.next{
+  display:grid;grid-template-columns:auto 1fr auto;
+  align-items:center;gap:clamp(20px,3vw,40px);
+  background:var(--white);border-radius:var(--r-lg);
+  padding:clamp(26px,3.2vw,40px) clamp(24px,3.2vw,44px);
+  box-shadow:var(--sh-2);position:relative;overflow:hidden;
+  margin-bottom:clamp(30px,3.6vw,46px);
+}
+.next::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--grad)}
+.next-when{text-align:center;flex-shrink:0}
+.next-badge{
+  display:inline-block;background:var(--grad);color:var(--white);
+  font-family:var(--en);font-size:10.5px;font-weight:700;letter-spacing:.16em;
+  padding:5px 14px;border-radius:var(--r-pill);margin-bottom:14px;
+}
+.next-md{
+  font-family:var(--en);font-size:clamp(40px,5.4vw,58px);font-weight:700;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  letter-spacing:-.01em;
+}
+.next-md span{font-size:.44em;font-weight:600;letter-spacing:.04em}
+.next-dow{margin-top:8px;font-size:13px;font-weight:700;color:var(--ink-2);letter-spacing:.06em}
+.next-body h3{font-size:clamp(16px,2vw,20px);font-weight:700;letter-spacing:.05em;line-height:1.6;margin-bottom:12px}
+.next-meta{display:flex;flex-wrap:wrap;gap:8px 18px}
+.next-meta li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.next-meta .ico{font-size:15px;color:var(--accent)}
+.next-cta{flex-shrink:0}
+
+.record{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,52px);align-items:center;
+  background:var(--white);border-radius:var(--r-lg);padding:clamp(26px,3.2vw,40px) clamp(24px,3.2vw,44px);
+  box-shadow:var(--sh-1);}
+.record-num{text-align:center;flex-shrink:0;padding-right:clamp(20px,3vw,40px);border-right:1px solid var(--line)}
+.record-big{
+  font-family:var(--en);font-size:clamp(46px,6.4vw,70px);font-weight:700;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.record-big span{font-size:.36em;font-weight:600}
+.record-lab{margin-top:8px;font-size:12px;font-weight:700;color:var(--ink-2);letter-spacing:.08em}
+.record-h{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent);margin-bottom:14px}
+.themes{display:flex;flex-wrap:wrap;gap:8px}
+.theme{
+  font-size:12.5px;font-weight:500;letter-spacing:.02em;
+  background:var(--accent-tint);color:var(--accent-deep);
+  padding:6px 15px;border-radius:var(--r-pill);
+}
+.theme.more{background:transparent;color:var(--ink-3);padding-left:4px}
+
+/* ═══════════════════════════════════════════
+   ORGANIZER
+   ═══════════════════════════════════════════ */
+.org{
+  background:var(--white);border-radius:var(--r-lg);
+  padding:clamp(26px,3.6vw,48px);
+  box-shadow:var(--sh-2);
+}
+.org-head{
+  display:flex;gap:clamp(20px,3vw,36px);align-items:center;
+  padding-bottom:clamp(22px,3vw,30px);margin-bottom:clamp(22px,3vw,30px);
+  border-bottom:1px solid var(--line);
+}
+.org-photo{width:clamp(116px,15vw,172px);flex-shrink:0}
+.org-photo img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 16%;
+  border-radius:var(--r-md);background:var(--gray-2);
+}
+.org-role{
+  font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.16em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:7px;
+}
+.org-name{font-size:clamp(20px,2.6vw,27px);font-weight:700;letter-spacing:.08em;line-height:1.4}
+.org-en{font-family:var(--en);font-size:12px;font-weight:500;letter-spacing:.14em;color:var(--ink-3);margin-top:4px}
+.org-titles{margin-top:14px;display:flex;flex-direction:column;gap:5px}
+.org-titles li{
+  font-size:12.5px;line-height:1.7;color:var(--ink-2);
+  display:flex;gap:9px;align-items:flex-start;
+}
+.org-titles li::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--grad);margin-top:9px;flex-shrink:0;
+}
+.org-bio{font-size:13.5px;line-height:2.05;color:var(--ink-2)}
+.org-bio+.org-bio{margin-top:14px}
+
+.org-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(12px,2vw,20px);margin-top:clamp(24px,3vw,32px);
+}
+.org-stat{
+  background:var(--accent-tint-2);border-radius:var(--r-md);
+  padding:18px 16px;text-align:center;
+}
+.org-stat-n{
+  font-family:var(--en);font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.15;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.org-stat-n span{font-size:.55em;font-weight:600;letter-spacing:.02em}
+.org-stat-l{margin-top:7px;font-size:11.5px;line-height:1.6;color:var(--ink-2);letter-spacing:.02em}
+
+.org-runs{margin-top:clamp(22px,2.6vw,28px);display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.org-run{
+  border:1px solid var(--line);border-radius:var(--r-md);
+  padding:15px 18px;display:flex;gap:12px;align-items:flex-start;
+}
+.org-run .ico{font-size:17px;color:var(--accent);margin-top:3px}
+.org-run b{display:block;font-size:13px;font-weight:700;letter-spacing:.03em;line-height:1.6}
+.org-run small{display:block;font-size:11.5px;color:var(--ink-3);line-height:1.6}
+.org-runs-h,.org-tags-h{
+  font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);
+  margin-top:clamp(22px,2.6vw,28px);
+}
+.org-runs-h+.org-runs{margin-top:10px}
+
+.org-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.org-tag{
+  font-size:12px;font-weight:500;letter-spacing:.02em;
+  background:var(--accent-tint);color:var(--accent);
+  padding:5px 14px;border-radius:var(--r-pill);
+}
+.org-cta{margin-top:clamp(24px,3vw,30px)}
+
+/* ─── MESSAGE（開催の想い） ─── */
+.msg{max-width:780px;margin:0 auto}
+.msg-quote{
+  text-align:center;
+  font-size:clamp(20px,3.4vw,32px);font-weight:700;line-height:1.65;letter-spacing:.05em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:clamp(30px,4vw,44px);
+}
+.msg-body{
+  background:var(--white);border-radius:var(--r-lg);
+  padding:clamp(28px,4vw,54px);box-shadow:var(--sh-1);
+}
+.msg-body p{font-size:clamp(13.5px,1.5vw,15px);line-height:2.15;color:var(--ink-2)}
+.msg-body p+p{margin-top:clamp(18px,2.2vw,24px)}
+.msg-body p strong{color:var(--ink);font-weight:700}
+.msg-sign{
+  margin-top:clamp(28px,3.4vw,38px);padding-top:clamp(20px,2.6vw,26px);
+  border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:14px;justify-content:flex-end;
+}
+.msg-sign-t{text-align:right}
+.msg-sign-n{font-size:15px;font-weight:700;letter-spacing:.08em;line-height:1.5}
+.msg-sign-r{font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+.msg-sign img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center 16%}
+
+/* ═══════════════════════════════════════════
+   VOICES
+   ═══════════════════════════════════════════ */
+.voice-feats{display:flex;flex-direction:column;gap:clamp(16px,2.2vw,22px);margin-bottom:clamp(26px,3.4vw,40px)}
+.voice-feat{
+  position:relative;overflow:hidden;
+  background:var(--white);border-radius:var(--r-lg);
+  padding:clamp(26px,3.4vw,42px) clamp(24px,3.4vw,44px);
+  box-shadow:var(--sh-2);
+  display:grid;grid-template-columns:186px 1fr;gap:clamp(22px,3.4vw,46px);
+}
+.voice-feat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--grad)}
+.voice-feat-who{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.voice-feat-mono{
+  width:58px;height:58px;border-radius:50%;
+  background:var(--grad);color:var(--white);
+  display:grid;place-items:center;
+  font-family:var(--en);font-size:21px;font-weight:600;
+}
+.voice-feat-name{font-size:15.5px;font-weight:700;letter-spacing:.05em;line-height:1.5}
+.voice-feat-role{font-size:12px;color:var(--ink-3);line-height:1.7;margin-top:2px}
+.voice-feat-stars{display:flex;gap:2px;color:var(--red);font-size:14px;margin-top:2px}
+.voice-feat-q{position:relative;padding-left:clamp(22px,2.4vw,30px)}
+.voice-feat-q::before{
+  content:'"';position:absolute;left:-4px;top:-18px;
+  font-family:var(--en);font-size:62px;font-weight:700;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:.4;
+}
+.voice-feat-q p{font-size:clamp(13.5px,1.55vw,15.5px);line-height:2.2;color:var(--ink)}
+.voice-feat-q p+p{margin-top:clamp(14px,1.8vw,18px)}
+.voice-more{
+  font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);
+  text-align:center;margin-bottom:clamp(14px,1.8vw,18px);
+}
+.voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.2vw,24px)}
+.voice{
+  background:var(--white);border-radius:var(--r-md);
+  padding:clamp(24px,2.8vw,32px);
+  display:flex;flex-direction:column;
+  box-shadow:var(--sh-1);
+  transition:transform .28s cubic-bezier(.22,.8,.3,1),box-shadow .28s;
+}
+.voice:hover{transform:translateY(-4px);box-shadow:var(--sh-2)}
+.voice-stars{display:flex;gap:2px;color:var(--red);font-size:14px;margin-bottom:14px}
+.voice-q{
+  font-size:13.5px;line-height:2;color:var(--ink);
+  position:relative;padding-left:26px;margin-bottom:22px;flex:1;
+}
+.voice-q::before{
+  content:'"';position:absolute;left:0;top:-12px;
+  font-family:var(--en);font-size:46px;font-weight:700;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:.45;
+}
+.voice-who{display:flex;align-items:center;gap:13px;padding-top:18px;border-top:1px solid var(--line)}
+.voice-mono{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  background:var(--grad);color:var(--white);
+  display:grid;place-items:center;
+  font-family:var(--en);font-size:16px;font-weight:600;
+}
+.voice-name{font-size:13px;font-weight:700;letter-spacing:.03em;line-height:1.6}
+.voice-role{font-size:11.5px;color:var(--ink-3);line-height:1.6}
+
+/* ═══════════════════════════════════════════
+   PARTICIPATION
+   ═══════════════════════════════════════════ */
+.price{
+  text-align:center;background:var(--white);
+  border-radius:var(--r-lg);padding:clamp(32px,4vw,50px) var(--gutter);
+  box-shadow:var(--sh-1);margin-bottom:clamp(30px,3.6vw,44px);
+}
+.price-big{
+  font-size:clamp(38px,6.4vw,62px);font-weight:700;letter-spacing:.06em;line-height:1.15;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.price-sub{margin-top:10px;font-size:clamp(12.5px,1.4vw,14px);font-weight:500;color:var(--ink-2);letter-spacing:.04em}
+.price-line{
+  margin-top:22px;padding-top:22px;border-top:1px dashed var(--gray-4);
+  font-size:13px;line-height:2;color:var(--ink-2);max-width:620px;margin-left:auto;margin-right:auto;
+}
+.faq-note{
+  margin:clamp(22px,2.8vw,30px) auto 0;
+  background:var(--white);border-radius:var(--r-md);
+  padding:18px 22px;box-shadow:var(--sh-1);
+  display:flex;gap:13px;align-items:flex-start;
+  font-size:13px;line-height:1.9;color:var(--ink-2);
+  max-width:720px;
+}
+.faq-note .ico{font-size:17px;color:var(--accent);margin-top:4px}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,20px)}
+.faq{background:var(--white);border-radius:var(--r-md);padding:clamp(22px,2.6vw,28px);box-shadow:var(--sh-1)}
+.faq-q{
+  display:flex;gap:12px;align-items:flex-start;
+  font-size:14px;font-weight:700;letter-spacing:.04em;line-height:1.7;
+  padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--line);
+}
+.faq-a{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.9;color:var(--ink-2)}
+.qa{
+  font-family:var(--en);font-size:16px;font-weight:700;line-height:1.3;flex-shrink:0;
+}
+.qa-q{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.qa-a{color:var(--ink-3)}
+
+/* ═══════════════════════════════════════════
+   FINAL CTA
+   ═══════════════════════════════════════════ */
+.final{
+  position:relative;overflow:hidden;
+  background:var(--grad);
+  padding:clamp(56px,7vw,92px) var(--gutter);
+  text-align:center;color:var(--white);
+}
+.final::before{
+  content:'';position:absolute;top:-140px;right:-100px;
+  width:420px;height:420px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+}
+.final::after{
+  content:'';position:absolute;bottom:-160px;left:-120px;
+  width:380px;height:380px;border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+.final .inner{position:relative;z-index:1}
+.final-en{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.18em;opacity:.85;margin-bottom:12px}
+.final h2{font-size:clamp(21px,3vw,30px);font-weight:700;letter-spacing:.06em;line-height:1.55}
+.final p{margin-top:18px;font-size:clamp(13px,1.4vw,14.5px);line-height:2;opacity:.94}
+.final-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  margin-top:clamp(28px,3.4vw,38px);
+  background:var(--white);color:var(--accent);
+  font-size:clamp(14px,1.7vw,16.5px);font-weight:700;letter-spacing:.05em;
+  padding:19px 30px 19px 36px;border-radius:var(--r-pill);
+  box-shadow:0 10px 30px rgba(51,51,51,.2);
+  transition:transform .2s,box-shadow .2s;
+}
+.final-btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(51,51,51,.28)}
+.final-btn .dot{
+  width:28px;height:28px;border-radius:50%;background:var(--grad);color:var(--white);
+  display:grid;place-items:center;font-size:14px;
+}
+.final-note{margin-top:20px;font-size:12px;opacity:.85;letter-spacing:.03em}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.ftr{background:var(--gray-2);padding:clamp(40px,5vw,60px) var(--gutter) 0}
+.ftr-in{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:36px;flex-wrap:wrap;padding-bottom:clamp(30px,4vw,44px);
+}
+.ftr-logo img{height:40px;width:auto;margin-bottom:14px}
+.ftr-tag{font-size:12px;line-height:1.9;color:var(--ink-3);max-width:320px}
+.ftr-nav{display:flex;flex-wrap:wrap;gap:12px 30px}
+.ftr-nav a{font-size:13px;font-weight:500;color:var(--ink-2);transition:color .2s}
+.ftr-nav a:hover{color:var(--accent)}
+.ftr-btm{
+  border-top:1px solid var(--gray-4);
+  max-width:var(--maxw);margin:0 auto;
+  padding:20px 0 24px;
+  font-family:var(--en);font-size:11.5px;color:var(--ink-3);text-align:center;
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE BOTTOM BAR (SHIFT AI signature)
+   ═══════════════════════════════════════════ */
+.mbar{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:95;
+  background:var(--accent);
+  padding-bottom:env(safe-area-inset-bottom);
+  box-shadow:0 -4px 20px rgba(51,51,51,.18);
+}
+.mbar-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.mbar a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  padding:10px 4px 9px;color:var(--white);
+  font-size:10.5px;font-weight:700;letter-spacing:.02em;
+}
+.mbar a .ico{font-size:20px;stroke-width:1.6}
+.mbar a.is-cta{background:var(--grad)}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width:1023px){
+  .hdr-nav{display:none}
+  .hdr-cta{display:none}
+  .hdr-burger{display:grid}
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .about-visual{max-width:460px;margin:0 auto}
+  .about-visual img.main{aspect-ratio:4/3}
+  .feat-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .act-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .voice-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .voice-feat{grid-template-columns:150px 1fr;gap:26px}
+  .faq-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .org-runs{grid-template-columns:1fr}
+  .next{grid-template-columns:auto 1fr;row-gap:26px}
+  .next-cta{grid-column:1 / -1}
+  .next-cta .btn-ghost{width:100%;justify-content:center}
+  .record{grid-template-columns:1fr;gap:24px}
+  .record-num{padding-right:0;padding-bottom:22px;border-right:none;border-bottom:1px solid var(--line)}
+  .hero-bg::after{
+    background:
+      linear-gradient(100deg,#fff 0%,rgba(255,255,255,.95) 42%,rgba(255,255,255,.6) 72%,rgba(255,255,255,.25) 100%),
+      linear-gradient(to top,rgba(255,255,255,.95) 0%,transparent 40%);
+  }
+}
+
+@media (max-width:767px){
+  body{font-size:14px;padding-bottom:64px}
+  .mbar{display:block}
+  .ribbons{display:none}
+  .hdr-in{height:62px}
+  .hdr-logo img{height:32px}
+  .drawer{inset:62px 0 0}
+
+  .hero-in{padding-top:36px;padding-bottom:44px}
+  .hero-kicker{letter-spacing:.02em}
+  .hero .cta-block{align-items:stretch}
+  .hero .cta-wrap{max-width:none}
+  .hero .cta-band{max-width:none}
+
+  .facts-grid{grid-template-columns:1fr;gap:0}
+  .fact{justify-content:flex-start;padding:15px 0}
+  .fact+.fact{border-left:none;border-top:1px solid var(--line)}
+
+  .strip{grid-template-columns:1fr}
+  .strip-item{aspect-ratio:2/1}
+
+  .about-visual img.sub{right:-8px;bottom:-14px;width:40%;border-width:4px}
+  .point{padding:16px 18px;gap:13px}
+  .point-ico{width:38px;height:38px;font-size:17px}
+
+
+
+  .voice-q{padding-left:22px}
+  .voice-feat{grid-template-columns:1fr;gap:20px;padding:24px 20px}
+  .voice-feat-who{flex-direction:row;align-items:center;gap:14px;flex-wrap:wrap}
+  .voice-feat-mono{width:48px;height:48px;font-size:18px}
+  .voice-feat-stars{width:100%;margin-top:0}
+  .voice-feat-q{padding-left:18px}
+  .voice-feat-q::before{font-size:46px;top:-14px}
+
+  .org-head{flex-direction:column;align-items:flex-start;gap:18px}
+  .org-photo{width:132px}
+  .org-stats{grid-template-columns:1fr;gap:10px}
+  .org-stat{
+    display:flex;align-items:center;gap:16px;
+    padding:14px 18px;text-align:left;
+  }
+  .org-stat-n{flex-shrink:0;min-width:118px;text-align:center;white-space:nowrap}
+  .org-stat-l{margin-top:0;font-size:12px}
+  .org-stat-l br{display:none}
+  .org-cta .btn-ghost{width:100%;justify-content:center}
+  .msg-body{padding:24px 18px}
+  .msg-sign{justify-content:flex-start;flex-direction:row-reverse}
+  .msg-sign-t{text-align:left}
+
+  .next{grid-template-columns:1fr;row-gap:22px;padding:26px 20px 26px 26px;text-align:center}
+  .next-when{text-align:center}
+  .next-meta{justify-content:center;gap:8px 14px}
+  .record{padding:26px 20px}
+  .themes{justify-content:center}
+  .record-h{text-align:center}
+
+  .cta-band{padding:19px 20px 17px}
+  .final-btn{padding:17px 24px 17px 28px;width:100%;justify-content:center}
+
+  .ftr-in{flex-direction:column;gap:26px}
+}
+
+@media (max-width:420px){
+  :root{--gutter:16px}
+  .hero-logo{width:100%;max-width:300px}
+  .mbar a{font-size:9.5px}
+  .mbar a .ico{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- ICON SPRITE -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-yen" viewBox="0 0 24 24"><path d="M12 13.2 6.4 4M12 13.2 17.6 4M12 13.2V21M8 13.6h8M8 17h8"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5a15 15 0 0 1 4 9.5 15 15 0 0 1-4 9.5 15 15 0 0 1-4-9.5 15 15 0 0 1 4-9.5z"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 6-8.5 8.5-5-5L2 16"/><path d="M16 6h6v6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="1.5" width="6" height="12" rx="3"/><path d="M19 10.5v1.5a7 7 0 0 1-14 0v-1.5M12 19v3.5M8.5 22.5h7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="m8.2 13.4-1.5 7.3L12 18l5.3 2.7-1.5-7.3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.3L7 14.2 2 9.3l6.9-1L12 2z"/></symbol>
+</svg>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a href="#top" class="hdr-logo" aria-label="MARKEY CONSULTING ホーム">
+      <img src="markey-logo.png" alt="MARKEY CONSULTING" width="460" height="122">
+    </a>
+    <nav class="hdr-nav" aria-label="メインメニュー">
+      <a href="#about">研究会について</a>
+      <a href="#features">3つの特徴</a>
+      <a href="#activities">活動内容</a>
+      <a href="#schedule">開催情報</a>
+      <a href="#organizer">主催者</a>
+      <a href="#voices">参加者の声</a>
+      <a href="#faq">参加について</a>
+    </nav>
+    <a href="https://forms.gle/1cDtf1LytakcHAzbA" class="hdr-cta" target="_blank" rel="noopener noreferrer">参加申込</a>
+    <button class="hdr-burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+      <svg class="ico" id="burger-ico"><use href="#i-menu"></use></svg>
+    </button>
+  </div>
+</header>
+
+<!-- drawer -->
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="#about">研究会について<svg class="ico"><use href="#i-arrow"></use></svg></a>
+  <a href="#features">3つの特徴<svg class="ico"><use href="#i-arrow"></use></svg></a>
+  <a href="#activities">活動内容<svg class="ico"><use href="#i-arrow"></use></svg></a>
+  <a href="#schedule">開催情報<svg class="ico"><use href="#i-arrow"></use></svg></a>
+  <a href="#organizer">主催者<svg class="ico"><use href="#i-arrow"></use></svg></a>
+  <a href="#voices">参加者の声<svg class="ico"><use href="#i-arrow"></use></svg></a>
+  <a href="#faq">参加について<svg class="ico"><use href="#i-arrow"></use></svg></a>
+  <a href="https://forms.gle/1cDtf1LytakcHAzbA" class="drawer-cta" target="_blank" rel="noopener noreferrer">参加申込はこちら</a>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=80&fit=crop"
+         alt="" width="1800" height="1200" fetchpriority="high">
+  </div>
+  <div class="ribbons" aria-hidden="true">
+    <div class="ribbon ribbon--a">登録無料・自由参加</div>
+    <div class="ribbon ribbon--b">全国オンライン開催</div>
+  </div>
+  <div class="hero-in">
+    <img class="hero-logo" src="sales-academy-logo.svg"
+         alt="Sales Academy by MARKEY CONSULTING" width="442" height="102">
+    <p class="hero-kicker">法人営業・SaaS営業・コンサルティング営業のための研究会</p>
+    <h1>BtoB営業を、<em>みんなで学ぶ。</em><br>共に成長する。</h1>
+    <div class="cta-block">
+      <div class="cta-wrap">
+        <span class="cta-label">まずはこちらから</span>
+        <a class="cta-band" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
+          <strong>無料で参加申込</strong>
+          <small>登録無料・オンライン開催・出入り自由</small>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ QUICK FACTS ══════════ -->
+<div class="facts">
+  <div class="facts-grid">
+    <div class="fact">
+      <span class="fact-ico"><svg class="ico"><use href="#i-monitor"></use></svg></span>
+      <span class="fact-txt">
+        <span class="fact-t">オンライン開催</span>
+        <span class="fact-s">全国どこからでも参加OK</span>
+      </span>
+    </div>
+    <div class="fact">
+      <span class="fact-ico"><svg class="ico"><use href="#i-calendar"></use></svg></span>
+      <span class="fact-txt">
+        <span class="fact-t">月1回の定例会</span>
+        <span class="fact-s">勉強会・ディスカッション</span>
+      </span>
+    </div>
+    <div class="fact">
+      <span class="fact-ico"><svg class="ico"><use href="#i-yen"></use></svg></span>
+      <span class="fact-txt">
+        <span class="fact-t">登録無料</span>
+        <span class="fact-s">イベント参加時のみ費用発生</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PHOTO STRIP ══════════ -->
+<div class="strip">
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&fit=crop" alt="月次勉強会の様子" loading="lazy" decoding="async" width="900" height="506">
+    <div class="strip-cap"><span class="strip-no">01 STUDY</span><div class="strip-t">月次勉強会・情報交換</div></div>
+  </div>
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=80&fit=crop" alt="ゲスト講演の様子" loading="lazy" decoding="async" width="900" height="506">
+    <div class="strip-cap"><span class="strip-no">02 LECTURE</span><div class="strip-t">ゲスト講師による特別講演</div></div>
+  </div>
+  <div class="strip-item">
+    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=900&q=80&fit=crop" alt="交流会の様子" loading="lazy" decoding="async" width="900" height="506">
+    <div class="strip-cap"><span class="strip-no">03 NETWORK</span><div class="strip-t">オンライン・オフライン交流会</div></div>
+  </div>
+</div>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section class="section" id="about">
+  <div class="inner about-grid">
+    <div class="about-visual rv">
+      <img class="main" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80&fit=crop" alt="ミーティングの様子" loading="lazy" decoding="async" width="900" height="1125">
+      <img class="sub" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80&fit=crop" alt="営業プロフェッショナル" loading="lazy" decoding="async" width="500" height="375">
+      <span class="about-chip">SALES ACADEMY</span>
+    </div>
+    <div class="about-body rv">
+      <p class="sec-en">About</p>
+      <h2 class="sec-title">BtoB営業のプロが集まる<br>学びと交流の場</h2>
+      <p class="sec-lead">Sales Academy by MARKEY CONSULTINGは、法人営業に携わるすべてのビジネスパーソンが実践的なスキルを磨き、横のつながりを築けるコミュニティです。</p>
+      <div class="points">
+        <div class="point">
+          <span class="point-ico"><svg class="ico"><use href="#i-book"></use></svg></span>
+          <div>
+            <h4>実践的なノウハウ共有</h4>
+            <p>現場で使えるセールス手法・トーク術・提案書の書き方などをメンバー同士でシェア</p>
+          </div>
+        </div>
+        <div class="point">
+          <span class="point-ico"><svg class="ico"><use href="#i-globe"></use></svg></span>
+          <div>
+            <h4>業界・職種を超えた交流</h4>
+            <p>SaaS・コンサル・メーカー・広告など多様な業界のトップセールスと繋がれる</p>
+          </div>
+        </div>
+        <div class="point">
+          <span class="point-ico"><svg class="ico"><use href="#i-trend"></use></svg></span>
+          <div>
+            <h4>キャリア・成果の向上</h4>
+            <p>学びの継続と仲間との切磋琢磨でセールスパーソンとしての市場価値を高める</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FEATURES ══════════ -->
+<section class="section tint" id="features">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">Features</p>
+      <h2 class="sec-title">気軽に参加できる3つの理由</h2>
+      <p class="sec-lead">本格的なビジネス塾ではなく、仲間と一緒にBtoB営業を学んでいくアットホームな研究会です。まずは気軽にご登録ください。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat rv">
+        <p class="feat-no">REASON 01</p>
+        <span class="feat-ico"><svg class="ico"><use href="#i-yen"></use></svg></span>
+        <h3>登録無料</h3>
+        <p>入会費・年会費は一切かかりません。イベントごとの費用のみのお支払いとなります。</p>
+      </div>
+      <div class="feat rv">
+        <p class="feat-no">REASON 02</p>
+        <span class="feat-ico"><svg class="ico"><use href="#i-file"></use></svg></span>
+        <h3>費用はイベント時のみ</h3>
+        <p><span class="amt">3,000円〜</span>参加するイベントの分だけ。使わない月の負担はありません。</p>
+      </div>
+      <div class="feat rv">
+        <p class="feat-no">REASON 03</p>
+        <span class="feat-ico"><svg class="ico"><use href="#i-check"></use></svg></span>
+        <h3>出入り自由</h3>
+        <p>毎回の参加は必須ではありません。予定が合うときだけ参加していただければ大丈夫です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ACTIVITIES ══════════ -->
+<section class="section" id="activities">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">Activities</p>
+      <h2 class="sec-title">3つの活動形式</h2>
+      <p class="sec-lead">多様な学び・交流の機会を提供します。毎月の定例会を中心に、特別講演やハイブリッド交流会を開催。</p>
+    </div>
+    <div class="act-grid">
+      <article class="act rv">
+        <div class="act-photo">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&fit=crop" alt="月次勉強会" loading="lazy" decoding="async" width="800" height="500">
+          <span class="act-no">01 STUDY</span>
+        </div>
+        <div class="act-body">
+          <h3>月次勉強会・情報交換</h3>
+          <p>月1回、主催者による営業技術講義とディスカッションを実施。成功事例・失敗事例を共有し、参加者全員で議論を深めます。</p>
+          <div class="act-meta">
+            <span class="chip">月1回・不定期開催</span>
+            <span class="chip">オンライン</span>
+            <span class="chip">90〜120分</span>
+            <span class="chip">テーマ制</span>
+          </div>
+        </div>
+      </article>
+      <article class="act rv">
+        <div class="act-photo">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80&fit=crop" alt="ゲスト講師による特別講演" loading="lazy" decoding="async" width="800" height="500">
+          <span class="act-no">02 LECTURE</span>
+        </div>
+        <div class="act-body">
+          <h3>ゲスト講師による特別講演</h3>
+          <p>トップセールスや著名な経営者・専門家をゲスト講師として招聘。業界最前線の知識を直接学べます。</p>
+          <div class="act-meta">
+            <span class="chip">不定期開催</span>
+            <span class="chip">講演＋Q&amp;A</span>
+          </div>
+        </div>
+      </article>
+      <article class="act rv">
+        <div class="act-photo">
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80&fit=crop" alt="オンライン・オフライン交流会" loading="lazy" decoding="async" width="800" height="500">
+          <span class="act-no">03 NETWORK</span>
+        </div>
+        <div class="act-body">
+          <h3>オンライン・オフライン交流会</h3>
+          <p>気軽に参加できるオンライン懇親会と、関係を深めるリアルイベントをハイブリッドで開催します。</p>
+          <div class="act-meta">
+            <span class="chip">不定期開催</span>
+            <span class="chip">オンライン・オフライン混合</span>
+            <span class="chip">全国から参加OK</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SCHEDULE ══════════ -->
+<section class="section tint" id="schedule">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">Schedule</p>
+      <h2 class="sec-title">開催情報</h2>
+      <p class="sec-lead">次回の定例会と、これまでに扱ってきたテーマをご紹介します。</p>
+    </div>
+
+    <div class="next rv">
+      <div class="next-when">
+        <span class="next-badge">NEXT</span>
+        <div class="next-md">10<span>月</span>20<span>日</span></div>
+        <div class="next-dow">火曜日</div>
+      </div>
+      <div class="next-body">
+        <h3>第11回 定例会</h3>
+        <ul class="next-meta">
+          <li><svg class="ico"><use href="#i-calendar"></use></svg>19:00 〜 21:00</li>
+          <li><svg class="ico"><use href="#i-monitor"></use></svg>オンライン開催</li>
+          <li><svg class="ico"><use href="#i-yen"></use></svg>参加費 3,000円</li>
+          <li><svg class="ico"><use href="#i-users"></use></svg>どなたでも参加OK</li>
+        </ul>
+      </div>
+      <div class="next-cta">
+        <a class="btn-ghost" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
+          参加する
+          <span class="dot"><svg class="ico"><use href="#i-arrow"></use></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="record rv">
+      <div class="record-num">
+        <div class="record-big">10<span>回</span></div>
+        <div class="record-lab">開催実績</div>
+      </div>
+      <div>
+        <p class="record-h">これまでに扱ったテーマ</p>
+        <div class="themes">
+          <span class="theme">SPIN話法</span>
+          <span class="theme">法人営業の6ステップ</span>
+          <span class="theme">Irresistible Offer</span>
+          <span class="theme">ROI訴求</span>
+          <span class="theme">アンカリング</span>
+          <span class="theme">USPのとがらせ方</span>
+          <span class="theme">ニーズ創成</span>
+          <span class="theme">ニーズヒアリング</span>
+          <span class="theme">視座の上げ方</span>
+          <span class="theme">初回アポの設計</span>
+          <span class="theme more">ほか</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ORGANIZER ══════════ -->
+<section class="section" id="organizer">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">Organizer</p>
+      <h2 class="sec-title">主催者紹介</h2>
+    </div>
+    <div class="org rv">
+      <div class="org-head">
+        <div class="org-photo">
+          <img src="profile.jpg" alt="鶴田 槙人" loading="lazy" decoding="async" width="560" height="531">
+        </div>
+        <div>
+          <p class="org-role">Founder &amp; Organizer</p>
+          <h3 class="org-name">鶴田　槙人</h3>
+          <p class="org-en">TSURUTA MAKITO</p>
+          <ul class="org-titles">
+            <li>MARKEY CONSULTING 代表</li>
+            <li>元 大手ハウスメーカー エリアマネージャー</li>
+            <li>元 LiB CONSULTING アソシエイトマネージャー</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="org-bio">住宅営業として全国10位（1,500人中）。エリアマネージャーを経て経営コンサルティングファームへ移り、法人向けのコンサルティングセールスで複数回の表彰を受ける。</p>
+      <p class="org-bio">独立後、海外へ移住。現地で目の当たりにした交渉の激しさに衝撃を受け、日本ではほとんど紹介されていない海外のセールス文献を独学で読み込んだ。個人向け・法人向け・自社プロダクトのソリューション営業と、売る相手も売り方も違う現場を横断してきた。<strong>「営業は鍛えることができる」</strong>をモットーに、より体系的な営業メソッドの普及を目指してSales Academyを設立。</p>
+
+      <div class="org-stats">
+        <div class="org-stat">
+          <div class="org-stat-n">10<span>位</span></div>
+          <div class="org-stat-l">住宅営業 全国順位<br>（1,500人中）</div>
+        </div>
+        <div class="org-stat">
+          <div class="org-stat-n">複数<span>回</span></div>
+          <div class="org-stat-l">法人セールスでの<br>社内表彰</div>
+        </div>
+        <div class="org-stat">
+          <div class="org-stat-n">1,000<span>名超</span></div>
+          <div class="org-stat-l">指導した<br>セールスパーソン</div>
+        </div>
+      </div>
+
+      <p class="org-runs-h">RUNNING</p>
+      <div class="org-runs">
+        <div class="org-run">
+          <svg class="ico"><use href="#i-badge"></use></svg>
+          <span>
+            <b>MARKEY CONSULTING</b>
+            <small>住宅会社向け 営業コンサルティング</small>
+          </span>
+        </div>
+        <div class="org-run">
+          <svg class="ico"><use href="#i-monitor"></use></svg>
+          <span>
+            <b>住宅営業登竜門</b>
+            <small>動画で学ぶ 営業学習サービス</small>
+          </span>
+        </div>
+      </div>
+
+      <p class="org-tags-h">FIELDS</p>
+      <div class="org-tags">
+        <span class="org-tag">SaaS営業</span>
+        <span class="org-tag">法人営業</span>
+        <span class="org-tag">住宅営業</span>
+        <span class="org-tag">営業組織改革</span>
+        <span class="org-tag">海外セールス研究</span>
+        <span class="org-tag">研修・講演</span>
+      </div>
+
+      <div class="org-cta">
+        <a class="btn-ghost" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
+          参加申込はこちら
+          <span class="dot"><svg class="ico"><use href="#i-arrow"></use></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MESSAGE ══════════ -->
+<section class="section tint-2" id="message">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">Message</p>
+      <h2 class="sec-title">開催の想い</h2>
+    </div>
+    <div class="msg">
+      <p class="msg-quote rv">営業は、楽しいもの。<br>やり方さえ理解すれば、必ず売れる。</p>
+      <div class="msg-body rv">
+        <p>セールスコンサルタントとして、これまで1,000名以上の営業パーソンを指導してきました。</p>
+        <p>その中で、ひとつ気づいたことがあります。<strong>会社がコンサルタントを入れてくれない限り、営業を本格的に学ぶ機会は、ほとんどない</strong>ということです。学びたいのに、学ぶ場所がない。そういう方が、想像していたよりずっとたくさんいました。</p>
+        <p>だから、堅苦しい営業コンサルティングとは違う場所をつくりたいと思いました。ビギナーからトップセールスまでが横に並んで、交流しながら本格的なスキルを学んでいける場所です。</p>
+        <p>ただし、中身は妥協しません。プロのセールスコンサルタントが提供するクオリティのまま、日本ではほとんど教えてもらえない海外の文献やMBAのセールスフレームワークまで扱います。</p>
+        <p>そして何より、楽しんでほしい。営業は楽しいものです。やり方さえ理解すれば、必ず売れる。気軽に学んで、がっつり稼ぐ。そういう場所にしたいと思っています。</p>
+        <p>全国には、意欲があるのに学ぶ機会がないという営業パーソンがまだたくさんいます。その方たちの力になりたい。この営業メソッドを、広めていきたいと思っています。</p>
+        <div class="msg-sign">
+          <div class="msg-sign-t">
+            <div class="msg-sign-n">鶴田　槙人</div>
+            <div class="msg-sign-r">Sales Academy 主宰 / MARKEY CONSULTING 代表</div>
+          </div>
+          <img src="profile.jpg" alt="" loading="lazy" decoding="async" width="560" height="531">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VOICES ══════════ -->
+<section class="section" id="voices">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">Voices</p>
+      <h2 class="sec-title">参加者の声</h2>
+      <p class="sec-lead">実際に参加されたメンバーからの感想をご紹介します。</p>
+    </div>
+    <div class="voice-feats">
+      <div class="voice-feat rv">
+        <div class="voice-feat-who">
+          <span class="voice-feat-mono" aria-hidden="true">S</span>
+          <div>
+            <div class="voice-feat-name">席川さん</div>
+            <div class="voice-feat-role">法人営業 / 建設機械</div>
+          </div>
+          <div class="voice-feat-stars" aria-label="5段階評価のうち5"><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg></div>
+        </div>
+        <div class="voice-feat-q">
+          <p>営業未経験で、会社のまわりの人との差を感じながら、何かを変えたいと思う中で、この研修に出会い、参加しました。</p>
+          <p>インプットとして必要なものはもちろん、どのようにして実務に活かしていくのかまで、レクチャーいただきました。必要なスキルを体系的に学び、実務を相談しながら実践に落とせるのですぐ使える内容ばかりです。</p>
+          <p>会社の中で少しずつ営業機会をもらえるようになってきたが、やり方が分からない、より成長していきたいと思っている方におすすめです。</p>
+        </div>
+      </div>
+      <div class="voice-feat rv">
+        <div class="voice-feat-who">
+          <span class="voice-feat-mono" aria-hidden="true">Y</span>
+          <div>
+            <div class="voice-feat-name">山茂さん</div>
+            <div class="voice-feat-role">広告代理店営業 / 個人</div>
+          </div>
+          <div class="voice-feat-stars" aria-label="5段階評価のうち5"><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg></div>
+        </div>
+        <div class="voice-feat-q">
+          <p>営業経験者向けの内容かと思っていましたが、苦手意識のある方にも非常に実践的な研修でした。実業務を題材に相談・演習できるため明日からすぐ使える内容ばかり。顧客心理や商談プロセスを体系的に学べるので、再現性高く成果につなげられると感じました。様々な業種・職種にも使えます。</p>
+          <p>営業力を伸ばしたい方におすすめです。</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="voice-more">OTHER VOICES</p>
+    <div class="voice-grid">
+      <div class="voice rv">
+        <div class="voice-stars" aria-label="5段階評価のうち5">
+          <svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg>
+        </div>
+        <p class="voice-q">勉強会でシェアされた「ROI訴求トーク」を使ったら、翌月に大型案件を受注できました。他業界の成功事例が自分の営業にも活かせると実感しています。</p>
+        <div class="voice-who">
+          <span class="voice-mono" aria-hidden="true">T</span>
+          <div>
+            <div class="voice-name">田中 健太さん（仮名）</div>
+            <div class="voice-role">SaaS企業 / 営業マネージャー・30代</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice rv">
+        <div class="voice-stars" aria-label="5段階評価のうち5">
+          <svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg>
+        </div>
+        <p class="voice-q">コンサルティング営業の提案プロセスについて、他社のやり方を聞けたのが非常に参考になりました。同じ悩みを持つ仲間がいると分かっただけでも心強い。</p>
+        <div class="voice-who">
+          <span class="voice-mono" aria-hidden="true">S</span>
+          <div>
+            <div class="voice-name">鈴木 美咲さん（仮名）</div>
+            <div class="voice-role">コンサルティングファーム / 営業担当・20代</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice rv">
+        <div class="voice-stars" aria-label="5段階評価のうち5">
+          <svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg>
+        </div>
+        <p class="voice-q">ゲスト講師の話が毎回刺激的で、「こんなアプローチがあったのか」と学びの連続です。オンラインで全国の優秀な営業パーソンと繋がれるのも大きな魅力ですね。</p>
+        <div class="voice-who">
+          <span class="voice-mono" aria-hidden="true">Y</span>
+          <div>
+            <div class="voice-name">山本 拓也さん（仮名）</div>
+            <div class="voice-role">メーカー / 法人営業・40代</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice rv">
+        <div class="voice-stars" aria-label="5段階評価のうち5">
+          <svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg><svg class="ico ico--fill"><use href="#i-star"></use></svg>
+        </div>
+        <p class="voice-q">参加後3ヶ月で受注率が約20%改善しました。仲間から学んだ「ヒアリング設計」のフレームワークが特に効果的で、チーム全体に展開しています。</p>
+        <div class="voice-who">
+          <span class="voice-mono" aria-hidden="true">I</span>
+          <div>
+            <div class="voice-name">伊藤 さやかさん（仮名）</div>
+            <div class="voice-role">広告代理店 / 営業リーダー・30代</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PARTICIPATION / FAQ ══════════ -->
+<section class="section gray" id="faq">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">About Participation</p>
+      <h2 class="sec-title">まずは気軽に参加してみてください</h2>
+    </div>
+    <div class="price rv">
+      <div class="price-big">登録無料</div>
+      <p class="price-sub">イベント参加時のみ費用が発生します</p>
+      <p class="price-line">本格的なビジネス塾ではなく、仲間と一緒にBtoB営業を学んでいく、アットホームな研究会です。<br>まずは登録して、雰囲気を見てから参加を決めていただけます。</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq rv">
+        <div class="faq-q"><span class="qa qa-q">Q</span>入会費・年会費はかかりますか？</div>
+        <div class="faq-a"><span class="qa qa-a">A</span>無料です。イベント参加時のみ費用が発生します。</div>
+      </div>
+      <div class="faq rv">
+        <div class="faq-q"><span class="qa qa-q">Q</span>毎回参加しないといけませんか？</div>
+        <div class="faq-a"><span class="qa qa-a">A</span>自由参加です。参加できるときだけ来ていただければOKです。</div>
+      </div>
+      <div class="faq rv">
+        <div class="faq-q"><span class="qa qa-q">Q</span>料金の目安はどれくらいですか？</div>
+        <div class="faq-a"><span class="qa qa-a">A</span>イベントによって異なりますが、1回あたり3,000円〜程度を予定しています。</div>
+      </div>
+      <div class="faq rv">
+        <div class="faq-q"><span class="qa qa-q">Q</span>どんな人が参加していますか？</div>
+        <div class="faq-a"><span class="qa qa-a">A</span>法人営業・SaaS営業・コンサルティング営業など、BtoB営業に関わるビジネスパーソンが集まっています。個人事業主で自身の商品・サービスをセールスしている方、将来マネジメントや育成に活用したい小売業の方など、様々なバックグラウンドを持っています。</div>
+      </div>
+      <div class="faq rv">
+        <div class="faq-q"><span class="qa qa-q">Q</span>オンラインでのセールスは学べますか？</div>
+        <div class="faq-a"><span class="qa qa-a">A</span>講義は基本オンラインで実施します。また、個人事業主の方に多いオンライン面談でのセールスも講義の学習範囲となり、学ぶことができます。オンライン面談は塾長の得意なセールスの一つです。</div>
+      </div>
+      <div class="faq rv">
+        <div class="faq-q"><span class="qa qa-q">Q</span>あやしい団体ではないですか？</div>
+        <div class="faq-a"><span class="qa qa-a">A</span>全くあやしくありません。当研究会は有志のメンバーで相互研鑽のために集まっており、いわゆるマルチ商法的な活動は厳禁としています。問題がある行為をしたメンバーが確認できた場合、退会していただきます。</div>
+      </div>
+    </div>
+    <p class="faq-note rv">
+      <svg class="ico"><use href="#i-chat"></use></svg>
+      <span>お支払い方法など詳しい内容は、ご登録時にお送りするメールでご案内します。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ FINAL CTA ══════════ -->
+<section class="final" id="contact">
+  <div class="inner">
+    <p class="final-en">Join Us</p>
+    <h2>参加申込・お問い合わせ</h2>
+    <p>Sales Academyへの参加を希望される方、まずはお気軽にお問い合わせください。<br>担当者より3営業日以内にご連絡いたします。</p>
+    <a class="final-btn" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
+      参加申込・お問い合わせはこちら
+      <span class="dot"><svg class="ico"><use href="#i-arrow"></use></svg></span>
+    </a>
+    <p class="final-note">Googleフォームが開きます／登録は無料です</p>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="ftr">
+  <div class="ftr-in">
+    <div>
+      <div class="ftr-logo"><img src="markey-logo.png" alt="MARKEY CONSULTING" width="460" height="122" loading="lazy"></div>
+      <p class="ftr-tag">Sales Academy by MARKEY CONSULTING<br>BtoB営業の実践と学びを共有するコミュニティ</p>
+    </div>
+    <nav class="ftr-nav" aria-label="フッターメニュー">
+      <a href="#about">研究会について</a>
+      <a href="#features">3つの特徴</a>
+      <a href="#activities">活動内容</a>
+      <a href="#schedule">開催情報</a>
+      <a href="#organizer">主催者</a>
+      <a href="#voices">参加者の声</a>
+      <a href="#faq">参加について</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
+  </div>
+  <div class="ftr-btm">© 2026 MARKEY CONSULTING. All rights reserved.</div>
+</footer>
+
+<!-- ══════════ MOBILE BAR ══════════ -->
+<nav class="mbar" aria-label="クイックメニュー">
+  <div class="mbar-in">
+    <a href="#activities"><svg class="ico"><use href="#i-file"></use></svg>活動内容</a>
+    <a href="#schedule"><svg class="ico"><use href="#i-calendar"></use></svg>開催情報</a>
+    <a href="#voices"><svg class="ico"><use href="#i-chat"></use></svg>参加者の声</a>
+    <a class="is-cta" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-users"></use></svg>参加申込</a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // sticky header shadow
+  var hdr = document.getElementById('hdr');
+  var onScroll = function(){
+    hdr.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // drawer
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  var bIco   = document.getElementById('burger-ico');
+  var setOpen = function(open){
+    drawer.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    bIco.querySelector('use').setAttribute('href', open ? '#i-close' : '#i-menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  burger.addEventListener('click', function(){
+    setOpen(!drawer.classList.contains('open'));
+  });
+  drawer.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && drawer.classList.contains('open')) setOpen(false);
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1023 && drawer.classList.contains('open')) setOpen(false);
+  });
+
+  // reveal on scroll
+  var items = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      var sibs = Array.prototype.slice.call(en.target.parentNode.children)
+                      .filter(function(n){ return n.classList.contains('rv'); });
+      var i = sibs.indexOf(en.target);
+      en.target.style.transitionDelay = (i > 0 ? Math.min(i,4) * 90 : 0) + 'ms';
+      en.target.classList.add('in');
+      io.unobserve(en.target);
+    });
+  }, {rootMargin:'0px 0px -12% 0px', threshold:0.08});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
