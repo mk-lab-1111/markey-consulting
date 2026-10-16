@@ -441,6 +441,254 @@ footer{background:var(--navy-deep);padding:64px 0 32px;color:rgba(255,255,255,.6
 .footer-bottom a{text-decoration:none;color:rgba(255,255,255,.4);}
 .footer-copy{text-align:center;font-size:11px;color:rgba(255,255,255,.25);margin-top:18px;}
 
+/* ===== 成約フレームワーク ===== */
+.fw-head{text-align:center;max-width:780px;margin:0 auto 44px;}
+.fw-head .fw-catch{
+  font-family:'Shippori Mincho',serif;font-size:clamp(20px,2.6vw,29px);font-weight:700;
+  color:var(--navy);line-height:1.7;
+}
+.fw-head .fw-catch .accent{color:var(--crimson);}
+.fw-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:34px;}
+.fw-card{
+  background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--crimson);
+  border-radius:16px;padding:26px 18px;text-align:center;
+}
+.fw-card .fw-no{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;background:var(--crimson-soft);
+  color:var(--crimson);font-size:13px;font-weight:900;margin-bottom:12px;
+}
+.fw-card h3{font-size:15.5px;line-height:1.5;margin-bottom:8px;}
+.fw-card p{font-size:12.5px;color:var(--sub-text);line-height:1.75;}
+.fw-note{
+  text-align:center;background:var(--crimson-soft);border-radius:14px;
+  padding:24px 28px;max-width:860px;margin:0 auto;
+}
+.fw-note strong{display:block;font-size:17px;color:var(--crimson);font-weight:800;margin-bottom:6px;}
+.fw-note span{font-size:13.5px;color:var(--sub-text);}
+
+/* ===== 6つの特徴 ===== */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.feat-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px 24px;
+}
+.feat-card .feat-no{
+  font-family:'Shippori Mincho',serif;font-size:13px;font-weight:800;
+  color:var(--gold-deep);letter-spacing:.1em;margin-bottom:8px;
+}
+.feat-card h3{font-size:16px;line-height:1.55;margin-bottom:10px;}
+.feat-card p{font-size:13px;color:var(--sub-text);line-height:1.85;}
+.feat-card p strong{color:var(--crimson);font-weight:700;}
+
+/* ===== プログラム一覧 ===== */
+.prog-wrap{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:36px 38px;max-width:900px;margin:0 auto;
+}
+.prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 36px;}
+.prog-grid li{
+  list-style:none;display:flex;align-items:center;gap:12px;
+  padding:11px 2px;border-bottom:1px dashed var(--line);font-size:14px;font-weight:600;color:var(--body-text);
+}
+.prog-grid li .pn{
+  flex:none;width:28px;height:22px;border-radius:5px;background:var(--crimson-soft);
+  color:var(--crimson);font-size:11.5px;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.prog-grid li.is-new{color:var(--crimson);}
+.prog-grid li .tag-new{
+  margin-left:auto;font-size:10.5px;font-weight:800;color:#fff;background:var(--crimson);
+  border-radius:4px;padding:2px 7px;letter-spacing:.04em;
+}
+.prog-foot{
+  margin-top:22px;text-align:center;font-size:12.5px;color:var(--sub-text);
+  background:var(--cream);border-radius:12px;padding:16px 18px;line-height:1.85;
+}
+.prog-foot strong{color:var(--crimson);font-weight:700;}
+
+/* ===== 受講者の声 ===== */
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:22px;}
+.voice-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  padding:26px 24px;position:relative;
+}
+.voice-card::before{
+  content:'"';position:absolute;top:6px;left:18px;
+  font-family:'Shippori Mincho',serif;font-size:54px;color:var(--crimson-soft);line-height:1;
+}
+.voice-card p{position:relative;font-size:14px;line-height:1.9;color:var(--body-text);font-weight:600;}
+.voice-card p .big{color:var(--crimson);font-weight:800;font-size:1.12em;}
+.voice-card .voice-who{
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+  font-size:11.5px;color:var(--sub-text);font-weight:600;
+}
+.voice-note{text-align:center;font-size:12px;color:var(--sub-text);}
+
+/* ===== 比較表 ===== */
+.cmp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.cmp-table{width:100%;min-width:760px;border-collapse:separate;border-spacing:0;background:var(--paper);
+  border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+.cmp-table th,.cmp-table td{padding:16px 16px;vertical-align:top;font-size:12.5px;line-height:1.8;
+  border-bottom:1px solid var(--line);}
+.cmp-table thead th{
+  background:var(--navy);color:#fff;font-family:'Shippori Mincho',serif;font-size:14px;
+  font-weight:700;text-align:center;border-bottom:none;
+}
+.cmp-table thead th.is-ours{background:linear-gradient(140deg,var(--crimson) 0%,var(--crimson-dark) 100%);}
+.cmp-table thead th .cmp-badge{
+  display:block;font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:.14em;
+  color:var(--gold-light);font-weight:700;margin-bottom:4px;
+}
+.cmp-table tbody th{
+  background:var(--cream);width:76px;text-align:center;font-family:'Shippori Mincho',serif;
+  font-size:13.5px;color:var(--navy);font-weight:700;
+}
+.cmp-table td.is-ours{background:var(--crimson-soft);}
+.cmp-table td.is-ours .cmp-main{color:var(--crimson);font-weight:800;font-size:15px;display:block;margin-bottom:4px;}
+.cmp-table td .cmp-main{display:block;font-weight:700;color:var(--navy);margin-bottom:4px;font-size:13.5px;}
+.cmp-table tr:last-child th,.cmp-table tr:last-child td{border-bottom:none;}
+.cmp-hint{display:none;text-align:center;font-size:11.5px;color:var(--sub-text);margin-bottom:10px;}
+
+/* ===== 視聴レポート ===== */
+.rep-wrap{display:flex;gap:40px;align-items:center;max-width:960px;margin:0 auto;}
+.rep-body{flex:1;}
+.rep-body h3{font-size:19px;line-height:1.6;margin-bottom:14px;}
+.rep-body h3 .accent{color:var(--crimson);}
+.rep-body p{font-size:14px;color:var(--sub-text);line-height:1.95;margin-bottom:16px;}
+.rep-points{list-style:none;}
+.rep-points li{
+  font-size:13.5px;color:var(--body-text);line-height:1.8;padding-left:22px;
+  position:relative;margin-bottom:9px;font-weight:600;
+}
+.rep-points li::before{
+  content:'';position:absolute;left:0;top:9px;width:9px;height:9px;
+  border-radius:50%;background:var(--gold);
+}
+.rep-caution{
+  margin-top:18px;background:var(--cream);border-left:3px solid var(--gold);
+  padding:14px 18px;font-size:12.5px;color:var(--sub-text);line-height:1.85;
+}
+.rep-shot{flex:none;width:400px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:var(--shadow);background:var(--paper);}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:880px;margin:0 auto;}
+.faq-item{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  padding:26px 30px;margin-bottom:16px;
+}
+.faq-q{
+  display:flex;gap:12px;align-items:flex-start;
+  font-family:'Shippori Mincho',serif;font-size:16.5px;font-weight:700;
+  color:var(--navy);line-height:1.6;margin-bottom:14px;
+}
+.faq-q .qm{
+  flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+  font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.faq-a{display:flex;gap:12px;align-items:flex-start;}
+.faq-a .am{
+  flex:none;width:26px;height:26px;border-radius:50%;background:var(--crimson);color:#fff;
+  font-size:13px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.faq-a .faq-text{flex:1;font-size:13.5px;color:var(--sub-text);line-height:1.95;}
+.faq-a .faq-text strong{color:var(--crimson);font-weight:700;}
+.faq-sub{
+  margin-top:12px;background:var(--cream);border-radius:10px;padding:14px 16px;
+  font-size:12.5px;color:var(--sub-text);line-height:1.85;
+}
+.faq-sub li{list-style:none;padding-left:14px;position:relative;margin-bottom:4px;}
+.faq-sub li::before{content:'・';position:absolute;left:0;}
+
+/* ===== モニターキャンペーン ===== */
+.mon-price{
+  background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);
+  max-width:820px;margin:0 auto 34px;padding:46px 44px;text-align:center;
+}
+.mon-tag{
+  display:inline-block;background:linear-gradient(120deg,var(--crimson) 0%,var(--crimson-dark) 100%);
+  color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;
+  border-radius:100px;padding:8px 24px;margin-bottom:22px;
+}
+.mon-was{font-size:13px;color:var(--sub-text);font-weight:600;margin-bottom:6px;}
+.mon-now{
+  font-family:'Shippori Mincho',serif;font-weight:900;color:var(--crimson);
+  font-size:clamp(34px,5.4vw,58px);line-height:1.15;margin-bottom:8px;
+}
+.mon-now .unit{font-size:.42em;color:var(--navy);font-weight:700;margin-left:4px;}
+.mon-cond{font-size:14px;color:var(--navy);font-weight:700;margin-bottom:6px;}
+.mon-free{
+  display:inline-block;background:var(--hl-yellow);color:var(--navy);
+  font-size:14.5px;font-weight:800;border-radius:8px;padding:8px 18px;margin-top:10px;
+}
+.mon-normal{
+  margin-top:30px;padding-top:26px;border-top:1px dashed var(--line);text-align:left;
+}
+.mon-normal h4{
+  font-family:'Shippori Mincho',serif;font-size:14px;color:var(--navy);
+  font-weight:700;margin-bottom:12px;text-align:center;
+}
+.mon-normal ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:6px 24px;}
+.mon-normal li{
+  font-size:12.5px;color:var(--sub-text);line-height:1.8;padding-left:14px;position:relative;
+}
+.mon-normal li::before{content:'・';position:absolute;left:0;}
+
+.cond-box{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px 38px;max-width:880px;margin:0 auto 20px;
+}
+.cond-box h3{
+  font-size:17px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--crimson);
+}
+.cond-list{list-style:none;}
+.cond-list li{
+  font-size:13.5px;color:var(--body-text);line-height:1.9;padding-left:22px;
+  position:relative;margin-bottom:10px;
+}
+.cond-list li::before{
+  content:'';position:absolute;left:0;top:9px;width:9px;height:9px;
+  border-radius:2px;background:var(--crimson);
+}
+.cond-list li .sub{display:block;font-size:12px;color:var(--sub-text);margin-top:2px;}
+.coop-head{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;
+  border-radius:6px;padding:4px 12px;margin:22px 0 12px;
+}
+.coop-head.must{background:var(--crimson);color:#fff;}
+.coop-head.opt{background:var(--navy);color:#fff;}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:880px;margin:0 auto 20px;}
+.pay-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 28px;
+}
+.pay-card h3{font-size:16px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.pay-card p{font-size:13px;color:var(--sub-text);line-height:1.9;margin-bottom:10px;}
+.pay-card p:last-child{margin-bottom:0;}
+.pay-card p strong{color:var(--navy);font-weight:700;}
+.pay-card .warn{color:var(--crimson);font-weight:700;}
+.terms-box{
+  background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 34px;max-width:880px;margin:0 auto;
+}
+.terms-box h3{font-size:15px;margin-bottom:14px;}
+.terms-box h4{
+  font-size:13px;color:var(--crimson);margin:18px 0 6px;font-family:'Noto Sans JP',sans-serif;font-weight:800;
+}
+.terms-box h4:first-of-type{margin-top:0;}
+.terms-box li{
+  list-style:none;font-size:12.5px;color:var(--sub-text);line-height:1.85;
+  padding-left:14px;position:relative;margin-bottom:4px;
+}
+.terms-box li::before{content:'・';position:absolute;left:0;}
+.notice-box{
+  background:var(--navy);color:#E8EAF0;border-radius:16px;padding:26px 30px;
+  max-width:880px;margin:20px auto 0;
+}
+.notice-box h3{color:#fff;font-size:15.5px;margin-bottom:10px;}
+.notice-box p{font-size:12.5px;line-height:1.95;color:#C0C8DE;}
+.notice-box p strong{color:var(--gold-light);font-weight:700;}
+
 /* ===== Reveal ===== */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.is-visible{opacity:1;transform:translateY(0);}
@@ -452,6 +700,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 /* ===== MOBILE ===== */
 @media (max-width:880px){
   nav.main-nav .nav-links{display:none;}
+  .fw-grid{grid-template-columns:repeat(3,1fr);}
+  .feat-grid{grid-template-columns:repeat(2,1fr);}
+  .voice-grid{grid-template-columns:repeat(2,1fr);}
+  .rep-wrap{flex-direction:column;}
+  .rep-shot{width:100%;}
+  .pay-grid{grid-template-columns:1fr;}
   .logo-txt{display:none;}
   .msg-wrap{flex-direction:column;align-items:center;}
   .msg-photo{width:140px;}
@@ -468,6 +722,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 }
 @media (max-width:760px){
   section{padding:52px 0;}
+  .fw-grid{grid-template-columns:1fr;gap:12px;}
+  .fw-card{padding:20px 18px;}
+  .fw-head .fw-catch{font-size:18px;}
+  .feat-grid{grid-template-columns:1fr;}
+  .prog-wrap{padding:24px 20px;}
+  .prog-grid{grid-template-columns:1fr;gap:0;}
+  .voice-grid{grid-template-columns:1fr;}
+  .cmp-hint{display:block;}
+  .cmp-table th,.cmp-table td{padding:12px 12px;font-size:11.5px;}
+  .rep-body h3{font-size:17px;}
+  .faq-item{padding:22px 20px;}
+  .faq-q{font-size:15px;}
+  .mon-price{padding:30px 20px;}
+  .mon-normal ul{grid-template-columns:1fr;}
+  .cond-box{padding:24px 20px;}
+  .pay-card{padding:22px 20px;}
+  .terms-box{padding:24px 20px;}
+  .notice-box{padding:22px 20px;}
   .section-head{margin-bottom:32px;}
   .eyebrow{font-size:11px;margin-bottom:12px;}
   h2.section-title{font-size:21px;line-height:1.55;margin-bottom:14px;}
@@ -533,13 +805,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     </a>
     <nav class="main-nav">
       <div class="nav-links">
-        <a href="#solution">特長</a>
+        <a href="#framework">5つの力</a>
         <a href="#content">研修内容</a>
-        <a href="#results">実績</a>
-        <a href="#flow">導入の流れ</a>
+        <a href="#voices">成果事例</a>
+        <a href="#faq">よくある質問</a>
         <a href="#pricing">料金</a>
       </div>
-      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-sm nav-cta">詳細はこちら</a>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-sm nav-cta">お申し込み・ご相談</a>
     </nav>
   </div>
 </header>
@@ -556,19 +828,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
       売れる人の頭の中にあるノウハウを、<span class="hl-hero">誰でも吸収できる研修動画に体系化</span>しました。
     </p>
     <p class="hero-sub">
-      元<span class="nw">ハウスメーカー</span><span class="nw">トップセールス</span>が全講義を担当｜新人育成・組織の営業力強化を動画で仕組み化｜<strong style="font-size:1.15em;" class="nw">月額55,000円〜</strong>
+      元<span class="nw">ハウスメーカー</span><span class="nw">トップセールス</span>が全講義を担当｜新人育成・組織の営業力強化を動画で仕組み化｜<strong style="font-size:1.15em;" class="nw">モニター価格 月5,480円／1名</strong>
     </p>
     <div class="hero-cta">
-      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-lg">詳細はこちら</a>
-      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-on-navy"><span class="nw">カスタマイズ</span>のご相談・ご質問はこちら</a>
+      <a href="#pricing" class="btn btn-primary btn-lg">モニターキャンペーンを見る</a>
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-on-navy">お申し込み・ご質問はこちら</a>
     </div>
   </div>
 </section>
 
 <!-- ===== CAMPAIGN BANNER (hero直下) ===== -->
 <div class="campaign-banner">
-  モニターキャンペーン実施中｜<span class="cb-limit nw">10月末まで</span>・<span class="cb-limit nw">先着50社限定</span>
-  <div class="cb-detail">特典の詳細は説明動画内でご案内します</div>
+  モニターキャンペーン実施中｜<span class="cb-limit nw">先着10社限定</span>・<span class="cb-limit nw">月5,480円／1名</span>
+  <div class="cb-detail">2名からお申し込み可能／永年適用／初回導入費は無料</div>
 </div>
 
 <!-- ===== 2. PAIN POINTS ===== -->
@@ -659,7 +931,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
       <p class="section-lead">50社・1,000人超の営業を支援してきた"教えるプロ"が、<span class="nw">トップセールス</span>級のノウハウを<br class="sp-br"><span class="hl-strong nw">約100本の研修動画に体系化</span>。</p>
     </div>
 
-    <div class="sol-grid reveal" id="content">
+    <div class="sol-grid reveal">
       <div class="sol-card">
         <div class="sol-icon">1</div>
         <p><strong>全店舗・全営業に同じ品質の教育が届く。</strong><span class="nw">トップセールス</span>の時間を1秒も使わずに、教え上手な店長がいない店舗でも育成が回る。運任せだった育成が、仕組みになる。</p>
@@ -678,19 +950,135 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
       </div>
     </div>
 
-    <div class="category-list reveal">
-      <h3>カテゴリ例</h3>
-      <div class="category-tags">
-        <span>土地なし研修</span>
-        <span>新人営業研修</span>
-        <span>SPIN営業</span>
-        <span>ヒアリング</span>
-        <span>信頼獲得</span>
-        <span>熱上げ</span>
-        <span>クロージング</span>
-        <span>反論処理</span>
-        <span>ファン化販売</span>
+  </div>
+</section>
+
+<!-- ===== 4b. FRAMEWORK ===== -->
+<section class="bg-cream" id="framework">
+  <svg class="deco-curve tr" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">FRAMEWORK</span>
+      <h2 class="section-title">登竜門 <span class="accent">成約フレームワーク</span></h2>
+      <p class="section-lead">成果を生み出す<span class="hl">5つの力</span>を、ひとつに。</p>
+    </div>
+
+    <div class="fw-head reveal">
+      <p class="fw-catch">年間12棟以上を安定して売る営業は、<br class="sp-br"><span class="accent">例外なくこの5つ</span>を身につけている。</p>
+    </div>
+
+    <div class="fw-grid reveal">
+      <div class="fw-card">
+        <span class="fw-no">1</span>
+        <h3>営業マインド</h3>
+        <p>成果を出し続けるための<br>考え方・姿勢・哲学</p>
       </div>
+      <div class="fw-card">
+        <span class="fw-no">2</span>
+        <h3>営業知識・<br>営業スキル</h3>
+        <p>お客様の心を動かし、<br>成約へ導く実践スキル</p>
+      </div>
+      <div class="fw-card">
+        <span class="fw-no">3</span>
+        <h3>商談戦略</h3>
+        <p>成功確率を高める<br>商談の設計と進め方</p>
+      </div>
+      <div class="fw-card">
+        <span class="fw-no">4</span>
+        <h3>アピアランス・<br>トナリティ</h3>
+        <p>信頼感を高める<br>見た目・声・雰囲気</p>
+      </div>
+      <div class="fw-card">
+        <span class="fw-no">5</span>
+        <h3>顧客管理</h3>
+        <p>長期的な信頼関係を築き<br>成果を安定させる管理力</p>
+      </div>
+    </div>
+
+    <div class="fw-note reveal">
+      <strong>5つの要素が連動することで、再現性のある成果を生み出す。</strong>
+      <span>単なるテクニックではなく、体系的に学び、実践し、成長を続けるためのフレームワークです。<br class="sp-br">すべてを一度に改善する必要はありません。住宅営業登竜門では、この5つすべてを学ぶことができます。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4c. FEATURES ===== -->
+<section class="bg-paper" id="features">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">FEATURES</span>
+      <h2 class="section-title">5つすべてを、<span class="accent">体系的に学べます</span></h2>
+      <p class="section-lead">16プログラム・100本以上の動画が見放題。<span class="nw">1本10〜15分</span>で、毎日続けられます。</p>
+    </div>
+
+    <div class="feat-grid reveal">
+      <div class="feat-card">
+        <p class="feat-no">01</p>
+        <h3>100本以上が見放題</h3>
+        <p>5つの弱点それぞれを埋める動画が揃っています。<strong>1本10〜15分</strong>。通勤の車の中でも聴けます。</p>
+      </div>
+      <div class="feat-card">
+        <p class="feat-no">02</p>
+        <h3>最強の即決トークを多数収録</h3>
+        <p>精神論や概念論ではなく、<strong>即決の営業トーク</strong>を多数収録。トークだけで受注が順調になったという声が多数あります。</p>
+      </div>
+      <div class="feat-card">
+        <p class="feat-no">03</p>
+        <h3>動画内にロープレパートも多数</h3>
+        <p>本当の研修のように、<strong>動画内でロープレを実演するパート</strong>があります。ロープレを重視していくと、売れるトークが使えるように設計されています。</p>
+      </div>
+      <div class="feat-card">
+        <p class="feat-no">04</p>
+        <h3>初心者から年12棟までのロードマップ</h3>
+        <p>初心者の方から年12棟までの営業に必要な要素は、この動画プログラムで網羅。<strong>多数の参加者が年12棟を実現</strong>しています。</p>
+      </div>
+      <div class="feat-card">
+        <p class="feat-no">05</p>
+        <h3>速習でも、受注は改善</h3>
+        <p>多忙な方は必要な部分だけを見ても、トップセールスの手法を見るだけでも大きな成果。<strong>年3〜5棟の受注増加</strong>が見込まれます。</p>
+      </div>
+      <div class="feat-card">
+        <p class="feat-no">06</p>
+        <h3>内容は定期的に更新・追加</h3>
+        <p>激変の住宅業界に合わせて、<strong>動画を毎月追加更新</strong>。インフレ、ファン化対応も確実にできるようになります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4d. PROGRAM LIST ===== -->
+<section class="bg-cream" id="content">
+  <svg class="deco-curve bl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">PROGRAM</span>
+      <h2 class="section-title">現16プログラムの<span class="accent">ラインナップ</span></h2>
+      <p class="section-lead">5つの成約フレームワークを、テーマ別に分解して収録しています。</p>
+    </div>
+
+    <div class="prog-wrap reveal">
+      <ul class="prog-grid">
+        <li><span class="pn">01</span>営業マインド研修</li>
+        <li><span class="pn">02</span>若手ビジネスマインド研修</li>
+        <li><span class="pn">03</span>成長マインドセット研修</li>
+        <li><span class="pn">04</span>アピアランス研修</li>
+        <li><span class="pn">05</span>トナリティ研修</li>
+        <li><span class="pn">06</span>土地研修</li>
+        <li><span class="pn">07</span>予算コントロール研修</li>
+        <li><span class="pn">08</span>家を買うなら今研修</li>
+        <li><span class="pn">09</span>商談の全体像研修</li>
+        <li><span class="pn">10</span>障壁解除と熱上げ研修</li>
+        <li><span class="pn">11</span>商談スキル／商談マインド研修</li>
+        <li><span class="pn">12</span>クロージング実践研修</li>
+        <li><span class="pn">13</span>中長期管理研修</li>
+        <li><span class="pn">14</span>再来顧客管理研修</li>
+        <li><span class="pn">15</span>案件管理研修</li>
+        <li class="is-new"><span class="pn">16</span>SPIN営業研修<span class="tag-new">近日追加</span></li>
+      </ul>
+      <p class="prog-foot">
+        ※ プログラムは今後、随時追加・更新予定です。<br>
+        激変の住宅業界に合わせて動画を毎月追加していきます。<strong>追加分も追加料金なしで見放題</strong>です。
+      </p>
     </div>
   </div>
 </section>
@@ -741,6 +1129,115 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   </div>
 </section>
 
+<!-- ===== 5b. VOICES ===== -->
+<section class="bg-paper" id="voices">
+  <svg class="deco-curve tl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">VOICES</span>
+      <h2 class="section-title">研修参加者の声・<span class="accent">成果事例</span></h2>
+      <p class="section-lead">弊社の営業研修に参加された方から届いた成果の一部です。</p>
+    </div>
+
+    <div class="voice-grid reveal">
+      <div class="voice-card">
+        <p>年間<span class="big">3棟 → 18棟</span>に受注が増えました。</p>
+        <p class="voice-who">東北地区　男性／勤続3年</p>
+      </div>
+      <div class="voice-card">
+        <p>土地無し契約が<span class="big">8割</span>になりました。ほとんどが一発で買付をいただけるようになりました。</p>
+        <p class="voice-who">関東地区　男性／勤続4年</p>
+      </div>
+      <div class="voice-card">
+        <p>単価が500万円ほど上がったにも関わらず、受注は<span class="big">6棟 → 13棟</span>になりました。</p>
+        <p class="voice-who">甲信越地区　女性／勤続8年</p>
+      </div>
+      <div class="voice-card">
+        <p>営業の成長速度が格段に上がり、即戦力化が進みました。年間一人当たり契約数は過去最高の<span class="big">8棟</span>に。</p>
+        <p class="voice-who">九州地区　男性／店長職</p>
+      </div>
+      <div class="voice-card">
+        <p>一般社員から<span class="big">トップセールス</span>になり、現在は営業部長にまで昇格しました。</p>
+        <p class="voice-who">東海地区　男性／部長職</p>
+      </div>
+      <div class="voice-card">
+        <p>入社半年で<span class="big">3棟受注</span>ができました。</p>
+        <p class="voice-who">東北地区　男性／勤続1年</p>
+      </div>
+    </div>
+
+    <p class="voice-note reveal">※ 弊社が実施した営業研修（対面支援を含む）参加者の声です。成果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- ===== 5c. COMPARISON ===== -->
+<section class="bg-cream" id="compare">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">COMPARISON</span>
+      <h2 class="section-title">営業教育の仕組み、<br class="sp-br"><span class="accent">何が違うのか</span></h2>
+      <p class="section-lead">価格・頻度・内容・解約条件を並べると、違いは明確です。</p>
+    </div>
+
+    <p class="cmp-hint reveal">← 横にスクロールできます →</p>
+    <div class="cmp-scroll reveal">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="is-ours"><span class="cmp-badge">RECOMMENDED</span>住宅営業登竜門</th>
+            <th>コンサル会社<br>の研修</th>
+            <th>一般の<br>営業動画講座</th>
+            <th>単発<br>セミナー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>価格</th>
+            <td class="is-ours">
+              <span class="cmp-main">月5,480円</span>
+              モニター価格適用時。1日あたり183円、缶コーヒー1本分で永年この価格。
+            </td>
+            <td><span class="cmp-main">月30万円以上〜</span>個人で負担できる金額ではありません。</td>
+            <td><span class="cmp-main">月15,000円〜</span>登竜門の約3倍の月額。</td>
+            <td><span class="cmp-main">1回50,000円〜</span>1回ごとに費用が発生します。</td>
+          </tr>
+          <tr>
+            <th>頻度</th>
+            <td class="is-ours">
+              <span class="cmp-main">動画100本以上が見放題</span>
+              好きな時に、何度でも。1本10〜15分で毎日続けられます。
+            </td>
+            <td><span class="cmp-main">月1回・数時間</span>次の研修まで1ヶ月空きます。</td>
+            <td><span class="cmp-main">動画見放題</span></td>
+            <td><span class="cmp-main">1回のみ</span>その場で終わりです。</td>
+          </tr>
+          <tr>
+            <th>内容</th>
+            <td class="is-ours">
+              <span class="cmp-main">住宅営業に特化</span>
+              1,500人中10位・6年間102棟の実績者が、50社1,000名の指導で体系化。トークスクリプト・ロープレ実演まで収録。
+            </td>
+            <td>体系的だが抽象的なことも多い。住宅営業の経験がないコンサルタントが担当する場合もあります。</td>
+            <td>住宅営業専門の内容はほとんどありません。一般的な営業手法が中心です。</td>
+            <td>良い内容だが、頻度が少ないため習得にかなりの時間がかかります。</td>
+          </tr>
+          <tr>
+            <th>解約</th>
+            <td class="is-ours">
+              <span class="cmp-main">いつでも解約可能</span>
+              解約手数料0円。最低利用期間の3ヶ月を過ぎれば、いつでもやめられます。
+            </td>
+            <td>年間契約が一般的。</td>
+            <td>プランにより異なります。</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 6. ROI ===== -->
 <section class="bg-paper">
   <div class="container">
@@ -753,7 +1250,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
       <div class="roi-row">
         <div class="roi-card">
           <p class="roi-label">月額費用</p>
-          <p class="roi-value cost"><span class="nw">55,000円〜</span></p>
+          <p class="roi-value cost"><span class="nw">5,480円 / 1名</span></p>
         </div>
         <div class="roi-arrow">→</div>
         <div class="roi-card">
@@ -772,12 +1269,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
 
       <div class="roi-highlight">
         <p class="roi-big-num">例えば20人の営業で8棟増えれば<br><span class="hl-strong"><span class="nw">粗利 2,400万円の増加</span></span></p>
-        <p>月額55,000円の投資で、年間数千万円のリターンに</p>
+        <p>営業20名でも月額109,600円。その投資で、年間数千万円のリターンに</p>
       </div>
 
       <div class="roi-reframe">
         そもそも、社内で研修を行えば残業代だけで月額費用を超えることも。<br>
-        例えば営業10名を2時間集めて店長が教えれば、残業代と店長の時間だけで<span class="hl-strong nw" style="color:var(--crimson);">月55,000円を超える</span>。<br><span class="sp-gap"></span>
+        例えば営業10名を2時間集めて店長が教えれば、残業代と店長の時間だけで<span class="hl-strong nw" style="color:var(--crimson);">月54,800円を超える</span>。<br><span class="sp-gap"></span>
         <strong>これは"追加コスト"ではなく、今かかっている教育コストの置き換えです。</strong>
       </div>
     </div>
@@ -820,31 +1317,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
   </div>
 </section>
 
-<!-- ===== 8. FLOW ===== -->
-<section class="bg-paper" id="flow">
+<!-- ===== 7b. REPORT ===== -->
+<section class="bg-paper" id="report">
+  <svg class="deco-curve tr" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow">FLOW</span>
-      <h2 class="section-title">導入までの<span class="accent">流れ</span></h2>
+      <span class="eyebrow">REPORT</span>
+      <h2 class="section-title">誰が見ていて、誰が止まっているか。<br><span class="accent">月1回、見える化します</span></h2>
     </div>
-    <div class="flow-row reveal">
-      <div class="flow-step">
-        <p class="flow-num">STEP 01</p>
-        <h3>詳細説明動画を見る</h3>
-        <p>実際の画面と使い方がわかる詳細説明動画をご覧ください（近日公開）</p>
+
+    <div class="rep-wrap reveal">
+      <div class="rep-body">
+        <h3>社員の<span class="accent">「サボり」を防止</span>し、<br>努力を<span class="accent">可視化</span>できる状態に。</h3>
+        <p>動画を配って終わり、にはしません。受講者ごとの視聴状況をまとめたレポートを、<strong>月1回、CSVでメールにてご共有</strong>します。</p>
+        <ul class="rep-points">
+          <li>誰が何本見ているか、進捗率がひと目でわかる</li>
+          <li>最終視聴からの経過日数で「止まっている人」が浮かび上がる</li>
+          <li>順調・鈍化・停滞・未着手の4段階で判定</li>
+          <li>面談や朝礼での声かけの材料として、そのまま使える</li>
+        </ul>
+        <div class="rep-caution">
+          ※ システム側で月1回、CSVをメールにて共有する形となります。<br>
+          ※ 社内用のダッシュボード機能はありません。管理者アカウントによる一括管理機能も現在はご提供しておりません。
+        </div>
       </div>
-      <div class="flow-step">
-        <p class="flow-num">STEP 02</p>
-        <h3>お申し込み / ご相談</h3>
-        <p>動画を見てご納得いただけたら、そのままお申し込みも可能。詳細のお問い合わせ・面談をご希望の方は、お気軽にご相談ください</p>
-      </div>
-      <div class="flow-step">
-        <p class="flow-num">STEP 03</p>
-        <h3>導入・運用開始</h3>
-        <p>アカウント発行後、すぐに研修動画で育成サイクルが回り始めます</p>
+      <div class="rep-shot">
+        <img src="report-sample.png" alt="受講状況レポートの例">
       </div>
     </div>
-    <p class="flow-note reveal">商談・打ち合わせ不要。動画を見て、そのまま始められます。</p>
   </div>
 </section>
 
@@ -892,41 +1392,319 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
           <li>累計50社以上の住宅会社を支援／エリアNo.1達成企業を多数輩出</li>
         </ul>
         <p class="profile-motto">「成果を必ず出すコンサルティング」が信条。</p>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--line);">
+          <p style="font-size:11.5px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:.04em;">主なご支援実績（一部）</p>
+          <p style="font-size:11.5px;color:var(--sub-text);line-height:1.85;">
+            G社様（40億）中期経営計画戦略／マネジメント強化／商品開発　・　H社様（10億）営業力強化／工務生産性向上<br>
+            I社様（60億）組織構造改編／育成の仕組み構築　・　S社様（15億）新ブランドマーケティング／商品ブランド構築<br>
+            Y社様（90億）営業総合強化　・　M社様（40億）顧客資産活用の仕組み構築　・　R社様（100億）営業個別強化<br>
+            A社様（1,300億）自社営業の型構築　ほか、新築部門立ち上げ／業績回復支援／販売戦略構築支援 多数
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 10. PRICING / CONTACT ===== -->
-<!-- campaign banner (料金セクション冒頭) -->
-<div class="campaign-banner">
-  モニターキャンペーン実施中｜<span class="cb-limit nw">10月末まで</span>・<span class="cb-limit nw">先着50社限定</span>
-  <div class="cb-detail">特典の詳細は説明動画内でご案内します</div>
-</div>
+<!-- ===== 9b. FAQ ===== -->
+<section class="bg-paper" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">よくある<span class="accent">ご質問</span></h2>
+    </div>
 
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <p class="faq-q"><span class="qm">Q</span>動画だけだと、なかなか自学習が進まないのではないか？</p>
+        <div class="faq-a">
+          <span class="am">A</span>
+          <div class="faq-text">
+            動画を見るルーティンを<strong>指示・仕組み・目標設定化</strong>することで、自発的な学習が生まれます。
+            <ul class="faq-sub">
+              <li>毎週1プログラムの視聴をルーティンとし、翌週に内容の報告とロープレテストをする</li>
+              <li>社内研修の代わりに営業全員でプログラムを視聴。店長などがアドバイスを補足して定期研修化する</li>
+              <li>入社後8月にデビューするまでにプログラム1〜16をすべて視聴。8月にテストし、合格したら営業デビュー</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q"><span class="qm">Q</span>どのレベルの営業に役立つのか？</p>
+        <div class="faq-a">
+          <span class="am">A</span>
+          <div class="faq-text">
+            特に<strong>若手1〜5年目</strong>の社員には間違いなくプラスになる内容です。年間10棟以上を受注できる営業になるためのプログラムになっています。<br>
+            ベテランでも年間5棟以下の方は、プログラム内容のいくつかができていない、中長期管理が苦手、アピアランスとトナリティが悪化している、マインドセットが崩れている、といった場合が多く、受注改善の大きなヒントになり得ます。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q"><span class="qm">Q</span>動画の内容が古くないか？</p>
+        <div class="faq-a">
+          <span class="am">A</span>
+          <div class="faq-text">
+            動画の内容は、現在わたしたちが<strong>実際にご支援しており、成果が出ている内容</strong>です。奇をてらった営業や問題のある手法は含まれておらず、あくまで「王道」で成果を出すための内容になっています。<br>
+            また、時節・時代に合わせた新しい営業手法を定期的に追加していきます。実施しているオンラインセミナーの動画なども随時追加予定です。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q"><span class="qm">Q</span>自分たちの営業に合っているか？ 今後、自社向けに作ってほしい。</p>
+        <div class="faq-a">
+          <span class="am">A</span>
+          <div class="faq-text">
+            基本的には王道の内容で構成しており、できる限り<strong>全営業・全業種に共通してプラスになる内容</strong>にしています。全体化が難しい内容については口頭ですべて補足し、各業種・価格帯・商品特性に合わせて利用する旨を動画内でお伝えしています。<br>
+            すべての企業に合わせた内容を全体向けの動画でお作りすることはできませんが、<strong>企業様独自の営業研修動画システムの作成</strong>（自社営業トークを盛り込んだもの）は、別途ご支援にて承っております。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q"><span class="qm">Q</span>利用環境はどうなっているのか？</p>
+        <div class="faq-a">
+          <span class="am">A</span>
+          <div class="faq-text">
+            スマートフォン・PC・タブレットすべてに対応しています。現在は「MOSH」というオンライン講座システムを用いており、セキュリティ面もしっかりとしています。<br>
+            当システムの関係で<strong>1名1アカウント付与</strong>という形となりますので、全体で1アカウントを利用する対応は不可となります。<br>
+            ※ 全体で1アカウントを契約し、他のメンバーが使い回している状態が確認された場合は利用規約違反となり、即時解除・違約扱いとなります（利用状況は運営側で確認ができます）。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q"><span class="qm">Q</span>動画の学習管理はできるのか？</p>
+        <div class="faq-a">
+          <span class="am">A</span>
+          <div class="faq-text">
+            動画の進捗管理は各アカウント内で個別に確認が可能です。あわせて、<strong>月1回のCSVレポート</strong>を事務局よりメールでご共有します。<br>
+            ただし<strong>管理者アカウントは存在しない</strong>ため、管理者側の画面で一括して進捗管理を行うことはできません。<br>
+            すべての学習進度が確認できる総合的な育成システムをお求めの場合は、システムを個別に再構築する形となり、現在の金額ではご提供できません。ご検討の場合は個別相談にて承ります。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="voice-note reveal" style="margin-top:22px;">※ 導入時のオリエンテーションや育成プログラム策定なども、単発・別途のご支援にて可能です。ご希望の際はお問い合わせください。</p>
+  </div>
+</section>
+
+<!-- ===== 10. MONITOR CAMPAIGN ===== -->
 <section class="bg-navy" id="pricing">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow" style="color:var(--gold-light);">PRICING</span>
-      <h2 class="section-title">料金・お問い合わせ</h2>
+      <span class="eyebrow" style="color:var(--gold-light);">CAMPAIGN</span>
+      <h2 class="section-title">10社限定　モニターキャンペーン</h2>
+      <p class="section-lead">以前よりご愛顧いただいております企業様・ご担当者様<span class="nw">10社限定</span>で、<br class="sp-br">オープンモニターキャンペーンを実施いたします。</p>
     </div>
 
-    <div class="pricing-box reveal">
-      <p class="price-label"><span class="nw">ベーシックプラン</span></p>
-      <p class="price-main"><span class="nw">月額 55,000円〜</span><span class="price-tax">(税込)</span></p>
-      <p class="price-sub"><span class="nw">企業規模・ご要望に応じて</span><span class="nw">最適なプランをご案内します</span></p>
+    <div class="mon-price reveal">
+      <span class="mon-tag">先着10社様限定</span>
+      <p class="mon-was">モニター条件をご承諾いただけた法人様のみ</p>
+      <p class="mon-now">5,480<span class="unit">円 / 月 / 1名</span></p>
+      <p class="mon-cond">（税込）2名からお申し込み可能 ／ <span class="nw">永年適用</span></p>
+      <p class="mon-free">さらに、初回導入費も無料</p>
 
-      <p class="pricing-urgency">＼ <span class="hl-full nw">10月末まで</span>・<span class="hl-full nw">先着50社限定</span> ／</p>
+      <div class="mon-normal">
+        <h4>― 通常の法人受付の場合 ―</h4>
+        <ul>
+          <li>初回法人導入費：300,000円（税抜）〜</li>
+          <li>月額 10万円（税抜）／ 5アカウント</li>
+          <li>月額 15万円（税抜）／ 10アカウント</li>
+          <li>月額 20万円（税抜）／ 15アカウント<br>以降5アカウントごとに5万円</li>
+        </ul>
+      </div>
+    </div>
 
-      <ul class="pricing-notes">
-        <li>ご要望に応じて、育成<span class="nw">カリキュラム</span>の構築・<span class="nw">カスタマイズ</span>のご支援も可能です</li>
-        <li>詳細説明動画は近日公開。公開時にメールでご案内します</li>
+    <div style="text-align:center;" class="reveal">
+      <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-xl">モニターキャンペーンに申し込む</a>
+      <p style="margin-top:16px;font-size:13px;color:#C0C8DE;">ご質問のみでも構いません。<br class="sp-br">メールでのお問い合わせも承っております（<span class="nw">m.tsuruta@markey-consulting.com</span>）</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10b. CONDITIONS ===== -->
+<section class="bg-cream" id="conditions">
+  <svg class="deco-curve bl" viewBox="0 0 400 300" aria-hidden="true"><use href="#ribbon"/></svg>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">CONDITIONS</span>
+      <h2 class="section-title">お申し込み<span class="accent">条件</span></h2>
+    </div>
+
+    <div class="cond-box reveal">
+      <h3>モニターキャンペーン お申し込み条件</h3>
+      <ul class="cond-list">
+        <li>先着10社様限定での受付となります。</li>
+        <li>お申し込みの人数分のアカウント利用料が、永年キャンペーン価格での適用となります。
+          <span class="sub">※ キャンペーン以降のお申し込み分は、別途ご相談のうえ対応となります。</span></li>
+        <li>最低お申し込み人数は<strong>2名</strong>からとなります。</li>
+        <li>最低利用期間は<strong>3ヶ月</strong>となります。3ヶ月以降のご解約は自由です。
+          <span class="sub">※ ご解約お申し込み日の翌月からの適用となります。ご解約費用は無料です。</span></li>
       </ul>
 
+      <p class="coop-head must">必須となります</p>
+      <ul class="cond-list">
+        <li>ご利用者様の声のご投稿（住宅営業登竜門サービスサイト内に掲載）／ 1名1投稿
+          <span class="sub">※ お名前は伏せ、「●●ハウス／入社3年目」等の表記も可能です。</span></li>
+      </ul>
+
+      <p class="coop-head opt">下記のどちらかを任意でご相談させてください</p>
+      <ul class="cond-list">
+        <li>企業ロゴの弊社WEBページへの掲載
+          <span class="sub">※ 社内でのご事情もあるかと存じますので、ご無理のない範囲で結構です。ご掲載が難しい場合でも、モニター価格の適用に影響はございません。</span></li>
+        <li>当サービスWEBページへの、代表者様または営業担当者様インタビューの掲載のご協力
+          <span class="sub">※ 公開の範囲、お顔写真の公開の有無等は、ご無理のない形でご相談させてください。</span></li>
+      </ul>
+      <p style="margin-top:18px;font-size:12.5px;color:var(--sub-text);">お申し込み時に、担当者より改めてご確認をさせていただきます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11. FLOW ===== -->
+<section class="bg-paper" id="flow">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">FLOW</span>
+      <h2 class="section-title">お申し込みの<span class="accent">流れ</span></h2>
+    </div>
+    <div class="flow-row reveal">
+      <div class="flow-step">
+        <p class="flow-num">STEP 01</p>
+        <h3>お申し込み・<br>お問い合わせ</h3>
+        <p>お申し込みをご希望の旨を、申し込みフォームよりご記入ください。直接メールでご連絡いただいても構いません。ご質問のみでも受け付けております。</p>
+      </div>
+      <div class="flow-step">
+        <p class="flow-num">STEP 02</p>
+        <h3>アカウント情報の<br>ご提供と確認</h3>
+        <p>アカウント発行に必要な情報のご記入フォーマットをお送りいたします。<br>※ 本システム利用者のメールアドレス・電話番号をご提供いただく必要があります。</p>
+      </div>
+      <div class="flow-step">
+        <p class="flow-num">STEP 03</p>
+        <h3>アカウント発行</h3>
+        <p>手続きご担当者様に、お申し込み同意・確認のメールを送信いたします。内容をご確認いただいたのち、アカウントを発行いたします。</p>
+      </div>
+      <div class="flow-step">
+        <p class="flow-num">STEP 04</p>
+        <h3>ご利用開始</h3>
+        <p>ご利用者様のメールアドレス宛に、システム（MOSH）より直接メールが届きます。ご本人にて登録を完了いただければ、即日ご利用いただけます。</p>
+      </div>
+    </div>
+    <p class="flow-note reveal">お支払いはアカウント開設月からの起算となります。ただし毎月20日以降に開設された場合、当月分は無償とし、翌月分からのご請求となります。</p>
+  </div>
+</section>
+
+<!-- ===== 12. PAYMENT / TERMS ===== -->
+<section class="bg-cream" id="terms">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">PAYMENT &amp; TERMS</span>
+      <h2 class="section-title">お支払い・ご解約<span class="accent">について</span></h2>
+    </div>
+
+    <div class="pay-grid reveal">
+      <div class="pay-card">
+        <h3>お支払いについて</h3>
+        <p>毎月ご請求書を発行し、<strong>ご利用月の月末まで</strong>にお支払いいただく形となります。</p>
+        <p><strong>ご利用開始月</strong><br>アカウント開設時にご請求書をお送りいたします。お支払いは開設月の月末までにお願いいたします。<br>
+        <span class="warn">※ 20日以降にアカウントを開設された場合、当月分は無償とし、翌月分からのご請求とさせていただきます。</span></p>
+        <p><strong>2ヶ月目以降</strong><br>毎月月初にご請求書を発行いたします。お支払いは当月末までにお願いいたします。</p>
+        <p><strong>お支払い方法</strong><br>銀行振込にてお願いいたします。振込手数料は御社（お振込側）にてご負担ください。<br>
+        経理処理のご都合により、年間一括や半年分をまとめてお支払いいただく形にも対応可能です。</p>
+      </div>
+
+      <div class="pay-card">
+        <h3>ご解約について</h3>
+        <p>ご解約をご希望の場合は、<strong>担当者宛にメール</strong>にてご連絡ください。</p>
+        <p><strong>毎月25日まで</strong>にご連絡いただいた場合、翌月からのサービス停止となります。26日以降のご連絡につきましては、翌々月からの停止となりますのでご了承ください。</p>
+        <p>解約費用は無料です。</p>
+
+        <h3 style="margin-top:24px;">ご利用人数の追加・変更</h3>
+        <p><strong>人数の追加</strong><br>追加をご希望の場合は、担当者までご連絡ください。モニターキャンペーン期間中の追加分についても、キャンペーン価格が適用となります。</p>
+        <p><strong>人数の減少</strong><br>ご退職等により人数を減らされる場合も、随時ご対応いたします。毎月25日までにご連絡いただいた場合、翌月分のご請求から反映いたします。<br>
+        <span class="warn">※ 最低お申し込み人数の2名を下回る場合は、ご解約の扱いとなります。</span></p>
+      </div>
+    </div>
+
+    <div class="pay-grid reveal" style="margin-bottom:20px;">
+      <div class="pay-card">
+        <h3>運用支援について（別途費用）</h3>
+        <p>基本的な使い方は、研修システム内に「成果が出やすい使い方」の項目をご用意しております。動画プログラムの進め方については、そちらでご確認いただけます。</p>
+        <p>そのうえで、以下をご希望の場合は<strong>別途費用</strong>を申し受けますので、ご了承ください。</p>
+        <p>① システムの使い方に関する講習<br>
+        ② 育成プログラム策定のご支援<br>
+        <span style="font-size:12px;">「自社の営業社員向けに、独自の育成プログラムを設計してほしい」といったご要望の場合。コンサルティングとして別途お見積りいたします。</span></p>
+      </div>
+
+      <div class="pay-card">
+        <h3>お問い合わせ窓口</h3>
+        <p>本サービスに関するお問い合わせ、ご解約のご連絡は、担当者宛のメールにてお願いいたします。</p>
+        <p style="font-size:15px;"><strong>m.tsuruta@markey-consulting.com</strong></p>
+        <p>MARKEY CONSULTING ／ 代表　鶴田 槙人（ツルタ マキト）<br>
+        ホームページ：markey-consulting.com</p>
+      </div>
+    </div>
+
+    <div class="notice-box reveal">
+      <h3>ご注意｜WEBページからの直接お申し込みについて</h3>
+      <p>本システムは、もともと<strong>個人の営業担当者様向け</strong>に開発したサービスです。通常は法人でのお申し込み、および<strong>請求書払い・銀行振込での受付を行っていないシステム</strong>となっております。<br>
+      そのため、本サービスのホームページからの直接のお申し込みはお控えください。法人でのご利用は、<strong>住宅営業登竜門の担当者とのやり取りを経て、モニターキャンペーンとしてご対応させていただいた場合のみ</strong>となります。</p>
+    </div>
+
+    <div class="terms-box reveal" style="margin-top:20px;">
+      <h3>ご利用にあたっての補足事項</h3>
+
+      <h4>コンテンツの取り扱いについて</h4>
+      <ul>
+        <li>本サービスおよびコンテンツの権利は、すべて MARKEY CONSULTING に属します。</li>
+        <li>本サービスの内容を複製・転載・共有すること、第三者へ販売することを禁止いたします。</li>
+        <li>動画の録画・ダウンロード、資料の複製、社内外を問わず本サービス外での二次利用、商用利用が発覚した場合は、相応の措置を取らせていただきます。</li>
+        <li>同業者の方によるご購入は固くお断りいたします。</li>
+      </ul>
+
+      <h4>アカウントの取り扱いについて</h4>
+      <ul>
+        <li>アカウントはご利用者様ごとの発行となります。1つのアカウントを複数名で共有してのご利用はご遠慮ください。</li>
+        <li>当該利用が判明した場合は、サービスの提供を中止いたします。</li>
+      </ul>
+
+      <h4>キャンペーン内容について</h4>
+      <ul>
+        <li>本モニターキャンペーンの内容は、現時点での内容となります。今後、同様のキャンペーンを実施する可能性がございます。</li>
+      </ul>
+
+      <h4>サービス内容の変更について</h4>
+      <ul>
+        <li>サービス内容は、予告なく変更させていただく場合がございます。あらかじめご了承ください。</li>
+        <li>利用システムの変更に伴い、ご利用方法が変更となる可能性がございます。その際は事前に共有させていただきます。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 13. FINAL CTA ===== -->
+<section class="bg-navy" id="contact">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">CONTACT</span>
+      <h2 class="section-title">まずは、<span style="color:var(--gold-light);">お問い合わせから</span></h2>
+      <p class="section-lead">お申し込みをご希望の方、ご質問のみの方、<br class="sp-br">どちらもこちらのフォームよりご連絡ください。</p>
+    </div>
+
+    <div class="pricing-box reveal" style="background:rgba(255,255,255,0.06);box-shadow:none;border:1px solid rgba(255,255,255,0.14);">
+      <p class="price-label" style="color:#C0C8DE;">モニター価格</p>
+      <p class="price-main" style="color:var(--gold-light);"><span class="nw">5,480円 / 月 / 1名</span><span class="price-tax" style="color:#C0C8DE;">(税込)</span></p>
+      <p class="price-sub" style="color:#C0C8DE;"><span class="nw">2名からお申し込み可能</span>／<span class="nw">永年適用</span>／<span class="nw">初回導入費 無料</span></p>
+
+      <p class="pricing-urgency" style="color:var(--gold-light);">＼ <span class="hl-full nw">先着10社様限定</span> ／</p>
+
       <div class="pricing-cta">
-        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-xl">詳細はこちら ― 公開案内を受け取る</a>
-        <span class="cta-hint">詳細説明動画の公開時にメールでお知らせします</span>
-        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-white-outline"><span class="nw">カスタマイズ</span>のご相談・ご質問はこちら</a>
+        <a href="https://forms.gle/Z455gE3xCMyC3BKT9" class="btn btn-primary btn-xl">お申し込み・お問い合わせはこちら</a>
+        <span class="cta-hint" style="color:#C0C8DE;">送信後、担当者よりご連絡させていただきます</span>
+        <a href="mailto:m.tsuruta@markey-consulting.com" class="btn btn-white-outline">メールでお問い合わせ（m.tsuruta@markey-consulting.com）</a>
       </div>
     </div>
   </div>
@@ -938,15 +1716,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--crimson);outline-of
     <div class="footer-top">
       <div class="footer-logo">
         <img src="logo.jpg" alt="住宅営業登竜門" class="ft-logo-img">
-        <p>売れる営業を育てる仕組みを、研修動画で<br>2026年8月末サービス開始予定</p>
+        <p>売れる営業を育てる仕組みを、研修動画で<br>16プログラム・100本以上の動画が見放題</p>
       </div>
       <div class="footer-nav">
         <div>
-          <a href="#solution">特長</a>
+          <a href="#framework">5つの力</a>
           <a href="#content">研修内容</a>
-          <a href="#results">実績</a>
-          <a href="#flow">導入の流れ</a>
-          <a href="#pricing">料金・お問い合わせ</a>
+          <a href="#voices">成果事例</a>
+          <a href="#compare">比較</a>
+          <a href="#faq">よくある質問</a>
+          <a href="#pricing">モニター価格</a>
+          <a href="#flow">お申し込みの流れ</a>
+          <a href="#terms">お支払い・ご解約</a>
         </div>
       </div>
       <div class="footer-markey">
