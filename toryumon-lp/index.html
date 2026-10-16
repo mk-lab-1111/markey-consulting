@@ -890,7 +890,7 @@ nav.main-nav a.nav-cta{flex-direction:column;gap:0;line-height:1.35;padding:9px 
   padding:52px 56px;box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:32px;
 }
 .price-main::after{
-  content:'期間限定';
+  content:'限定100名';
   position:absolute;top:24px;right:-28px;
   width:120px;background:var(--crimson);color:#fff;
   font-size:11px;font-weight:700;letter-spacing:.12em;
@@ -2326,25 +2326,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
     </div>
 
     <div class="scarcity reveal">
-      <span class="sc-blink">CAMPAIGN 残席わずか</span>
+      <span class="sc-blink">CAMPAIGN 開催中</span>
       <div class="sc-seats">
-        残り <span class="num">64</span>名<span class="sc-total">／限定100名</span>
+        限定 <span class="num">100</span>名<span class="sc-total">／永年35%OFF</span>
       </div>
-      <div class="sc-when">2026年8月時点</div>
-      <div class="sc-bar"><div class="sc-bar-fill"></div></div>
-      <div class="sc-bar-note">すでに36名の方がお申し込みされています</div>
-      <div class="sc-deadline">
-        <div class="sc-dl-lb">永年35%OFF キャンペーン締切</div>
-        <div class="sc-dl-date"><span class="em">2026年10月29日（水）0:00</span> まで</div>
-        <div id="countdown">残り —</div>
-      </div>
+      <div class="sc-bar-note">定員に達し次第、受付を終了いたします。</div>
     </div>
 
     <div class="final-cta-box reveal">
       <h2>今月から、<br class="sp-br">売れる営業になる。</h2>
       <p>
-        月5,480円・永年固定。<br class="sp-br">期間限定のお試し価格です。<br>
-        キャンペーン期間が終了したら、<br class="sp-br">通常金額に戻ります。
+        月5,480円・永年固定。<br class="sp-br">限定100名のお試し価格です。<br>
+        定員に達し次第、<br class="sp-br">通常金額に戻ります。
       </p>
       <div class="final-cta-buttons">
         <a href="https://mosh.jp/services/383423?openExternalBrowser=1" class="btn btn-gold btn-lg">今すぐ申し込む（月5,480円）<span class="b-sub">オープンキャンペーン開催中！</span></a>
@@ -2503,7 +2496,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
       </p>
 
       <p>
-        そして——<strong>永年35%OFFは、2026年10月29日0:00まで。限定100名です。</strong>この価格で入られた方は、来年も3年後も5,480円のまま。締切後にお申し込みの方は8,480円になります。
+        そして——<strong>永年35%OFFは、限定100名です。</strong>この価格で入られた方は、来年も3年後も5,480円のまま。定員に達した後にお申し込みの方は8,480円になります。
       </p>
 
       <p class="ps-strong">
@@ -2524,8 +2517,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
 
     <div class="mini-cta reveal" style="max-width:760px;margin-left:auto;margin-right:auto;">
       <div>
-        <span class="mc-label">締切 2026年10月29日 0:00</span>
-        <p>永年35%OFF・限定100名<span>残り64名（2026年8月時点）</span></p>
+        <span class="mc-label">先着100名限定</span>
+        <p>永年35%OFF・月5,480円<span>定員に達し次第、受付を終了します</span></p>
       </div>
       <a href="https://mosh.jp/services/383423?openExternalBrowser=1" class="btn btn-sm">今すぐ申し込む<span class="b-sub">月5,480円・永年固定</span></a>
     </div>
@@ -2621,29 +2614,6 @@ if('IntersectionObserver' in window){
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
 }
 
-// キャンペーン締切カウントダウン
-(function(){
-  var el = document.getElementById('countdown');
-  if(!el) return;
-  var deadline = new Date('2026-10-29T00:00:00+09:00').getTime();
-  function tick(){
-    var diff = deadline - Date.now();
-    if(diff <= 0){
-      el.innerHTML = 'キャンペーンは終了しました';
-      return;
-    }
-    var d = Math.floor(diff/86400000);
-    var h = Math.floor(diff%86400000/3600000);
-    var m = Math.floor(diff%3600000/60000);
-    var s = Math.floor(diff%60000/1000);
-    el.innerHTML = '残り ' + d + '<span class="cd-u">日</span>' +
-                   h + '<span class="cd-u">時間</span>' +
-                   m + '<span class="cd-u">分</span>' +
-                   s + '<span class="cd-u">秒</span>';
-    setTimeout(tick, 1000);
-  }
-  tick();
-})();
 </script>
 </body>
 </html>
