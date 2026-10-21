@@ -13,7 +13,7 @@ from pathlib import Path
 SITE = "https://markey-consulting.com/"
 ROOT_PAGES = ["", "cases.html", "corporate.html", "training.html", "events.html",
               "event_01.html", "event_02.html", "reports.html", "privacy.html",
-              "toryumon-lp/", "sales-academy/", "toryumon/"]
+              "toryumon-lp/", "sales-academy/", "toryumon/", "toryumon/corporate.html"]
 
 
 def front(md):
