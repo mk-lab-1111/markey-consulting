@@ -1053,6 +1053,36 @@ a.cbn-btn:not(.cbn-btn--off){background:var(--grad);font-size:clamp(16px,1.4vw,1
 a.cbn-btn:not(.cbn-btn--off):hover{filter:brightness(1.08)}
 a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2s}
 .cbn:hover a.cbn-btn .ico{transform:translateX(5px)}
+
+/* comparison table */
+.cmp-wrap{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-2);border:2px solid #E3C3D6;background:#fff}
+.cmp{width:100%;border-collapse:collapse;table-layout:fixed}
+.cmp thead th{background:#2f2a3a;color:#fff;font-weight:800;padding:16px 12px;font-size:clamp(14px,1.2vw,16px);line-height:1.5;text-align:center}
+.cmp thead th:first-child{width:104px}
+.cmp thead .cmp-us-h{background:var(--grad);font-size:clamp(17px,1.5vw,20px)}
+.cmp-us-h em{display:block;font-style:normal;font-family:var(--en);font-size:11px;letter-spacing:.16em;color:#FFE9A8;margin-bottom:4px}
+.cmp tbody th{background:#faf7fa;color:var(--accent-deep);font-weight:800;text-align:center;padding:14px 8px;font-size:clamp(14px,1.2vw,16px);border-top:1px solid var(--line)}
+.cmp td{padding:16px 16px;vertical-align:top;border-top:1px solid var(--line);line-height:1.65;font-size:14.5px;color:var(--ink-3)}
+.cmp td b{display:block;font-size:clamp(14.5px,1.2vw,16px);color:var(--ink);margin-bottom:4px;font-weight:800}
+.cmp td span{display:block}
+.cmp td.cmp-us{background:var(--accent-tint-2);border-left:3px solid var(--accent);border-right:3px solid var(--accent)}
+.cmp td.cmp-us b{color:var(--accent);font-size:clamp(16px,1.4vw,18px)}
+.cmp td.cmp-us span{color:var(--ink)}
+.cmp tbody tr:last-child td.cmp-us{border-bottom:3px solid var(--accent)}
+.cmp-note{margin-top:12px;font-size:13px;color:var(--ink-3);text-align:right}
+@media(max-width:820px){
+ .cmp,.cmp tbody,.cmp tr,.cmp td,.cmp th{display:block;width:100%}
+ .cmp thead{display:none}
+ .cmp tbody tr{border-top:8px solid var(--accent-tint-2);padding-bottom:6px}
+ .cmp tbody tr:first-child{border-top:0}
+ .cmp tbody th{text-align:left;padding:12px 16px;border-top:0;font-size:17px}
+ .cmp td{border-top:0;padding:10px 16px}
+ .cmp td::before{content:attr(data-l);display:block;font-size:12px;font-weight:800;color:var(--ink-3);margin-bottom:3px}
+ .cmp td.cmp-us{border:0;border-left:5px solid var(--accent);margin:0 0 6px}
+ .cmp td.cmp-us::before{color:var(--accent)}
+ .cmp tbody tr:last-child td.cmp-us{border-bottom:0}
+}
+.cmp thead th.cmp-us-h{width:31%}
 </style>
 </head>
 <body>
@@ -1091,7 +1121,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
       <a href="#organizer">主催者・講師</a>
       <a href="#faq">よくある質問</a>
     </nav>
-    <a href="https://forms.gle/1cDtf1LytakcHAzbA" class="hdr-cta" target="_blank" rel="noopener noreferrer">参加申込</a>
+    <a href="study-group.html" class="hdr-cta">勉強会に参加</a>
     <button class="hdr-burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
       <svg class="ico" id="burger-ico"><use href="#i-menu"></use></svg>
     </button>
@@ -1106,7 +1136,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
   <a href="#voices">参加者の声<svg class="ico"><use href="#i-arrow"></use></svg></a>
   <a href="#organizer">主催者・講師<svg class="ico"><use href="#i-arrow"></use></svg></a>
   <a href="#faq">よくある質問<svg class="ico"><use href="#i-arrow"></use></svg></a>
-  <a href="https://forms.gle/1cDtf1LytakcHAzbA" class="drawer-cta" target="_blank" rel="noopener noreferrer">参加申込はこちら</a>
+  <a href="study-group.html" class="drawer-cta">月次定例勉強会に参加する</a>
 </nav>
 
 <!-- ══════════ HERO ══════════ -->
@@ -1127,7 +1157,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
     <div class="cta-block">
       <div class="cta-wrap">
         <span class="cta-label">体験したい方はこちら</span>
-        <a class="cta-band" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
+        <a class="cta-band" href="study-group.html">
           <strong>月次定例勉強会に参加する</strong>
           <small>オンライン開催・1回3,000円／クーポンで初回無料</small>
         </a>
@@ -1188,7 +1218,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
         </ul>
       </div>
       <div class="next-cta">
-        <a class="btn-ghost" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
+        <a class="btn-ghost" href="study-group.html">
           参加する
           <span class="dot"><svg class="ico"><use href="#i-arrow"></use></svg></span>
         </a>
@@ -1223,7 +1253,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
         <li>コースを選ぶ前に、内容を知りたい</li>
       </ul>
     </div>
-    <div class="cta-center"><a class="cta-band" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer"><strong>月次定例勉強会に参加する</strong><small>オンライン開催・1回3,000円／クーポンで初回無料</small></a></div>
+    <div class="cta-center"><a class="cta-band" href="study-group.html"><strong>月次定例勉強会に参加する</strong><small>オンライン開催・1回3,000円／クーポンで初回無料</small></a></div>
   </div>
 </section>
 
@@ -1309,11 +1339,11 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
       <h2 class="sec-title">学習までの3ステップ</h2>
     </div>
     <div class="step-grid">
-      <div class="step rv"><span class="step-no">STEP 01</span><h3>参加を申し込む</h3><p>フォームから、参加したい月次定例勉強会を選んで申し込みます。</p></div>
+      <div class="step rv"><span class="step-no">STEP 01</span><h3>参加を申し込む</h3><p>月次定例勉強会のページから、参加したい回を選んで申し込みます。</p></div>
       <div class="step rv"><span class="step-no">STEP 02</span><h3>月次定例勉強会に参加する</h3><p>オンラインで参加。無料体験クーポンコードをお持ちの方は、初回無料です。</p></div>
       <div class="step rv"><span class="step-no">STEP 03</span><h3>コースで体系的に学ぶ</h3><p>気に入ったら、目的に合うコースへ。営業の型を一歩ずつ身につけます。</p></div>
     </div>
-    <div class="cta-center"><a class="cta-band" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer"><strong>月次定例勉強会に参加する</strong><small>オンライン開催・1回3,000円／クーポンで初回無料</small></a></div>
+    <div class="cta-center"><a class="cta-band" href="study-group.html"><strong>月次定例勉強会に参加する</strong><small>オンライン開催・1回3,000円／クーポンで初回無料</small></a></div>
   </div>
 </section>
 
@@ -1345,6 +1375,68 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
         <p>すべてオンラインで開催します。場所を問わず、仕事の合間に学べます。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══════════ COMPARE ══════════ -->
+<section class="section" id="compare">
+  <div class="inner">
+    <div class="sec-head rv">
+      <p class="sec-en">Comparison</p>
+      <h2 class="sec-title">他の営業研修との違い</h2>
+      <p class="sec-lead">お手頃な金額で、トップ講師から一流の内容を学べる。そして、気軽に続けられる。それがSales Academyです。</p>
+    </div>
+    <div class="cmp-wrap rv">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="cmp-us-h"><em>RECOMMENDED</em>Sales Academy</th>
+            <th>一般的な<br>営業研修会社</th>
+            <th>営業動画・<br>オンライン講座</th>
+            <th>単発<br>セミナー</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">金額</th>
+          <td class="cmp-us" data-l="Sales Academy"><b>かなりお手頃</b><span>勉強会は1回3,000円、コースは1回5,500円。</span></td>
+          <td data-l="一般的な営業研修会社"><b>高額になりやすい</b><span>法人向けが中心で、個人では負担しにくいことも。</span></td>
+          <td data-l="営業動画・オンライン講座"><b>月額課金が続く</b><span>続けるほど費用がかさみます。</span></td>
+          <td data-l="単発セミナー"><b>1回ごとに費用</b><span>回数を重ねるほど高くなります。</span></td>
+        </tr>
+        <tr>
+          <th scope="row">講師</th>
+          <td class="cmp-us" data-l="Sales Academy"><b>超実績のあるトップ講師が全講座を担当</b><span>毎回、同じ講師が一貫して教えます。</span></td>
+          <td data-l="一般的な営業研修会社"><b>講師が回ごとに異なる</b><span>担当者によって内容に差が出ることも。</span></td>
+          <td data-l="営業動画・オンライン講座"><b>講師と直接やりとりしにくい</b><span>質問や相談がしづらい形式です。</span></td>
+          <td data-l="単発セミナー"><b>講師は回ごとに異なる</b><span>その場限りの出会いになりがちです。</span></td>
+        </tr>
+        <tr>
+          <th scope="row">内容</th>
+          <td class="cmp-us" data-l="Sales Academy"><b>超一流の内容</b><span>元セールスコンサルティング会社マネージャーが、すべての研修内容を監修。</span></td>
+          <td data-l="一般的な営業研修会社"><b>体系的だが抽象的になりやすい</b><span>現場でどう使うかが見えにくいことも。</span></td>
+          <td data-l="営業動画・オンライン講座"><b>一般的な内容が中心</b><span>自分の現場に当てはめにくいことも。</span></td>
+          <td data-l="単発セミナー"><b>良い内容でも1回で終わる</b><span>身につくまでに時間がかかります。</span></td>
+        </tr>
+        <tr>
+          <th scope="row">実績・範囲</th>
+          <td class="cmp-us" data-l="Sales Academy"><b>成果実績が多数。基本から技術まで</b><span>すぐに使える技術から基本まで、セールスのすべてを学べます。</span></td>
+          <td data-l="一般的な営業研修会社"><b>領域が限られることも</b><span>特定のテーマに絞られる場合があります。</span></td>
+          <td data-l="営業動画・オンライン講座"><b>自分で選んで学ぶ形式</b><span>体系的に学ぶのは難しいことも。</span></td>
+          <td data-l="単発セミナー"><b>単発のテーマのみ</b><span>全体像までは学びにくい形式です。</span></td>
+        </tr>
+        <tr>
+          <th scope="row">雰囲気</th>
+          <td class="cmp-us" data-l="Sales Academy"><b>気楽・気軽に受けられる</b><span>営業研究会として発足。ギスギスせず、高め合いながら楽しく学べる文化があります。</span></td>
+          <td data-l="一般的な営業研修会社"><b>堅い雰囲気になりやすい</b><span>緊張感があり、気軽には質問しにくいことも。</span></td>
+          <td data-l="営業動画・オンライン講座"><b>ひとりで進める</b><span>仲間と高め合う機会が少なめです。</span></td>
+          <td data-l="単発セミナー"><b>その場限り</b><span>仲間ができにくい形式です。</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmp-note rv">※他社との比較は、一般的な傾向をもとにしたものです。</p>
   </div>
 </section>
 
@@ -1556,8 +1648,8 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
       </div>
 
       <div class="org-cta">
-        <a class="btn-ghost" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
-          参加申込はこちら
+        <a class="btn-ghost" href="study-group.html">
+          月次定例勉強会はこちら
           <span class="dot"><svg class="ico"><use href="#i-arrow"></use></svg></span>
         </a>
       </div>
@@ -1709,7 +1801,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
     <div class="price rv">
       <div class="price-big">1回 3,000円</div>
       <p class="price-sub">月次定例勉強会（オンライン）／1回から参加OK</p>
-      <p class="price-line">入会費・年会費はかかりません。<br>コースの開講日・料金は、決まり次第このページでご案内します。</p>
+      <p class="price-line">入会費・年会費はかかりません。<br>コースの受講料・開講日は、各コースの詳細ページでご案内しています。</p>
     </div>
     <div class="faq-grid">
       <div class="faq rv">
@@ -1722,7 +1814,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
       </div>
       <div class="faq rv">
         <div class="faq-q"><span class="qa qa-q">Q</span>料金はいくらですか？</div>
-        <div class="faq-a"><span class="qa qa-a">A</span>月次定例勉強会は1回3,000円です。コースの料金は、決まり次第このページでご案内します。</div>
+        <div class="faq-a"><span class="qa qa-a">A</span>月次定例勉強会は1回3,000円です。コースの料金は、各コースの詳細ページでご案内しています。</div>
       </div>
       <div class="faq rv">
         <div class="faq-q"><span class="qa qa-q">Q</span>無料体験クーポンコードとは何ですか？</div>
@@ -1745,10 +1837,6 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
         <div class="faq-a"><span class="qa qa-a">A</span>全くあやしくありません。当アカデミーは有志のメンバーで相互研鑽のために集まっており、いわゆるマルチ商法的な活動は厳禁としています。問題がある行為をしたメンバーが確認できた場合、退会していただきます。</div>
       </div>
     </div>
-    <p class="faq-note rv">
-      <svg class="ico"><use href="#i-chat"></use></svg>
-      <span>お支払い方法など詳しい内容は、ご登録時にお送りするメールでご案内します。</span>
-    </p>
   </div>
 </section>
 
@@ -1756,10 +1844,10 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
 <section class="final" id="contact">
   <div class="inner">
     <p class="final-en">Join Us</p>
-    <h2>参加申込・お問い合わせ</h2>
-    <p>Sales Academyへのご参加や、コースのご案内を希望される方は、お気軽にお問い合わせください。<br>担当者より3営業日以内にご連絡いたします。</p>
+    <h2>お問い合わせ</h2>
+    <p>Sales Academyについて、ご不明な点があれば、お気軽にお問い合わせください。</p>
     <a class="final-btn" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">
-      参加申込・お問い合わせはこちら
+      お問い合わせはこちら
       <span class="dot"><svg class="ico"><use href="#i-arrow"></use></svg></span>
     </a>
       </div>
@@ -1794,7 +1882,7 @@ a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2
     <a href="#next"><svg class="ico"><use href="#i-calendar"></use></svg>勉強会</a>
     <a href="#courses"><svg class="ico"><use href="#i-book"></use></svg>コース</a>
     <a href="#voices"><svg class="ico"><use href="#i-chat"></use></svg>参加者の声</a>
-    <a class="is-cta" href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-users"></use></svg>参加申込</a>
+    <a class="is-cta" href="study-group.html"><svg class="ico"><use href="#i-users"></use></svg>勉強会に参加</a>
   </div>
 </nav>
 
