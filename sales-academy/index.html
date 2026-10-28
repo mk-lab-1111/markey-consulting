@@ -1044,6 +1044,15 @@ section[id]{scroll-margin-top:76px}
 .ribbons{top:0}
 }
 .pain-next{text-align:center;margin-top:clamp(22px,3vw,34px);font-weight:800;font-size:clamp(18px,1.8vw,22px);color:var(--accent)}.pain-next span{display:block;font-size:20px;margin-top:6px;line-height:1}
+
+/* course cards: whole card clickable, button stands out */
+.cbn{position:relative;transition:transform .2s,box-shadow .2s}
+.cbn:has(a.cbn-btn):hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(126,21,83,.28)}
+a.cbn-btn::after{content:'';position:absolute;inset:0;z-index:3}
+a.cbn-btn:not(.cbn-btn--off){background:var(--grad);font-size:clamp(16px,1.4vw,18px);padding:20px 18px}
+a.cbn-btn:not(.cbn-btn--off):hover{filter:brightness(1.08)}
+a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2s}
+.cbn:hover a.cbn-btn .ico{transform:translateX(5px)}
 </style>
 </head>
 <body>
@@ -1224,7 +1233,7 @@ section[id]{scroll-margin-top:76px}
     <div class="sec-head rv">
       <p class="sec-en">Courses</p>
       <h2 class="sec-title">営業のレベルに合わせて学べるコース</h2>
-      <p class="sec-lead">場面ごとに、全4回〜10回で体系的に学びます。開講日・料金は決まり次第、このページでご案内します。</p>
+      <p class="sec-lead">場面ごとに、全4回〜10回で体系的に学びます。受講料・開講日は、各コースの詳細ページでご案内しています。</p>
     </div>
     <div class="cbn-grid">
       <article class="cbn rv">
@@ -1288,7 +1297,7 @@ section[id]{scroll-margin-top:76px}
         <a class="cbn-btn cbn-btn--off" href="courses.html#basic">営業基礎コース（準備中）の詳細</a>
       </article>
     </div>
-    <p class="course-note rv">コースのご案内を希望される方は、<a href="courses.html">コースの詳細ページ</a>もご覧ください。開講のご案内は、<a href="https://forms.gle/1cDtf1LytakcHAzbA" target="_blank" rel="noopener noreferrer">こちらのフォーム</a>からお知らせください。</p>
+    <p class="course-note rv">気になるコースは、カードをクリックして詳細をご確認ください。</p>
   </div>
 </section>
 
