@@ -1032,6 +1032,17 @@ a.cbn-btn:hover{background:var(--accent-deep)}
 .cbn--soon .cbn-l{background:#6b6b6b}
 @media(max-width:820px){.cbn-grid{grid-template-columns:1fr}}
 .record{grid-template-columns:1fr}
+
+/* viewport-height aware hero (laptop @100% zoom) + anchor offset */
+section[id]{scroll-margin-top:76px}
+@media(min-width:900px){
+.hero{min-height:calc(100vh - 74px);min-height:calc(100svh - 74px);display:flex;align-items:center}
+.hero-in{width:100%;padding-top:clamp(20px,4vh,70px);padding-bottom:clamp(24px,5vh,80px)}
+.hero-logo{width:clamp(210px,min(33vw,40vh),404px);margin-bottom:clamp(12px,3vh,34px)}
+.hero-kicker{margin-bottom:clamp(10px,2.2vh,20px)}
+.hero h1{font-size:clamp(26px,min(4.2vw,7.4vh),56px);margin-bottom:clamp(14px,3.4vh,40px)}
+.ribbons{top:0}
+}
 </style>
 </head>
 <body>
