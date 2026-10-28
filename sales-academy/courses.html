@@ -1092,6 +1092,17 @@ a.cbn-btn:hover{background:var(--accent-deep)}
 @media(max-width:900px){.cp-side .cta-band{width:100%!important}}
 .cp-main>.cp-box:nth-child(4){grid-row:3}
 .cp-main>.cp-box:nth-child(5){grid-row:3}
+/* course cards: whole card clickable, button stands out */
+.cbn{position:relative;transition:transform .2s,box-shadow .2s}
+.cbn:has(a.cbn-btn):hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(126,21,83,.28)}
+a.cbn-btn::after{content:'';position:absolute;inset:0;z-index:3}
+a.cbn-btn:not(.cbn-btn--off){background:var(--grad);font-size:clamp(16px,1.4vw,18px);padding:20px 18px}
+a.cbn-btn:not(.cbn-btn--off):hover{filter:brightness(1.08)}
+a.cbn-btn:not(.cbn-btn--off) .ico{width:22px;height:22px;transition:transform .2s}
+.cbn:hover a.cbn-btn .ico{transform:translateX(5px)}
+
+.cp-hero{padding:clamp(34px,6vh,80px) var(--gutter) clamp(26px,4vh,48px)}
+.cp-hero h1{font-size:clamp(26px,min(3.4vw,6vh),42px)}
 </style></head>
 <body>
 
@@ -1148,78 +1159,74 @@ a.cbn-btn:hover{background:var(--accent-deep)}
 
 <section class="cp-hero">
   <p class="sec-en">Courses</p>
-  <h1>営業を、<em>体系的に学べる</em>4つのコース</h1>
-  <p>場面ごとに、全4回〜10回で学びます。コースの内容・回数・担当講師をご確認ください。</p>
-  <div class="cp-nav">
-    <a href="#inside">インサイドセールス</a><a href="#spin">SPINヒアリング</a><a href="#closing">クロージング</a><a href="#basic">営業基礎（準備中）</a>
-  </div>
+  <h1>営業を、<em>体系的に学べる</em>コース</h1>
+  <p>場面ごとに、全4回〜10回で学びます。気になるコースをクリックして、詳細をご確認ください。</p>
 </section>
 
-<section class="section" id="inside">
+<section class="section" id="courses">
   <div class="inner">
-    <div class="cp-head rv"><span class="cp-no">COURSE 01</span><h2>インサイドセールスコース</h2></div>
-    <p class="cp-catch rv">電話で、アポが取れる。話し方の型を学ぶ。</p>
-    <div class="cp-wrap">
-      <aside class="cp-side rv">
-        <div class="cp-facts"><div><b>回数</b><span>全4回</span></div><div><b>期間</b><span>約2か月</span></div><div><b>頻度</b><span>2週間に1回</span></div><div><b>形式</b><span>オンライン</span></div></div>
-        <a class="cta-band" href="course-inside.html"><strong>詳細を確認する</strong></a>
-      </aside>
-      <div class="cp-main">
-        <div class="cp-box rv"><h3>コースの概要</h3><p>電話でのアポイント獲得の方法を学ぶコースです。話し方の組み立てから、断られたときの切り返しまでを実践的に身につけます。</p></div>
-        <div class="cp-box rv"><h3>学べること</h3><ul class="cp-list"><li>電話でアポイントを取るための、話し方の組み立て</li><li>断られたときの切り返し方</li><li>実際のレビューをもとにした、改善のポイント</li></ul></div>
-        <div class="cp-box rv"><h3>こんな方におすすめ</h3><ul class="cp-list"><li>電話をかけても、アポが取れない</li><li>インサイドセールスを基礎から学びたい</li><li>自己流の架電を見直したい</li></ul></div>
-        <div class="cp-box rv"><h3>各回のテーマ</h3><table class="cp-table"><tbody><tr><th>第1回</th><td>インサイドセールスの全体像・型</td></tr><tr><th>第2回</th><td>インサイドセールス 4つの「不」</td></tr><tr><th>第3回</th><td>インサイドセールス実践①（フィードバック・ロープレ）</td></tr><tr><th>第4回</th><td>インサイドセールス実践②（フィードバック・ロープレ・まとめ）</td></tr></tbody></table></div>
-        <div class="cp-box rv"><h3>担当講師</h3><div class="cp-inst"><img src="yanagida.jpg" alt="柳田　俊太郎" loading="lazy" width="560" height="747"><div><b>柳田　俊太郎</b><span>インサイドセールスコース担当。元 （株）LiB CONSULTING。インサイドセールス部隊の立ち上げに多数携わり、現在は某メガベンチャーで新規事業を担当。</span></div></div></div>
-      </div>
+    <div class="cbn-grid">
+      <article class="cbn rv">
+        <div class="cbn-photo">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80&fit=crop" alt="" loading="lazy" decoding="async" width="900" height="560">
+          <span class="cbn-no">COURSE 01</span>
+          <div class="cbn-txt">
+            <span class="cbn-l">電話で、アポが取れる</span><span class="cbn-l">話し方の型を学ぶ</span>
+            <span class="cbn-sub">インサイドセールスを基礎から実践まで</span>
+          </div>
+        </div>
+        <div class="cbn-info">
+          <p>電話でのアポイント獲得の方法を学ぶコースです。話し方の組み立てから、断られたときの切り返しまでを実践的に身につけます。</p>
+          <div class="act-meta"><span class="chip">全4回</span><span class="chip">約2か月</span><span class="chip">2週間に1回</span><span class="chip">オンライン</span></div>
+        </div>
+        <a class="cbn-btn" href="course-inside.html">インサイドセールスコースの詳細を見る<svg class="ico"><use href="#i-arrow"></use></svg></a>
+      </article>
+      <article class="cbn rv">
+        <div class="cbn-photo">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&fit=crop" alt="" loading="lazy" decoding="async" width="900" height="560">
+          <span class="cbn-no">COURSE 02</span>
+          <div class="cbn-txt">
+            <span class="cbn-l">お客様の課題を</span><span class="cbn-l">引き出すヒアリング</span>
+            <span class="cbn-sub">SPINの型で、提案が刺さる</span>
+          </div>
+        </div>
+        <div class="cbn-info">
+          <p>SPIN営業の考え方をもとに、お客様の課題を引き出すヒアリングを学ぶコースです。聞き方の型を身につけ、提案につなげます。</p>
+          <div class="act-meta"><span class="chip">全6回</span><span class="chip">約3か月</span><span class="chip">オンライン</span></div>
+        </div>
+        <a class="cbn-btn" href="course-spin.html">SPINヒアリングコースの詳細を見る<svg class="ico"><use href="#i-arrow"></use></svg></a>
+      </article>
+      <article class="cbn rv">
+        <div class="cbn-photo">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80&fit=crop" alt="" loading="lazy" decoding="async" width="900" height="560">
+          <span class="cbn-no">COURSE 03</span>
+          <div class="cbn-txt">
+            <span class="cbn-l">商談を、決める</span><span class="cbn-l">クロージングの型</span>
+            <span class="cbn-sub">迷うお客様の背中を押す方法</span>
+          </div>
+        </div>
+        <div class="cbn-info">
+          <p>商談を「決める」ところまで持っていくクロージングの考え方と進め方を学ぶコースです。迷っているお客様の背中を押す方法を扱います。</p>
+          <div class="act-meta"><span class="chip">全6回</span><span class="chip">約3か月</span><span class="chip">オンライン</span></div>
+        </div>
+        <a class="cbn-btn" href="course-closing.html">クロージングコースの詳細を見る<svg class="ico"><use href="#i-arrow"></use></svg></a>
+      </article>
+      <article class="cbn cbn--soon rv">
+        <div class="cbn-photo">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=80&fit=crop" alt="" loading="lazy" decoding="async" width="900" height="560">
+          <span class="cbn-no">COURSE 04 ・ 準備中</span>
+          <div class="cbn-txt">
+            <span class="cbn-l">営業の基本を</span><span class="cbn-l">ひとつずつ身につける</span>
+            <span class="cbn-sub">全10回予定・現在準備中</span>
+          </div>
+        </div>
+        <div class="cbn-info">
+          <p>営業の基本をひとつずつ身につける、全10回予定のコースです。現在準備を進めています。</p>
+          <div class="act-meta"><span class="chip">全10回（予定）</span><span class="chip">オンライン</span></div>
+        </div>
+        <span class="cbn-btn cbn-btn--off">営業基礎コース（準備中）</span>
+      </article>
     </div>
-  </div>
-</section>
-
-<section class="section tint" id="spin">
-  <div class="inner">
-    <div class="cp-head rv"><span class="cp-no">COURSE 02</span><h2>SPINヒアリングコース</h2></div>
-    <p class="cp-catch rv">お客様の課題を引き出す。SPINの型で、提案が刺さる。</p>
-    <div class="cp-wrap">
-      <aside class="cp-side rv">
-        <div class="cp-facts"><div><b>回数</b><span>全6回</span></div><div><b>期間</b><span>約3か月</span></div><div><b>形式</b><span>オンライン</span></div></div>
-        <a class="cta-band" href="course-spin.html"><strong>詳細を確認する</strong></a>
-      </aside>
-      <div class="cp-main">
-        <div class="cp-box rv"><h3>コースの概要</h3><p>SPIN営業の考え方をもとに、お客様の課題を引き出すヒアリングを学ぶコースです。聞き方の型を身につけ、提案につなげます。</p></div>
-        <div class="cp-box rv"><h3>学べること</h3><ul class="cp-list"><li>SPIN営業の基本的な考え方</li><li>お客様の課題を引き出す質問の組み立て</li><li>ヒアリングから提案へのつなげ方</li></ul></div>
-        <div class="cp-box rv"><h3>こんな方におすすめ</h3><ul class="cp-list"><li>ヒアリングが浅く、提案が刺さらない</li><li>聞き方の「型」を身につけたい</li><li>お客様の本当の課題をつかみたい</li></ul></div>
-        <div class="cp-box rv"><h3>各回のテーマ</h3><table class="cp-table"><tbody><tr><th>第1回</th><td>SPINの全体像</td></tr><tr><th>第2回</th><td>S：状況質問</td></tr><tr><th>第3回</th><td>P：問題質問とI：示唆質問</td></tr><tr><th>第4回</th><td>リスク放置とベネフィット合意</td></tr><tr><th>第5回</th><td>ヒアリングの実践・ニーズのつくりかた</td></tr><tr><th>第6回</th><td>クロージング・ニーズペイオフ</td></tr></tbody></table></div>
-        <div class="cp-box rv"><h3>担当講師</h3><div class="cp-inst"><img src="profile.jpg" alt="鶴田　槙人" loading="lazy" width="560" height="531"><div><b>鶴田　槙人</b><span>MARKEY CONSULTING 代表。住宅営業として全国10位（1,500人中）。法人向けコンサルティングセールスで複数回の表彰を受け、これまで1,000名超のセールスパーソンを指導。</span></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="closing">
-  <div class="inner">
-    <div class="cp-head rv"><span class="cp-no">COURSE 03</span><h2>クロージングコース</h2></div>
-    <p class="cp-catch rv">商談を、決める。クロージングの型を学ぶ。</p>
-    <div class="cp-wrap">
-      <aside class="cp-side rv">
-        <div class="cp-facts"><div><b>回数</b><span>全6回</span></div><div><b>期間</b><span>約3か月</span></div><div><b>形式</b><span>オンライン</span></div></div>
-        <a class="cta-band" href="course-closing.html"><strong>詳細を確認する</strong></a>
-      </aside>
-      <div class="cp-main">
-        <div class="cp-box rv"><h3>コースの概要</h3><p>商談を「決める」ところまで持っていくクロージングの考え方と進め方を学ぶコースです。迷っているお客様の背中を押す方法を扱います。</p></div>
-        <div class="cp-box rv"><h3>学べること</h3><ul class="cp-list"><li>クロージングの考え方と進め方</li><li>迷っているお客様の背中を押す方法</li><li>商談の最後で決め切るための準備</li></ul></div>
-        <div class="cp-box rv"><h3>こんな方におすすめ</h3><ul class="cp-list"><li>商談の最後に、決め切れない</li><li>クロージングのやり方を体系的に学びたい</li><li>商談の成約率を上げたい</li></ul></div>
-        <div class="cp-box rv"><h3>各回のテーマ</h3><table class="cp-table"><tbody><tr><th>第1回</th><td>クロージングの全体像</td></tr><tr><th>第2回</th><td>障壁解除と熱上げ</td></tr><tr><th>第3回</th><td>商談スキルとクロージングマインド</td></tr><tr><th>第4回</th><td>商談の全体像</td></tr><tr><th>第5回</th><td>クロージングの実践</td></tr><tr><th>第6回</th><td>クロージング力最大化</td></tr></tbody></table></div>
-        <div class="cp-box rv"><h3>担当講師</h3><div class="cp-inst"><img src="profile.jpg" alt="鶴田　槙人" loading="lazy" width="560" height="531"><div><b>鶴田　槙人</b><span>MARKEY CONSULTING 代表。住宅営業として全国10位（1,500人中）。法人向けコンサルティングセールスで複数回の表彰を受け、これまで1,000名超のセールスパーソンを指導。</span></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section tint" id="basic">
-  <div class="inner">
-    <div class="cp-head rv"><span class="cp-no">COURSE 04</span><h2>営業基礎コース</h2></div>
-    <div class="cp-box rv"><p><span class="cp-soon">準備中</span>　現在、内容を準備しています。</p></div>
-    <div class="cp-box rv" style="margin-top:16px"><h3>担当講師</h3><p>担当講師は、決まり次第ご案内します。</p></div>
   </div>
 </section>
 
