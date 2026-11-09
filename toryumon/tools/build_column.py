@@ -466,8 +466,12 @@ def article_page(a, arts, css, head_html, foot_html):
           </section>
 """ % items
 
-    rel = [x for x in arts
-           if x["slug"] != a["slug"] and x["framework"] == a["framework"]][:3]
+    # 関連記事: 同じフレームワークを優先し、足りなければタグの重なりが多い順に補う（最大3本）
+    others = [x for x in arts if x["slug"] != a["slug"]]
+    same = [x for x in others if x["framework"] == a["framework"]]
+    rest = sorted((x for x in others if x not in same),
+                  key=lambda x: -len(set(x["tags"]) & set(a["tags"])))
+    rel = (same + rest)[:3]
     rel_html = ""
     if rel:
         rel_html = """          <section style="margin-top: 48px;">
@@ -615,7 +619,7 @@ def index_page(arts, css, head_html, foot_html):
                 continue
             items = [a for a in arts if a[key] == name]
             lis = "".join('              <li><a href="%s.html">%s%s</a></li>\n'
-                          % (a["slug"], badge(a), E(a["title"])) for a in items[:8])
+                          % (a["slug"], badge(a), E(a["title"])) for a in items[:30])
             if not lis:
                 lis = '              <li class="none">準備中</li>\n'
             out.append(
