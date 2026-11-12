@@ -43,7 +43,7 @@ def main(root):
     (root / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n",
         encoding="utf-8")
-    (root / "robots.txt").write_text("User-agent: *\nAllow: /\n\nSitemap: " + SITE + "sitemap.xml\n", encoding="utf-8")
+    (root / "robots.txt").write_text("User-agent: *\nAllow: /\nDisallow: /toryumon/gift/\n\nSitemap: " + SITE + "sitemap.xml\n", encoding="utf-8")
     print("sitemap.xml:", len(urls), "URL（うちコラム記事", len(arts), "本）")
 
 

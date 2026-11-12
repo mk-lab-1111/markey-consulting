@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /toryumon/gift/
 
 Sitemap: https://markey-consulting.com/sitemap.xml
