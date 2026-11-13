@@ -226,7 +226,7 @@ def rail(arts, current=None):
 
           <a href="../../toryumon-lp/" style="display: block; margin-top: 26px; border: 4px solid #C2273F; padding: 14px;">
             <img src="../assets/video-course.jpg" alt="住宅営業登竜門 動画講座" style="display: block; width: 100%%; height: auto;">
-            <span style="display: block; margin-top: 12px; font-size: 14px; font-weight: 700; line-height: 1.7;">トップセールス直伝の動画が見放題。<span style="color: #C2273F;">～キャンペーン実施中～</span></span>
+            <span style="display: block; margin-top: 12px; font-size: 14px; font-weight: 700; line-height: 1.7;">トップセールス直伝の動画が見放題。<span style="color: #C2273F;">（キャンペーン実施中／月額制 住宅営業動画講座）</span></span>
           </a>
 
           <div style="margin-top: 26px; border-top: 2px solid #111111; padding-top: 16px;">
@@ -245,7 +245,7 @@ def rail(arts, current=None):
           <div class="dk" style="margin-top: 26px; padding: 26px 24px; background: #111111; border-top: 4px solid #E8A33D;">
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
             <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">営業が強くなる特別コラムを<br>メールでお届けします</p>
-            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。登録は無料です。</p>
+            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ限定にアレンジした特別コラムと住宅市場レポート、定期的な営業研修・イベントのお知らせをお送りします。登録は無料です。</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">メルマガに登録して受け取る ›</a>
             <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>

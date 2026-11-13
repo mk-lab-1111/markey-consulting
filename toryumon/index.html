@@ -381,6 +381,19 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     .hero:before { right: -520px; top: -30px; opacity: .7; }
     .hero:after { left: -560px; bottom: -60px; opacity: .35; }
   }
+
+  /* メルマガのメリット（ヒーロー） */
+  .hero-mm { margin-top: 22px; padding: 18px 20px; border: 1px solid rgba(255,226,150,.45); background: rgba(7,15,40,.45); animation: heroUp .8s cubic-bezier(.2,.7,.2,1) .62s both; }
+  .hero-mm-h { font-family: 'Shippori Mincho', 'Noto Serif CJK JP', serif; font-weight: 800; font-size: 18px; color: #FFFFFF; }
+  .hero-mm ul { margin-top: 10px; display: grid; gap: 6px; }
+  .hero-mm li { position: relative; padding-left: 20px; font-size: 14px; line-height: 1.7; color: #E6ECF8; }
+  .hero-mm li:before { content: ""; position: absolute; left: 2px; top: .62em; width: 8px; height: 8px; background: #F0CB6A; transform: rotate(45deg); }
+  .hero-mm-g { margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,226,150,.4); font-size: 13px; color: #D5DCEC; }
+  .hero-mm-g b { color: #FFD56B; font-weight: 900; }
+  .hero-btn { margin-top: 16px; }
+  .sp-only { display: none; }
+  @media (max-width: 760px) { .sp-only { display: inline; } .hero-mm { padding: 16px; } .hero-mm-h { font-size: 17px; } }
+  @media (prefers-reduced-motion: reduce) { .hero-mm { animation: none; } }
 </style>
 </head>
 <body class="home">
@@ -475,12 +488,20 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
       <div class="hero-txt">
         <p class="en hero-k">JUTAKU EIGYO TORYUMON</p>
         <h1 class="hero-h"><span>トップセールスには、</span><span>必ず売れる<em>「型」</em>がある。</span></h1>
-        <p class="hero-p">売り込まずに、売れる営業へ。<br>住宅営業の「型」を、コラム・動画・セミナーで学べます。</p>
+        <p class="hero-p">売り込まずに、売れる営業へ。<br>住宅営業の「型」が学べるポータルサイト、<br class="sp-only">住宅営業登竜門です。</p>
+        <div class="hero-mm">
+          <p class="hero-mm-h">見るだけで、営業が強くなるメルマガ</p>
+          <ul>
+            <li>メルマガ限定にアレンジした特別コラム</li>
+            <li>住宅市場レポート</li>
+            <li>営業研修・イベントのお知らせ</li>
+          </ul>
+          <p class="hero-mm-g">ご登録の方に<b>営業ツール5点セット</b>をプレゼント</p>
+        </div>
         <div class="hero-btn">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" class="btn-main">メルマガに登録して受け取る ›</a>
           <a href="#column" class="btn-sub">コラムを読む</a>
         </div>
-        <p class="hero-n">登録特典：営業ツール5点セット（Excel）</p>
       </div>
       <div class="hero-mv">
         <video src="assets/cm.mp4" autoplay muted loop playsinline preload="auto" aria-label="住宅営業登竜門 紹介動画（43秒）"></video>
@@ -586,7 +607,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <img src="assets/video-course.jpg" alt="住宅営業登竜門 動画講座 — トップセールスのフレームワークを体系的に動画講座で学べる。全16プログラム、100本以上の動画（1本10〜15分）。" style="display: block; width: 100%; height: auto;">
           </a>
 
-          <p style="margin-top: 16px; font-size: 14px; font-weight: 700; line-height: 1.85;">トップセールス直伝の動画が見放題。<span style="color: #C2273F;">～キャンペーン実施中～</span></p>
+          <p style="margin-top: 16px; font-size: 14px; font-weight: 700; line-height: 1.85;">トップセールス直伝の動画が見放題。<span style="color: #C2273F;">（キャンペーン実施中／月額制 住宅営業動画講座）</span></p>
 
           <p class="en" style="margin-top: 22px; padding-bottom: 10px; border-bottom: 2px solid #111111; font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8A8A8A;">PROGRAM LIST</p>
           <ol>
@@ -658,7 +679,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <div hidden data-hide="重複" class="dk" style="margin-top: 26px; padding: 26px 24px; background: #111111; border-top: 4px solid #E8A33D;">
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
             <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">営業が強くなる特別コラムを<br>メールでお届けします</p>
-            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。登録は無料です。</p>
+            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ限定にアレンジした特別コラムと住宅市場レポート、定期的な営業研修・イベントのお知らせをお送りします。登録は無料です。</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #E8A33D; color: #111111; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">無料で登録する ›</a>
             <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
@@ -1000,25 +1021,25 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 
       <div style="display: flex; flex-wrap: wrap; gap: 36px; margin-top: 28px;">
         <!-- 最新号 -->
-        <a href="../reports.html" class="lead" style="flex: 2 1 440px; min-width: 0; display: block;">
+        <a id="rp-link" href="../reports.html#r20261109" class="lead" style="flex: 2 1 440px; min-width: 0; display: block;">
           <div style="position: relative; width: 100%; height: 250px; overflow: hidden;">
             <img src="assets/report-photo.jpg" alt="建築中の木造住宅の軸組" style="display: block; width: 100%; height: 100%; object-fit: cover;">
             <span style="position: absolute; left: 0; bottom: 0; background: #111111; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: .06em; padding: 9px 18px;">住宅市場レポート　最新号</span>
           </div>
-          <p style="margin-top: 14px; font-size: 12px; font-weight: 700; color: #C2273F;">最新号　10月第3週　<span class="en">2026.10.11</span></p>
-          <h3 style="margin-top: 8px; font-size: 25px; line-height: 1.5;">金融庁、50年超長期住宅ローンへの監督強化方針を提示。買取再販のM&amp;Aなど、ストック市場への集中と業界再編の流れ</h3>
-          <p style="margin-top: 12px; font-size: 14px; line-height: 1.9; color: #4A4A4A;">「50年返済で毎月の支払いを安く見せる営業」からの脱却が求められます。持ち家着工は底ばいが定着し、棟数依存から一棟あたりの粗利・単価防衛への移行が急務です。</p>
+          <p id="rp-date" style="margin-top: 14px; font-size: 12px; font-weight: 700; color: #C2273F;">最新号　11月第1週　<span class="en">2026.11.09</span></p>
+          <h3 id="rp-title" style="margin-top: 8px; font-size: 25px; line-height: 1.5;">1月～10月工務店の倒産件数が前年対比1.8倍に急増。大手は高額リノベにシフト</h3>
+          <p id="rp-sum" style="margin-top: 12px; font-size: 14px; line-height: 1.9; color: #4A4A4A;">資材費高騰・職人不足・金利先高感に伴う購入価格の上昇を受け、2026年1〜10月のハウスメーカー（木造建築工事業）の倒産件数が前年同期比1.8倍に急増。</p>
           <p style="margin-top: 14px; font-size: 13px; font-weight: 700; color: #C2273F;">レポートを読む ›</p>
         </a>
 
         <!-- バックナンバー -->
         <div style="flex: 1 1 320px; min-width: 0;">
           <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8A8A8A; padding-bottom: 10px; border-bottom: 1px solid #111111;">THIS WEEK'S TOPICS</p>
-          <ul>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html" class="row" style="display: flex; gap: 12px; padding: 15px 6px;"><span class="en" style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #C2273F;">01</span><span><span style="display: block; font-size: 11px; font-weight: 700; color: #17547E;">金融・政策</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">金融庁が「50年住宅ローン」の監督強化を発表、リスク説明を厳格化</span></span></a></li>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html" class="row" style="display: flex; gap: 12px; padding: 15px 6px;"><span class="en" style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #C2273F;">02</span><span><span style="display: block; font-size: 11px; font-weight: 700; color: #7A5A10;">事業戦略・M&amp;A</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">中古住宅再生・ストック市場の再編が拡大</span></span></a></li>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html" class="row" style="display: flex; gap: 12px; padding: 15px 6px;"><span class="en" style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #C2273F;">03</span><span><span style="display: block; font-size: 11px; font-weight: 700; color: #C2273F;">市場・着工</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">8月の持ち家着工は1.7万戸、低水準での底ばいが定着</span></span></a></li>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html" class="row" style="display: block; padding: 15px 6px;"><span style="display: block; font-size: 11px; font-weight: 700; color: #8A8A8A;">今週のインプリケーション</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">住宅事業者が今週取るべきアクション ›</span></a></li>
+          <ul id="rp-topics">
+            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html#r20261109" class="row" style="display: flex; gap: 12px; padding: 15px 6px;"><span class="en" style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #C2273F;">01</span><span><span style="display: block; font-size: 11px; font-weight: 700; color: #17547E;">企業・経営</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">ハウスメーカー倒産が前年比1.8倍に急増、人手不足と原価高が直撃</span></span></a></li>
+            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html#r20261109" class="row" style="display: flex; gap: 12px; padding: 15px 6px;"><span class="en" style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #C2273F;">02</span><span><span style="display: block; font-size: 11px; font-weight: 700; color: #7A5A10;">事業戦略</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">リフォームの収益力が新築へ迫る、大手各社が「高額リノベ」へシフト</span></span></a></li>
+            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html#r20261109" class="row" style="display: flex; gap: 12px; padding: 15px 6px;"><span class="en" style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #C2273F;">03</span><span><span style="display: block; font-size: 11px; font-weight: 700; color: #C2273F;">市場・分譲</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">建売住宅市況が回復基調へ、飯田グループや積水ハウスがエリア展開を強化</span></span></a></li>
+            <li style="border-bottom: 1px solid #D4D4D4;"><a href="../reports.html#r20261109" class="row" style="display: block; padding: 15px 6px;"><span style="display: block; font-size: 11px; font-weight: 700; color: #8A8A8A;">今週のインプリケーション</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">倒産リスク不安を解消する「施工体制・事業継続性」のプレゼン強化 ›</span></a></li>
           </ul>
           <div style="margin-top: 18px; border: 1px solid #111111; padding: 18px 20px;">
             <p style="font-size: 14px; font-weight: 900; line-height: 1.6;">最新号をメールで受け取る</p>
@@ -1253,7 +1274,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
         <div style="flex: 1 1 420px; min-width: 0; padding: 0 40px 0 0; border-right: 1px solid rgba(255,255,255,0.22);">
           <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
           <h2 style="margin-top: 12px; font-size: 30px; color: #FFFFFF; line-height: 1.5;">営業が強くなる特別コラムを<br>メールでお届けします</h2>
-          <p style="margin-top: 14px; font-size: 15px; line-height: 1.95; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。<br>新しいコラムや資料の公開もあわせてご案内します。登録は無料です。<br>ご登録いただいた方には、営業ツール5点セット（Excel）をプレゼントします。</p>
+          <p style="margin-top: 14px; font-size: 15px; line-height: 1.95; color: #B8B8B8;">メルマガ限定にアレンジした特別コラムと住宅市場レポート、定期的な営業研修・イベントのお知らせをお送りします。<br>新しいコラムや資料の公開もあわせてご案内します。登録は無料です。<br>ご登録いただいた方には、営業ツール5点セット（Excel）をプレゼントします。</p>
           <div style="margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px;">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="background: #C2273F; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 16px 38px;">メルマガに登録して受け取る ›</a>
             <a href="#tools" style="font-size: 13px; font-weight: 700; color: #E8A33D;">登録特典：営業ツール5点セットを見る ›</a>
@@ -1363,6 +1384,55 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   });
   heads.forEach(function (el) { el.classList.add('rvh'); io.observe(el); });
   setTimeout(function () { els.concat(heads).forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < innerHeight) { el.classList.add('in'); } }); }, 1200);
+})();
+</script>
+<script>
+/* 住宅市場レポート：最新号を自動で表示（データは reports.html と同じ） */
+(function () {
+  var URL = 'https://mk-lab-1111.github.io/markey-report/data/archive.json';
+  var $ = function (id) { return document.getElementById(id); };
+  if (!$('rp-title') || !window.fetch) { return; }
+  function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function cut(t, n) { t = t.replace(/\s+/g, ' ').trim(); return t.length > n ? t.slice(0, n) + '…' : t; }
+  fetch(URL, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!Array.isArray(d) || !d.length) { return; }
+    d.sort(function (a, b) { return String(b.stamp).localeCompare(String(a.stamp)); });
+    var it = d[0], st = String(it.stamp || ''), lines = String(it.report_text || '').split('\n');
+    var title = '', week = '', sum = '', first = '', imp = '', topics = [], inSum = false, inImp = false;
+    lines.forEach(function (l) {
+      var t = l.trim();
+      if (!t) { return; }
+      if (/^TITLE:/.test(t)) { title = t.replace(/^TITLE:\s*/, ''); return; }
+      if (/^SECTION:/.test(t)) {
+        var sc = t.replace(/^SECTION:\s*/, '');
+        inSum = /Executive Summary|要約/.test(sc); inImp = false;
+        var m = sc.match(/^[①②③④⑤⑥⑦⑧⑨]\s*(?:【([^】]+)】)?\s*(.+)$/);
+        if (m) { topics.push({ cat: m[1] || '', t: m[2] }); }
+        return;
+      }
+      if (/インプリケーション/.test(t) && t.length < 30) { inImp = true; inSum = false; return; }
+      if (!first && !/^(DATE:|---|CLOSING:|■)/.test(t)) { first = t; }
+      if (inSum && !sum && !/^DATE:|^---/.test(t)) { sum = t.replace(/^[^:：]{1,20}[:：]\s*/, ''); }
+      if (inImp && !imp) { imp = t; }
+    });
+    var wm = title.match(/^【([^】]+)】\s*/);
+    if (wm) { week = wm[1]; title = title.slice(wm[0].length); }
+    title = title || it.theme || '住宅市場レポート';
+    var link = '../reports.html#r' + st;
+    var ymd = st.length >= 8 ? st.slice(0, 4) + '.' + st.slice(4, 6) + '.' + st.slice(6, 8) : '';
+    $('rp-link').href = link;
+    $('rp-date').innerHTML = '最新号' + (week ? '　' + esc(week) : '') + '　<span class="en">' + esc(ymd) + '</span>';
+    $('rp-title').textContent = title;
+    $('rp-sum').textContent = cut(sum || first || '', 110);
+    var colors = ['#17547E', '#7A5A10', '#C2273F', '#4A2E6E'], h = '';
+    topics.slice(0, 3).forEach(function (o, i) {
+      h += '<li style="border-bottom: 1px solid #D4D4D4;"><a href="' + link + '" class="row" style="display: flex; gap: 12px; padding: 15px 6px;"><span class="en" style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #C2273F;">0' + (i + 1) + '</span><span>'
+        + (o.cat ? '<span style="display: block; font-size: 11px; font-weight: 700; color: ' + colors[i] + ';">' + esc(o.cat) + '</span>' : '')
+        + '<span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">' + esc(cut(o.t, 48)) + '</span></span></a></li>';
+    });
+    h += '<li style="border-bottom: 1px solid #D4D4D4;"><a href="' + link + '" class="row" style="display: block; padding: 15px 6px;"><span style="display: block; font-size: 11px; font-weight: 700; color: #8A8A8A;">今週のインプリケーション</span><span style="display: block; margin-top: 4px; font-size: 15px; font-weight: 700; line-height: 1.65;">' + (imp ? esc(cut(imp, 60)) : '住宅事業者が今週取るべきアクション') + ' ›</span></a></li>';
+    $('rp-topics').innerHTML = h;
+  }).catch(function () {});
 })();
 </script>
 </body>
