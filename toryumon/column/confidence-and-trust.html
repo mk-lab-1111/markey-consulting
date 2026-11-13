@@ -23,7 +23,7 @@
 <link rel="icon" href="../favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho:wght@700;800&amp;display=swap">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article",
  "headline":"お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む","description":"売れない原因が、スキルではなくマインドにあることがあります。自分が良いと思えない家は勧められない理由と、「任せてください」の一言の力を、トーク例とともに解説します。","url":"https://markey-consulting.com/toryumon/column/confidence-and-trust.html",
@@ -270,6 +270,67 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   }
   @media (prefers-reduced-motion: reduce) { .tick-in { animation: none; } }
 
+  /* ===================== ヘッダー（新） ===================== */
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .tbar { background: #14110E; }
+  .tbar-in { max-width: 1420px; margin: 0 auto; padding: 9px 28px; display: flex; align-items: center; gap: 26px; }
+  .tbar-c { flex: 1 1 auto; font-size: 11px; letter-spacing: .14em; color: #B9A77E; }
+  .tbar a { font-size: 12px; font-weight: 500; letter-spacing: .06em; color: #E9E2D3; transition: color .2s ease; }
+  .tbar a:hover { color: #E8B84A; }
+  .hdr { background: #FBF8F1; }
+  .hdr-in { max-width: 1420px; margin: 0 auto; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; gap: 18px 28px; }
+  .lg { display: inline-flex; align-items: center; gap: 15px; color: #1A1613; flex: 0 0 auto; }
+  .lg:hover { color: #1A1613; }
+  .lg-seal { width: 52px; height: 52px; display: grid; place-items: center; background: linear-gradient(145deg, #C8283F, #8E1429); color: #FFF8EE; font-family: 'Shippori Mincho', 'Noto Serif JP', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif; font-weight: 800; font-size: 31px; line-height: 1; border-radius: 4px; box-shadow: inset 0 0 0 2px #B01E36, inset 0 0 0 3px rgba(255,236,200,.55), 0 6px 14px -6px rgba(142,20,41,.6); transform: rotate(-4deg); transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .lg:hover .lg-seal { transform: rotate(0deg) scale(1.04); }
+  .lg-t { display: flex; flex-direction: column; }
+  .lg-jp { font-family: 'Shippori Mincho', 'Noto Serif JP', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif; font-weight: 800; font-size: 31px; line-height: 1.15; letter-spacing: .12em; white-space: nowrap; }
+  .lg-jp b { font-weight: 800; color: #B3202F; }
+  .lg-en { margin-top: 7px; font-family: 'Archivo', sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: .46em; color: #A08A55; white-space: nowrap; }
+  .hdr-r { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .hs { display: flex; align-items: center; gap: 9px; background: #FFFFFF; border: 1px solid #E3D7C1; border-radius: 999px; padding: 10px 16px; color: #8A7B5C; transition: border-color .2s ease, box-shadow .2s ease; }
+  .hs:focus-within { border-color: #C9962E; box-shadow: 0 0 0 3px rgba(201,150,46,.18); }
+  .hs input { border: 0; outline: 0; background: transparent; width: 190px; max-width: 100%; min-width: 0; font-size: 14px; font-family: inherit; color: #1A1613; }
+  .hb { flex: 0 0 auto; font-size: 13px; font-weight: 700; letter-spacing: .08em; padding: 12px 22px; border-radius: 999px; transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease; }
+  .hb-line { border: 1px solid #1A1613; color: #1A1613; }
+  .hb-line:hover { background: #1A1613; color: #FBF8F1; }
+  .hb-red { background: #C2273F; color: #FFFFFF; box-shadow: 0 8px 18px -8px rgba(194,39,63,.7); }
+  .hb-red:hover { color: #FFFFFF; transform: translateY(-2px); }
+  .gn { position: sticky; top: 0; z-index: 60; background: rgba(251,248,241,.92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid #E3D7C1; border-bottom: 1px solid #E3D7C1; }
+  .gn-in { max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; gap: 0 30px; }
+  .gn a { position: relative; flex: 0 0 auto; padding: 15px 0; font-size: 14px; font-weight: 700; letter-spacing: .1em; color: #1A1613; white-space: nowrap; }
+  .gn a:after { content: ""; position: absolute; left: 0; right: 0; bottom: 8px; height: 2px; background: #C9962E; transform: scaleX(0); transform-origin: left center; transition: transform .25s ease; }
+  .gn a:hover { color: #B3202F; }
+  .gn a:hover:after { transform: scaleX(1); }
+  .gn-new { color: #B3202F !important; display: inline-flex; align-items: center; gap: 7px; }
+  .gn-new i { width: 7px; height: 7px; border-radius: 50%; background: #C2273F; box-shadow: 0 0 0 0 rgba(194,39,63,.6); animation: pulse 2s ease-out infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(194,39,63,.55); } 100% { box-shadow: 0 0 0 9px rgba(194,39,63,0); } }
+  .gn-sp { flex: 1 1 auto; }
+  .gn-sub { font-size: 12px !important; font-weight: 500 !important; color: #8A7B5C !important; }
+  .gn-m { display: none; }
+  @media (max-width: 1040px) { .hb-line { display: none; } .hs input { width: 150px; } }
+  @media (max-width: 760px) {
+    .tbar { display: none; }
+    .hdr-in { padding: 14px 16px 12px; flex-wrap: wrap; gap: 12px; }
+    .lg { gap: 11px; }
+    .lg-seal { width: 40px; height: 40px; font-size: 24px; }
+    .lg-jp { font-size: 22px; letter-spacing: .1em; }
+    .lg-en { font-size: 7.5px; letter-spacing: .4em; margin-top: 5px; }
+    .hdr-r { flex: 1 1 auto; justify-content: flex-end; }
+    .hb-red { padding: 10px 16px; font-size: 12px; }
+    .hs { order: 3; flex: 1 1 100%; padding: 10px 14px; }
+    .hdr-r { display: contents; }
+    .hs input { width: 100%; flex: 1 1 auto; font-size: 16px; }
+    .gn-in { padding: 0 16px; gap: 0 22px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .gn-in::-webkit-scrollbar { display: none; }
+    .gn a { padding: 13px 0; font-size: 14px; }
+    .gn a:after { bottom: 6px; }
+    .gn-m { display: block; }
+    .gn-sp { display: none; }
+    .gn:after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 30px; background: linear-gradient(90deg, rgba(251,248,241,0), #FBF8F1); pointer-events: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .gn-new i { animation: none; } }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -372,59 +433,54 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 </style>
 </head>
 <body>
-<!-- ===== 1. 黒ユーティリティバー ===== -->
-  <div id="ubar" class="dk" style="background: #000000; padding: 11px 0;">
-    <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; gap: 0 20px; align-items: center;">
-      <a href="framework-intro.html" style="font-size: 12px; font-weight: 700;">住宅営業登竜門とは</a>
-      <span style="color: #4A4A4A; font-size: 12px;">|</span>
-      <a href="../corporate.html" style="font-size: 12px; font-weight: 700;">法人での導入</a>
-      <span style="color: #4A4A4A; font-size: 12px;">|</span>
-      <a href="../#tools" style="font-size: 12px; font-weight: 700; color: #E8A33D;">無料プレゼント・営業ツール</a>
-      <span style="color: #4A4A4A; font-size: 12px;">|</span>
-      <a href="../#other" style="font-size: 12px; font-weight: 700;">MARKEY CONSULTING</a>
-      <span style="flex: 1 1 auto;"></span>
-      <a href="../#contact" style="font-size: 12px; font-weight: 700;">お問い合わせ</a>
+<!-- ===== 1. 上の細い帯 ===== -->
+  <div class="tbar">
+    <div class="tbar-in">
+      <span class="tbar-c">住宅営業の受注を上げるための情報サイト</span>
+      <a href="framework-intro.html">住宅営業登竜門とは</a>
+      <a href="../corporate.html">法人での導入</a>
+      <a href="../#other">MARKEY CONSULTING</a>
+      <a href="../#contact">お問い合わせ</a>
     </div>
   </div>
 
-  <!-- ===== 2. 黒ヘッダー ===== -->
-  <header style="background-color: #FFFFFF; background-image: linear-gradient(90deg, #9C7A1C, #EBD492 28%, #C9A53A 52%, #EBD492 74%, #9C7A1C), linear-gradient(90deg, #9C7A1C, #EBD492 28%, #C9A53A 52%, #EBD492 74%, #9C7A1C); background-size: 100% 6px, 100% 6px; background-position: top left, bottom left; background-repeat: no-repeat; padding: 25px 0 23px;">
-    <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px;">
-      <a href="../" style="flex: 0 0 auto;">
-        <img src="../assets/toryumon-logo.png" alt="住宅営業登竜門" style="display: block; width: 400px; max-width: 100%; height: auto;">
+  <!-- ===== 2. ヘッダー ===== -->
+  <div class="hdr" role="banner">
+    <div class="hdr-in">
+      <a href="../" class="lg" aria-label="住宅営業登竜門 トップへ">
+        <span class="lg-seal" aria-hidden="true">登</span>
+        <span class="lg-t">
+          <span class="lg-jp">住宅営業<b>登竜門</b></span>
+          <span class="lg-en">JUTAKU EIGYO TORYUMON</span>
+        </span>
       </a>
-      <p class="tagline" style="flex: 1 1 230px; min-width: 0; border-left: 1px solid #D4D4D4; padding-left: 24px;">
-        <span style="display: block; font-size: 15px; font-weight: 900; line-height: 1.6;">住宅営業の<span style="color: #C2273F;">受注を上げる</span>ための情報サイト</span>
-        <span style="display: block; margin-top: 5px; font-size: 12px; line-height: 1.7; color: #5C5C5C;">コラム／住宅市場レポート／セミナー／動画講座</span>
-      </p>
-      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; min-width: 0;">
-        <form action="/toryumon/column/" method="get" role="search" style="display: flex; align-items: center; gap: 9px; border-bottom: 1px solid #C4C4C4; padding: 7px 2px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8A8A" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-          <label for="q-top" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">サイト内を検索</label>
-          <input id="q-top" name="q" type="search" enterkeyhint="search" placeholder="悩み・キーワードで探す" style="border: 0; outline: 0; font-size: 13px; font-family: 'Zen Kaku Gothic New', sans-serif; width: 160px; max-width: 100%; min-width: 0; background: transparent; color: #111111;">
+      <div class="hdr-r">
+        <form action="/toryumon/column/" method="get" role="search" class="hs">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+          <label for="q-top" class="vh">サイト内を検索</label>
+          <input id="q-top" name="q" type="search" enterkeyhint="search" placeholder="悩み・キーワードで探す">
         </form>
-        <a href="../#mailmag" style="font-size: 13px; font-weight: 700;">メルマガ登録</a>
-        <a href="../#contact" style="background: #C2273F; color: #FFFFFF; font-size: 13px; font-weight: 700; padding: 11px 24px;">導入のご相談</a>
+        <a href="../#contact" class="hb hb-line">導入のご相談</a>
+        <a href="../#mailmag" class="hb hb-red">メルマガ登録</a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- ===== 3. 黒ナビ ===== -->
-  <nav id="gnav" class="dk" aria-label="メインナビゲーション" style="background: #000000; padding: 13px 0;">
-    <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px;">
-      <a href="./" style="display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: #E8596E;">
-        <span style="width: 8px; height: 8px; background: #E8596E; border-radius: 50%;"></span>新着
-      </a>
-      <a href="./" style="font-size: 14px; font-weight: 700;">コラム</a>
-      <a href="../#report" style="font-size: 14px; font-weight: 700;">業界レポート</a>
-      <a href="../#seminar" style="font-size: 14px; font-weight: 700;">セミナー</a>
-      <a href="../#video" style="font-size: 14px; font-weight: 700;">動画講座</a>
-      <a href="../#tools" style="font-size: 14px; font-weight: 700;">お役立ち資料</a>
-      <a href="../#note" hidden data-hide="未完成" style="font-size: 14px; font-weight: 700;">note・書籍</a>
-      <a href="../#ranking" style="font-size: 14px; font-weight: 700;">おすすめ記事</a>
-      <a href="../#profile" style="font-size: 14px; font-weight: 700;">運営者</a>
-      <span style="flex: 1 1 auto;"></span>
-      <a href="../#other" style="font-size: 13px; font-weight: 700; color: #9B9B9B;">Sales Academy ／ AI事業</a>
+  <!-- ===== 3. メニュー ===== -->
+  <nav class="gn" aria-label="メインナビゲーション">
+    <div class="gn-in">
+      <a href="./" class="gn-new"><i></i>新着</a>
+      <a href="./">コラム</a>
+      <a href="../#video">動画講座</a>
+      <a href="../#tools">お役立ち資料</a>
+      <a href="../#report">業界レポート</a>
+      <a href="../#seminar">セミナー</a>
+      <a href="../#ranking">おすすめ記事</a>
+      <a href="../#profile">運営者</a>
+      <a href="../corporate.html" class="gn-m">法人での導入</a>
+      <a href="../#contact" class="gn-m">お問い合わせ</a>
+      <span class="gn-sp"></span>
+      <a href="../#other" class="gn-sub">Sales Academy ／ AI事業</a>
     </div>
   </nav>
 
