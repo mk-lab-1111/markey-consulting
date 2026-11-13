@@ -91,6 +91,9 @@ def chrome():
         t = t.replace('href="./"', 'href="../"')
         t = t.replace('href="column/#', 'href="./#').replace('href="column/"', 'href="./"')
         t = t.replace('href="corporate.html"', 'href="../corporate.html"')
+        # トップから column/xxx.html へのリンクは、同じフォルダ内のリンクに直す
+        t = re.sub(r'href="column/([^"#?/]+\.html)"', r'href="\1"', t)
+        t = re.sub(r'href="column/\?', 'href="./?', t)
         t = t.replace('href="../toryumon-lp/"', 'href="../../toryumon-lp/"')
         t = t.replace('href="../reports.html"', 'href="../../reports.html"')
         t = t.replace('href="../events.html"', 'href="../../events.html"')
@@ -243,7 +246,7 @@ def rail(arts, current=None):
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
             <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">営業が強くなる特別コラムを<br>メールでお届けします</p>
             <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。登録は無料です。</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #E8A33D; color: #111111; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">無料で登録する ›</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">メルマガに登録して受け取る ›</a>
             <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
         </aside>
@@ -652,6 +655,16 @@ def index_page(arts, css, head_html, foot_html):
 
     <h1 class="bar" style="margin-top: 16px; font-size: 26px;">住宅営業登竜門コラム</h1>
     <p style="font-size: 15px; line-height: 1.75; color: #333333;">受注を上げるための型を、つまずく場所ごとに解説しています。全文無料・登録不要です。</p>
+
+    <form action="./" method="get" role="search" style="margin-top: 16px; display: flex; gap: 8px;">
+      <input name="q" id="q-col" type="search" enterkeyhint="search" placeholder="悩み・キーワードで探す（例：値引き、追客）" aria-label="コラムを検索" style="flex: 1 1 auto; min-width: 0; border: 1px solid #111111; padding: 12px 12px; font-size: 16px; font-family: inherit;">
+      <button type="submit" style="flex: 0 0 auto; background: #111111; color: #FFFFFF; border: 0; padding: 0 20px; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer;">検索</button>
+    </form>
+    <section id="sr" hidden>
+      <h2 class="bar" id="sr-h">検索結果</h2>
+      <ul class="dlist" id="sr-list"></ul>
+      <p style="margin-top: 14px;"><a href="./" style="font-size: 14px; font-weight: 700; text-decoration: underline;">すべてのコラムを見る ›</a></p>
+    </section>
 """ + intro_html + """
 
     <section>
@@ -677,6 +690,38 @@ def index_page(arts, css, head_html, foot_html):
 </main>
 """
 
+    import json as _json
+    data = _json.dumps([{"s": a["slug"], "t": a["title"], "d": a["description"], "f": a["framework"],
+                         "k": " ".join(a["tags"])} for a in arts if not a["draft"]], ensure_ascii=False)
+    main += """
+<script>
+(function () {
+  var A = %s;
+  var q = (new URLSearchParams(location.search).get("q") || "").replace(/^[#＃]/, "").trim();
+  if (!q) { return; }
+  var box = document.getElementById("q-col"); if (box) { box.value = q; }
+  var top = document.getElementById("q-top"); if (top) { top.value = q; }
+  var words = q.toLowerCase().split(/[\\s　]+/).filter(Boolean);
+  var hit = A.filter(function (a) {
+    var text = (a.t + " " + a.d + " " + a.f + " " + a.k).toLowerCase();
+    return words.every(function (w) { return text.indexOf(w) > -1; });
+  });
+  var list = document.getElementById("sr-list"), h = document.getElementById("sr-h");
+  h.textContent = "「" + q + "」の検索結果　" + hit.length + "件";
+  if (!hit.length) {
+    var p = document.createElement("li"); p.textContent = "見つかりませんでした。別の言葉でお試しください。"; p.style.padding = "14px 4px"; list.appendChild(p);
+  }
+  hit.forEach(function (a) {
+    var li = document.createElement("li"), l = document.createElement("a"), f = document.createElement("span"), t = document.createElement("span");
+    l.href = a.s + ".html"; l.style.display = "block"; l.style.padding = "12px 4px";
+    f.textContent = a.f; f.style.cssText = "display:block;font-size:12px;font-weight:700;color:#C2273F;";
+    t.textContent = a.t; t.style.cssText = "display:block;margin-top:4px;font-size:16px;font-weight:700;line-height:1.6;";
+    l.appendChild(f); l.appendChild(t); li.appendChild(l); li.style.borderBottom = "1px solid #D4D4D4"; list.appendChild(li);
+  });
+  document.getElementById("sr").hidden = false;
+})();
+</script>
+""" % data
     return page("コラム｜住宅営業登竜門",
                 "住宅営業の受注を上げるためのコラム。初回接客からクロージング、追客、育成まで、つまずく場所ごとに解説しています。",
                 url, css, head_html, foot_html, main)

@@ -112,6 +112,76 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     header a[href="./"] img, header a[href="../"] img { width: 230px !important; max-width: 72% !important; }
   }
 
+  /* ===== スマホ：上の帯とメニューは1行で横にスクロール。メニューは上に固定 ===== */
+  #gnav { position: sticky; top: 0; z-index: 60; }
+  @media (max-width: 760px) {
+    #gnav > div, #ubar > div { flex-wrap: nowrap !important; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 0 22px !important; }
+    #gnav > div::-webkit-scrollbar, #ubar > div::-webkit-scrollbar { display: none; }
+    #gnav a, #ubar a, #ubar span { flex: 0 0 auto; }
+    #gnav a { padding: 4px 0; font-size: 15px !important; }
+    #gnav span[style*="flex: 1 1 auto"], #ubar span[style*="flex: 1 1 auto"] { display: none; }
+    #gnav { padding: 11px 0 !important; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+    #gnav:after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 34px; background: linear-gradient(90deg, rgba(0,0,0,0), #000); pointer-events: none; }
+    #ubar { padding: 8px 0 !important; }
+  }
+  /* ===== トップページの見た目（body.home だけ） ===== */
+  .home h2 { font-family: 'Shippori Mincho', 'Zen Kaku Gothic New', serif; font-weight: 800; letter-spacing: .03em; }
+  .home [style*="border-bottom: 2px solid #111111"], .home [style*="border-bottom: 2px solid #FFFFFF"] { position: relative; }
+  .home [style*="border-bottom: 2px solid #111111"]:after, .home [style*="border-bottom: 2px solid #FFFFFF"]:after { content: ""; position: absolute; left: 0; bottom: -4px; width: 120px; height: 6px; background: linear-gradient(90deg, #B8811C, #E8B84A 55%, rgba(232,184,74,0)); transform-origin: left center; }
+  .home a[style*="background: #C2273F"], .btn-main { position: relative; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+  .home a[style*="background: #C2273F"]:hover, .btn-main:hover { color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(194,39,63,.35); }
+  .home a[style*="background: #C2273F"]:before, .btn-main:before { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, rgba(255,255,255,0), rgba(255,255,255,.35), rgba(255,255,255,0)); transform: skewX(-18deg); animation: shine 4.5s ease-in-out infinite; }
+  @keyframes shine { 0%, 62% { left: -60%; } 100% { left: 130%; } }
+  .home .prog, .home a.row, .home a.lead, .home .tag { transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .home .prog:hover { transform: translateY(-3px); }
+  .home a.lead img { transition: filter .3s ease; }
+  .home a.lead:hover img { filter: brightness(1.06) contrast(1.03); }
+  /* ヒーロー */
+  .hero { position: relative; overflow: hidden; color: #FFFFFF; background: radial-gradient(120% 140% at 80% 0%, #3A2A12 0%, #1B1612 42%, #0D0B09 100%); border-bottom: 4px solid #C9962E; }
+  .hero:before, .hero:after { content: ""; position: absolute; width: 900px; height: 190px; opacity: .5; pointer-events: none;
+    background: linear-gradient(180deg, transparent 0 8%, #E8B84A 8% 20%, transparent 20% 27%, #C9962E 27% 52%, transparent 52% 58%, #E8B84A 58% 66%, transparent 66% 80%, #D9A93C 80% 86%, transparent 86%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 25%, #000 60%, transparent); mask-image: linear-gradient(90deg, transparent, #000 25%, #000 60%, transparent); transform: rotate(-38deg); }
+  .hero:before { right: -380px; top: -70px; }
+  .hero:after { left: -470px; bottom: -110px; opacity: .3; }
+  .hero-in { position: relative; z-index: 1; max-width: 1420px; margin: 0 auto; padding: 46px 28px 50px; display: flex; flex-wrap: wrap; align-items: center; gap: 30px 48px; }
+  .hero-txt { flex: 2 1 380px; min-width: 0; }
+  .hero-mv { flex: 3 1 520px; min-width: 0; }
+  .hero-mv video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #141210; border: 1px solid rgba(232,184,74,.7); box-shadow: 0 30px 70px rgba(0,0,0,.6), 0 0 0 8px rgba(232,184,74,.08); }
+  .hero-k { font-size: 11px; font-weight: 600; letter-spacing: .3em; color: #E8B84A; }
+  .hero-h { margin-top: 14px; font-family: 'Shippori Mincho', serif; font-weight: 800; font-size: 44px; line-height: 1.5; letter-spacing: .02em; color: #FFFFFF; }
+  .hero-h span { display: block; }
+  .hero-h em { font-style: normal; color: #E8596E; font-size: 1.18em; }
+  .hero-p { margin-top: 16px; font-size: 15px; line-height: 2; color: #D8D0C2; }
+  .hero-btn { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn-main { flex: 1 1 260px; background: #C2273F; color: #FFFFFF !important; text-align: center; font-size: 16px; font-weight: 900; padding: 17px 20px; }
+  .btn-sub { flex: 1 1 160px; border: 1px solid rgba(255,255,255,.8); color: #FFFFFF !important; text-align: center; font-size: 15px; font-weight: 700; padding: 16px 20px; transition: background .2s ease, color .2s ease; }
+  .btn-sub:hover { background: #FFFFFF; color: #111111 !important; }
+  .hero-n { margin-top: 12px; font-size: 12px; color: #B8B8B8; }
+  @keyframes heroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  @keyframes heroMv { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+  .hero-k, .hero-h span, .hero-p, .hero-btn, .hero-n { animation: heroUp .8s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-h span:nth-child(1) { animation-delay: .1s; } .hero-h span:nth-child(2) { animation-delay: .3s; }
+  .hero-p { animation-delay: .55s; } .hero-btn { animation-delay: .7s; } .hero-n { animation-delay: .8s; }
+  .hero-mv { animation: heroMv 1s cubic-bezier(.2,.7,.2,1) .2s both; }
+  @media (max-width: 760px) {
+    .hero-in { padding: 22px 16px 30px; gap: 22px; }
+    .hero-mv { order: -1; flex-basis: 100%; }
+    .hero-h { font-size: 27px; margin-top: 10px; }
+    .hero-p { font-size: 14px; margin-top: 12px; }
+    .hero-btn { margin-top: 18px; }
+  }
+  /* スクロールで、ふわっと出る */
+  html.js .home .rv { opacity: 0; transform: translateY(30px); transition: opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  html.js .home .rv.in { opacity: 1; transform: none; }
+  html.js .home .rvh:after { transform: scaleX(0); transition: transform .8s cubic-bezier(.2,.7,.2,1) .25s; }
+  html.js .home .rvh.in:after { transform: scaleX(1); }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .home .rv { opacity: 1; transform: none; transition: none; }
+    html.js .home .rvh:after { transform: none; transition: none; }
+    .hero-k, .hero-h span, .hero-p, .hero-btn, .hero-n, .hero-mv { animation: none; }
+    .home a[style*="background: #C2273F"]:before, .btn-main:before { animation: none; display: none; }
+  }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -215,9 +285,9 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 </head>
 <body>
 <!-- ===== 1. 黒ユーティリティバー ===== -->
-  <div class="dk" style="background: #000000; padding: 11px 0;">
+  <div id="ubar" class="dk" style="background: #000000; padding: 11px 0;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; gap: 0 20px; align-items: center;">
-      <a href="column/framework-intro.html" style="font-size: 12px; font-weight: 700;">住宅営業登竜門とは</a>
+      <a href="framework-intro.html" style="font-size: 12px; font-weight: 700;">住宅営業登竜門とは</a>
       <span style="color: #4A4A4A; font-size: 12px;">|</span>
       <a href="../corporate.html" style="font-size: 12px; font-weight: 700;">法人での導入</a>
       <span style="color: #4A4A4A; font-size: 12px;">|</span>
@@ -240,10 +310,10 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
         <span style="display: block; margin-top: 5px; font-size: 12px; line-height: 1.7; color: #5C5C5C;">コラム／住宅市場レポート／セミナー／動画講座</span>
       </p>
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; min-width: 0;">
-        <form style="display: flex; align-items: center; gap: 9px; border-bottom: 1px solid #C4C4C4; padding: 7px 2px;">
+        <form action="/toryumon/column/" method="get" role="search" style="display: flex; align-items: center; gap: 9px; border-bottom: 1px solid #C4C4C4; padding: 7px 2px;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8A8A" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
           <label for="q-top" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">サイト内を検索</label>
-          <input id="q-top" type="search" placeholder="悩み・キーワードで探す" style="border: 0; outline: 0; font-size: 13px; font-family: 'Zen Kaku Gothic New', sans-serif; width: 160px; max-width: 100%; min-width: 0; background: transparent; color: #111111;">
+          <input id="q-top" name="q" type="search" enterkeyhint="search" placeholder="悩み・キーワードで探す" style="border: 0; outline: 0; font-size: 13px; font-family: 'Zen Kaku Gothic New', sans-serif; width: 160px; max-width: 100%; min-width: 0; background: transparent; color: #111111;">
         </form>
         <a href="../#mailmag" style="font-size: 13px; font-weight: 700;">メルマガ登録</a>
         <a href="../#contact" style="background: #C2273F; color: #FFFFFF; font-size: 13px; font-weight: 700; padding: 11px 24px;">導入のご相談</a>
@@ -252,7 +322,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   </header>
 
   <!-- ===== 3. 黒ナビ ===== -->
-  <nav class="dk" aria-label="メインナビゲーション" style="background: #000000; padding: 13px 0;">
+  <nav id="gnav" class="dk" aria-label="メインナビゲーション" style="background: #000000; padding: 13px 0;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px;">
       <a href="./" style="display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: #E8596E;">
         <span style="width: 8px; height: 8px; background: #E8596E; border-radius: 50%;"></span>新着
@@ -279,6 +349,16 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 
     <h1 class="bar" style="margin-top: 16px; font-size: 26px;">住宅営業登竜門コラム</h1>
     <p style="font-size: 15px; line-height: 1.75; color: #333333;">受注を上げるための型を、つまずく場所ごとに解説しています。全文無料・登録不要です。</p>
+
+    <form action="./" method="get" role="search" style="margin-top: 16px; display: flex; gap: 8px;">
+      <input name="q" id="q-col" type="search" enterkeyhint="search" placeholder="悩み・キーワードで探す（例：値引き、追客）" aria-label="コラムを検索" style="flex: 1 1 auto; min-width: 0; border: 1px solid #111111; padding: 12px 12px; font-size: 16px; font-family: inherit;">
+      <button type="submit" style="flex: 0 0 auto; background: #111111; color: #FFFFFF; border: 0; padding: 0 20px; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer;">検索</button>
+    </form>
+    <section id="sr" hidden>
+      <h2 class="bar" id="sr-h">検索結果</h2>
+      <ul class="dlist" id="sr-list"></ul>
+      <p style="margin-top: 14px;"><a href="./" style="font-size: 14px; font-weight: 700; text-decoration: underline;">すべてのコラムを見る ›</a></p>
+    </section>
     <a href="framework-intro.html" class="intro">
       <span class="en" style="display: block; font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #C2273F;">START HERE</span>
       <span style="display: block; margin-top: 6px; font-size: 18px; font-weight: 900; line-height: 1.55;">住宅営業の成約フレームワークとは：成果を生み出す5つの力</span>
@@ -436,13 +516,41 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
             <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">営業が強くなる特別コラムを<br>メールでお届けします</p>
             <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。登録は無料です。</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #E8A33D; color: #111111; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">無料で登録する ›</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">メルマガに登録して受け取る ›</a>
             <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
         </aside>
 </div>
   </div>
 </main>
+
+<script>
+(function () {
+  var A = [{"s": "closing-not-final-push", "t": "クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする", "d": "クロージングが苦手な方へ。押すのではなく、不安と迷いを一つずつ消していく考え方と、小さなYESを積み重ねる方法を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 クロージング 小さなYES 契約"}, {"s": "competitor-response", "t": "他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する", "d": "競合との比較で、他社を悪く言うのは逆効果です。事実を伝え、自社の考えを想いとして語る方法と、「他社の方が安い」と言われたときの対応を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 競合 他社比較 差別化"}, {"s": "confidence-and-trust", "t": "お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む", "d": "売れない原因が、スキルではなくマインドにあることがあります。自分が良いと思えない家は勧められない理由と、「任せてください」の一言の力を、トーク例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 自信 任せてください"}, {"s": "contract-analysis", "t": "契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる", "d": "失注だけでなく、契約を分析する重要性を解説します。契約分析でやる3つのこと、お客様に決め手を直接聞く方法を、トーク例とともに紹介します。", "f": "商談戦略", "k": "住宅営業 契約分析 勝ちパターン 振り返り"}, {"s": "kpi-return-visits", "t": "受注は「再来場の回数」に比例する：10再来場で1契約をKPIにする", "d": "住宅営業の受注を安定させるには、再来場の回数をKPIにすることが有効です。10再来場で1契約という指標と、行動を振り返る営業会議の進め方を解説します。", "f": "顧客管理", "k": "住宅営業 KPI 再来場 営業会議"}, {"s": "land-tour-advantage", "t": "土地案内は、差別化になる：イメージできないものは、お客様は買えない", "d": "土地バンクやポータルサイトが普及した今、土地案内をしない営業が多いからこそ、土地案内は差別化になります。お客様が判断できるようにイメージを作る方法を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 土地案内 差別化 イメージ"}, {"s": "listen-more-than-talk", "t": "営業は「話す仕事」ではなく「聞く仕事」：沈黙は、お客様の整理時間", "d": "トップ営業ほど説明が短く、質問が多い理由を解説します。話した時間より聞いた時間を増やす方法と、商談中の沈黙を怖がらなくてよい理由を、トーク例とともに紹介します。", "f": "営業知識・営業スキル", "k": "住宅営業 傾聴 沈黙 会話"}, {"s": "lost-deal-analysis", "t": "失注を「縁がなかった」で終わらせない：当日3行で残す失注分析の基本", "d": "住宅営業で失注を成長に変える方法を解説します。「縁がなかった」で片付けない理由と、失注当日に残す3行メモ、表向きの理由と本音を分けて書く方法を、記録例とともに紹介します。", "f": "商談戦略", "k": "住宅営業 失注分析 振り返り 商談記録"}, {"s": "make-them-want", "t": "ハードルを外しても、欲しくなければ契約しない：「欲しい」を作る商談の考え方", "d": "資金や土地の条件が整っても、お客様が欲しいと思わなければ契約には至りません。「欲しい」を作るために、営業が心がけることを、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 熱上げ クロージング 欲しい"}, {"s": "referral-ask", "t": "紹介が出る営業は、契約日から動いている：一言の依頼を「仕組み」にする", "d": "住宅営業で紹介が安定して出る人は、偶然ではなく、紹介が出るようにしています。契約時・引渡し時・アフター時に「ご紹介いただけませんか」を伝える方法を、トーク例とともに解説します。", "f": "顧客管理", "k": "住宅営業 紹介 アフター 顧客管理"}, {"s": "standardize-top-sales", "t": "トップセールスの手法は、真似できる：要素分解して「型」にする", "d": "トップセールスのやり方は独特で、真似できないと言われがちです。しかし、要素に分解してプロセスを再構成すれば、再現できます。流れの設計とロープレの進め方を解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 標準化 ロープレ 型"}, {"s": "translate-to-benefit", "t": "性能は「お客様の得」に翻訳して伝える：お客様の言葉を、そのまま使う", "d": "「高気密高断熱です」では、お客様の心は動きません。特徴をお客様の得に翻訳する方法と、お客様の言葉をそのまま使う理由を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 提案 翻訳 お客様の言葉"}, {"s": "whole-family", "t": "決定権者だけを見る営業は、契約を逃す：家は「家族全員」で決まる", "d": "住宅の契約は、ご主人様一人では決まりません。奥様、お子様、ご両親まで見据えた商談の進め方を、よくある失注パターンとトーク例で解説します。", "f": "商談戦略", "k": "住宅営業 家族 親ハードル 失注"}, {"s": "appointment-sentakuhou", "t": "アポは「選択法」で取る：次回のアポを確実にする言い方とタイミング", "d": "住宅営業で次回のアポが取れない原因は、聞き方とタイミングにあります。「いかがでしょうか」を「どちらが良いですか」に変える選択法と、アポを切り出すベストなタイミングを、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 アポイント 選択法 再来場"}, {"s": "first-contact-30sec", "t": "初回接客は最初の30秒で決まる：商品の前に「警戒」を解く", "d": "住宅営業の初回接客で、商品説明より先にやるべきことは、お客様の警戒を解くことです。最初の30秒の考え方と、「今日は決めなくて大丈夫ですよ」の使い方を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 初回接客 第一印象 警戒を解く"}, {"s": "hearing-yoko-tate-naname", "t": "ヒアリングのコツは「横・縦・ななめ」：質問の順番を変えるだけで深く聞ける", "d": "住宅営業のヒアリングは、質問の順番で深さが変わります。「横の質問」「縦の質問」「ななめの質問」の使い分けを、「広い家がほしい」を例に、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 ヒアリング 質問力 深掘り"}, {"s": "kentou-shimasu", "t": "「検討します」と言われたときの対応：断り文句ではなく「まだ不安がある」という合図", "d": "住宅営業で「検討します」と言われたとき、断られたと判断するのは早すぎます。この言葉の意味と、聞くべきこと、その後の追客の考え方を、トーク例とともに解説します。", "f": "顧客管理", "k": "住宅営業 検討します 追客 顧客管理"}, {"s": "appearance-style-or-pro", "t": "好きな髪型・服装と「住宅営業のプロの見た目」、どちらを優先すべきか", "d": "好きなファッションや髪型と、住宅営業としての見た目が相容れないとき、どちらを優先すべきか。研修で頻繁に受ける質問に、結論からお答えします。", "f": "アピアランス・トナリティ", "k": "アピアランス 身だしなみ 髪型 服装"}, {"s": "framework-intro", "t": "住宅営業の成約フレームワークとは：成果を生み出す5つの力", "d": "住宅営業の成果を決める5つの要素（営業マインド、営業知識・営業スキル、商談戦略、アピアランス・トナリティ、顧客管理）を、現場でよく見られる状況と受講者の事例とともに解説します。", "f": "成約フレームワーク", "k": "成約フレームワーク 住宅営業 営業力"}, {"s": "price-objection-takai", "t": "「高い」と言われたときの考え方：価格は断りやすい\"建前\"にすぎない", "d": "住宅営業で「高い」と言われたとき、値引きの前に疑うべきは価格ではなく価値の伝え方です。失注理由の「価格」を信じてはいけない理由と、「高い」への返し方を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 高いと言われたら 値引き 失注分析"}];
+  var q = (new URLSearchParams(location.search).get("q") || "").replace(/^[#＃]/, "").trim();
+  if (!q) { return; }
+  var box = document.getElementById("q-col"); if (box) { box.value = q; }
+  var top = document.getElementById("q-top"); if (top) { top.value = q; }
+  var words = q.toLowerCase().split(/[\s　]+/).filter(Boolean);
+  var hit = A.filter(function (a) {
+    var text = (a.t + " " + a.d + " " + a.f + " " + a.k).toLowerCase();
+    return words.every(function (w) { return text.indexOf(w) > -1; });
+  });
+  var list = document.getElementById("sr-list"), h = document.getElementById("sr-h");
+  h.textContent = "「" + q + "」の検索結果　" + hit.length + "件";
+  if (!hit.length) {
+    var p = document.createElement("li"); p.textContent = "見つかりませんでした。別の言葉でお試しください。"; p.style.padding = "14px 4px"; list.appendChild(p);
+  }
+  hit.forEach(function (a) {
+    var li = document.createElement("li"), l = document.createElement("a"), f = document.createElement("span"), t = document.createElement("span");
+    l.href = a.s + ".html"; l.style.display = "block"; l.style.padding = "12px 4px";
+    f.textContent = a.f; f.style.cssText = "display:block;font-size:12px;font-weight:700;color:#C2273F;";
+    t.textContent = a.t; t.style.cssText = "display:block;margin-top:4px;font-size:16px;font-weight:700;line-height:1.6;";
+    l.appendChild(f); l.appendChild(t); li.appendChild(l); li.style.borderBottom = "1px solid #D4D4D4"; list.appendChild(li);
+  });
+  document.getElementById("sr").hidden = false;
+})();
+</script>
 
 <!-- ===== FOOTER ===== -->
   <footer class="dk" style="background: #000000; color: #FFFFFF; padding: 48px 0 32px;">

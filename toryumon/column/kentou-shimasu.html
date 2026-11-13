@@ -129,6 +129,76 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     header a[href="./"] img, header a[href="../"] img { width: 230px !important; max-width: 72% !important; }
   }
 
+  /* ===== スマホ：上の帯とメニューは1行で横にスクロール。メニューは上に固定 ===== */
+  #gnav { position: sticky; top: 0; z-index: 60; }
+  @media (max-width: 760px) {
+    #gnav > div, #ubar > div { flex-wrap: nowrap !important; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 0 22px !important; }
+    #gnav > div::-webkit-scrollbar, #ubar > div::-webkit-scrollbar { display: none; }
+    #gnav a, #ubar a, #ubar span { flex: 0 0 auto; }
+    #gnav a { padding: 4px 0; font-size: 15px !important; }
+    #gnav span[style*="flex: 1 1 auto"], #ubar span[style*="flex: 1 1 auto"] { display: none; }
+    #gnav { padding: 11px 0 !important; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+    #gnav:after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 34px; background: linear-gradient(90deg, rgba(0,0,0,0), #000); pointer-events: none; }
+    #ubar { padding: 8px 0 !important; }
+  }
+  /* ===== トップページの見た目（body.home だけ） ===== */
+  .home h2 { font-family: 'Shippori Mincho', 'Zen Kaku Gothic New', serif; font-weight: 800; letter-spacing: .03em; }
+  .home [style*="border-bottom: 2px solid #111111"], .home [style*="border-bottom: 2px solid #FFFFFF"] { position: relative; }
+  .home [style*="border-bottom: 2px solid #111111"]:after, .home [style*="border-bottom: 2px solid #FFFFFF"]:after { content: ""; position: absolute; left: 0; bottom: -4px; width: 120px; height: 6px; background: linear-gradient(90deg, #B8811C, #E8B84A 55%, rgba(232,184,74,0)); transform-origin: left center; }
+  .home a[style*="background: #C2273F"], .btn-main { position: relative; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+  .home a[style*="background: #C2273F"]:hover, .btn-main:hover { color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(194,39,63,.35); }
+  .home a[style*="background: #C2273F"]:before, .btn-main:before { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, rgba(255,255,255,0), rgba(255,255,255,.35), rgba(255,255,255,0)); transform: skewX(-18deg); animation: shine 4.5s ease-in-out infinite; }
+  @keyframes shine { 0%, 62% { left: -60%; } 100% { left: 130%; } }
+  .home .prog, .home a.row, .home a.lead, .home .tag { transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .home .prog:hover { transform: translateY(-3px); }
+  .home a.lead img { transition: filter .3s ease; }
+  .home a.lead:hover img { filter: brightness(1.06) contrast(1.03); }
+  /* ヒーロー */
+  .hero { position: relative; overflow: hidden; color: #FFFFFF; background: radial-gradient(120% 140% at 80% 0%, #3A2A12 0%, #1B1612 42%, #0D0B09 100%); border-bottom: 4px solid #C9962E; }
+  .hero:before, .hero:after { content: ""; position: absolute; width: 900px; height: 190px; opacity: .5; pointer-events: none;
+    background: linear-gradient(180deg, transparent 0 8%, #E8B84A 8% 20%, transparent 20% 27%, #C9962E 27% 52%, transparent 52% 58%, #E8B84A 58% 66%, transparent 66% 80%, #D9A93C 80% 86%, transparent 86%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 25%, #000 60%, transparent); mask-image: linear-gradient(90deg, transparent, #000 25%, #000 60%, transparent); transform: rotate(-38deg); }
+  .hero:before { right: -380px; top: -70px; }
+  .hero:after { left: -470px; bottom: -110px; opacity: .3; }
+  .hero-in { position: relative; z-index: 1; max-width: 1420px; margin: 0 auto; padding: 46px 28px 50px; display: flex; flex-wrap: wrap; align-items: center; gap: 30px 48px; }
+  .hero-txt { flex: 2 1 380px; min-width: 0; }
+  .hero-mv { flex: 3 1 520px; min-width: 0; }
+  .hero-mv video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #141210; border: 1px solid rgba(232,184,74,.7); box-shadow: 0 30px 70px rgba(0,0,0,.6), 0 0 0 8px rgba(232,184,74,.08); }
+  .hero-k { font-size: 11px; font-weight: 600; letter-spacing: .3em; color: #E8B84A; }
+  .hero-h { margin-top: 14px; font-family: 'Shippori Mincho', serif; font-weight: 800; font-size: 44px; line-height: 1.5; letter-spacing: .02em; color: #FFFFFF; }
+  .hero-h span { display: block; }
+  .hero-h em { font-style: normal; color: #E8596E; font-size: 1.18em; }
+  .hero-p { margin-top: 16px; font-size: 15px; line-height: 2; color: #D8D0C2; }
+  .hero-btn { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn-main { flex: 1 1 260px; background: #C2273F; color: #FFFFFF !important; text-align: center; font-size: 16px; font-weight: 900; padding: 17px 20px; }
+  .btn-sub { flex: 1 1 160px; border: 1px solid rgba(255,255,255,.8); color: #FFFFFF !important; text-align: center; font-size: 15px; font-weight: 700; padding: 16px 20px; transition: background .2s ease, color .2s ease; }
+  .btn-sub:hover { background: #FFFFFF; color: #111111 !important; }
+  .hero-n { margin-top: 12px; font-size: 12px; color: #B8B8B8; }
+  @keyframes heroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  @keyframes heroMv { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+  .hero-k, .hero-h span, .hero-p, .hero-btn, .hero-n { animation: heroUp .8s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-h span:nth-child(1) { animation-delay: .1s; } .hero-h span:nth-child(2) { animation-delay: .3s; }
+  .hero-p { animation-delay: .55s; } .hero-btn { animation-delay: .7s; } .hero-n { animation-delay: .8s; }
+  .hero-mv { animation: heroMv 1s cubic-bezier(.2,.7,.2,1) .2s both; }
+  @media (max-width: 760px) {
+    .hero-in { padding: 22px 16px 30px; gap: 22px; }
+    .hero-mv { order: -1; flex-basis: 100%; }
+    .hero-h { font-size: 27px; margin-top: 10px; }
+    .hero-p { font-size: 14px; margin-top: 12px; }
+    .hero-btn { margin-top: 18px; }
+  }
+  /* スクロールで、ふわっと出る */
+  html.js .home .rv { opacity: 0; transform: translateY(30px); transition: opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  html.js .home .rv.in { opacity: 1; transform: none; }
+  html.js .home .rvh:after { transform: scaleX(0); transition: transform .8s cubic-bezier(.2,.7,.2,1) .25s; }
+  html.js .home .rvh.in:after { transform: scaleX(1); }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .home .rv { opacity: 1; transform: none; transition: none; }
+    html.js .home .rvh:after { transform: none; transition: none; }
+    .hero-k, .hero-h span, .hero-p, .hero-btn, .hero-n, .hero-mv { animation: none; }
+    .home a[style*="background: #C2273F"]:before, .btn-main:before { animation: none; display: none; }
+  }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -232,9 +302,9 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 </head>
 <body>
 <!-- ===== 1. 黒ユーティリティバー ===== -->
-  <div class="dk" style="background: #000000; padding: 11px 0;">
+  <div id="ubar" class="dk" style="background: #000000; padding: 11px 0;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; gap: 0 20px; align-items: center;">
-      <a href="column/framework-intro.html" style="font-size: 12px; font-weight: 700;">住宅営業登竜門とは</a>
+      <a href="framework-intro.html" style="font-size: 12px; font-weight: 700;">住宅営業登竜門とは</a>
       <span style="color: #4A4A4A; font-size: 12px;">|</span>
       <a href="../corporate.html" style="font-size: 12px; font-weight: 700;">法人での導入</a>
       <span style="color: #4A4A4A; font-size: 12px;">|</span>
@@ -257,10 +327,10 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
         <span style="display: block; margin-top: 5px; font-size: 12px; line-height: 1.7; color: #5C5C5C;">コラム／住宅市場レポート／セミナー／動画講座</span>
       </p>
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; min-width: 0;">
-        <form style="display: flex; align-items: center; gap: 9px; border-bottom: 1px solid #C4C4C4; padding: 7px 2px;">
+        <form action="/toryumon/column/" method="get" role="search" style="display: flex; align-items: center; gap: 9px; border-bottom: 1px solid #C4C4C4; padding: 7px 2px;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8A8A" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
           <label for="q-top" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">サイト内を検索</label>
-          <input id="q-top" type="search" placeholder="悩み・キーワードで探す" style="border: 0; outline: 0; font-size: 13px; font-family: 'Zen Kaku Gothic New', sans-serif; width: 160px; max-width: 100%; min-width: 0; background: transparent; color: #111111;">
+          <input id="q-top" name="q" type="search" enterkeyhint="search" placeholder="悩み・キーワードで探す" style="border: 0; outline: 0; font-size: 13px; font-family: 'Zen Kaku Gothic New', sans-serif; width: 160px; max-width: 100%; min-width: 0; background: transparent; color: #111111;">
         </form>
         <a href="../#mailmag" style="font-size: 13px; font-weight: 700;">メルマガ登録</a>
         <a href="../#contact" style="background: #C2273F; color: #FFFFFF; font-size: 13px; font-weight: 700; padding: 11px 24px;">導入のご相談</a>
@@ -269,7 +339,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   </header>
 
   <!-- ===== 3. 黒ナビ ===== -->
-  <nav class="dk" aria-label="メインナビゲーション" style="background: #000000; padding: 13px 0;">
+  <nav id="gnav" class="dk" aria-label="メインナビゲーション" style="background: #000000; padding: 13px 0;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px;">
       <a href="./" style="display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: #E8596E;">
         <span style="width: 8px; height: 8px; background: #E8596E; border-radius: 50%;"></span>新着
@@ -520,7 +590,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
             <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">営業が強くなる特別コラムを<br>メールでお届けします</p>
             <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。登録は無料です。</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #E8A33D; color: #111111; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">無料で登録する ›</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">メルマガに登録して受け取る ›</a>
             <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
         </aside>
