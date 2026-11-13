@@ -352,6 +352,35 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     .gn:after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 30px; background: linear-gradient(90deg, rgba(251,248,241,0), #FBF8F1); pointer-events: none; }
   }
   @media (prefers-reduced-motion: reduce) { .gn-new i { animation: none; } }
+
+  /* ===================== 紺 × 金（動画講座のバナーと同じ色に） ===================== */
+  .hero { background: radial-gradient(120% 150% at 82% 0%, #1D469A 0%, #12306E 34%, #0B1B45 66%, #070F28 100%); border-bottom: 3px solid #C9962E; }
+  .hero:before, .hero:after, .home section.grad:before { height: 150px; opacity: .8;
+    background: linear-gradient(180deg, transparent 0 6%, rgba(232,184,74,.9) 6% 8.5%, transparent 8.5% 20%, rgba(255,226,150,.95) 20% 33%, rgba(201,150,46,.55) 33% 37%, transparent 37% 52%, rgba(232,184,74,.8) 52% 54%, transparent 54% 66%, rgba(255,226,150,.5) 66% 71%, transparent 71% 88%, rgba(232,184,74,.7) 88% 89.5%, transparent 89.5%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.25) 18%, #000 42%, rgba(0,0,0,.6) 60%, transparent 82%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.25) 18%, #000 42%, rgba(0,0,0,.6) 60%, transparent 82%);
+    transform: rotate(-24deg); filter: blur(.4px); }
+  .hero:before { right: -300px; top: 10px; width: 900px; }
+  .hero:after { left: -420px; bottom: -40px; width: 820px; opacity: .45; }
+  .hero-mv video { border: 1px solid rgba(255,226,150,.75); box-shadow: 0 30px 70px rgba(3,8,24,.7), 0 0 0 8px rgba(255,226,150,.07); background: #0A1430; }
+  .hero-k { color: #F0CB6A; }
+  .hero-h em { color: #FFD56B; }
+  .hero-p { color: #D5DCEC; }
+  .hero-n { color: #A9B4CC; }
+  .home .grad { background-color: #0B1B45 !important; background-image: radial-gradient(120% 150% at 85% 0%, #1D469A 0%, #12306E 36%, #0B1B45 68%, #070F28 100%) !important; }
+  .home section.grad:before { right: -340px; top: 0; width: 860px; opacity: .55; }
+  .home .prog { border-color: rgba(255,226,150,.35) !important; background: rgba(255,255,255,.04); }
+  .home .prog:hover { background: #F0CB6A !important; color: #0B1B45 !important; border-color: #F0CB6A !important; }
+  .home .prog:hover * { color: #0B1B45 !important; }
+  .tick { background: #070F28; border-bottom: 1px solid rgba(240,203,106,.45); }
+  .tick a { color: #E6ECF8 !important; }
+  .tick a:hover { color: #F0CB6A !important; }
+  .tbar { background: #070F28; }
+  .tbar-c { color: #B9C3DA; }
+  .home footer { background: #070F28 !important; }
+  @media (max-width: 760px) {
+    .hero:before { right: -520px; top: -30px; opacity: .7; }
+    .hero:after { left: -560px; bottom: -60px; opacity: .35; }
+  }
 </style>
 </head>
 <body class="home">
