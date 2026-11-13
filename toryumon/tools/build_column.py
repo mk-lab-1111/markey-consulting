@@ -499,7 +499,7 @@ def article_page(a, arts, css, head_html, foot_html):
 {"@context":"https://schema.org","@type":"Article",
  "headline":%s,"description":%s,"url":%s,
  "datePublished":"%s","dateModified":"%s","inLanguage":"ja",
- "author":{"@type":"Person","name":"鶴田 槙人"},
+ "author":{"@type":"Organization","name":"MARKEY CONSULTING","url":"https://markey-consulting.com/"},
  "publisher":{"@type":"Organization","name":"住宅営業登竜門"},
  "mainEntityOfPage":{"@type":"WebPage","@id":%s}}
 </script>
@@ -547,9 +547,9 @@ def article_page(a, arts, css, head_html, foot_html):
 %s%s
       <section style="margin-top: 48px; border-top: 2px solid #111111; padding-top: 28px; display: flex; flex-wrap: wrap; gap: 26px; align-items: flex-start;">
         <div style="flex: 1 1 320px; min-width: 0;">
-          <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8A8A8A;">AUTHOR</p>
-          <p style="margin-top: 8px; font-size: 20px; font-weight: 900;">鶴田 槙人<span style="font-size: 13px; font-weight: 400; color: #5C5C5C; margin-left: 12px;">MARKEY CONSULTING 代表</span></p>
-          <p style="margin-top: 12px; font-size: 14px; line-height: 1.95; color: #333333;">住宅会社の営業力強化・育成の仕組み構築を専門とするコンサルタント。年商10億から1,300億規模まで、新築部門の立ち上げ、業績回復、販売戦略構築を支援。</p>
+          <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8A8A8A;">監修</p>
+          <p style="margin-top: 8px; font-size: 20px; font-weight: 900;">MARKEY CONSULTING</p>
+          <p style="margin-top: 12px; font-size: 14px; line-height: 1.95; color: #333333;">住宅会社の営業力強化・育成の仕組み構築を専門とするコンサルティング事業。年商10億から1,300億規模まで、新築部門の立ち上げ、業績回復、販売戦略構築を支援。</p>
         </div>
       </section>
     </article>
