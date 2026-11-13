@@ -204,6 +204,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   .hero-p { animation-delay: .55s; } .hero-btn { animation-delay: .7s; } .hero-n { animation-delay: .8s; }
   .hero-mv { animation: heroMv 1s cubic-bezier(.2,.7,.2,1) .2s both; }
   @media (max-width: 760px) {
+    #vc { order: -1; padding-top: 22px !important; }
     .hero-in { padding: 22px 16px 30px; gap: 22px; }
     .hero-mv { order: -1; flex-basis: 100%; }
     .hero-h { font-size: 27px; margin-top: 10px; }
@@ -222,6 +223,74 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     .hero-k, .hero-h span, .hero-p, .hero-btn, .hero-n, .hero-mv { animation: none; }
     .home a[style*="background: #C2273F"]:before, .btn-main:before { animation: none; display: none; }
   }
+
+  /* ===================== 新デザイン（和紙 × 黒 × 金） ===================== */
+  body.home { background: #F5EFE3; background-image: radial-gradient(rgba(150,120,70,.07) 1px, transparent 1.2px); background-size: 6px 6px; color: #1A1613; }
+  .home header { background-color: #FBF8F1 !important; }
+  .home .en { letter-spacing: .26em !important; }
+  /* 見出し：大きく、明朝、左に金の印 */
+  .home section h2 { font-size: 34px !important; line-height: 1.45 !important; color: #1A1613; }
+  .home .dk h2, .home .grad h2 { color: #FFFFFF !important; }
+  .home section > div > div[style*="border-bottom: 2px solid"] { border-bottom-width: 1px !important; border-bottom-color: rgba(26,22,19,.25) !important; padding-bottom: 20px !important; }
+  .home .dk section > div > div[style*="border-bottom: 2px solid"], .home section.dk > div > div[style*="border-bottom: 2px solid"] { border-bottom-color: rgba(255,255,255,.3) !important; }
+  .home section > div > div[style*="border-bottom: 2px solid"] p.en:first-child { color: #B8811C !important; }
+  .home section > div > div[style*="border-bottom: 2px solid"] p.en:first-child:before { content: ""; display: inline-block; width: 26px; height: 2px; margin-right: 10px; vertical-align: middle; background: #C9962E; }
+  /* セクションの区切り */
+  .home section[style*="border-bottom: 1px solid #D4D4D4"] { border-bottom: 0 !important; position: relative; }
+  .home section[style*="padding: 52px 0 58px"] { padding: 84px 0 88px !important; }
+  .home section[style*="padding: 52px 0 58px"] + section[style*="padding: 52px 0 58px"]:before { content: "◆"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #C9962E; letter-spacing: 0; }
+  /* 線を温かい色に */
+  .home [style*="1px solid #D4D4D4"] { border-color: #E3D7C1 !important; }
+  .home [style*="border-top: 1px solid #111111"], .home [style*="border-bottom: 1px solid #111111"] { border-color: rgba(26,22,19,.35) !important; }
+  /* 紺の帯 → 黒と金 */
+  .home .grad { background-color: #14110E !important; background-image: radial-gradient(120% 140% at 85% 0%, #3A2A12 0%, #1B1612 45%, #0D0B09 100%) !important; position: relative; overflow: hidden; }
+  .home section.grad:before { content: ""; position: absolute; right: -380px; top: -80px; width: 900px; height: 180px; opacity: .35; pointer-events: none; transform: rotate(-38deg);
+    background: linear-gradient(180deg, transparent 0 10%, #E8B84A 10% 22%, transparent 22% 30%, #C9962E 30% 55%, transparent 55% 62%, #E8B84A 62% 70%, transparent 70%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%, #000 60%, transparent); mask-image: linear-gradient(90deg, transparent, #000 30%, #000 60%, transparent); }
+  .home section.grad > div { position: relative; z-index: 1; }
+  .home .grad [style*="color: #E8A33D"] { color: #E8B84A !important; }
+  .home .prog { border-color: rgba(232,184,74,.35) !important; background: rgba(255,255,255,.03); }
+  .home .prog:hover { background: #E8B84A !important; color: #14110E !important; border-color: #E8B84A !important; }
+  .home .prog:hover * { color: #14110E !important; }
+  /* カード：白い紙を浮かせる */
+  .home .lead[style*="border: 1px solid #111111"], .home .lead[style*="border: 2px solid #111111"], .home div[style*="border: 2px solid #111111"] { border: 0 !important; background: #FFFFFF; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 18px 40px -18px rgba(90,60,20,.35); }
+  .home .lead[style*="border: 1px solid #111111"]:hover { transform: translateY(-4px); box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 26px 50px -18px rgba(90,60,20,.45); }
+  .home #tools [style*="border: 1px solid #D4D4D4; background: #FFFFFF"] { border: 0 !important; box-shadow: 0 18px 40px -20px rgba(90,60,20,.4); transition: transform .25s ease, box-shadow .25s ease; }
+  .home #tools [style*="border: 1px solid #D4D4D4; background: #FFFFFF"]:hover { transform: translateY(-6px) rotate(-.4deg); box-shadow: 0 28px 50px -20px rgba(90,60,20,.5); }
+  /* 一覧の行：左から金の線 */
+  .home a.row { position: relative; }
+  .home a.row:before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #C9962E; transform: scaleY(0); transform-origin: top; transition: transform .25s ease; }
+  .home a.row:hover { background: rgba(255,255,255,.7) !important; }
+  .home a.row:hover:before { transform: scaleY(1); }
+  .home .tag { background: #FFFFFF; border-color: #E3D7C1 !important; border-radius: 999px; }
+  .home .tag:hover { background: #1A1613 !important; color: #E8B84A !important; border-color: #1A1613 !important; }
+  /* 写真：ゆっくり寄る */
+  .home a.lead { overflow: hidden; }
+  .home a.lead img { transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .3s ease; }
+  .home a.lead:hover img { transform: scale(1.04); }
+  /* 動画講座のバナー枠：赤い太枠 → 金の細枠と影 */
+  .home #vc > div[style*="border: 5px solid #C2273F"] { border: 1px solid #C9962E !important; background: #FFFFFF; box-shadow: 0 0 0 6px #FFFFFF, 0 0 0 7px rgba(201,150,46,.45), 0 24px 50px -22px rgba(90,60,20,.45); position: relative; }
+  .home #vc > div[style*="border: 5px solid #C2273F"]:before { content: "PICK UP"; position: absolute; top: -13px; left: 18px; background: #C2273F; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .2em; padding: 4px 12px; }
+  .home .top3 { border-bottom: 0 !important; }
+  .home .top3 [style*="border-right: 1px solid #D4D4D4"] { border-right-color: #E3D7C1 !important; }
+  /* 流れるキーワードの帯 */
+  .tick { background: #14110E; border-bottom: 1px solid rgba(232,184,74,.4); overflow: hidden; white-space: nowrap; }
+  .tick-in { display: inline-flex; animation: tick 60s linear infinite; }
+  .tick:hover .tick-in { animation-play-state: paused; }
+  .tick-row { display: inline-flex; align-items: center; padding: 14px 0; }
+  .tick a { color: #F2E6CC !important; font-size: 15px; font-weight: 700; padding: 0 18px; transition: color .2s ease; }
+  .tick a:hover { color: #E8B84A !important; }
+  .tick i { color: #C9962E; font-style: normal; font-size: 9px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* フッター */
+  .home footer { background: #0D0B09 !important; border-top: 3px solid #C9962E; }
+  @media (max-width: 760px) {
+    .home section h2 { font-size: 25px !important; }
+    .home section[style*="padding: 52px 0 58px"] { padding: 54px 0 58px !important; }
+    .tick a { font-size: 14px; padding: 0 14px; }
+    .tick-row { padding: 12px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .tick-in { animation: none; } }
 </style>
 </head>
 <body class="home">
@@ -335,7 +404,12 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   </section>
 
   <!-- ===== 5. トップ 3カラム ===== -->
-  <section style="border-bottom: 2px solid #111111;">
+  <!-- ===== 4c. キーワードの帯（流れる） ===== -->
+  <div class="tick" aria-label="キーワードで探す">
+    <div class="tick-in"><div class="tick-row"><a href="column/?q=初回接客">#初回接客</a><i>◆</i><a href="column/?q=ヒアリング">#ヒアリング</a><i>◆</i><a href="column/?q=高いと言われたら">#高いと言われたら</a><i>◆</i><a href="column/?q=値引き">#値引き</a><i>◆</i><a href="column/?q=検討します">#検討します</a><i>◆</i><a href="column/?q=追客">#追客</a><i>◆</i><a href="column/?q=アポイント">#アポイント</a><i>◆</i><a href="column/?q=再来場">#再来場</a><i>◆</i><a href="column/?q=クロージング">#クロージング</a><i>◆</i><a href="column/?q=小さなYES">#小さなYES</a><i>◆</i><a href="column/?q=失注分析">#失注分析</a><i>◆</i><a href="column/?q=勝ちパターン">#勝ちパターン</a><i>◆</i><a href="column/?q=他社比較">#他社比較</a><i>◆</i><a href="column/?q=紹介">#紹介</a><i>◆</i><a href="column/?q=家族">#家族</a><i>◆</i><a href="column/?q=親ハードル">#親ハードル</a><i>◆</i><a href="column/?q=傾聴">#傾聴</a><i>◆</i><a href="column/?q=土地案内">#土地案内</a><i>◆</i><a href="column/?q=KPI">#KPI</a><i>◆</i><a href="column/?q=自信">#自信</a><i>◆</i></div><div class="tick-row" aria-hidden="true"><a tabindex="-1" href="column/?q=初回接客">#初回接客</a><i>◆</i><a tabindex="-1" href="column/?q=ヒアリング">#ヒアリング</a><i>◆</i><a tabindex="-1" href="column/?q=高いと言われたら">#高いと言われたら</a><i>◆</i><a tabindex="-1" href="column/?q=値引き">#値引き</a><i>◆</i><a tabindex="-1" href="column/?q=検討します">#検討します</a><i>◆</i><a tabindex="-1" href="column/?q=追客">#追客</a><i>◆</i><a tabindex="-1" href="column/?q=アポイント">#アポイント</a><i>◆</i><a tabindex="-1" href="column/?q=再来場">#再来場</a><i>◆</i><a tabindex="-1" href="column/?q=クロージング">#クロージング</a><i>◆</i><a tabindex="-1" href="column/?q=小さなYES">#小さなYES</a><i>◆</i><a tabindex="-1" href="column/?q=失注分析">#失注分析</a><i>◆</i><a tabindex="-1" href="column/?q=勝ちパターン">#勝ちパターン</a><i>◆</i><a tabindex="-1" href="column/?q=他社比較">#他社比較</a><i>◆</i><a tabindex="-1" href="column/?q=紹介">#紹介</a><i>◆</i><a tabindex="-1" href="column/?q=家族">#家族</a><i>◆</i><a tabindex="-1" href="column/?q=親ハードル">#親ハードル</a><i>◆</i><a tabindex="-1" href="column/?q=傾聴">#傾聴</a><i>◆</i><a tabindex="-1" href="column/?q=土地案内">#土地案内</a><i>◆</i><a tabindex="-1" href="column/?q=KPI">#KPI</a><i>◆</i><a tabindex="-1" href="column/?q=自信">#自信</a><i>◆</i></div></div>
+  </div>
+
+  <section class="top3" style="border-bottom: 2px solid #111111;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px;">
       <div style="display: flex; flex-wrap: wrap;">
 
@@ -421,7 +495,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
         </div>
 
         <!-- 中：動画講座 -->
-        <div hidden data-hide="重複" style="flex: 2 1 320px; min-width: 0; padding: 30px 32px 36px; border-right: 1px solid #D4D4D4; display: flex; flex-direction: column;">
+        <div id="vc" style="flex: 2 1 320px; min-width: 0; padding: 30px 32px 36px; border-right: 1px solid #D4D4D4; display: flex; flex-direction: column;">
           <div style="border: 5px solid #C2273F; padding: 18px; margin-bottom: 30px;">
           <a href="../toryumon-lp/" style="display: block;">
             <img src="assets/video-course.jpg" alt="住宅営業登竜門 動画講座 — トップセールスのフレームワークを体系的に動画講座で学べる。全16プログラム、100本以上の動画（1本10〜15分）。" style="display: block; width: 100%; height: auto;">
@@ -439,7 +513,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <li style="border-bottom: 1px solid #D4D4D4;"><a href="../toryumon-lp/" class="row" style="display: flex; gap: 13px; align-items: baseline; padding: 9px 4px;"><span class="en" style="flex: 0 0 auto; width: 22px; font-size: 12px; font-weight: 800; color: #C2273F;">06</span><span style="font-size: 13px; font-weight: 700; line-height: 1.6;">土地研修</span></a></li>
           </ol>
           <a href="#video" style="display: block; margin-top: 12px; text-align: right; font-size: 13px; font-weight: 700;">全16プログラムを見る ›</a>
-          <a href="../toryumon-lp/" style="display: block; margin-top: 14px; background: #C2273F; color: #FFFFFF; text-align: center; padding: 14px; font-size: 13px; font-weight: 700;">詳細を見る</a>
+          <a href="../toryumon-lp/" style="display: block; margin-top: 14px; background: #C2273F; color: #FFFFFF; text-align: center; padding: 16px; font-size: 15px; font-weight: 900;">動画講座の詳細を見る ›</a>
           </div>
 
           <!-- 住宅市場レポート バナー -->
