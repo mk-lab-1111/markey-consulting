@@ -80,6 +80,48 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     header form { flex: 1 1 180px; }
   }
 
+
+  /* ===== スマホ表示（760px以下） ===== */
+  @media (max-width: 760px) {
+    body { -webkit-text-size-adjust: 100%; }
+    /* 左右の余白と上下のリズム */
+    [style*="max-width: 1420px"] { padding-left: 16px !important; padding-right: 16px !important; }
+    section[style*="padding: 52px 0 58px"] { padding-top: 34px !important; padding-bottom: 38px !important; }
+    section[style*="padding: 56px 0"] { padding-top: 38px !important; padding-bottom: 40px !important; }
+    /* 見出し：大きすぎる文字を小さく */
+    h2[style*="font-size: 38px"] { font-size: 23px !important; line-height: 1.5 !important; letter-spacing: 0 !important; }
+    h2[style*="font-size: 30px"] { font-size: 22px !important; line-height: 1.5 !important; }
+    h3[style*="font-size: 27px"] { font-size: 22px !important; }
+    h3[style*="font-size: 22px"] { font-size: 19px !important; }
+    h3[style*="font-size: 21px"], h3[style*="font-size: 20px"] { font-size: 18px !important; }
+    p[style*="font-size: 22px"] { font-size: 19px !important; }
+    /* 小さすぎる文字を読みやすく */
+    p[style*="font-size: 12px"] { font-size: 13px !important; }
+    p[style*="font-size: 13px"] { font-size: 14px !important; line-height: 1.85 !important; }
+    p[style*="font-size: 14px"] { font-size: 15px !important; }
+    p[style*="font-size: 15px"] { font-size: 15px !important; line-height: 1.9 !important; }
+    /* 縦に並べる：2列・3列・4列の表組みをやめる */
+    [style*="repeat(2, minmax(0, 1fr))"], [style*="repeat(3, minmax(0, 1fr))"] { grid-template-columns: minmax(0, 1fr) !important; }
+    [style*="repeat(4, minmax(0, 1fr))"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+    /* 列を区切る縦線とすき間を外す */
+    [style*="border-right: 1px solid #D4D4D4"] { border-right: 0 !important; }
+    [style*="flex: 3 1 480px"], [style*="flex: 2 1 320px"] { padding-left: 0 !important; padding-right: 0 !important; }
+    [style*="flex: 1 1 420px"][style*="border-right"] { border-right: 0 !important; padding: 0 0 30px !important; margin-bottom: 30px !important; border-bottom: 1px solid rgba(255,255,255,0.22); }
+    #contact { padding: 0 !important; }
+    /* 写真は大きすぎないように */
+    img[src="assets/hero-article.jpg"] { height: 200px !important; }
+    img[src="profile.jpg"] { width: 120px !important; height: 148px !important; }
+    img[src="assets/video-course.jpg"] { height: auto !important; }
+    /* フレームワークの行：ラベルを上、題名を下に */
+    span[style*="min-width: 172px"] { min-width: 100% !important; }
+    a.row[style*="flex: 1 1 190px"] { flex-basis: 100% !important; padding-left: 4px !important; padding-right: 4px !important; border-bottom: 1px solid #D4D4D4; }
+    /* ボタンは押しやすく */
+    a[style*="padding: 15px 44px"], a[style*="padding: 13px 28px"] { display: block !important; text-align: center; }
+    [style*="min-width: 190px"][style*="border-right"] { min-width: 0 !important; width: 100% !important; flex: 1 1 100% !important; border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,0.22); padding: 20px 20px !important; flex-direction: row !important; gap: 10px; justify-content: flex-start !important; align-items: baseline !important; }
+    /* ヘッダー */
+    header a[href="./"] img, header a[href="../"] img { width: 230px !important; max-width: 72% !important; }
+  }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -162,6 +204,22 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     header form { flex: 1 1 180px; }
   }
   .flt.on { background: #111111; color: #FFFFFF; border-color: #111111; }
+  @media (max-width: 640px) {
+    main.artwrap { padding: 0 0 40px !important; }
+    .colbox { padding: 18px 16px 34px !important; }
+    h1[style*="font-size: 30px"] { font-size: 21px !important; line-height: 1.55 !important; padding: 15px 16px !important; border-left-width: 6px !important; }
+    h1.bar { font-size: 21px !important; padding: 13px 14px !important; }
+    .bar { font-size: 18px !important; padding: 12px 14px !important; margin: 30px 0 14px !important; border-left-width: 6px !important; }
+    .art h2 { font-size: 18px !important; line-height: 1.55 !important; padding: 12px 14px !important; margin: 34px 0 16px !important; border-left-width: 6px !important; }
+    .art h3 { font-size: 17px !important; margin: 26px 0 12px !important; }
+    .art p, .art li { font-size: 15px !important; line-height: 1.85 !important; }
+    .art blockquote { padding: 13px 14px !important; }
+    .art blockquote p { font-size: 14.5px !important; line-height: 1.8 !important; }
+    p[style*="font-size: 13px"] { font-size: 14px !important; }
+    p[style*="font-size: 12px"], span[style*="font-size: 12px"] { font-size: 13px !important; }
+    figure img, .colbox img { max-width: 100% !important; height: auto !important; }
+    .sidebx { padding: 16px 16px !important; }
+  }
 
 </style>
 </head>
@@ -169,7 +227,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 <!-- ===== 1. 黒ユーティリティバー ===== -->
   <div class="dk" style="background: #000000; padding: 11px 0;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px; display: flex; flex-wrap: wrap; gap: 0 20px; align-items: center;">
-      <a href="../#about" style="font-size: 12px; font-weight: 700;">住宅営業登竜門とは</a>
+      <a href="column/framework-intro.html" style="font-size: 12px; font-weight: 700;">住宅営業登竜門とは</a>
       <span style="color: #4A4A4A; font-size: 12px;">|</span>
       <a href="../corporate.html" style="font-size: 12px; font-weight: 700;">法人での導入</a>
       <span style="color: #4A4A4A; font-size: 12px;">|</span>
@@ -455,11 +513,8 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
             <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">住宅市場レポートを<br>メールでお届けします</p>
             <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">金利・建材・競合・来場動向などの市場情報をメールで。登録は無料です。</p>
-            <form style="margin-top: 16px;">
-              <label for="mm-col" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">メールアドレス</label>
-              <input id="mm-col" type="email" placeholder="メールアドレス" style="width: 100%; border: 1px solid #4A4A4A; background: #000000; color: #FFFFFF; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; padding: 13px 14px;">
-              <button type="button" style="width: 100%; margin-top: 9px; border: 0; background: #C2273F; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 14px;">無料で登録する</button>
-            </form>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 14px; font-weight: 700; padding: 14px;">無料で登録する</a>
+            <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
         </aside>
 </div>
@@ -501,8 +556,8 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <ul style="display: flex; flex-direction: column; gap: 10px;">
             <li><a href="../../toryumon-lp/" style="font-size: 13px; color: #B8B8B8;">動画講座（個人）</a></li>
             <li><a href="../corporate.html" style="font-size: 13px; color: #B8B8B8;">動画講座（法人）</a></li>
-            <li><a href="../#other" style="font-size: 13px; color: #B8B8B8;">MARKEY CONSULTING</a></li>
-            <li><a href="../#other" style="font-size: 13px; color: #B8B8B8;">Sales Academy</a></li>
+            <li><a href="https://markey-consulting.com/" style="font-size: 13px; color: #B8B8B8;">MARKEY CONSULTING</a></li>
+            <li><a href="https://markey-consulting.com/sales-academy/" style="font-size: 13px; color: #B8B8B8;">Sales Academy</a></li>
             <li><a href="../#other" style="font-size: 13px; color: #B8B8B8;">営業AI事業</a></li>
           </ul>
         </div>
@@ -510,7 +565,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .16em; color: #E8A33D; margin-bottom: 14px;">サイトについて</p>
           <ul style="display: flex; flex-direction: column; gap: 10px;">
             <li><a href="../#profile" style="font-size: 13px; color: #B8B8B8;">運営者プロフィール</a></li>
-            <li><a href="#" data-todo="link" style="font-size: 13px; color: #B8B8B8;">相互リンク・掲載のご相談</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdgY0QqRMXgqjCKgWs0lFEXRMV4kaskAzkKoi3QMFxKAMdEOw/viewform" target="_blank" rel="noopener" style="font-size: 13px; color: #B8B8B8;">相互リンク・掲載のご相談</a></li>
             <li><a href="#" data-todo="link" style="font-size: 13px; color: #B8B8B8;">取材・メディア掲載</a></li>
             <li><a href="../#contact" style="font-size: 13px; color: #B8B8B8;">お問い合わせ</a></li>
             <li><a href="#" data-todo="link" style="font-size: 13px; color: #B8B8B8;">特定商取引法に基づく表記</a></li>

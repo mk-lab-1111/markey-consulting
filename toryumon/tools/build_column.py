@@ -243,11 +243,8 @@ def rail(arts, current=None):
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
             <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">住宅市場レポートを<br>メールでお届けします</p>
             <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">金利・建材・競合・来場動向などの市場情報をメールで。登録は無料です。</p>
-            <form style="margin-top: 16px;">
-              <label for="mm-col" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">メールアドレス</label>
-              <input id="mm-col" type="email" placeholder="メールアドレス" style="width: 100%%; border: 1px solid #4A4A4A; background: #000000; color: #FFFFFF; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; padding: 13px 14px;">
-              <button type="button" style="width: 100%%; margin-top: 9px; border: 0; background: #C2273F; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 14px;">無料で登録する</button>
-            </form>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 14px; font-weight: 700; padding: 14px;">無料で登録する</a>
+            <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
         </aside>
 """ % rows
@@ -336,6 +333,22 @@ EXTRA_CSS = """
     header form { flex: 1 1 180px; }
   }
   .flt.on { background: #111111; color: #FFFFFF; border-color: #111111; }
+  @media (max-width: 640px) {
+    main.artwrap { padding: 0 0 40px !important; }
+    .colbox { padding: 18px 16px 34px !important; }
+    h1[style*="font-size: 30px"] { font-size: 21px !important; line-height: 1.55 !important; padding: 15px 16px !important; border-left-width: 6px !important; }
+    h1.bar { font-size: 21px !important; padding: 13px 14px !important; }
+    .bar { font-size: 18px !important; padding: 12px 14px !important; margin: 30px 0 14px !important; border-left-width: 6px !important; }
+    .art h2 { font-size: 18px !important; line-height: 1.55 !important; padding: 12px 14px !important; margin: 34px 0 16px !important; border-left-width: 6px !important; }
+    .art h3 { font-size: 17px !important; margin: 26px 0 12px !important; }
+    .art p, .art li { font-size: 15px !important; line-height: 1.85 !important; }
+    .art blockquote { padding: 13px 14px !important; }
+    .art blockquote p { font-size: 14.5px !important; line-height: 1.8 !important; }
+    p[style*="font-size: 13px"] { font-size: 14px !important; }
+    p[style*="font-size: 12px"], span[style*="font-size: 12px"] { font-size: 13px !important; }
+    figure img, .colbox img { max-width: 100% !important; height: auto !important; }
+    .sidebx { padding: 16px 16px !important; }
+  }
 """
 
 

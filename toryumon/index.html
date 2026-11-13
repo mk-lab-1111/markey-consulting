@@ -102,6 +102,47 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     header form { flex: 1 1 180px; }
   }
 
+
+  /* ===== スマホ表示（760px以下） ===== */
+  @media (max-width: 760px) {
+    body { -webkit-text-size-adjust: 100%; }
+    /* 左右の余白と上下のリズム */
+    [style*="max-width: 1420px"] { padding-left: 16px !important; padding-right: 16px !important; }
+    section[style*="padding: 52px 0 58px"] { padding-top: 34px !important; padding-bottom: 38px !important; }
+    section[style*="padding: 56px 0"] { padding-top: 38px !important; padding-bottom: 40px !important; }
+    /* 見出し：大きすぎる文字を小さく */
+    h2[style*="font-size: 38px"] { font-size: 23px !important; line-height: 1.5 !important; letter-spacing: 0 !important; }
+    h2[style*="font-size: 30px"] { font-size: 22px !important; line-height: 1.5 !important; }
+    h3[style*="font-size: 27px"] { font-size: 22px !important; }
+    h3[style*="font-size: 22px"] { font-size: 19px !important; }
+    h3[style*="font-size: 21px"], h3[style*="font-size: 20px"] { font-size: 18px !important; }
+    p[style*="font-size: 22px"] { font-size: 19px !important; }
+    /* 小さすぎる文字を読みやすく */
+    p[style*="font-size: 12px"] { font-size: 13px !important; }
+    p[style*="font-size: 13px"] { font-size: 14px !important; line-height: 1.85 !important; }
+    p[style*="font-size: 14px"] { font-size: 15px !important; }
+    p[style*="font-size: 15px"] { font-size: 15px !important; line-height: 1.9 !important; }
+    /* 縦に並べる：2列・3列・4列の表組みをやめる */
+    [style*="repeat(2, minmax(0, 1fr))"], [style*="repeat(3, minmax(0, 1fr))"] { grid-template-columns: minmax(0, 1fr) !important; }
+    [style*="repeat(4, minmax(0, 1fr))"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+    /* 列を区切る縦線とすき間を外す */
+    [style*="border-right: 1px solid #D4D4D4"] { border-right: 0 !important; }
+    [style*="flex: 3 1 480px"], [style*="flex: 2 1 320px"] { padding-left: 0 !important; padding-right: 0 !important; }
+    [style*="flex: 1 1 420px"][style*="border-right"] { border-right: 0 !important; padding: 0 0 30px !important; margin-bottom: 30px !important; border-bottom: 1px solid rgba(255,255,255,0.22); }
+    #contact { padding: 0 !important; }
+    /* 写真は大きすぎないように */
+    img[src="assets/hero-article.jpg"] { height: 200px !important; }
+    img[src="profile.jpg"] { width: 120px !important; height: 148px !important; }
+    img[src="assets/video-course.jpg"] { height: auto !important; }
+    /* フレームワークの行：ラベルを上、題名を下に */
+    span[style*="min-width: 172px"] { min-width: 100% !important; }
+    a.row[style*="flex: 1 1 190px"] { flex-basis: 100% !important; padding-left: 4px !important; padding-right: 4px !important; border-bottom: 1px solid #D4D4D4; }
+    /* ボタンは押しやすく */
+    a[style*="padding: 15px 44px"], a[style*="padding: 13px 28px"] { display: block !important; text-align: center; }
+    [style*="min-width: 190px"][style*="border-right"] { min-width: 0 !important; width: 100% !important; flex: 1 1 100% !important; border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,0.22); padding: 20px 20px !important; flex-direction: row !important; gap: 10px; justify-content: flex-start !important; align-items: baseline !important; }
+    /* ヘッダー */
+    header a[href="./"] img, header a[href="../"] img { width: 230px !important; max-width: 72% !important; }
+  }
 </style>
 </head>
 <body>
@@ -170,8 +211,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 
       <span style="display: inline-flex; align-items: baseline; gap: 9px; background: #111111; padding: 8px 15px; flex-shrink: 0;">
         <span style="font-size: 12px; font-weight: 700; color: #FFFFFF;">公開コラム</span>
-        <span class="en" style="font-size: 13px; font-weight: 800; color: #FFFFFF;">[N] 本</span>
-        <span class="en" style="font-size: 12px; font-weight: 600; color: #2FA85F;">▲ [N]</span>
+        <span class="en" style="font-size: 13px; font-weight: 800; color: #FFFFFF;">20 本</span>
       </span>
 
       <span style="display: inline-flex; align-items: baseline; gap: 9px; background: #111111; padding: 8px 15px; flex-shrink: 0;">
@@ -195,10 +235,6 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
         <span style="font-size: 12px; font-weight: 700; color: #E8A33D;">#クロージング</span>
       </span>
 
-      <span style="display: inline-flex; align-items: baseline; gap: 9px; background: #111111; padding: 8px 15px; flex-shrink: 0;">
-        <span style="font-size: 12px; font-weight: 700; color: #FFFFFF;">note</span>
-        <span class="en" style="font-size: 13px; font-weight: 800; color: #FFFFFF;">[N] 本</span>
-      </span>
     </div>
   </section>
 
