@@ -239,11 +239,11 @@ def rail(arts, current=None):
             </a>
           </div>
 
-          <div class="dk grad" style="margin-top: 26px; padding: 26px 24px;">
+          <div class="dk" style="margin-top: 26px; padding: 26px 24px; background: #111111; border-top: 4px solid #E8A33D;">
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
-            <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">住宅市場レポートを<br>メールでお届けします</p>
-            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">金利・建材・競合・来場動向などの市場情報をメールで。登録は無料です。</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 14px; font-weight: 700; padding: 14px;">無料で登録する</a>
+            <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">営業が強くなる特別コラムを<br>メールでお届けします</p>
+            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。登録は無料です。</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #E8A33D; color: #111111; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">無料で登録する ›</a>
             <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
         </aside>

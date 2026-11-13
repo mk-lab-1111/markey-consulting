@@ -91,6 +91,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             background: #FFFFFF; color: #111111; }
   .rk-tab.rk-on { background: #111111; color: #FFFFFF; }
   [hidden] { display: none !important; }
+  @media (min-width: 761px) { .fw-arrow { display: none; } }
   img { max-width: 100%; }
   :focus-visible { outline: 3px solid #C2273F; outline-offset: 2px; }
   @media (max-width: 980px) {
@@ -127,9 +128,15 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     [style*="repeat(4, minmax(0, 1fr))"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
     /* 列を区切る縦線とすき間を外す */
     [style*="border-right: 1px solid #D4D4D4"] { border-right: 0 !important; }
-    [style*="flex: 3 1 480px"], [style*="flex: 2 1 320px"] { padding-left: 0 !important; padding-right: 0 !important; }
+    [style*="flex: 3 1 480px"], [style*="flex: 2 1 320px"], [style*="flex: 2 1 300px"] { padding-left: 0 !important; padding-right: 0 !important; }
+    /* 最新コラムの一覧：文字を小さめに */
+    a.row span[style*="font-size: 15px; font-weight: 700; line-height: 1.65"] { font-size: 14px !important; line-height: 1.6 !important; }
+    a.row span.en[style*="width: 52px"] { width: 42px !important; font-size: 11px !important; padding-top: 2px !important; }
+    a.row[style*="gap: 16px; padding: 14px 6px"] { gap: 10px !important; padding: 12px 4px !important; }
     [style*="flex: 1 1 420px"][style*="border-right"] { border-right: 0 !important; padding: 0 0 30px !important; margin-bottom: 30px !important; border-bottom: 1px solid rgba(255,255,255,0.22); }
     #contact { padding: 0 !important; }
+    /* 一番下のメルマガ・お問い合わせのボタン：横幅いっぱい、文字は中央 */
+    a[style*="padding: 16px 38px"], a[style*="padding: 16px 34px"] { flex: 1 1 100% !important; display: block !important; text-align: center !important; }
     /* 写真は大きすぎないように */
     img[src="assets/hero-article.jpg"] { height: 200px !important; }
     img[src="profile.jpg"] { width: 120px !important; height: 148px !important; }
@@ -243,6 +250,13 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 
         <!-- 左：主役 -->
         <div style="flex: 3 1 480px; min-width: 0; padding: 30px 32px 36px 0; border-right: 1px solid #D4D4D4; display: flex; flex-direction: column;">
+          <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 12px; margin-bottom: 18px; border-bottom: 2px solid #111111;">
+            <div>
+              <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #8A8A8A;">PICK UP</p>
+              <h2 style="margin-top: 7px; font-size: 22px;">注目のコラム</h2>
+            </div>
+            <a href="column/" style="font-size: 13px; font-weight: 700;">コラム一覧 ›</a>
+          </div>
           <a href="column/price-objection-takai.html" class="lead" style="display: block;">
             <img src="assets/hero-article.jpg" alt="商談で顧客に説明する住宅営業担当者" style="display: block; width: 100%; height: 360px; object-fit: cover;">
             <p style="margin-top: 7px; font-size: 11px; color: #8A8A8A; text-align: right;">写真：住宅営業登竜門</p>
@@ -391,11 +405,11 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           </div>
 
           <!-- マーキーレポート（メルマガ登録） -->
-          <div class="dk grad" style="margin-top: 26px; padding: 26px 24px;">
+          <div class="dk" style="margin-top: 26px; padding: 26px 24px; background: #111111; border-top: 4px solid #E8A33D;">
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
-            <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">住宅市場レポートを<br>メールでお届けします</p>
-            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">金利・建材・競合・来場動向などの市場情報をメールで。登録は無料です。</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #C2273F; color: #FFFFFF; text-align: center; font-size: 14px; font-weight: 700; padding: 14px;">無料で登録する</a>
+            <p style="margin-top: 12px; font-size: 19px; font-weight: 900; line-height: 1.55; color: #FFFFFF;">営業が強くなる特別コラムを<br>メールでお届けします</p>
+            <p style="margin-top: 12px; font-size: 13px; line-height: 1.85; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。登録は無料です。</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="display: block; margin-top: 16px; background: #E8A33D; color: #111111; text-align: center; font-size: 15px; font-weight: 900; padding: 15px;">無料で登録する ›</a>
             <p style="margin-top: 10px; font-size: 12px; line-height: 1.8; color: #B8B8B8;">登録特典：営業ツール5点セット（Excel）</p>
           </div>
 
@@ -413,26 +427,39 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   <!-- ===== 6. 5つの成約フレームワーク ===== -->
   <nav aria-label="5つの成約フレームワークから探す" style="border-bottom: 1px solid #D4D4D4;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px;">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; padding: 34px 0 12px; border-bottom: 2px solid #111111;">
+        <div>
+          <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #8A8A8A;">FRAMEWORK</p>
+          <h2 style="margin-top: 7px; font-size: 22px;">フレームワーク別コラム</h2>
+          <p style="margin-top: 6px; font-size: 13px; color: #5C5C5C;">5つの成約フレームワークから、テーマを選べます。</p>
+        </div>
+        <a href="column/" style="font-size: 13px; font-weight: 700;">コラム一覧 ›</a>
+      </div>
       <div style="display: flex; flex-wrap: wrap;">
         <a href="column/#mind" class="row" style="flex: 1 1 190px; display: flex; align-items: center; gap: 13px; padding: 20px 20px 20px 0; border-right: 1px solid #D4D4D4;">
           <span style="width: 4px; height: 30px; background: #111111; flex-shrink: 0;"></span>
           <span style="font-size: 15px; line-height: 1.5;"><strong style="font-weight: 900;">営業マインド</strong></span>
+          <span class="fw-arrow" style="margin-left: auto; font-size: 15px; font-weight: 700; color: #8A8A8A;">›</span>
         </a>
         <a href="column/#skill" class="row" style="flex: 1 1 190px; display: flex; align-items: center; gap: 13px; padding: 20px; border-right: 1px solid #D4D4D4;">
           <span style="width: 4px; height: 30px; background: #C2273F; flex-shrink: 0;"></span>
           <span style="font-size: 15px; line-height: 1.5;"><strong style="font-weight: 900;">営業知識・営業スキル</strong></span>
+          <span class="fw-arrow" style="margin-left: auto; font-size: 15px; font-weight: 700; color: #8A8A8A;">›</span>
         </a>
         <a href="column/#plan" class="row" style="flex: 1 1 190px; display: flex; align-items: center; gap: 13px; padding: 20px; border-right: 1px solid #D4D4D4;">
           <span style="width: 4px; height: 30px; background: #17547E; flex-shrink: 0;"></span>
           <span style="font-size: 15px; line-height: 1.5;"><strong style="font-weight: 900;">商談戦略</strong></span>
+          <span class="fw-arrow" style="margin-left: auto; font-size: 15px; font-weight: 700; color: #8A8A8A;">›</span>
         </a>
         <a href="column/#look" class="row" style="flex: 1 1 190px; display: flex; align-items: center; gap: 13px; padding: 20px; border-right: 1px solid #D4D4D4;">
           <span style="width: 4px; height: 30px; background: #7A5A10; flex-shrink: 0;"></span>
           <span style="font-size: 15px; line-height: 1.5;"><strong style="font-weight: 900;">アピアランス・トナリティ</strong></span>
+          <span class="fw-arrow" style="margin-left: auto; font-size: 15px; font-weight: 700; color: #8A8A8A;">›</span>
         </a>
         <a href="column/#mgmt" class="row" style="flex: 1 1 190px; display: flex; align-items: center; gap: 13px; padding: 20px 0 20px 20px;">
           <span style="width: 4px; height: 30px; background: #4A2E6E; flex-shrink: 0;"></span>
           <span style="font-size: 15px; line-height: 1.5;"><strong style="font-weight: 900;">顧客管理</strong></span>
+          <span class="fw-arrow" style="margin-left: auto; font-size: 15px; font-weight: 700; color: #8A8A8A;">›</span>
         </a>
       </div>
     </div>
@@ -946,13 +973,13 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   <section style="padding: 52px 0 58px; border-bottom: 1px solid #D4D4D4;">
     <div style="max-width: 1420px; margin: 0 auto; padding: 0 28px;">
       <div style="display: flex; flex-wrap: wrap; gap: 40px;">
-        <div style="flex: 2 1 560px; min-width: 0;">
+        <div hidden data-hide="未完成" style="flex: 2 1 560px; min-width: 0;">
           <div style="padding-bottom: 14px; border-bottom: 2px solid #111111;">
             <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #8A8A8A;">INDUSTRY</p>
             <h2 style="margin-top: 9px; font-size: 24px;">業界情報・参考リンク</h2>
           </div>
           <ul style="margin-top: 4px;">
-            <li style="border-bottom: 1px solid #D4D4D4;"><div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; padding: 16px 8px;"><span style="font-size: 15px; font-weight: 700; min-width: 190px;">新建ハウジング</span><span style="font-size: 13px; color: #5C5C5C;">工務店向け業界紙</span></div></li>
+            <li hidden data-hide="不要" style="border-bottom: 1px solid #D4D4D4;"><div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; padding: 16px 8px;"><span style="font-size: 15px; font-weight: 700; min-width: 190px;">新建ハウジング</span><span style="font-size: 13px; color: #5C5C5C;">工務店向け業界紙</span></div></li>
             <li hidden data-hide="未完成" style="border-bottom: 1px solid #D4D4D4;"><a href="#" data-todo="link" class="row" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; padding: 16px 8px;"><span style="font-size: 15px; font-weight: 700; min-width: 190px;">[媒体名]</span><span style="font-size: 13px; color: #5C5C5C;">[ひとこと説明]</span></a></li>
             <li hidden data-hide="未完成" style="border-bottom: 1px solid #D4D4D4;"><a href="#" data-todo="link" class="row" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; padding: 16px 8px;"><span style="font-size: 15px; font-weight: 700; min-width: 190px;">[媒体名]</span><span style="font-size: 13px; color: #5C5C5C;">[ひとこと説明]</span></a></li>
             <li hidden data-hide="未完成" style="border-bottom: 1px solid #D4D4D4;"><a href="#" data-todo="link" class="row" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; padding: 16px 8px;"><span style="font-size: 15px; font-weight: 700; min-width: 190px;">[媒体名]</span><span style="font-size: 13px; color: #5C5C5C;">[ひとこと説明]</span></a></li>
@@ -975,8 +1002,8 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 
         <div style="flex: 1 1 420px; min-width: 0; padding: 0 40px 0 0; border-right: 1px solid rgba(255,255,255,0.22);">
           <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">MAIL MAGAZINE</p>
-          <h2 style="margin-top: 12px; font-size: 30px; color: #FFFFFF; line-height: 1.5;">住宅市場レポートを<br>メールでお届けします</h2>
-          <p style="margin-top: 14px; font-size: 15px; line-height: 1.95; color: #B8B8B8;">金利・建材・競合・来場動向などの市場情報をメールで。<br>新しいコラムや資料の公開もあわせてご案内します。登録は無料です。<br>ご登録いただいた方には、営業ツール5点セット（Excel）をプレゼントします。</p>
+          <h2 style="margin-top: 12px; font-size: 30px; color: #FFFFFF; line-height: 1.5;">営業が強くなる特別コラムを<br>メールでお届けします</h2>
+          <p style="margin-top: 14px; font-size: 15px; line-height: 1.95; color: #B8B8B8;">メルマガ向けにアレンジした特別コラムと住宅市場レポートを、定期的にお送りします。<br>新しいコラムや資料の公開もあわせてご案内します。登録は無料です。<br>ご登録いただいた方には、営業ツール5点セット（Excel）をプレゼントします。</p>
           <div style="margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px;">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXdA2M9X1K752HWGvotF7mZeCLgl6GpLEEfQO9IqVgEXFgvA/viewform" target="_blank" rel="noopener" style="background: #C2273F; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 16px 38px;">無料で登録する ›</a>
             <a href="#tools" style="font-size: 13px; font-weight: 700; color: #E8A33D;">登録特典：営業ツール5点セットを見る ›</a>
@@ -986,7 +1013,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
         <div id="contact" style="flex: 1 1 420px; min-width: 0; padding: 0 0 0 40px;">
           <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #E8A33D;">CONTACT</p>
           <h2 style="margin-top: 12px; font-size: 30px; color: #FFFFFF; line-height: 1.5;">まずはお気軽に</h2>
-          <p style="margin-top: 14px; font-size: 15px; line-height: 1.95; color: #B8B8B8;">動画講座の導入のご相談、お見積り、<br>取材・掲載・提携のご依頼まで。ご質問だけでも構いません。</p>
+          <p style="margin-top: 14px; font-size: 15px; line-height: 1.95; color: #B8B8B8;">法人での導入、全体研修、コンサルティングのご希望などは、こちらからお問い合わせください。<br>お見積り、取材・掲載・提携のご依頼、ご質問だけでも構いません。</p>
           <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px;">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgY0QqRMXgqjCKgWs0lFEXRMV4kaskAzkKoi3QMFxKAMdEOw/viewform" target="_blank" rel="noopener" style="background: #FFFFFF; color: #111111; font-size: 15px; font-weight: 700; padding: 16px 34px;">お問い合わせフォーム</a>
             <a href="#tools" style="border: 1px solid #FFFFFF; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 16px 34px;">無料プレゼントを見る</a>
