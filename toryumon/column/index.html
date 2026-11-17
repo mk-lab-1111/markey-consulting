@@ -356,6 +356,15 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   @media (max-width: 760px) { .sp-only { display: inline; } .hero-mm { padding: 16px; } .hero-mm-h { font-size: 17px; } }
   @media (prefers-reduced-motion: reduce) { .hero-mm { animation: none; } }
 
+  /* 動画の「音を出す」ボタン */
+  .hero-mv { position: relative; }
+  .snd { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid rgba(255,226,150,.85); border-radius: 999px; background: rgba(7,15,40,.78); color: #FFFFFF; font-size: 14px; font-weight: 700; letter-spacing: .06em; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s ease; }
+  .snd:hover { background: rgba(7,15,40,.95); }
+  .snd .snd-on { display: none; }
+  .snd[aria-pressed="true"] .snd-on { display: inline; }
+  .snd[aria-pressed="true"] .snd-off { display: none; }
+  @media (max-width: 760px) { .snd { right: 10px; bottom: 10px; min-height: 40px; padding: 0 13px; font-size: 13px; } }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -538,21 +547,21 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     <section>
       <h2 class="bar">おすすめ記事</h2>
       <div class="g2">
-        <a href="closing-not-final-push.html" class="pick" style="display: block;">
-          <span style="display: block; text-align: center; font-size: 14px; line-height: 1.6; color: #444444; margin-bottom: 7px;">商談戦略</span>
-          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #17547E; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする</span>
+        <a href="aizuchi-variation.html" class="pick" style="display: block;">
+          <span style="display: block; text-align: center; font-size: 14px; line-height: 1.6; color: #444444; margin-bottom: 7px;">アピアランス・トナリティ</span>
+          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #7A5A10; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">相づちは「はい」だけにしない：聞いていることが伝わる返し方</span>
         </a>
-        <a href="competitor-response.html" class="pick" style="display: block;">
-          <span style="display: block; text-align: center; font-size: 14px; line-height: 1.6; color: #444444; margin-bottom: 7px;">商談戦略</span>
-          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #17547E; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する</span>
+        <a href="cleanliness-hands-feet.html" class="pick" style="display: block;">
+          <span style="display: block; text-align: center; font-size: 14px; line-height: 1.6; color: #444444; margin-bottom: 7px;">アピアランス・トナリティ</span>
+          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #7A5A10; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方</span>
         </a>
-        <a href="confidence-and-trust.html" class="pick" style="display: block;">
+        <a href="customer-and-company.html" class="pick" style="display: block;">
           <span style="display: block; text-align: center; font-size: 14px; line-height: 1.6; color: #444444; margin-bottom: 7px;">営業マインド</span>
-          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #E8A33D; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む</span>
+          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #E8A33D; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</span>
         </a>
-        <a href="contract-analysis.html" class="pick" style="display: block;">
-          <span style="display: block; text-align: center; font-size: 14px; line-height: 1.6; color: #444444; margin-bottom: 7px;">商談戦略</span>
-          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #17547E; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる</span>
+        <a href="customer-rank.html" class="pick" style="display: block;">
+          <span style="display: block; text-align: center; font-size: 14px; line-height: 1.6; color: #444444; margin-bottom: 7px;">顧客管理</span>
+          <span class="grad" style="display: flex; align-items: center; aspect-ratio: 4 / 3; padding: 20px 22px; border-left: 6px solid #4A2E6E; color: #FFFFFF; font-size: 19px; font-weight: 900; line-height: 1.55;">お客様のランク分け：「今すぐ」と「これから」で追客を変える</span>
         </a>
       </div>
     </section>
@@ -560,26 +569,26 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     <section>
       <h2 class="bar">最新記事・更新記事</h2>
       <ul class="dlist">
-        <li><span class="d">11/09</span><a href="closing-not-final-push.html">クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする</a></li>
-        <li><span class="d">11/09</span><a href="competitor-response.html">他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する</a></li>
-        <li><span class="d">11/09</span><a href="confidence-and-trust.html">お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む</a></li>
-        <li><span class="d">11/09</span><a href="contract-analysis.html">契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる</a></li>
-        <li><span class="d">11/09</span><a href="kpi-return-visits.html">受注は「再来場の回数」に比例する：10再来場で1契約をKPIにする</a></li>
-        <li><span class="d">11/09</span><a href="land-tour-advantage.html">土地案内は、差別化になる：イメージできないものは、お客様は買えない</a></li>
-        <li><span class="d">11/09</span><a href="listen-more-than-talk.html">営業は「話す仕事」ではなく「聞く仕事」：沈黙は、お客様の整理時間</a></li>
-        <li><span class="d">11/09</span><a href="lost-deal-analysis.html">失注を「縁がなかった」で終わらせない：当日3行で残す失注分析の基本</a></li>
-        <li><span class="d">11/09</span><a href="make-them-want.html">ハードルを外しても、欲しくなければ契約しない：「欲しい」を作る商談の考え方</a></li>
-        <li><span class="d">11/09</span><a href="referral-ask.html">紹介が出る営業は、契約日から動いている：一言の依頼を「仕組み」にする</a></li>
-        <li><span class="d">11/09</span><a href="standardize-top-sales.html">トップセールスの手法は、真似できる：要素分解して「型」にする</a></li>
-        <li><span class="d">11/09</span><a href="translate-to-benefit.html">性能は「お客様の得」に翻訳して伝える：お客様の言葉を、そのまま使う</a></li>
-        <li><span class="d">11/09</span><a href="whole-family.html">決定権者だけを見る営業は、契約を逃す：家は「家族全員」で決まる</a></li>
-        <li><span class="d">10/26</span><a href="appointment-sentakuhou.html">アポは「選択法」で取る：次回のアポを確実にする言い方とタイミング</a></li>
-        <li><span class="d">10/26</span><a href="first-contact-30sec.html">初回接客は最初の30秒で決まる：商品の前に「警戒」を解く</a></li>
-        <li><span class="d">10/26</span><a href="hearing-yoko-tate-naname.html">ヒアリングのコツは「横・縦・ななめ」：質問の順番を変えるだけで深く聞ける</a></li>
-        <li><span class="d">10/26</span><a href="kentou-shimasu.html">「検討します」と言われたときの対応：断り文句ではなく「まだ不安がある」という合図</a></li>
-        <li><span class="d">10/21</span><a href="appearance-style-or-pro.html">好きな髪型・服装と「住宅営業のプロの見た目」、どちらを優先すべきか</a></li>
-        <li><span class="d">10/21</span><a href="framework-intro.html">住宅営業の成約フレームワークとは：成果を生み出す5つの力</a></li>
-        <li><span class="d">10/21</span><a href="price-objection-takai.html">「高い」と言われたときの考え方：価格は断りやすい&quot;建前&quot;にすぎない</a></li>
+        <li><span class="d">11/17</span><a href="aizuchi-variation.html">相づちは「はい」だけにしない：聞いていることが伝わる返し方</a></li>
+        <li><span class="d">11/17</span><a href="cleanliness-hands-feet.html">清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方</a></li>
+        <li><span class="d">11/17</span><a href="customer-and-company.html">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</a></li>
+        <li><span class="d">11/17</span><a href="customer-rank.html">お客様のランク分け：「今すぐ」と「これから」で追客を変える</a></li>
+        <li><span class="d">11/17</span><a href="daily-reflection.html">成長は1日5分の振り返りから：日報を「自分のための記録」にする</a></li>
+        <li><span class="d">11/17</span><a href="goal-backward.html">目標は月の契約数から逆算する：今日やることを自分で決める</a></li>
+        <li><span class="d">11/17</span><a href="kotobazukai.html">言葉づかいで損をしない：「〜になります」「〜のほう」を見直す</a></li>
+        <li><span class="d">11/17</span><a href="meishi-posture.html">名刺の渡し方と立ち姿：言葉より先に伝わる所作</a></li>
+        <li><span class="d">11/17</span><a href="no-excuses.html">景気・商品・エリアのせいにしない：言い訳を手放すと、打つ手が見える</a></li>
+        <li><span class="d">11/17</span><a href="no-visitor-day.html">来場がない日の使い方：「待つ営業」から「準備する営業」へ</a></li>
+        <li><span class="d">11/17</span><a href="pacing-speed.html">話す速さは、お客様に合わせる：ペーシングの基本</a></li>
+        <li><span class="d">11/17</span><a href="phone-online-impression.html">電話・オンライン商談の印象：声と画面の映り方を整える</a></li>
+        <li><span class="d">11/17</span><a href="pride-in-housing.html">家づくりは、お客様の人生に関わる仕事：住宅営業の誇りと使命感</a></li>
+        <li><span class="d">11/17</span><a href="proposal-is-responsibility.html">提案は「売り込み」ではなく「責任」：勧めることを怖がらない</a></li>
+        <li><span class="d">11/17</span><a href="slow-for-important.html">大事なことほど、ゆっくり話す：強調は声の大きさではなく速さで</a></li>
+        <li><span class="d">11/17</span><a href="slump-keep-action.html">売れない時期こそ「行動の量」を守る：数字が出ないときの過ごし方</a></li>
+        <li><span class="d">11/17</span><a href="smile-practice.html">笑顔は練習で身につく：自然な表情のつくり方</a></li>
+        <li><span class="d">11/17</span><a href="sunao-try-advice.html">伸びる人は、まず素直に試す：上司・先輩の助言の受け取り方</a></li>
+        <li><span class="d">11/17</span><a href="thanks-same-day.html">来場当日のお礼連絡：記憶が新しいうちに、次につなげる</a></li>
+        <li><span class="d">11/17</span><a href="voice-tone-bright.html">声は「少し明るく」：第一印象を変える声のトーン</a></li>
       </ul>
     </section>
 
@@ -589,6 +598,15 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <div id="mind">
             <h3 class="subbar"><span style="width: 10px; height: 10px; background: #111111; flex-shrink: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.6);"></span>営業マインド</h3>
             <ul class="blist">
+              <li><a href="customer-and-company.html">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</a></li>
+              <li><a href="daily-reflection.html">成長は1日5分の振り返りから：日報を「自分のための記録」にする</a></li>
+              <li><a href="goal-backward.html">目標は月の契約数から逆算する：今日やることを自分で決める</a></li>
+              <li><a href="no-excuses.html">景気・商品・エリアのせいにしない：言い訳を手放すと、打つ手が見える</a></li>
+              <li><a href="no-visitor-day.html">来場がない日の使い方：「待つ営業」から「準備する営業」へ</a></li>
+              <li><a href="pride-in-housing.html">家づくりは、お客様の人生に関わる仕事：住宅営業の誇りと使命感</a></li>
+              <li><a href="proposal-is-responsibility.html">提案は「売り込み」ではなく「責任」：勧めることを怖がらない</a></li>
+              <li><a href="slump-keep-action.html">売れない時期こそ「行動の量」を守る：数字が出ないときの過ごし方</a></li>
+              <li><a href="sunao-try-advice.html">伸びる人は、まず素直に試す：上司・先輩の助言の受け取り方</a></li>
               <li><a href="confidence-and-trust.html">お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む</a></li>
             </ul>
           </div>
@@ -619,12 +637,23 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <div id="look">
             <h3 class="subbar"><span style="width: 10px; height: 10px; background: #7A5A10; flex-shrink: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.6);"></span>アピアランス・トナリティ</h3>
             <ul class="blist">
+              <li><a href="aizuchi-variation.html">相づちは「はい」だけにしない：聞いていることが伝わる返し方</a></li>
+              <li><a href="cleanliness-hands-feet.html">清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方</a></li>
+              <li><a href="kotobazukai.html">言葉づかいで損をしない：「〜になります」「〜のほう」を見直す</a></li>
+              <li><a href="meishi-posture.html">名刺の渡し方と立ち姿：言葉より先に伝わる所作</a></li>
+              <li><a href="pacing-speed.html">話す速さは、お客様に合わせる：ペーシングの基本</a></li>
+              <li><a href="phone-online-impression.html">電話・オンライン商談の印象：声と画面の映り方を整える</a></li>
+              <li><a href="slow-for-important.html">大事なことほど、ゆっくり話す：強調は声の大きさではなく速さで</a></li>
+              <li><a href="smile-practice.html">笑顔は練習で身につく：自然な表情のつくり方</a></li>
+              <li><a href="voice-tone-bright.html">声は「少し明るく」：第一印象を変える声のトーン</a></li>
               <li><a href="appearance-style-or-pro.html">好きな髪型・服装と「住宅営業のプロの見た目」、どちらを優先すべきか</a></li>
             </ul>
           </div>
           <div id="mgmt">
             <h3 class="subbar"><span style="width: 10px; height: 10px; background: #4A2E6E; flex-shrink: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.6);"></span>顧客管理</h3>
             <ul class="blist">
+              <li><a href="customer-rank.html">お客様のランク分け：「今すぐ」と「これから」で追客を変える</a></li>
+              <li><a href="thanks-same-day.html">来場当日のお礼連絡：記憶が新しいうちに、次につなげる</a></li>
               <li><a href="kpi-return-visits.html">受注は「再来場の回数」に比例する：10再来場で1契約をKPIにする</a></li>
               <li><a href="referral-ask.html">紹介が出る営業は、契約日から動いている：一言の依頼を「仕組み」にする</a></li>
               <li><a href="kentou-shimasu.html">「検討します」と言われたときの対応：断り文句ではなく「まだ不安がある」という合図</a></li>
@@ -637,27 +666,27 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <h2 style="font-size: 18px; line-height: 1.4; background: #333333; color: #FFFFFF; text-align: center; padding: 16px 12px;">最新コラム</h2>
           <ul style="margin-top: 14px;">
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="closing-not-final-push.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする</span>
+              <a href="aizuchi-variation.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">相づちは「はい」だけにしない：聞いていることが伝わる返し方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="competitor-response.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する</span>
+              <a href="cleanliness-hands-feet.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="confidence-and-trust.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む</span>
+              <a href="customer-and-company.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="contract-analysis.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる</span>
+              <a href="customer-rank.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">お客様のランク分け：「今すぐ」と「これから」で追客を変える</span>
               </a>
             </li>
           </ul>
@@ -695,7 +724,7 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 
 <script>
 (function () {
-  var A = [{"s": "closing-not-final-push", "t": "クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする", "d": "クロージングが苦手な方へ。押すのではなく、不安と迷いを一つずつ消していく考え方と、小さなYESを積み重ねる方法を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 クロージング 小さなYES 契約"}, {"s": "competitor-response", "t": "他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する", "d": "競合との比較で、他社を悪く言うのは逆効果です。事実を伝え、自社の考えを想いとして語る方法と、「他社の方が安い」と言われたときの対応を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 競合 他社比較 差別化"}, {"s": "confidence-and-trust", "t": "お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む", "d": "売れない原因が、スキルではなくマインドにあることがあります。自分が良いと思えない家は勧められない理由と、「任せてください」の一言の力を、トーク例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 自信 任せてください"}, {"s": "contract-analysis", "t": "契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる", "d": "失注だけでなく、契約を分析する重要性を解説します。契約分析でやる3つのこと、お客様に決め手を直接聞く方法を、トーク例とともに紹介します。", "f": "商談戦略", "k": "住宅営業 契約分析 勝ちパターン 振り返り"}, {"s": "kpi-return-visits", "t": "受注は「再来場の回数」に比例する：10再来場で1契約をKPIにする", "d": "住宅営業の受注を安定させるには、再来場の回数をKPIにすることが有効です。10再来場で1契約という指標と、行動を振り返る営業会議の進め方を解説します。", "f": "顧客管理", "k": "住宅営業 KPI 再来場 営業会議"}, {"s": "land-tour-advantage", "t": "土地案内は、差別化になる：イメージできないものは、お客様は買えない", "d": "土地バンクやポータルサイトが普及した今、土地案内をしない営業が多いからこそ、土地案内は差別化になります。お客様が判断できるようにイメージを作る方法を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 土地案内 差別化 イメージ"}, {"s": "listen-more-than-talk", "t": "営業は「話す仕事」ではなく「聞く仕事」：沈黙は、お客様の整理時間", "d": "トップ営業ほど説明が短く、質問が多い理由を解説します。話した時間より聞いた時間を増やす方法と、商談中の沈黙を怖がらなくてよい理由を、トーク例とともに紹介します。", "f": "営業知識・営業スキル", "k": "住宅営業 傾聴 沈黙 会話"}, {"s": "lost-deal-analysis", "t": "失注を「縁がなかった」で終わらせない：当日3行で残す失注分析の基本", "d": "住宅営業で失注を成長に変える方法を解説します。「縁がなかった」で片付けない理由と、失注当日に残す3行メモ、表向きの理由と本音を分けて書く方法を、記録例とともに紹介します。", "f": "商談戦略", "k": "住宅営業 失注分析 振り返り 商談記録"}, {"s": "make-them-want", "t": "ハードルを外しても、欲しくなければ契約しない：「欲しい」を作る商談の考え方", "d": "資金や土地の条件が整っても、お客様が欲しいと思わなければ契約には至りません。「欲しい」を作るために、営業が心がけることを、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 熱上げ クロージング 欲しい"}, {"s": "referral-ask", "t": "紹介が出る営業は、契約日から動いている：一言の依頼を「仕組み」にする", "d": "住宅営業で紹介が安定して出る人は、偶然ではなく、紹介が出るようにしています。契約時・引渡し時・アフター時に「ご紹介いただけませんか」を伝える方法を、トーク例とともに解説します。", "f": "顧客管理", "k": "住宅営業 紹介 アフター 顧客管理"}, {"s": "standardize-top-sales", "t": "トップセールスの手法は、真似できる：要素分解して「型」にする", "d": "トップセールスのやり方は独特で、真似できないと言われがちです。しかし、要素に分解してプロセスを再構成すれば、再現できます。流れの設計とロープレの進め方を解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 標準化 ロープレ 型"}, {"s": "translate-to-benefit", "t": "性能は「お客様の得」に翻訳して伝える：お客様の言葉を、そのまま使う", "d": "「高気密高断熱です」では、お客様の心は動きません。特徴をお客様の得に翻訳する方法と、お客様の言葉をそのまま使う理由を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 提案 翻訳 お客様の言葉"}, {"s": "whole-family", "t": "決定権者だけを見る営業は、契約を逃す：家は「家族全員」で決まる", "d": "住宅の契約は、ご主人様一人では決まりません。奥様、お子様、ご両親まで見据えた商談の進め方を、よくある失注パターンとトーク例で解説します。", "f": "商談戦略", "k": "住宅営業 家族 親ハードル 失注"}, {"s": "appointment-sentakuhou", "t": "アポは「選択法」で取る：次回のアポを確実にする言い方とタイミング", "d": "住宅営業で次回のアポが取れない原因は、聞き方とタイミングにあります。「いかがでしょうか」を「どちらが良いですか」に変える選択法と、アポを切り出すベストなタイミングを、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 アポイント 選択法 再来場"}, {"s": "first-contact-30sec", "t": "初回接客は最初の30秒で決まる：商品の前に「警戒」を解く", "d": "住宅営業の初回接客で、商品説明より先にやるべきことは、お客様の警戒を解くことです。最初の30秒の考え方と、「今日は決めなくて大丈夫ですよ」の使い方を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 初回接客 第一印象 警戒を解く"}, {"s": "hearing-yoko-tate-naname", "t": "ヒアリングのコツは「横・縦・ななめ」：質問の順番を変えるだけで深く聞ける", "d": "住宅営業のヒアリングは、質問の順番で深さが変わります。「横の質問」「縦の質問」「ななめの質問」の使い分けを、「広い家がほしい」を例に、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 ヒアリング 質問力 深掘り"}, {"s": "kentou-shimasu", "t": "「検討します」と言われたときの対応：断り文句ではなく「まだ不安がある」という合図", "d": "住宅営業で「検討します」と言われたとき、断られたと判断するのは早すぎます。この言葉の意味と、聞くべきこと、その後の追客の考え方を、トーク例とともに解説します。", "f": "顧客管理", "k": "住宅営業 検討します 追客 顧客管理"}, {"s": "appearance-style-or-pro", "t": "好きな髪型・服装と「住宅営業のプロの見た目」、どちらを優先すべきか", "d": "好きなファッションや髪型と、住宅営業としての見た目が相容れないとき、どちらを優先すべきか。研修で頻繁に受ける質問に、結論からお答えします。", "f": "アピアランス・トナリティ", "k": "アピアランス 身だしなみ 髪型 服装"}, {"s": "framework-intro", "t": "住宅営業の成約フレームワークとは：成果を生み出す5つの力", "d": "住宅営業の成果を決める5つの要素（営業マインド、営業知識・営業スキル、商談戦略、アピアランス・トナリティ、顧客管理）を、現場でよく見られる状況と受講者の事例とともに解説します。", "f": "成約フレームワーク", "k": "成約フレームワーク 住宅営業 営業力"}, {"s": "price-objection-takai", "t": "「高い」と言われたときの考え方：価格は断りやすい\"建前\"にすぎない", "d": "住宅営業で「高い」と言われたとき、値引きの前に疑うべきは価格ではなく価値の伝え方です。失注理由の「価格」を信じてはいけない理由と、「高い」への返し方を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 高いと言われたら 値引き 失注分析"}];
+  var A = [{"s": "aizuchi-variation", "t": "相づちは「はい」だけにしない：聞いていることが伝わる返し方", "d": "お客様の話を聞くとき、「はい」「はい」だけで返していませんか。相づちの種類を増やすと、お客様は「ちゃんと聞いてもらえている」と感じ、もっと話してくれるようになります。相づちの使い分けを、トーク例とともに解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 トナリティ 相づち 傾聴"}, {"s": "cleanliness-hands-feet", "t": "清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方", "d": "服装や髪型は整えていても、靴や爪、持ち物まで気を配れているでしょうか。住宅営業の清潔感は、足元と手元で決まります。見られやすいポイントと、毎日の点検のしかたを解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 アピアランス 清潔感 身だしなみ"}, {"s": "customer-and-company", "t": "「お客様のため」と「会社のため」は両立する：契約を迷わない考え方", "d": "契約をお願いするとき、「会社のために売っているのでは」と迷う営業の方へ。お客様の役に立つことと、会社の利益は、対立するものではありません。両立させる考え方と、迷わないための基準を解説します。", "f": "営業マインド", "k": "住宅営業 マインド 契約 迷い"}, {"s": "customer-rank", "t": "お客様のランク分け：「今すぐ」と「これから」で追客を変える", "d": "すべてのお客様に、同じように連絡していませんか。家づくりの時期や進み具合でお客様を分けると、連絡のしかたと回数を変えられます。ランク分けの考え方と、ランクごとの追客の例を解説します。", "f": "顧客管理", "k": "住宅営業 顧客管理 ランク分け 追客"}, {"s": "daily-reflection", "t": "成長は1日5分の振り返りから：日報を「自分のための記録」にする", "d": "日報を、会社に出すための作業にしていないでしょうか。1日5分の振り返りを、自分のための記録にすると、商談の改善点が見えてきます。振り返りで書く3つのことと、続けるコツを、記入例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 振り返り 日報"}, {"s": "goal-backward", "t": "目標は月の契約数から逆算する：今日やることを自分で決める", "d": "「今月も頑張ろう」だけでは、毎日の行動は決まりません。月の契約目標から、必要な商談や連絡の数を逆算し、今日やることに落とし込む考え方を、例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 目標設定 逆算"}, {"s": "kotobazukai", "t": "言葉づかいで損をしない：「〜になります」「〜のほう」を見直す", "d": "丁寧に話しているつもりでも、言葉づかいのくせで、印象を下げていることがあります。住宅営業でよく使われがちな言い回しと、言い換えの例を、トーク例とともに解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 トナリティ 言葉づかい 敬語"}, {"s": "meishi-posture", "t": "名刺の渡し方と立ち姿：言葉より先に伝わる所作", "d": "名刺の渡し方や、立ち方・歩き方は、言葉より先にお客様に伝わります。住宅営業として身につけたい基本の所作と、ついやってしまいがちな注意点を、例とともに解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 アピアランス 所作 名刺"}, {"s": "no-excuses", "t": "景気・商品・エリアのせいにしない：言い訳を手放すと、打つ手が見える", "d": "売れない理由を、景気や商品、担当エリアのせいにしていないでしょうか。外の理由は、本当でも、打つ手につながりません。自分で変えられることに目を向ける考え方を、例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 言い訳 主体性"}, {"s": "no-visitor-day", "t": "来場がない日の使い方：「待つ営業」から「準備する営業」へ", "d": "展示場に来場がない平日や雨の日を、どう過ごしていますか。来場を待つだけの一日と、準備に使う一日では、次の商談の質が大きく変わります。来場がない日にやることを、具体的に解説します。", "f": "営業マインド", "k": "住宅営業 マインド 時間の使い方 準備"}, {"s": "pacing-speed", "t": "話す速さは、お客様に合わせる：ペーシングの基本", "d": "早口の営業は、内容が良くても、お客様を疲れさせてしまいます。話す速さや声の大きさを、お客様に合わせる「ペーシング」の考え方と、明日からできる合わせ方を、トーク例とともに解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 トナリティ ペーシング 話す速さ"}, {"s": "phone-online-impression", "t": "電話・オンライン商談の印象：声と画面の映り方を整える", "d": "電話やオンライン商談では、対面とは違う印象の伝わり方をします。表情が見えない電話では声が、オンラインでは画面の映り方が、第一印象を決めます。それぞれの整え方を、例とともに解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 トナリティ 電話 オンライン商談"}, {"s": "pride-in-housing", "t": "家づくりは、お客様の人生に関わる仕事：住宅営業の誇りと使命感", "d": "住宅営業は、家を売るだけの仕事ではありません。お客様の暮らしと人生に、長く関わる仕事です。その重みを知ることが、日々の行動と言葉を変えます。住宅営業の誇りと使命感について解説します。", "f": "営業マインド", "k": "住宅営業 マインド 使命感 誇り"}, {"s": "proposal-is-responsibility", "t": "提案は「売り込み」ではなく「責任」：勧めることを怖がらない", "d": "お客様に勧めることを「売り込み」と感じて、一歩踏み込めない営業の方へ。提案は、お客様の判断を助ける責任です。勧めることへの抵抗をなくす考え方を、トーク例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 提案 売り込み"}, {"s": "slow-for-important", "t": "大事なことほど、ゆっくり話す：強調は声の大きさではなく速さで", "d": "大事なことを伝えたいとき、声を大きくしていませんか。お客様の心に残る強調は、声の大きさではなく、話す速さと間でつくります。ゆっくり話すべき場面と、その練習方法を解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 トナリティ 話し方 強調"}, {"s": "slump-keep-action", "t": "売れない時期こそ「行動の量」を守る：数字が出ないときの過ごし方", "d": "契約が取れない時期は、誰にでもあります。そんなときに崩してはいけないのは、気持ちではなく行動の量です。売れない時期の考え方と、毎日守る行動の決め方を、例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド スランプ 行動量"}, {"s": "smile-practice", "t": "笑顔は練習で身につく：自然な表情のつくり方", "d": "「笑顔が大事」と分かっていても、商談中は表情が固くなりがちです。笑顔は、性格ではなく練習で身につけられます。自然な表情をつくる練習と、場面に合わせた表情の使い分けを解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 アピアランス 笑顔 表情"}, {"s": "sunao-try-advice", "t": "伸びる人は、まず素直に試す：上司・先輩の助言の受け取り方", "d": "上司や先輩からの助言を、聞いて終わりにしていないでしょうか。伸びる営業は、まず素直に試し、その結果を返しています。助言の受け取り方と、試したあとの伝え方を、例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 素直さ 成長"}, {"s": "thanks-same-day", "t": "来場当日のお礼連絡：記憶が新しいうちに、次につなげる", "d": "来場してくださったお客様へのお礼は、いつ、どのように伝えていますか。来場当日のお礼連絡は、お客様の記憶が新しいうちに、次の約束へつなげる大切な機会です。お礼連絡の考え方と伝え方を、例とともに解説します。", "f": "顧客管理", "k": "住宅営業 顧客管理 お礼 来場後フォロー"}, {"s": "voice-tone-bright", "t": "声は「少し明るく」：第一印象を変える声のトーン", "d": "第一印象は、見た目だけでなく、声でも決まります。住宅営業の声のトーンは、いつもより少し明るく。暗く聞こえる原因と、明るい声を出すための練習を、例とともに解説します。", "f": "アピアランス・トナリティ", "k": "住宅営業 トナリティ 声 第一印象"}, {"s": "closing-not-final-push", "t": "クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする", "d": "クロージングが苦手な方へ。押すのではなく、不安と迷いを一つずつ消していく考え方と、小さなYESを積み重ねる方法を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 クロージング 小さなYES 契約"}, {"s": "competitor-response", "t": "他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する", "d": "競合との比較で、他社を悪く言うのは逆効果です。事実を伝え、自社の考えを想いとして語る方法と、「他社の方が安い」と言われたときの対応を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 競合 他社比較 差別化"}, {"s": "confidence-and-trust", "t": "お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む", "d": "売れない原因が、スキルではなくマインドにあることがあります。自分が良いと思えない家は勧められない理由と、「任せてください」の一言の力を、トーク例とともに解説します。", "f": "営業マインド", "k": "住宅営業 マインド 自信 任せてください"}, {"s": "contract-analysis", "t": "契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる", "d": "失注だけでなく、契約を分析する重要性を解説します。契約分析でやる3つのこと、お客様に決め手を直接聞く方法を、トーク例とともに紹介します。", "f": "商談戦略", "k": "住宅営業 契約分析 勝ちパターン 振り返り"}, {"s": "kpi-return-visits", "t": "受注は「再来場の回数」に比例する：10再来場で1契約をKPIにする", "d": "住宅営業の受注を安定させるには、再来場の回数をKPIにすることが有効です。10再来場で1契約という指標と、行動を振り返る営業会議の進め方を解説します。", "f": "顧客管理", "k": "住宅営業 KPI 再来場 営業会議"}, {"s": "land-tour-advantage", "t": "土地案内は、差別化になる：イメージできないものは、お客様は買えない", "d": "土地バンクやポータルサイトが普及した今、土地案内をしない営業が多いからこそ、土地案内は差別化になります。お客様が判断できるようにイメージを作る方法を、トーク例とともに解説します。", "f": "商談戦略", "k": "住宅営業 土地案内 差別化 イメージ"}, {"s": "listen-more-than-talk", "t": "営業は「話す仕事」ではなく「聞く仕事」：沈黙は、お客様の整理時間", "d": "トップ営業ほど説明が短く、質問が多い理由を解説します。話した時間より聞いた時間を増やす方法と、商談中の沈黙を怖がらなくてよい理由を、トーク例とともに紹介します。", "f": "営業知識・営業スキル", "k": "住宅営業 傾聴 沈黙 会話"}, {"s": "lost-deal-analysis", "t": "失注を「縁がなかった」で終わらせない：当日3行で残す失注分析の基本", "d": "住宅営業で失注を成長に変える方法を解説します。「縁がなかった」で片付けない理由と、失注当日に残す3行メモ、表向きの理由と本音を分けて書く方法を、記録例とともに紹介します。", "f": "商談戦略", "k": "住宅営業 失注分析 振り返り 商談記録"}, {"s": "make-them-want", "t": "ハードルを外しても、欲しくなければ契約しない：「欲しい」を作る商談の考え方", "d": "資金や土地の条件が整っても、お客様が欲しいと思わなければ契約には至りません。「欲しい」を作るために、営業が心がけることを、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 熱上げ クロージング 欲しい"}, {"s": "referral-ask", "t": "紹介が出る営業は、契約日から動いている：一言の依頼を「仕組み」にする", "d": "住宅営業で紹介が安定して出る人は、偶然ではなく、紹介が出るようにしています。契約時・引渡し時・アフター時に「ご紹介いただけませんか」を伝える方法を、トーク例とともに解説します。", "f": "顧客管理", "k": "住宅営業 紹介 アフター 顧客管理"}, {"s": "standardize-top-sales", "t": "トップセールスの手法は、真似できる：要素分解して「型」にする", "d": "トップセールスのやり方は独特で、真似できないと言われがちです。しかし、要素に分解してプロセスを再構成すれば、再現できます。流れの設計とロープレの進め方を解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 標準化 ロープレ 型"}, {"s": "translate-to-benefit", "t": "性能は「お客様の得」に翻訳して伝える：お客様の言葉を、そのまま使う", "d": "「高気密高断熱です」では、お客様の心は動きません。特徴をお客様の得に翻訳する方法と、お客様の言葉をそのまま使う理由を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 提案 翻訳 お客様の言葉"}, {"s": "whole-family", "t": "決定権者だけを見る営業は、契約を逃す：家は「家族全員」で決まる", "d": "住宅の契約は、ご主人様一人では決まりません。奥様、お子様、ご両親まで見据えた商談の進め方を、よくある失注パターンとトーク例で解説します。", "f": "商談戦略", "k": "住宅営業 家族 親ハードル 失注"}, {"s": "appointment-sentakuhou", "t": "アポは「選択法」で取る：次回のアポを確実にする言い方とタイミング", "d": "住宅営業で次回のアポが取れない原因は、聞き方とタイミングにあります。「いかがでしょうか」を「どちらが良いですか」に変える選択法と、アポを切り出すベストなタイミングを、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 アポイント 選択法 再来場"}, {"s": "first-contact-30sec", "t": "初回接客は最初の30秒で決まる：商品の前に「警戒」を解く", "d": "住宅営業の初回接客で、商品説明より先にやるべきことは、お客様の警戒を解くことです。最初の30秒の考え方と、「今日は決めなくて大丈夫ですよ」の使い方を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 初回接客 第一印象 警戒を解く"}, {"s": "hearing-yoko-tate-naname", "t": "ヒアリングのコツは「横・縦・ななめ」：質問の順番を変えるだけで深く聞ける", "d": "住宅営業のヒアリングは、質問の順番で深さが変わります。「横の質問」「縦の質問」「ななめの質問」の使い分けを、「広い家がほしい」を例に、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 ヒアリング 質問力 深掘り"}, {"s": "kentou-shimasu", "t": "「検討します」と言われたときの対応：断り文句ではなく「まだ不安がある」という合図", "d": "住宅営業で「検討します」と言われたとき、断られたと判断するのは早すぎます。この言葉の意味と、聞くべきこと、その後の追客の考え方を、トーク例とともに解説します。", "f": "顧客管理", "k": "住宅営業 検討します 追客 顧客管理"}, {"s": "appearance-style-or-pro", "t": "好きな髪型・服装と「住宅営業のプロの見た目」、どちらを優先すべきか", "d": "好きなファッションや髪型と、住宅営業としての見た目が相容れないとき、どちらを優先すべきか。研修で頻繁に受ける質問に、結論からお答えします。", "f": "アピアランス・トナリティ", "k": "アピアランス 身だしなみ 髪型 服装"}, {"s": "framework-intro", "t": "住宅営業の成約フレームワークとは：成果を生み出す5つの力", "d": "住宅営業の成果を決める5つの要素（営業マインド、営業知識・営業スキル、商談戦略、アピアランス・トナリティ、顧客管理）を、現場でよく見られる状況と受講者の事例とともに解説します。", "f": "成約フレームワーク", "k": "成約フレームワーク 住宅営業 営業力"}, {"s": "price-objection-takai", "t": "「高い」と言われたときの考え方：価格は断りやすい\"建前\"にすぎない", "d": "住宅営業で「高い」と言われたとき、値引きの前に疑うべきは価格ではなく価値の伝え方です。失注理由の「価格」を信じてはいけない理由と、「高い」への返し方を、トーク例とともに解説します。", "f": "営業知識・営業スキル", "k": "住宅営業 高いと言われたら 値引き 失注分析"}];
   var q = (new URLSearchParams(location.search).get("q") || "").replace(/^[#＃]/, "").trim();
   if (!q) { return; }
   var box = document.getElementById("q-col"); if (box) { box.value = q; }

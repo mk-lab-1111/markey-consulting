@@ -373,6 +373,15 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   @media (max-width: 760px) { .sp-only { display: inline; } .hero-mm { padding: 16px; } .hero-mm-h { font-size: 17px; } }
   @media (prefers-reduced-motion: reduce) { .hero-mm { animation: none; } }
 
+  /* 動画の「音を出す」ボタン */
+  .hero-mv { position: relative; }
+  .snd { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid rgba(255,226,150,.85); border-radius: 999px; background: rgba(7,15,40,.78); color: #FFFFFF; font-size: 14px; font-weight: 700; letter-spacing: .06em; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s ease; }
+  .snd:hover { background: rgba(7,15,40,.95); }
+  .snd .snd-on { display: none; }
+  .snd[aria-pressed="true"] .snd-on { display: inline; }
+  .snd[aria-pressed="true"] .snd-off { display: none; }
+  @media (max-width: 760px) { .snd { right: 10px; bottom: 10px; min-height: 40px; padding: 0 13px; font-size: 13px; } }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -654,38 +663,38 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <h2 style="margin-top: 8px; font-size: 22px; padding-bottom: 12px; border-bottom: 2px solid #111111;">同じフレームワークの記事</h2>
             <ul>
         <li style="border-bottom: 1px solid #D4D4D4;">
-          <a href="closing-not-final-push.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
+          <a href="customer-and-company.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
             <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
-              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #17547E;"><span style="width: 8px; height: 8px; background: #17547E; flex-shrink: 0;"></span>商談戦略</span>
-              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.09 ・ 読了 4分</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #111111;"><span style="width: 8px; height: 8px; background: #111111; flex-shrink: 0;"></span>営業マインド</span>
+              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.17 ・ 読了 4分</span>
             </div>
             <div style="flex: 1 1 380px; min-width: 0;">
-              <h3 style="font-size: 18px; line-height: 1.6;">クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする</h3>
-              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">クロージングが苦手な方へ。押すのではなく、不安と迷いを一つずつ消していく考え方と、小さなYESを積み重ねる方法を、トーク例とともに解説します。</p>
+              <h3 style="font-size: 18px; line-height: 1.6;">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</h3>
+              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">契約をお願いするとき、「会社のために売っているのでは」と迷う営業の方へ。お客様の役に立つことと、会社の利益は、対立するものではありません。両立させる考え方と、迷わないための基準を解説します。</p>
             </div>
           </a>
         </li>
         <li style="border-bottom: 1px solid #D4D4D4;">
-          <a href="competitor-response.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
+          <a href="daily-reflection.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
             <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
-              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #17547E;"><span style="width: 8px; height: 8px; background: #17547E; flex-shrink: 0;"></span>商談戦略</span>
-              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.09 ・ 読了 4分</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #111111;"><span style="width: 8px; height: 8px; background: #111111; flex-shrink: 0;"></span>営業マインド</span>
+              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.17 ・ 読了 4分</span>
             </div>
             <div style="flex: 1 1 380px; min-width: 0;">
-              <h3 style="font-size: 18px; line-height: 1.6;">他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する</h3>
-              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">競合との比較で、他社を悪く言うのは逆効果です。事実を伝え、自社の考えを想いとして語る方法と、「他社の方が安い」と言われたときの対応を、トーク例とともに解説します。</p>
+              <h3 style="font-size: 18px; line-height: 1.6;">成長は1日5分の振り返りから：日報を「自分のための記録」にする</h3>
+              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">日報を、会社に出すための作業にしていないでしょうか。1日5分の振り返りを、自分のための記録にすると、商談の改善点が見えてきます。振り返りで書く3つのことと、続けるコツを、記入例とともに解説します。</p>
             </div>
           </a>
         </li>
         <li style="border-bottom: 1px solid #D4D4D4;">
-          <a href="contract-analysis.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
+          <a href="goal-backward.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
             <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
-              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #17547E;"><span style="width: 8px; height: 8px; background: #17547E; flex-shrink: 0;"></span>商談戦略</span>
-              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.09 ・ 読了 4分</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #111111;"><span style="width: 8px; height: 8px; background: #111111; flex-shrink: 0;"></span>営業マインド</span>
+              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.17 ・ 読了 4分</span>
             </div>
             <div style="flex: 1 1 380px; min-width: 0;">
-              <h3 style="font-size: 18px; line-height: 1.6;">契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる</h3>
-              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">失注だけでなく、契約を分析する重要性を解説します。契約分析でやる3つのこと、お客様に決め手を直接聞く方法を、トーク例とともに紹介します。</p>
+              <h3 style="font-size: 18px; line-height: 1.6;">目標は月の契約数から逆算する：今日やることを自分で決める</h3>
+              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">「今月も頑張ろう」だけでは、毎日の行動は決まりません。月の契約目標から、必要な商談や連絡の数を逆算し、今日やることに落とし込む考え方を、例とともに解説します。</p>
             </div>
           </a>
         </li>
@@ -706,27 +715,27 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <h2 style="font-size: 18px; line-height: 1.4; background: #333333; color: #FFFFFF; text-align: center; padding: 16px 12px;">最新コラム</h2>
           <ul style="margin-top: 14px;">
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="closing-not-final-push.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする</span>
+              <a href="aizuchi-variation.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">相づちは「はい」だけにしない：聞いていることが伝わる返し方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="competitor-response.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する</span>
+              <a href="cleanliness-hands-feet.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="contract-analysis.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる</span>
+              <a href="customer-and-company.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="kpi-return-visits.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">受注は「再来場の回数」に比例する：10再来場で1契約をKPIにする</span>
+              <a href="customer-rank.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">お客様のランク分け：「今すぐ」と「これから」で追客を変える</span>
               </a>
             </li>
           </ul>

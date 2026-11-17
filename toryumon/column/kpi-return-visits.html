@@ -373,6 +373,15 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   @media (max-width: 760px) { .sp-only { display: inline; } .hero-mm { padding: 16px; } .hero-mm-h { font-size: 17px; } }
   @media (prefers-reduced-motion: reduce) { .hero-mm { animation: none; } }
 
+  /* 動画の「音を出す」ボタン */
+  .hero-mv { position: relative; }
+  .snd { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid rgba(255,226,150,.85); border-radius: 999px; background: rgba(7,15,40,.78); color: #FFFFFF; font-size: 14px; font-weight: 700; letter-spacing: .06em; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s ease; }
+  .snd:hover { background: rgba(7,15,40,.95); }
+  .snd .snd-on { display: none; }
+  .snd[aria-pressed="true"] .snd-on { display: inline; }
+  .snd[aria-pressed="true"] .snd-off { display: none; }
+  @media (max-width: 760px) { .snd { right: 10px; bottom: 10px; min-height: 40px; padding: 0 13px; font-size: 13px; } }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -674,6 +683,30 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <h2 style="margin-top: 8px; font-size: 22px; padding-bottom: 12px; border-bottom: 2px solid #111111;">同じフレームワークの記事</h2>
             <ul>
         <li style="border-bottom: 1px solid #D4D4D4;">
+          <a href="customer-rank.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
+            <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
+              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #4A2E6E;"><span style="width: 8px; height: 8px; background: #4A2E6E; flex-shrink: 0;"></span>顧客管理</span>
+              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.17 ・ 読了 4分</span>
+            </div>
+            <div style="flex: 1 1 380px; min-width: 0;">
+              <h3 style="font-size: 18px; line-height: 1.6;">お客様のランク分け：「今すぐ」と「これから」で追客を変える</h3>
+              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">すべてのお客様に、同じように連絡していませんか。家づくりの時期や進み具合でお客様を分けると、連絡のしかたと回数を変えられます。ランク分けの考え方と、ランクごとの追客の例を解説します。</p>
+            </div>
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid #D4D4D4;">
+          <a href="thanks-same-day.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
+            <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
+              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #4A2E6E;"><span style="width: 8px; height: 8px; background: #4A2E6E; flex-shrink: 0;"></span>顧客管理</span>
+              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.11.17 ・ 読了 4分</span>
+            </div>
+            <div style="flex: 1 1 380px; min-width: 0;">
+              <h3 style="font-size: 18px; line-height: 1.6;">来場当日のお礼連絡：記憶が新しいうちに、次につなげる</h3>
+              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">来場してくださったお客様へのお礼は、いつ、どのように伝えていますか。来場当日のお礼連絡は、お客様の記憶が新しいうちに、次の約束へつなげる大切な機会です。お礼連絡の考え方と伝え方を、例とともに解説します。</p>
+            </div>
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid #D4D4D4;">
           <a href="referral-ask.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
             <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
               <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #4A2E6E;"><span style="width: 8px; height: 8px; background: #4A2E6E; flex-shrink: 0;"></span>顧客管理</span>
@@ -682,30 +715,6 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
             <div style="flex: 1 1 380px; min-width: 0;">
               <h3 style="font-size: 18px; line-height: 1.6;">紹介が出る営業は、契約日から動いている：一言の依頼を「仕組み」にする</h3>
               <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">住宅営業で紹介が安定して出る人は、偶然ではなく、紹介が出るようにしています。契約時・引渡し時・アフター時に「ご紹介いただけませんか」を伝える方法を、トーク例とともに解説します。</p>
-            </div>
-          </a>
-        </li>
-        <li style="border-bottom: 1px solid #D4D4D4;">
-          <a href="kentou-shimasu.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
-            <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
-              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #4A2E6E;"><span style="width: 8px; height: 8px; background: #4A2E6E; flex-shrink: 0;"></span>顧客管理</span>
-              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.10.26 ・ 読了 5分</span>
-            </div>
-            <div style="flex: 1 1 380px; min-width: 0;">
-              <h3 style="font-size: 18px; line-height: 1.6;">「検討します」と言われたときの対応：断り文句ではなく「まだ不安がある」という合図</h3>
-              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">住宅営業で「検討します」と言われたとき、断られたと判断するのは早すぎます。この言葉の意味と、聞くべきこと、その後の追客の考え方を、トーク例とともに解説します。</p>
-            </div>
-          </a>
-        </li>
-        <li style="border-bottom: 1px solid #D4D4D4;">
-          <a href="appointment-sentakuhou.html" class="row" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 8px; align-items: flex-start;">
-            <div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px; min-width: 180px;">
-              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #C2273F;"><span style="width: 8px; height: 8px; background: #C2273F; flex-shrink: 0;"></span>営業知識・営業スキル</span>
-              <span class="en" style="font-size: 12px; color: #8A8A8A;">2026.10.26 ・ 読了 5分</span>
-            </div>
-            <div style="flex: 1 1 380px; min-width: 0;">
-              <h3 style="font-size: 18px; line-height: 1.6;">アポは「選択法」で取る：次回のアポを確実にする言い方とタイミング</h3>
-              <p style="margin-top: 7px; font-size: 13px; line-height: 1.85; color: #5C5C5C;">住宅営業で次回のアポが取れない原因は、聞き方とタイミングにあります。「いかがでしょうか」を「どちらが良いですか」に変える選択法と、アポを切り出すベストなタイミングを、トーク例とともに解説します。</p>
             </div>
           </a>
         </li>
@@ -726,27 +735,27 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <h2 style="font-size: 18px; line-height: 1.4; background: #333333; color: #FFFFFF; text-align: center; padding: 16px 12px;">最新コラム</h2>
           <ul style="margin-top: 14px;">
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="closing-not-final-push.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする</span>
+              <a href="aizuchi-variation.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">相づちは「はい」だけにしない：聞いていることが伝わる返し方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="competitor-response.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する</span>
+              <a href="cleanliness-hands-feet.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="confidence-and-trust.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む</span>
+              <a href="customer-and-company.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="contract-analysis.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる</span>
+              <a href="customer-rank.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">お客様のランク分け：「今すぐ」と「これから」で追客を変える</span>
               </a>
             </li>
           </ul>

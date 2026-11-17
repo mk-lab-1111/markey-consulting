@@ -373,6 +373,15 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   @media (max-width: 760px) { .sp-only { display: inline; } .hero-mm { padding: 16px; } .hero-mm-h { font-size: 17px; } }
   @media (prefers-reduced-motion: reduce) { .hero-mm { animation: none; } }
 
+  /* 動画の「音を出す」ボタン */
+  .hero-mv { position: relative; }
+  .snd { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid rgba(255,226,150,.85); border-radius: 999px; background: rgba(7,15,40,.78); color: #FFFFFF; font-size: 14px; font-weight: 700; letter-spacing: .06em; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s ease; }
+  .snd:hover { background: rgba(7,15,40,.95); }
+  .snd .snd-on { display: none; }
+  .snd[aria-pressed="true"] .snd-on { display: inline; }
+  .snd[aria-pressed="true"] .snd-off { display: none; }
+  @media (max-width: 760px) { .snd { right: 10px; bottom: 10px; min-height: 40px; padding: 0 13px; font-size: 13px; } }
+
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
             padding-bottom: 12px; border-bottom: 2px solid #111111; }
@@ -714,27 +723,27 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
           <h2 style="font-size: 18px; line-height: 1.4; background: #333333; color: #FFFFFF; text-align: center; padding: 16px 12px;">最新コラム</h2>
           <ul style="margin-top: 14px;">
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="closing-not-final-push.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">クロージングは「最後に頑張るもの」ではない：小さなYESを重ねて、不安をゼロにする</span>
+              <a href="aizuchi-variation.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">相づちは「はい」だけにしない：聞いていることが伝わる返し方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="competitor-response.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">他社の悪口は、自分の価値を下げる：事実と「想い」で差別化する</span>
+              <a href="cleanliness-hands-feet.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">清潔感は「足元と手元」で決まる：靴・爪・持ち物の整え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="confidence-and-trust.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">お客様は、商品ではなく「営業の自信」を買っている：まず自分が惚れ込む</span>
+              <a href="customer-and-company.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">「お客様のため」と「会社のため」は両立する：契約を迷わない考え方</span>
               </a>
             </li>
             <li style="border-bottom: 1px solid #D4D4D4;">
-              <a href="contract-analysis.html" class="row" style="display: block; padding: 13px 6px;">
-                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span>
-                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">契約も分析する：「なぜ決まったか」を言語化すると、勝ちパターンが再現できる</span>
+              <a href="customer-rank.html" class="row" style="display: block; padding: 13px 6px;">
+                <span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span>
+                <span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">お客様のランク分け：「今すぐ」と「これから」で追客を変える</span>
               </a>
             </li>
           </ul>
