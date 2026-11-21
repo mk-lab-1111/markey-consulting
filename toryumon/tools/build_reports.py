@@ -99,7 +99,14 @@ def parse(path):
     meta["slug"] = slug
     meta["updated"] = meta.get("updated") or meta["published"]
     meta["draft"] = meta.get("draft", "").lower() in ("true", "yes", "1")
-    meta["body"] = m.group(2).strip()
+    body = m.group(2).strip()
+    # 書き込みの途中で【…】が消えた原稿の救済：空の「****」は【概要】に戻す
+    body = re.sub(r"^\*\*\*\*\s*$", "**【概要】**", body, flags=re.M)
+    meta["body"] = body
+    # タイトルに「【M月第N週】」がなければ、公開日から付ける
+    if not meta["title"].startswith("【"):
+        d = datetime.date.fromisoformat(meta["published"])
+        meta["title"] = "【%d月第%d週】%s" % (d.month, (d.day + 6) // 7, meta["title"])
     wm = re.match(r"^【([^】]+)】\s*(.*)$", meta["title"])
     meta["week"], meta["headline"] = (wm.group(1), wm.group(2)) if wm else ("", meta["title"])
     if not meta.get("description"):

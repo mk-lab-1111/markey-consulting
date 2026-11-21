@@ -40,7 +40,7 @@ def check(path):
             errs.append("ファイル名の日付と published が違います")
         wm = re.match(r"^【(\d+月第\d週)】", meta.get("title", ""))
         if not wm:
-            errs.append("タイトルが「【M月第N週】」で始まっていません")
+            warns.append("タイトルが「【M月第N週】」で始まっていません（公開日から自動で付けます）")
         elif wm.group(1) != week_label(d):
             warns.append("タイトルの週（%s）が公開日から計算した週（%s）と違います" % (wm.group(1), week_label(d)))
         if (d - datetime.date.today()).days > 14:
@@ -62,6 +62,8 @@ def check(path):
     n = len(re.sub(r"\s|[#*\-]", "", body))
     if n < 1500:
         warns.append("本文が短すぎます（%d字）" % n)
+    if re.search(r"^\*\*\*\*\s*$", body, re.M):
+        warns.append("空の「****」があります（【概要】に自動で直します）")
     if re.search(r"(今週のテーマ|SELECTED_THEME|TITLE:|SECTION:)", body):
         warns.append("生成時の作業用の文字列が残っています")
     return errs, warns
