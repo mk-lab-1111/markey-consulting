@@ -271,6 +271,15 @@ THEME = """
   @media (max-width: 640px) { .rp-hero { padding: 24px 0 44px; } .rp-hero h1 { font-size: 22px; line-height: 1.6; } .rp-lead { font-size: 13.5px; } .rp-badge { font-size: 11.5px; padding: 5px 12px; }
     .rp-body { padding: 0 10px 50px; } .rp .art h2 { font-size: 19px; } .rp .art h3 { font-size: 17px; } .rp .art p, .rp .art li { font-size: 14px; } }
 
+  .rp-cta { margin-top: 40px; border-radius: 18px; overflow: hidden; border: 2px solid var(--navy); background: #FFFFFF; }
+  .rp-cta .hd { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color: var(--gold-light); font-size: 13px; font-weight: 700; letter-spacing: .08em; padding: 10px 20px; }
+  .rp-cta .bd { display: block; padding: 20px 22px 24px; }
+  .rp-cta img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .rp-cta .ttl { display: block; margin-top: 16px; font-family: 'Shippori Mincho', serif; font-size: 20px; font-weight: 700; line-height: 1.6; color: var(--navy); }
+  .rp-cta .txt { display: block; margin-top: 8px; font-size: 14px; line-height: 1.85; color: #4A4A4A; }
+  .rp-cta .btn { margin-top: 16px; }
+  .rp-cta a:hover .ttl { color: var(--crimson); }
+
   /* 一覧 */
   .rp .latest { display: block; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 18px 50px -22px rgba(27,37,64,.28); }
   .rp .latest .hd { background: linear-gradient(120deg, var(--crimson-deep) 0%, var(--crimson) 100%); padding: 24px 28px; }
@@ -298,6 +307,21 @@ def hero(crumb, eyebrow, title_html, lead="", badges=()):
   </div></section>
 %s
 """ % (crumb, eyebrow, title_html, ('<p class="rp-lead">%s</p>\n    ' % lead) if lead else "", b, WAVE)
+
+
+def course_banner(campaign):
+    """住宅営業登竜門（動画講座）のバナー。レポートの本文の終わりと一覧に置く"""
+    href = "../../toryumon-lp/?utm_source=report&utm_medium=banner&utm_campaign=" + campaign
+    return """      <aside class="rp-cta" aria-label="住宅営業登竜門 動画講座のご案内">
+        <p class="hd">住宅営業登竜門 動画講座のご案内</p>
+        <a class="bd" href="%s">
+          <img src="../assets/video-course.jpg" alt="住宅営業登竜門 動画講座">
+          <span class="ttl">市場が変わっても売れる営業へ。トップセールスの「型」を動画で学べます。</span>
+          <span class="txt">全16プログラム・100本以上。1本10〜15分で、要約と目次付き。スマホ・PC・タブレットで、倍速でも視聴できます。</span>
+          <span class="btn">動画講座の詳細を見る ›</span>
+        </a>
+      </aside>
+""" % E(href)
 
 
 def wrap_rp(hero_html, main_inner, side_html):
@@ -422,7 +446,7 @@ def report_page(r, reps, cols, css, head_html, foot_html):
 %s
       </div>
       <p class="note" style="margin-top: 30px;">※本レポートは、公表資料・報道をもとに編集部がまとめた情報提供です。数値・制度は各発表元の最新情報をご確認ください。「背景とポイント」「インプリケーション」は編集部の考察です。運営：MARKEY CONSULTING</p>
-%s%s    </article>""" % (toc_html, body, pn, rel_html)
+%s%s%s    </article>""" % (toc_html, body, course_banner("report-" + r["slug"]), pn, rel_html)
 
     ld = """<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article",
@@ -486,10 +510,10 @@ def index_page(reps, css, head_html, foot_html):
                      '住宅市場<span class="wk">レポート</span>',
                      "大手ハウスメーカーの受注速報、顧客マインド、不動産価格、倒産動向など、住宅会社の経営と営業の受注判断に効く業界ニュースを、毎週まとめてお届けしています。各号の数字には出典を付けています。",
                      ['<span class="dot"></span>毎週更新', "出典付き", "全%d号" % len(reps), "編集：住宅営業登竜門編集部"])
-    inner = """%s
+    inner = """%s%s
     <section>
       <h2 class="sec">バックナンバー</h2>
-%s    </section>""" % (latest, arch)
+%s    </section>""" % (latest, course_banner("report-index"), arch)
 
     ld = """<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CollectionPage","name":"住宅市場レポート","url":%s,"inLanguage":"ja",
