@@ -1,12 +1,19 @@
 name: 住宅市場レポートを公開
 
-# 承認済みの原稿（toryumon/reports/_src/*.md）が届いたら、
-# 個別ページ・一覧・登竜門トップの最新号・reports.html・sitemap.xml を作り直して反映する。
+# 次のどれかが変わったら、個別ページ・一覧・登竜門トップの最新号・reports.html・sitemap.xml を作り直して反映する。
+#  - 承認済みの原稿（toryumon/reports/_src/*.md）
+#  - ページの作り（build_reports.py）・点検（check_report.py）・このファイル
+#  - 登竜門トップ（toryumon/index.html。ヘッダーやフッターを直したとき）
+# ※この自動処理が自分で反映した変更では、もう一度は動かない（GitHubの仕様）。
 on:
   push:
     branches: [main]
     paths:
       - "toryumon/reports/_src/**"
+      - "toryumon/tools/build_reports.py"
+      - "toryumon/tools/check_report.py"
+      - "toryumon/index.html"
+      - ".github/workflows/build-reports.yml"
   workflow_dispatch:
 
 permissions:
