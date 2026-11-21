@@ -39,12 +39,21 @@ def main(root):
     if arts:
         urls.append((SITE + "toryumon/column/", today))
         urls += arts
+    reps = []
+    for f in sorted((root / "toryumon" / "reports" / "_src").glob("*.md")):
+        d = front(f.read_text(encoding="utf-8"))
+        if d.get("draft", "").lower() == "true":
+            continue
+        reps.append((SITE + "toryumon/reports/" + f.stem + ".html", d.get("updated") or d.get("published") or today))
+    if reps:
+        urls.append((SITE + "toryumon/reports/", max(u[1] for u in reps)))
+        urls += reps
     body = "".join("  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % u for u in urls)
     (root / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n",
         encoding="utf-8")
     (root / "robots.txt").write_text("User-agent: *\nAllow: /\nDisallow: /toryumon/gift/\n\nSitemap: " + SITE + "sitemap.xml\n", encoding="utf-8")
-    print("sitemap.xml:", len(urls), "URL（うちコラム記事", len(arts), "本）")
+    print("sitemap.xml:", len(urls), "URL（うちコラム記事", len(arts), "本、レポート", len(reps), "号）")
 
 
 if __name__ == "__main__":

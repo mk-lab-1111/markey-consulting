@@ -1,0 +1,59 @@
+name: 住宅市場レポートを公開
+
+# 承認済みの原稿（toryumon/reports/_src/*.md）が届いたら、
+# 個別ページ・一覧・登竜門トップの最新号・reports.html・sitemap.xml を作り直して反映する。
+on:
+  push:
+    branches: [main]
+    paths:
+      - "toryumon/reports/_src/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: build-reports
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 準備
+        run: pip install markdown
+
+      - name: 原稿の点検（形が崩れていたら止める）
+        run: |
+          changed=$(git diff --name-only HEAD~1 HEAD -- 'toryumon/reports/_src/*.md' 2>/dev/null || true)
+          [ -z "$changed" ] && changed=$(ls toryumon/reports/_src/*.md | tail -1)
+          echo "対象: $changed"
+          python3 toryumon/tools/check_report.py $changed | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: ページを作る
+        run: |
+          python3 toryumon/tools/build_reports.py toryumon
+          python3 toryumon/tools/build_sitemap.py .
+
+      - name: 反映
+        run: |
+          git config user.name "report-bot"
+          git config user.email "report-bot@users.noreply.github.com"
+          git add toryumon/reports toryumon/index.html reports.html sitemap.xml robots.txt
+          if git diff --staged --quiet; then echo "変更なし"; exit 0; fi
+          git commit -m "住宅市場レポートを公開 $(date +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
+
+      - name: サイトの更新を依頼
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "（自動で更新される場合は不要）"

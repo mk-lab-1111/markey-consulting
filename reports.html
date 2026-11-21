@@ -12,7 +12,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>住宅市場レポート | MARKEY CONSULTING</title>
-<meta name="description" content="住宅市場の最新動向を週2回自動配信。金利・建材・競合・来場動向など、住宅営業に役立つ市場レポートをまとめてご覧いただけます。">
+<meta name="description" content="住宅会社の経営者・営業責任者向けの週次「住宅市場レポート」。大手ハウスメーカーの受注速報、金利、制度、倒産動向などを毎週まとめています。全号は住宅営業登竜門に掲載しています。">
+<link rel="canonical" href="https://markey-consulting.com/reports.html">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -365,12 +366,12 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
     <p class="eyebrow">MARKET REPORT</p>
     <h1>住宅市場<span class="accent">レポート</span></h1>
     <p class="hero-lead">
-      金利・建材・競合・来場動向など、住宅営業に役立つ市場情報を週2回（月・木）自動配信しています。
-      最新レポートから過去のアーカイブまで、こちらでまとめてご覧いただけます。
+      大手ハウスメーカーの受注速報、金利、制度、倒産動向など、住宅会社の経営と営業に役立つ業界ニュースを毎週まとめています。
+      各号の全文とバックナンバーは、教育プラットフォーム「住宅営業登竜門」に掲載しています。
     </p>
     <div class="hero-meta">
-      <span class="hero-badge"><span class="dot"></span>週2回 自動更新（月・木 20:00）</span>
-      <span class="hero-badge">最新30件を保存</span>
+      <span class="hero-badge"><span class="dot"></span>毎週更新</span>
+      <span class="hero-badge">出典付き</span>
     </div>
   </div>
 </section>
@@ -381,64 +382,45 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
   </svg>
 </div>
 
-<!-- ===== REPORTS ROOT ===== -->
-<div id="reports-root">
-
-  <!-- Loading -->
-  <div id="state-loading" class="latest-section" style="background:var(--paper);">
-    <div class="container">
-      <div class="state-box">
-        <div class="spinner"></div>
-        <p>レポートを読み込んでいます…</p>
-      </div>
+<!-- ===== REPORTS ===== -->
+<!-- REPORT-LIST:START -->
+<style>
+.rp-wrap{padding:64px 0 72px;background:var(--paper);}
+.rp-list{list-style:none;margin-top:22px;border-top:1px solid var(--line);}
+.rp-list li{border-bottom:1px solid var(--line);}
+.rp-list a{display:flex;flex-wrap:wrap;gap:4px 18px;padding:16px 6px;text-decoration:none;color:var(--ink);}
+.rp-list a:hover .t{color:var(--crimson);}
+.rp-list .d{flex:0 0 auto;min-width:96px;font-size:13px;color:var(--mist);}
+.rp-list .t{flex:1 1 320px;font-size:15.5px;font-weight:700;line-height:1.65;}
+.rp-more{text-align:center;margin-top:34px;}
+.rp-note{margin-top:12px;font-size:13px;color:var(--mist);}
+</style>
+<section class="rp-wrap">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">LATEST</p>
+      <h2 style="font-size:clamp(22px,2.8vw,30px);">最新のレポート</h2>
+      <p>タイトルを押すと、各号の全文（住宅営業登竜門のページ）が開きます。</p>
+    </div>
+    <ul class="rp-list">
+      <li><a href="toryumon/reports/2026-11-17.html"><span class="d">2026.11.17</span><span class="t">【11月第3週】中古戸建価格も最高を更新。リフォーム事業が活気づくも、リフォーム事業者の倒産は最多。</span></a></li>
+      <li><a href="toryumon/reports/2026-11-15.html"><span class="d">2026.11.15</span><span class="t">【11月第3週】大手メーカー10月受注速報。プラスに転じる企業も。注文住宅単体は厳しい様相。分譲シフトがはっきり。住宅ローン金利高騰に合わせた商品展開の対策を。</span></a></li>
+      <li><a href="toryumon/reports/2026-11-09.html"><span class="d">2026.11.09</span><span class="t">【11月第1週】1月～10月工務店の倒産件数が前年対比1.8倍に急増。大手は高額リノベにシフト</span></a></li>
+      <li><a href="toryumon/reports/2026-10-20.html"><span class="d">2026.10.20</span><span class="t">【10月第3週】大手ハウスメーカー収益圧迫、省エネ義務化の中小工務店への影響続く</span></a></li>
+      <li><a href="toryumon/reports/2026-10-11.html"><span class="d">2026.10.11</span><span class="t">【10月第3週】金融庁、50年超長期住宅ローンへの監督強化方針を提示。買取再販のM&amp;Aなど、ストック市場への集中、業界再編の流れ</span></a></li>
+      <li><a href="toryumon/reports/2026-09-27.html"><span class="d">2026.09.27</span><span class="t">【10月第1週】8月受注戸建て単体では各社減少傾向に。家賃UPが顕著となり、賃貸か住宅購入で悩む顧客が増加。</span></a></li>
+      <li><a href="toryumon/reports/2026-09-13.html"><span class="d">2026.09.13</span><span class="t">【9月第2週】「家賃上がっている」4割。住宅購入の後押しとなるか。フラット35と楽天が提携、フラット35利用で楽天ポイント付与。</span></a></li>
+      <li><a href="toryumon/reports/2026-09-06.html"><span class="d">2026.09.06</span><span class="t">【9月第1週】大和ハウス国内新築事業の縮小と請負価格5000万円を下限とする方針を発表</span></a></li>
+      <li><a href="toryumon/reports/2026-08-31.html"><span class="d">2026.08.31</span><span class="t">【8月第5週】総合展示場来場減、2か月連続全エリアで。全国的な水害により、水害対策もニーズとして表面化。</span></a></li>
+      <li><a href="toryumon/reports/2026-08-30.html"><span class="d">2026.08.30</span><span class="t">【8月第5週】総合展示場来場減、2ヶ月連続全エリアで。ゲリラ豪雨・地震頻発による災害対策・レジリエンス強化が大きなトレンドに。</span></a></li>
+    </ul>
+    <div class="rp-more">
+      <a class="btn btn-primary" href="toryumon/reports/">すべてのレポートを見る（住宅営業登竜門）</a>
+      <p class="rp-note">全25号のバックナンバーを、住宅営業登竜門に掲載しています。</p>
     </div>
   </div>
-
-  <!-- Error / Empty -->
-  <div id="state-error" class="latest-section" style="background:var(--paper);display:none;">
-    <div class="container">
-      <div class="state-box">
-        <div class="state-icon">📋</div>
-        <h3 id="state-error-title">まだレポートがありません</h3>
-        <p id="state-error-msg">次回の自動生成（月・木 20:00）をお待ちください。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Reports content (shown when data loads successfully) -->
-  <div id="reports-content" style="display:none;">
-
-    <!-- Latest featured -->
-    <section class="latest-section" id="latest-section">
-      <div class="container">
-        <div class="sec-head latest-label">
-          <p class="eyebrow">LATEST</p>
-          <h2 style="font-size:clamp(22px,2.8vw,30px);">最新レポート</h2>
-        </div>
-        <div id="latest-container"></div>
-      </div>
-    </section>
-
-    <div class="wave" style="background:var(--paper);">
-      <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,16 C360,52 720,0 1080,32 C1260,48 1380,18 1440,12 L1440,48 L0,48 Z" fill="var(--cream)"/>
-      </svg>
-    </div>
-
-    <!-- Archive -->
-    <section class="archive-section" id="archive-section">
-      <div class="container">
-        <div class="sec-head" id="archive-head" style="display:none;">
-          <p class="eyebrow">ARCHIVE</p>
-          <h2>過去のレポート</h2>
-          <p>クリックで全文を開けます。</p>
-        </div>
-        <div class="archive-grid" id="archive-container"></div>
-      </div>
-    </section>
-
-  </div>
-</div>
+</section>
+<!-- REPORT-LIST:END -->
 
 <!-- ===== FOOTER ===== -->
 <footer>
@@ -470,325 +452,6 @@ footer{background:var(--navy-deep);padding:52px 0 32px;}
   </div>
 </footer>
 
-<script>
-const DATA_URL = 'https://mk-lab-1111.github.io/markey-report/data/archive.json';
-
-/* ===== UTILS ===== */
-function esc(s) {
-  return String(s)
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function formatStamp(stamp) {
-  // "20260622" → "2026年06月22日"
-  if (!stamp || stamp.length < 8) return stamp;
-  return `${stamp.slice(0,4)}年${stamp.slice(4,6)}月${stamp.slice(6,8)}日`;
-}
-
-/* ===== PARSER ===== */
-function parseReportText(text) {
-  if (!text) return { title: '', date: '', sections: [], closing: '' };
-
-  // --- 区切りに依存せず行単位で解析する。
-  // --- がある旧データ(6/22〜6/30)も、--- が1つだけの新データ(7/1〜)も両対応。
-  let title = '', date = '', closing = '';
-  const sections = [];
-  let inClosing = false;
-  const closingLines = [];
-  let bodyStarted = false;
-
-  let curSectionTitle = null; // null = セクション未開始
-  let curSubSections = [];
-  let curSubTitle = '';
-  let curBody = [];
-
-  function flushSub() {
-    if (curSubTitle || curBody.length) {
-      curSubSections.push({ title: curSubTitle, body: curBody.join('\n').trim() });
-      curSubTitle = '';
-      curBody = [];
-    }
-  }
-  function flushSection() {
-    flushSub();
-    if (curSectionTitle !== null || curSubSections.length) {
-      sections.push({ sectionTitle: curSectionTitle || '', subSections: curSubSections });
-      curSectionTitle = null;
-      curSubSections = [];
-    }
-  }
-
-  for (const line of text.split('\n')) {
-    const t = line.trim();
-
-    // --- は区切り記号として無視（body 開始の目印としてフラグだけ立てる）
-    if (/^-{3,}$/.test(t)) { bodyStarted = true; continue; }
-
-    if (inClosing) { closingLines.push(line); continue; }
-
-    if (t.startsWith('TITLE:'))  { title = t.replace(/^TITLE:\s*/, '');  continue; }
-    if (t.startsWith('DATE:'))   { date  = t.replace(/^DATE:\s*/, '');   continue; }
-
-    if (t.startsWith('CLOSING:')) {
-      flushSection();
-      inClosing = true;
-      const rest = t.replace(/^CLOSING:\s*/, '').trim();
-      if (rest) closingLines.push(rest);
-      continue;
-    }
-
-    if (t.startsWith('SECTION:')) {
-      const sc = t.replace(/^SECTION:\s*/, '').trim();
-      if (sc.startsWith('■')) {
-        // 「SECTION: ■ X」→ 小見出し(H4)として扱う（崩れデータの後方互換）
-        flushSub();
-        curSubTitle = sc.replace(/^■\s*/, '').trim();
-        if (curSectionTitle === null) curSectionTitle = '';
-      } else {
-        // 新しい大見出し(H3)セクション開始
-        flushSection();
-        curSectionTitle = sc;
-      }
-      bodyStarted = true;
-      continue;
-    }
-
-    if (t.startsWith('■')) {
-      flushSub();
-      curSubTitle = t.replace(/^■\s*/, '').trim();
-      if (curSectionTitle === null) curSectionTitle = '';
-      bodyStarted = true;
-      continue;
-    }
-
-    if (!t) { if (bodyStarted) curBody.push(''); continue; } // 空行
-
-    // 通常テキスト
-    if (!bodyStarted && !title) {
-      title = t; // fallback: TITLE: がない場合の先頭行をタイトルに
-    } else {
-      curBody.push(line);
-      bodyStarted = true;
-      if (curSectionTitle === null) curSectionTitle = '';
-    }
-  }
-
-  flushSection();
-  closing = closingLines.join('\n').trim();
-  return { title, date, sections, closing };
-}
-
-function emphasize(str) {
-  return str.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-}
-
-function formatBody(raw) {
-  const lines = raw.split('\n');
-  let html = '';
-  let inList = false;
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const trimmed = line.trim();
-    if (!trimmed) {
-      if (inList) { html += '</ul>'; inList = false; }
-      continue;
-    }
-
-    // 箇条書き: 「・」または「-」で始まる行
-    const bulletMatch = trimmed.match(/^[・\-]\s*(.+)$/);
-    if (bulletMatch) {
-      if (!inList) { html += '<ul class="r-list">'; inList = true; }
-      html += `<li>${emphasize(esc(bulletMatch[1]))}</li>`;
-      continue;
-    }
-
-    // リスト以外の行が来たらリストを閉じる
-    if (inList) { html += '</ul>'; inList = false; }
-
-    // 番号付き小見出し: 「1. 」「2. 」など
-    const numMatch = trimmed.match(/^(\d+)[.\)．）]\s*(.+)$/);
-    if (numMatch) {
-      html += `<p class="r-item-head"><strong>${esc(numMatch[1])}. ${emphasize(esc(numMatch[2]))}</strong></p>`;
-      continue;
-    }
-
-    // 行頭「短い語＋コロン」パターン（コロン前10文字以内）
-    const colonMatch = trimmed.match(/^(.{1,10}?)[:：]\s*(.+)$/);
-    if (colonMatch) {
-      html += `<p class="r-body"><strong>${esc(colonMatch[1])}：</strong>${emphasize(esc(colonMatch[2]))}</p>`;
-      continue;
-    }
-
-    // 通常行
-    html += `<p class="r-body">${emphasize(esc(trimmed))}</p>`;
-  }
-  if (inList) html += '</ul>';
-  return html;
-}
-
-function renderParsed(parsed) {
-  let html = '';
-  for (const sec of parsed.sections) {
-    if (sec.sectionTitle) {
-      html += `<h3 class="r-section">${esc(sec.sectionTitle)}</h3>`;
-    }
-    for (const sub of sec.subSections) {
-      if (sub.title) html += `<h4 class="r-subsection">■ ${esc(sub.title)}</h4>`;
-      if (sub.body) html += formatBody(sub.body);
-    }
-  }
-  if (parsed.closing) {
-    html += `<div class="r-closing"><p>${esc(parsed.closing).replace(/\n/g,'<br>')}</p></div>`;
-  }
-  return html;
-}
-
-function getPreview(text, maxLen = 120) {
-  if (!text) return '';
-  // strip section markers for preview
-  return text
-    .replace(/^(TITLE:|DATE:|SECTION:|CLOSING:|---+|■)/gm,'')
-    .replace(/\s+/g,' ').trim()
-    .slice(0, maxLen) + (text.length > maxLen ? '…' : '');
-}
-
-function shareUrl(stamp) {
-  return `${location.href.split('#')[0]}#r${stamp}`;
-}
-
-/* ===== RENDERERS ===== */
-function renderLatest(item) {
-  const parsed = parseReportText(item.report_text);
-  const displayDate = item.generated_at || formatStamp(item.stamp);
-  const title = parsed.title || item.theme || 'レポート';
-  const bodyHtml = renderParsed(parsed);
-
-  return `
-    <article class="latest-card" id="r${esc(item.stamp)}">
-      <div class="latest-card-head">
-        <div class="latest-meta">
-          <span class="latest-badge">最新号</span>
-          <span class="latest-stamp">${esc(displayDate)}</span>
-        </div>
-        <h2 class="latest-theme">${esc(title)}</h2>
-      </div>
-      <div class="latest-card-body">
-        ${bodyHtml || `<p class="r-body">${esc(item.report_text || '')}</p>`}
-        <a href="${esc(shareUrl(item.stamp))}" class="anchor-link">🔗 このレポートへのリンク</a>
-      </div>
-    </article>
-  `;
-}
-
-function renderArchiveCard(item, index) {
-  const parsed = parseReportText(item.report_text);
-  const displayDate = item.generated_at || formatStamp(item.stamp);
-  const title = parsed.title || item.theme || 'レポート';
-  const preview = getPreview(item.report_text);
-  const bodyHtml = renderParsed(parsed);
-  const cardId = `r${item.stamp}`;
-
-  return `
-    <article class="archive-card" id="${esc(cardId)}">
-      <div class="archive-card-head" role="button" tabindex="0" aria-expanded="false" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleCard(this)">
-        <div class="arch-info">
-          <p class="arch-date">${esc(displayDate)}</p>
-          <h3 class="arch-theme">${esc(title)}</h3>
-          <p class="arch-preview">${esc(preview)}</p>
-        </div>
-        <button class="arch-toggle" aria-label="展開" tabindex="-1">▼</button>
-      </div>
-      <div class="archive-card-body">
-        ${bodyHtml || `<p class="r-body">${esc(item.report_text || '')}</p>`}
-        <a href="${esc(shareUrl(item.stamp))}" class="anchor-link">🔗 このレポートへのリンク</a>
-      </div>
-    </article>
-  `;
-}
-
-function toggleCard(head) {
-  const card = head.closest('.archive-card');
-  const isOpen = card.classList.contains('open');
-  card.classList.toggle('open', !isOpen);
-  head.setAttribute('aria-expanded', String(!isOpen));
-}
-
-/* ===== MAIN ===== */
-async function loadReports() {
-  const elLoading = document.getElementById('state-loading');
-  const elError   = document.getElementById('state-error');
-  const elContent = document.getElementById('reports-content');
-  const elErrTitle = document.getElementById('state-error-title');
-  const elErrMsg   = document.getElementById('state-error-msg');
-
-  try {
-    const res = await fetch(DATA_URL);
-
-    if (res.status === 404) {
-      elLoading.style.display = 'none';
-      elErrTitle.textContent = 'まだレポートがありません';
-      elErrMsg.textContent = '次回の自動生成（月・木 20:00）をお待ちください。';
-      elError.style.display = '';
-      return;
-    }
-
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-    const data = await res.json();
-
-    if (!Array.isArray(data) || data.length === 0) {
-      elLoading.style.display = 'none';
-      elErrTitle.textContent = 'まだレポートがありません';
-      elErrMsg.textContent = '次回の自動生成（月・木 20:00）をお待ちください。';
-      elError.style.display = '';
-      return;
-    }
-
-    // Sort newest first by stamp (string "20260622" works lexicographically)
-    data.sort((a, b) => String(b.stamp).localeCompare(String(a.stamp)));
-
-    const [latest, ...rest] = data;
-
-    // Render latest
-    document.getElementById('latest-container').innerHTML = renderLatest(latest);
-
-    // Render archive
-    if (rest.length > 0) {
-      document.getElementById('archive-head').style.display = '';
-      document.getElementById('archive-container').innerHTML =
-        rest.map((item, i) => renderArchiveCard(item, i)).join('');
-    }
-
-    elLoading.style.display = 'none';
-    elContent.style.display = '';
-
-    // If URL has anchor, scroll to it after render
-    if (location.hash) {
-      const target = document.querySelector(location.hash);
-      if (target) {
-        setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
-        // Also auto-open the archive card if it's an archive item
-        const card = target.closest('.archive-card');
-        if (card && !card.classList.contains('open')) {
-          const head = card.querySelector('.archive-card-head');
-          if (head) toggleCard(head);
-        }
-      }
-    }
-
-  } catch (err) {
-    console.error('[reports] fetch error:', err);
-    elLoading.style.display = 'none';
-    elErrTitle.textContent = 'レポートの読み込みに失敗しました';
-    elErrMsg.textContent = 'ネットワーク接続をご確認の上、ページを再読み込みしてください。';
-    elError.style.display = '';
-  }
-}
-
-loadReports();
-</script>
 
 <aside class="tr-cta" id="tr-cta" aria-label="住宅営業登竜門のご案内">
   <button type="button" class="tr-cta__close" id="tr-cta-close" aria-label="閉じる">&times;</button>
