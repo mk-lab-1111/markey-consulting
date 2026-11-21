@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho:wght@700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&display=swap">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article",
  "headline":"【9月第2週】「家賃上がっている」4割。住宅購入の後押しとなるか。フラット35と楽天が提携、フラット35利用で楽天ポイント付与。","description":"nippon.comが報じた調査結果によると、賃貸契約の更新時に4割以上の人が家賃値上げに直面しており、そのうち半数以上が「月額5,000円以上」の負担増となっています。建築費・修繕費の高騰や固定資産税の上昇が背景にあり、賃貸コストの上…","url":"https://markey-consulting.com/toryumon/reports/2026-09-13.html",
@@ -395,6 +396,78 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
   .latestcard:hover { border-color: #C2273F; }
   .note { font-size: 12px; color: #6B6B6B; line-height: 1.8; }
 
+  .rp { --crimson:#C2273F; --crimson-deep:#6E1424; --crimson-soft:#FBEAEC; --navy:#1B2540; --navy-deep:#0E1626;
+        --gold:#C49A2E; --gold-light:#E9CE82; --cream:#FBF7F0; --ink:#23262E; --mist:#83899B; --line:#EAE2D2; background: var(--cream); }
+  .rp .mincho { font-family: 'Shippori Mincho', serif; }
+  .rp-hero { position: relative; overflow: hidden; padding: 34px 0 58px; background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); }
+  .rp-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 82% 28%, rgba(194,39,63,.22) 0%, transparent 60%); }
+  .rp-hero .in { position: relative; max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  .rp-crumb { font-size: 12px; color: rgba(255,255,255,.6); }
+  .rp-crumb a { color: rgba(255,255,255,.78); }
+  .rp-crumb a:hover { color: var(--gold-light); }
+  .rp-eyebrow { margin-top: 22px; font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .22em; color: var(--gold-light); }
+  .rp-hero h1 { margin-top: 12px; font-family: 'Shippori Mincho', serif; font-weight: 700; color: #FFFFFF; font-size: clamp(24px, 3.4vw, 36px); line-height: 1.5; }
+  .rp-hero h1 .wk { color: var(--gold-light); }
+  .rp-lead { margin-top: 14px; max-width: 720px; font-size: 14.5px; line-height: 1.9; color: rgba(255,255,255,.74); }
+  .rp-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .rp-badge { display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(255,255,255,.24); background: rgba(255,255,255,.08);
+              border-radius: 100px; padding: 6px 15px; font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.88); }
+  .rp-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-light); }
+  .rp-wave { display: block; width: 100%; height: 40px; margin-top: -1px; }
+  .rp-body { max-width: 1060px; margin: -10px auto 0; padding: 0 16px 70px; display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
+  .rp-main { flex: 1 1 560px; min-width: 0; background: #FFFFFF; border: 1px solid var(--line); border-radius: 20px;
+             box-shadow: 0 18px 50px -22px rgba(27,37,64,.28); padding: 34px 38px 40px; }
+  .rp-side { flex: 0 0 290px; min-width: 0; }
+  .rp-card { background: #FFFFFF; border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px; margin-bottom: 18px; }
+  .rp-card h2 { font-family: 'Shippori Mincho', serif; font-size: 17px; color: var(--navy); padding-bottom: 10px; border-bottom: 2px solid var(--crimson); }
+  .rp-card li a { display: block; padding: 11px 2px; border-bottom: 1px solid var(--line); }
+  .rp-card li a:hover .t { color: var(--crimson); }
+  .rp-card .d { display: block; font-size: 11px; color: var(--mist); }
+  .rp-card .t { display: block; margin-top: 3px; font-size: 13.5px; font-weight: 700; line-height: 1.6; color: var(--ink); }
+  @media (max-width: 800px) { .rp-main { padding: 24px 20px 30px; border-radius: 14px; } .rp-side { flex: 1 1 100%; } }
+
+  /* 本文 */
+  .rp .art, .rp .art p, .rp .art li { font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; color: var(--ink); letter-spacing: 0; }
+  .rp .art p { font-size: 15px; line-height: 1.95; margin: 0 0 18px; }
+  .rp .art li { font-size: 15px; line-height: 1.85; margin-bottom: 6px; }
+  .rp .art ul { list-style: disc; padding-left: 1.3em; margin: 0 0 20px; }
+  .rp .art h2 { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 700; line-height: 1.5; color: var(--crimson);
+                background: none; border: 0; border-left: 4px solid var(--crimson); padding: 2px 0 2px 14px; margin: 46px 0 18px; }
+  .rp .art h2:first-child { margin-top: 6px; }
+  .rp .art h3 { font-family: 'Shippori Mincho', serif; font-size: 19px; font-weight: 700; line-height: 1.55; color: var(--navy);
+                border: 0; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin: 32px 0 14px; }
+  .rp .art h4 { font-size: 15.5px; color: var(--navy); border-left: 3px solid var(--gold); padding-left: 10px; margin: 22px 0 8px; }
+  .rp .art strong { color: var(--navy); font-weight: 700; }
+  .rp .art a { color: var(--crimson); text-decoration: underline; word-break: break-all; }
+  .rp .art .imp { margin-top: 40px; padding: 26px 28px 10px; border-radius: 16px; background: var(--crimson-soft); border-left: 5px solid var(--crimson); }
+  .rp .art .imp h2 { margin-top: 0; }
+  .rp .art .imp h3 { border-bottom-color: rgba(194,39,63,.25); }
+  .rp .art .src li { font-size: 13px; line-height: 1.75; color: #555B6B; }
+  .rp .toc { margin-top: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--cream); padding: 18px 22px; }
+  .rp .toc a { color: var(--navy); }
+  .rp .toc a:hover { color: var(--crimson); }
+  .rp .note { font-size: 12px; color: var(--mist); line-height: 1.8; }
+  .rp .pn a { border-radius: 12px; border-color: var(--line); background: #FFFFFF; }
+  .rp .pn a:hover { border-color: var(--crimson); }
+  .rp .btn { display: inline-block; background: linear-gradient(120deg, var(--crimson), #9A1B30); color: #FFFFFF; font-size: 14px; font-weight: 700;
+             padding: 13px 30px; border-radius: 100px; box-shadow: 0 12px 28px -12px rgba(194,39,63,.5); }
+  /* 見出しの改行：日本語は文字単位で自然に折り返す（コラムの keep-all を打ち消す） */
+  .rp h1, .rp h2, .rp h3, .rp h4, .rp .t, .rp .mincho { word-break: normal; overflow-wrap: anywhere; line-break: strict; text-wrap: pretty; }
+  @media (max-width: 640px) { .rp-hero { padding: 24px 0 44px; } .rp-hero h1 { font-size: 22px; line-height: 1.6; } .rp-lead { font-size: 13.5px; } .rp-badge { font-size: 11.5px; padding: 5px 12px; }
+    .rp-body { padding: 0 10px 50px; } .rp .art h2 { font-size: 19px; } .rp .art h3 { font-size: 17px; } .rp .art p, .rp .art li { font-size: 14px; } }
+
+  /* 一覧 */
+  .rp .latest { display: block; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 18px 50px -22px rgba(27,37,64,.28); }
+  .rp .latest .hd { background: linear-gradient(120deg, var(--crimson-deep) 0%, var(--crimson) 100%); padding: 24px 28px; }
+  .rp .latest .bd { background: var(--cream); padding: 20px 28px 24px; }
+  .rp .latest:hover .bd { background: #FFFFFF; }
+  .rp .pill { display: inline-block; background: rgba(255,255,255,.18); color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: .1em; padding: 3px 12px; border-radius: 100px; }
+  .rp .month { margin-top: 30px; font-family: 'Shippori Mincho', serif; font-size: 17px; color: var(--navy); padding-bottom: 6px; border-bottom: 2px solid var(--gold); background: none; border-left: 0; }
+  .rp .rlist li { border-bottom: 1px solid var(--line); }
+  .rp .rlist a { color: var(--navy); }
+  .rp .rlist a:hover { color: var(--crimson); }
+  .rp .sec { font-family: 'Shippori Mincho', serif; font-size: 22px; color: var(--crimson); border-left: 4px solid var(--crimson); padding-left: 14px; margin: 40px 0 14px; }
+
 
   h1, h2, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   .art h2 { font-size: 27px; line-height: 1.55; margin: 48px 0 18px;
@@ -549,26 +622,27 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
     </div>
   </nav>
 
-<main class="artwrap" style="background: #2E2E2E; padding: 24px 16px 70px;">
-  <div class="wrapx" style="max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start;">
-  <div class="colbox ix" style="flex: 1 1 0; min-width: 0; background: #FFFFFF; border-top: 6px solid #E8A33D;">
-  <nav aria-label="パンくず" style="font-size: 12px; color: #5C5C5C;">
-    <a href="../">住宅営業登竜門</a> › <a href="./">住宅市場レポート</a> › <span>9月第2週</span>
-  </nav>
+<main class="rp">
+<section class="rp-hero"><div class="in">
+    <nav class="rp-crumb" aria-label="パンくず"><a href="../">住宅営業登竜門</a> › <a href="./">住宅市場レポート</a> › <span>9月第2週</span></nav>
+    <p class="rp-eyebrow">WEEKLY MARKET REPORT</p>
+    <h1><span class="wk">【9月第2週】</span><br>「家賃上がっている」4割。住宅購入の後押しとなるか。フラット35と楽天が提携、フラット35利用で楽天ポイント付与。</h1>
+    <div class="rp-badges"><span class="rp-badge"><span class="dot"></span>公開 2026.09.13</span><span class="rp-badge">編集：住宅営業登竜門編集部</span></div>
+  </div></section>
+<svg class="rp-wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,20 C1200,48 960,8 720,28 C480,48 240,4 0,24 Z" fill="#0E1626"/></svg>
+<div class="rp-body">
+  <div class="rp-main">
     <article style="min-width: 0;">
-      <p class="en" style="margin-top: 18px; font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #C2273F;">WEEKLY REPORT　9月第2週</p>
-      <h1 style="margin-top: 10px; background: #333333; color: #FFFFFF; border-left: 10px solid #E8A33D; padding: 22px 26px; font-size: 26px; line-height: 1.55;">【9月第2週】「家賃上がっている」4割。住宅購入の後押しとなるか。フラット35と楽天が提携、フラット35利用で楽天ポイント付与。</h1>
-      <p class="rp-meta">公開 2026.09.13<br>編集：住宅営業登竜門編集部（運営 MARKEY CONSULTING）</p>
-      <nav class="toc" aria-label="このページの目次" style="margin: 28px 0 0; border: 1px solid #D4D4D4; padding: 20px 22px;">
-        <p style="font-size: 15px; font-weight: 900;">このレポートの目次</p>
-        <ul style="margin-top: 10px;">
-          <li style="border-bottom: 1px solid #E2E2E2;"><a href="#s1" style="display: block; padding: 9px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">Executive Summary（今週の要約）</a></li>
-          <li style="border-bottom: 1px solid #E2E2E2;"><a href="#s2" style="display: block; padding: 9px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">主なニュースTOPIC</a></li>
-          <li style="border-bottom: 1px solid #E2E2E2;"><a href="#s3" style="display: block; padding: 9px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">1. 【市場・賃貸】賃貸契約更新者の4割超が「家賃値上げ」に直面、購入シフトへの契機に</a></li>
-          <li style="border-bottom: 1px solid #E2E2E2;"><a href="#s4" style="display: block; padding: 9px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">2. 【市場・集客】展示場来場者が全エリアで前年割れ、Web・見学会主体の集客再構築が急務</a></li>
-          <li style="border-bottom: 1px solid #E2E2E2;"><a href="#s5" style="display: block; padding: 9px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">3. 【政策・金融】脱炭素予算1.92倍増と「フラット35×ポイント還元」等の購入支援策</a></li>
-          <li style="border-bottom: 1px solid #E2E2E2;"><a href="#s6" style="display: block; padding: 9px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">一次情報・公的参照元URL</a></li>
-          <li style="border-bottom: 1px solid #E2E2E2;"><a href="#s7" style="display: block; padding: 9px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">今週のインプリケーション（住宅事業者が取るべきアクション）</a></li>
+      <nav class="toc" aria-label="このレポートの目次">
+        <p class="mincho" style="font-size: 16px; font-weight: 700; color: #1B2540;">このレポートの目次</p>
+        <ul style="margin-top: 8px;">
+          <li style="border-bottom: 1px solid #EAE2D2;"><a href="#s1" style="display: block; padding: 8px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">Executive Summary（今週の要約）</a></li>
+          <li style="border-bottom: 1px solid #EAE2D2;"><a href="#s2" style="display: block; padding: 8px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">主なニュースTOPIC</a></li>
+          <li style="border-bottom: 1px solid #EAE2D2;"><a href="#s3" style="display: block; padding: 8px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">1. 【市場・賃貸】賃貸契約更新者の4割超が「家賃値上げ」に直面、購入シフトへの契機に</a></li>
+          <li style="border-bottom: 1px solid #EAE2D2;"><a href="#s4" style="display: block; padding: 8px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">2. 【市場・集客】展示場来場者が全エリアで前年割れ、Web・見学会主体の集客再構築が急務</a></li>
+          <li style="border-bottom: 1px solid #EAE2D2;"><a href="#s5" style="display: block; padding: 8px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">3. 【政策・金融】脱炭素予算1.92倍増と「フラット35×ポイント還元」等の購入支援策</a></li>
+          <li style="border-bottom: 1px solid #EAE2D2;"><a href="#s6" style="display: block; padding: 8px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">一次情報・公的参照元URL</a></li>
+          <li style="border-bottom: 1px solid #EAE2D2;"><a href="#s7" style="display: block; padding: 8px 2px; font-size: 14px; font-weight: 700; line-height: 1.6;">今週のインプリケーション（住宅事業者が取るべきアクション）</a></li>
         </ul>
       </nav>
       <div class="art" style="margin-top: 30px;">
@@ -596,28 +670,27 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
 <li><strong>資金計画での背中押し</strong>: 金利上昇や価格高騰で背中を押しにくい状況に対し、ポイント還元や光熱費削減効果を盛り込んだ「総合的な実質負担軽減」を可視化するプレゼンが有効です。</li>
 </ul>
 <h2 id="s6">一次情報・公的参照元URL</h2>
-<ul>
+<ul class="src">
 <li>nippon.com（家賃更新：4割超が値上げに直面―家計苦しく、次は引っ越しも検討）: <a href="https://www.nippon.com/ja/japan-data/h02756/" target="_blank" rel="noopener">https://www.nippon.com/ja/japan-data/h02756/</a></li>
 <li>住宅産業新聞（展示場集客および最新の業界ニュース）: <a href="https://www.housenews.jp/" target="_blank" rel="noopener">https://www.housenews.jp/</a></li>
 <li>住宅金融支援機構（フラット35 ニュースリリース）: <a href="https://www.flat35.com/" target="_blank" rel="noopener">https://www.flat35.com/</a></li>
 </ul>
-<h2 id="s7">今週のインプリケーション（住宅事業者が取るべきアクション）</h2>
+<div class="imp"><h2 id="s7">今週のインプリケーション（住宅事業者が取るべきアクション）</h2>
 <h3>1. 賃貸層（一次取得者）に対する「賃料値上げvs住宅ローン」の比較シミュレーション提示</h3>
 <p>「家賃更新で月5,000円〜1万円上がった場合、30年でどれだけの支出増になるか」を数値化し、現在の家賃支払い額と同等の返済予算で建築・購入できる住宅プランを早期提案する。</p>
 <h3>2. 「実質負担削減」を可視化した資金計画シミュレーションの即時導入</h3>
 <p>物価高・金利上昇への不安を和らげるため、新施策（ポイント還元等）や高断熱・創エネによる30年間の光熱費削減額を組み込んだライフサイクルコスト（LCC）提案を標準化する。</p>
 <h3>3. 展示場依存からの脱却と「Web予約＋現場見学会」導線のリアルタイム改善</h3>
-<p>展示場来場者の減少に対応し、自社WebサイトやSNSから「直近で建てた施主のリアルな事例見学会」へダイレクトに誘引するデジタル集客の予算配分・運用を再点検する。</p>
+<p>展示場来場者の減少に対応し、自社WebサイトやSNSから「直近で建てた施主のリアルな事例見学会」へダイレクトに誘引するデジタル集客の予算配分・運用を再点検する。</p></div>
       </div>
-      <p class="note" style="margin-top: 30px;">※本レポートは、公表資料・報道をもとに編集部がまとめた情報提供です。数値・制度は各発表元の最新情報をご確認ください。「背景とポイント」「インプリケーション」は編集部の考察です。</p>
+      <p class="note" style="margin-top: 30px;">※本レポートは、公表資料・報道をもとに編集部がまとめた情報提供です。数値・制度は各発表元の最新情報をご確認ください。「背景とポイント」「インプリケーション」は編集部の考察です。運営：MARKEY CONSULTING</p>
       <div class="pn">
         <a href="2026-09-06.html"><span class="l">‹ 前の号</span><span class="t">【9月第1週】大和ハウス国内新築事業の縮小と請負価格5000万円を下限とする方針を発表</span></a>
         <a href="2026-09-27.html" style="text-align: right;"><span class="l">次の号 ›</span><span class="t">【10月第1週】8月受注戸建て単体では各社減少傾向に。家賃UPが顕著となり、賃貸か住宅購入で悩む顧客が増加。</span></a>
       </div>
-      <p style="margin-top: 16px; text-align: center;"><a href="./" style="display: inline-block; background: #111111; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 13px 30px;">住宅市場レポートの一覧へ</a></p>
-      <section style="margin-top: 44px;">
-        <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #8A8A8A;">RELATED COLUMN</p>
-        <h2 style="margin-top: 8px; font-size: 20px; padding-bottom: 10px; border-bottom: 2px solid #111111;">営業の現場で使う：関連コラム</h2>
+      <p style="margin-top: 22px; text-align: center;"><a class="btn" href="./">住宅市場レポートの一覧へ</a></p>
+      <section>
+        <h2 class="sec">営業の現場で使う：関連コラム</h2>
         <ul class="rlist">
           <li><a href="../column/money-plan-first.html">資金計画は先に話す：予算の話を後回しにしない理由</a></li>
           <li><a href="../column/loan-basics.html">住宅ローンの基本を、お客様の言葉で説明する：金利タイプの違い</a></li>
@@ -626,33 +699,33 @@ body { margin: 0; background: #FFFFFF; color: #111111; font-family: 'Zen Kaku Go
       </section>
     </article>
   </div>
-  <div class="sidebx" style="flex: 0 0 290px; min-width: 0; background: #FFFFFF; padding: 16px 14px; border-top: 6px solid #E8A33D;">
-        <aside style="display: flex; flex-direction: column;">
-          <h2 style="font-size: 18px; line-height: 1.4; background: #333333; color: #FFFFFF; text-align: center; padding: 16px 12px;">最新のレポート</h2>
-          <ul style="margin-top: 14px;">
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="2026-11-17.html" class="row" style="display: block; padding: 13px 6px;"><span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.17</span><span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">【11月第3週】中古戸建価格も最高を更新。リフォーム事業が活気づくも、リフォーム事業者の倒産は最多。</span></a></li>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="2026-11-15.html" class="row" style="display: block; padding: 13px 6px;"><span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.15</span><span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">【11月第3週】大手メーカー10月受注速報。プラスに転じる企業も。注文住宅単体は厳しい様相。分譲シフトがはっきり。住宅ローン金利高騰に合わせた商品展開の対策を。</span></a></li>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="2026-11-09.html" class="row" style="display: block; padding: 13px 6px;"><span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.11.09</span><span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">【11月第1週】1月～10月工務店の倒産件数が前年対比1.8倍に急増。大手は高額リノベにシフト</span></a></li>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="2026-10-20.html" class="row" style="display: block; padding: 13px 6px;"><span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.10.20</span><span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">【10月第3週】大手ハウスメーカー収益圧迫、省エネ義務化の中小工務店への影響続く</span></a></li>
-            <li style="border-bottom: 1px solid #D4D4D4;"><a href="2026-10-11.html" class="row" style="display: block; padding: 13px 6px;"><span class="en" style="display: block; font-size: 11px; color: #8A8A8A;">2026.10.11</span><span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 700; line-height: 1.6;">【10月第3週】金融庁、50年超長期住宅ローンへの監督強化方針を提示。買取再販のM&amp;Aなど、ストック市場への集中、業界再編の流れ</span></a></li>
-          </ul>
-          <a href="./" style="display: block; margin-top: 12px; text-align: right; font-size: 13px; font-weight: 700;">レポート一覧 ›</a>
-          <a href="../column/" style="display: block; margin-top: 26px; border: 1px solid #111111; padding: 16px 18px;">
-            <span class="en" style="display: block; font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8A8A8A;">COLUMN</span>
-            <span style="display: block; margin-top: 6px; font-size: 15px; font-weight: 900; line-height: 1.6;">住宅営業の「型」を学ぶコラム</span>
-            <span style="display: block; margin-top: 6px; font-size: 12px; color: #5C5C5C;">初回接客からクロージングまで ›</span>
-          </a>
-          <a href="../../toryumon-lp/" style="display: block; margin-top: 20px; border: 4px solid #C2273F; padding: 14px;">
-            <img src="../assets/video-course.jpg" alt="住宅営業登竜門 動画講座" style="display: block; width: 100%; height: auto;">
-            <span style="display: block; margin-top: 12px; font-size: 14px; font-weight: 700; line-height: 1.7;">トップセールス直伝の動画講座（月額制）</span>
-          </a>
-          <a href="../../" style="display: block; margin-top: 20px; border: 1px dashed #9B9B9B; padding: 16px 18px;">
-            <span style="display: block; font-size: 14px; font-weight: 900; line-height: 1.5;">住宅会社の経営・営業組織のご相談</span>
-            <span style="display: block; margin-top: 6px; font-size: 12px; line-height: 1.8; color: #5C5C5C;">MARKEY CONSULTING ›</span>
-          </a>
-        </aside>
+  <div class="rp-side">
+    <div class="rp-card">
+      <h2>最新のレポート</h2>
+      <ul>
+        <li><a href="2026-11-17.html"><span class="d en">2026.11.17</span><span class="t">【11月第3週】中古戸建価格も最高を更新。リフォーム事業が活気づくも、リフォーム事業者の倒産は最多。</span></a></li>
+        <li><a href="2026-11-15.html"><span class="d en">2026.11.15</span><span class="t">【11月第3週】大手メーカー10月受注速報。プラスに転じる企業も。注文住宅単体は厳しい様相。分譲シフトがはっきり。住宅ローン金利高騰に合わせた商品展開の対策を。</span></a></li>
+        <li><a href="2026-11-09.html"><span class="d en">2026.11.09</span><span class="t">【11月第1週】1月～10月工務店の倒産件数が前年対比1.8倍に急増。大手は高額リノベにシフト</span></a></li>
+        <li><a href="2026-10-20.html"><span class="d en">2026.10.20</span><span class="t">【10月第3週】大手ハウスメーカー収益圧迫、省エネ義務化の中小工務店への影響続く</span></a></li>
+        <li><a href="2026-10-11.html"><span class="d en">2026.10.11</span><span class="t">【10月第3週】金融庁、50年超長期住宅ローンへの監督強化方針を提示。買取再販のM&amp;Aなど、ストック市場への集中、業界再編の流れ</span></a></li>
+      </ul>
+      <a href="./" style="display: block; margin-top: 10px; text-align: right; font-size: 13px; font-weight: 700; color: #C2273F;">レポート一覧 ›</a>
+    </div>
+    <a class="rp-card" href="../column/" style="display: block;">
+      <span class="en" style="display: block; font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #83899B;">COLUMN</span>
+      <span style="display: block; margin-top: 6px; font-size: 15px; font-weight: 900; line-height: 1.6;">住宅営業の「型」を学ぶコラム</span>
+      <span style="display: block; margin-top: 6px; font-size: 12px; color: #5C5C5C;">初回接客からクロージングまで ›</span>
+    </a>
+    <a class="rp-card" href="../../toryumon-lp/" style="display: block; border: 3px solid #C2273F;">
+      <img src="../assets/video-course.jpg" alt="住宅営業登竜門 動画講座" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+      <span style="display: block; margin-top: 12px; font-size: 14px; font-weight: 700; line-height: 1.7;">トップセールス直伝の動画講座（月額制）</span>
+    </a>
+    <a class="rp-card" href="../../" style="display: block;">
+      <span style="display: block; font-size: 14px; font-weight: 900; line-height: 1.5;">住宅会社の経営・営業組織のご相談</span>
+      <span style="display: block; margin-top: 6px; font-size: 12px; line-height: 1.8; color: #5C5C5C;">MARKEY CONSULTING ›</span>
+    </a>
   </div>
-  </div>
+</div>
 </main>
 
 <!-- ===== FOOTER ===== -->
