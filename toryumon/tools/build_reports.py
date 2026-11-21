@@ -541,7 +541,7 @@ def replace_block(s, name, new, path):
     return s[:i] + "\n" + new + s[j:]
 
 
-def top_block(lt):
+def top_block(lt, n):
     colors = ["#17547E", "#7A5A10", "#C2273F"]
     link = "reports/%s.html" % lt["slug"]
     lis = "".join(
@@ -567,8 +567,8 @@ def top_block(lt):
           <p class="en" style="font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8A8A8A; padding-bottom: 10px; border-bottom: 1px solid #111111;">THIS WEEK'S TOPICS</p>
           <ul id="rp-topics">
 %s          </ul>
-          <a href="reports/" style="display: block; margin-top: 12px; text-align: right; font-size: 13px; font-weight: 700;">バックナンバー一覧 ›</a>
-""" % (link, E(lt["week"]), dot(lt["published"]), E(lt["headline"]), E(lt["description"]), lis)
+          <a href="reports/" class="rp-allbtn" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 16px; background: #1B2540; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 16px 18px; border-left: 6px solid #C49A2E;">過去のレポート一覧を見る（全%d号） <span style="color: #E9CE82;">›</span></a>
+""" % (link, E(lt["week"]), dot(lt["published"]), E(lt["headline"]), E(lt["description"]), lis, n)
 
 
 def markey_block(reps):
@@ -622,7 +622,7 @@ def main():
     print("  レポート:", len(reps), "号（最新", reps[0]["slug"] + "）")
 
     s = read(TOP)
-    write(TOP, replace_block(s, "REPORT-LATEST", top_block(reps[0]), TOP))
+    write(TOP, replace_block(s, "REPORT-LATEST", top_block(reps[0], len(reps)), TOP))
     print("  登竜門トップの最新号を更新")
 
     if os.path.exists(MARKEY_REPORTS):
