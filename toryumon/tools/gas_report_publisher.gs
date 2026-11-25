@@ -37,7 +37,7 @@ function publishApproved() {
       ? DocumentApp.openById(f.getId()).getBody().getText()
       : f.getBlob().getDataAsString('UTF-8');
     text = text.replace(/^﻿/, '').replace(/\r\n/g, '\n');
-    if (!/^---\n[\s\S]*?\ntitle:/.test(text)) {
+    if (!/^---\n(?:[\s\S]*?\n)?title:/.test(text)) {
       Logger.log('飛ばしました（先頭の設定がない）: ' + f.getName());
       continue;
     }
